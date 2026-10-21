@@ -35,6 +35,8 @@ export async function ensureChannel(): Promise<void> {
   try {
     await Notifications.setNotificationChannelAsync(CHANNEL_ID, {
       name: 'Souffle',
+      // AndroidImportance is re-exported through `export *`, which import/namespace cannot follow.
+      // eslint-disable-next-line import/namespace
       importance: Notifications.AndroidImportance.DEFAULT,
       vibrationPattern: [0, 150],
     });

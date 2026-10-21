@@ -14,6 +14,7 @@ export default function EditProfileScreen() {
   const { t } = useTranslation();
   const user = useUserStore((s) => s.user);
   const updateUser = useUserStore((s) => s.updateUser);
+  const updateHabits = useUserStore((s) => s.updateHabits);
   const [firstName, setFirstName] = useState(user?.firstName ?? '');
   const [cigs, setCigs] = useState(String(user?.smoking.cigarettesPerDay ?? ''));
   const [years, setYears] = useState(String(user?.smoking.yearsSmoking ?? ''));
@@ -40,11 +41,12 @@ export default function EditProfileScreen() {
       answers[3] = c <= 10 ? 0 : c <= 20 ? 1 : c <= 30 ? 2 : 3;
     }
     const score = answers ? computeFagerstromScore(answers) : user.smoking.dependenceScore;
+    // Habits are versioned: past savings keep the values that applied at the time.
+    updateHabits({ cigarettesPerDay: c, cigarettesPerPack: pp, packPriceCents: p });
+    const fresh = useUserStore.getState().user ?? user;
     updateUser({
       firstName: firstName.trim(),
-      smoking: { ...user.smoking, cigarettesPerDay: c, yearsSmoking: y, packPriceCents: p, cigarettesPerPack: pp, fagerstromAnswers: answers, dependenceScore: score, dependenceLevel: score !== undefined ? fagerstromLevel(score) : undefined },
-      // Baseline drives savings: history stays consistent because savings are recomputed from events.
-      smokingBaselinePerDay: c,
+      smoking: { ...fresh.smoking, yearsSmoking: y, fagerstromAnswers: answers, dependenceScore: score, dependenceLevel: score !== undefined ? fagerstromLevel(score) : undefined },
       sportLevel: level,
       intensityPreference: intensity,
       limitations,

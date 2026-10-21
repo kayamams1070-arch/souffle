@@ -15,6 +15,8 @@ export const STORAGE_KEYS = {
   journal: `${STORAGE_PREFIX}.journal`,
   settings: `${STORAGE_PREFIX}.settings`,
   schemaVersion: `${STORAGE_PREFIX}.schemaVersion`,
+  /** Copy of a real user's data taken before entering demo mode (restored on exit). */
+  demoBackup: `${STORAGE_PREFIX}.demoBackup`,
 } as const;
 
 export type StorageKey = (typeof STORAGE_KEYS)[keyof typeof STORAGE_KEYS];
@@ -80,6 +82,10 @@ export async function clearAll(): Promise<void> {
   } catch (error) {
     throw new StorageError('Cannot clear storage', error);
   }
+}
+
+export async function removeRaw(key: StorageKey): Promise<void> {
+  await zustandStorage.removeItem(key);
 }
 
 export async function writeSchemaVersion(): Promise<void> {

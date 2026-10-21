@@ -9,6 +9,8 @@
  *  2. add a `case <oldVersion>:` block that transforms the object to the next version
  */
 import { SCHEMA_VERSION } from '@/utils/constants';
+import { savingsStart } from '@/utils/calculations';
+import type { User } from '@/types';
 
 type AnyRecord = Record<string, unknown>;
 
@@ -21,6 +23,14 @@ export function migrateUserState(persisted: unknown, version: number): AnyRecord
   let v = version;
   while (v < SCHEMA_VERSION) {
     switch (v) {
+      case 1: {
+        // v1 -> v2: pin the savings start so that later quit-date changes keep the history.
+        const user = state.user as User | null | undefined;
+        if (user && typeof user === 'object' && !user.savingsStartDate && user.createdAt) {
+          state.user = { ...user, savingsStartDate: savingsStart(user) };
+        }
+        break;
+      }
       default:
         break;
     }

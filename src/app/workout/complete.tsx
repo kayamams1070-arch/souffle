@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
@@ -8,30 +8,20 @@ import { AppButton, AppCard, AppText, Banner, ScaleSelector, Screen, TextField }
 import { useRewardStore, useWorkoutStore } from '@/store';
 import { useSosSession } from '@/store/useSosSession';
 import { xpEventId } from '@/services/rewardService';
-import { useHaptics } from '@/hooks/useHaptics';
 import { formatMinutesAsClock } from '@/utils/dates';
 
 export default function WorkoutCompleteScreen() {
   const theme = useAppTheme();
   const router = useRouter();
   const { t } = useTranslation();
-  const haptics = useHaptics();
   const { sessionId, from, abandoned } = useLocalSearchParams<{ sessionId: string; from?: string; abandoned?: string }>();
   const session = useWorkoutStore((s) => s.sessions.find((x) => x.id === sessionId));
   const annotateSession = useWorkoutStore((s) => s.annotateSession);
-  const awardXp = useRewardStore((s) => s.awardXp);
+  // XP is awarded once when the session completes (workout/session); shown here from the log.
+  const xp = useRewardStore((s) => (sessionId ? s.events.find((e) => e.id === xpEventId.workout(sessionId))?.xp ?? 0 : 0));
   const sos = useSosSession();
   const [effort, setEffort] = useState<number | null>(null);
   const [notes, setNotes] = useState('');
-  const [xp, setXp] = useState<number | null>(null);
-
-  useEffect(() => {
-    if (session?.completed && xp === null) {
-      const gained = awardXp(xpEventId.workout(session.id), 'workout_completed');
-      setXp(gained);
-      if (gained > 0) haptics.success();
-    }
-  }, [session, awardXp, xp, haptics]);
 
   if (!session) return null;
   const isAbandoned = abandoned === '1' || !session.completed;

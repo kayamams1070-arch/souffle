@@ -40,7 +40,9 @@ export default function RelapseScreen() {
   const [confirm, setConfirm] = useState(false);
   const [saved, setSaved] = useState<SmokingEvent | null>(null);
 
-  const occurredAt = useMemo(() => new Date(Date.now() - hoursAgo * 3600_000).toISOString(), [hoursAgo]);
+  // Reference instant captured when the screen opens; the event time is computed from it.
+  const [openedAt] = useState(() => Date.now());
+  const occurredAt = useMemo(() => new Date(openedAt - hoursAgo * 3600_000).toISOString(), [openedAt, hoursAgo]);
   const shieldCheck = useMemo(() => canUseShield(rewards, dayKey(occurredAt)), [rewards, occurredAt]);
   const streakAtRisk = !isReduction && streak.currentDays > 0;
 

@@ -8,7 +8,7 @@ import { AppButton, AppCard, AppText, Screen } from '@/components/ui';
 import { useUserStore, useSettingsStore } from '@/store';
 import { SUPPORTED_LANGUAGES } from '@/i18n';
 import { ChipGroup } from '@/components/ui/FormControls';
-import { loadDemoData } from '@/data/demoData';
+import { enterDemo } from '@/services/dataService';
 
 export default function WelcomeScreen() {
   const theme = useAppTheme();
@@ -20,12 +20,15 @@ export default function WelcomeScreen() {
   const [showHow, setShowHow] = useState(false);
   const [loadingDemo, setLoadingDemo] = useState(false);
   const hasDraft = Boolean(draft.step && draft.step > 1);
+  // Resume where the user stopped: draft.step is the next step to fill (2..5).
+  const resumeRoute =
+    draft.step === 5 ? '/onboarding/pact' : draft.step === 4 ? '/onboarding/goals' : draft.step === 3 ? '/onboarding/health' : draft.step === 2 ? '/onboarding/fagerstrom' : '/onboarding/profile';
 
   return (
     <Screen
       footer={
         <>
-          <AppButton label={hasDraft ? t('onboarding.welcome.resume') : t('onboarding.welcome.start')} onPress={() => router.push('/onboarding/profile')} size="lg" icon="arrow-forward" />
+          <AppButton label={hasDraft ? t('onboarding.welcome.resume') : t('onboarding.welcome.start')} onPress={() => router.push(hasDraft ? resumeRoute : '/onboarding/profile')} size="lg" icon="arrow-forward" />
           <AppButton label={t('onboarding.welcome.how')} variant="ghost" onPress={() => setShowHow((v) => !v)} />
         </>
       }>
@@ -88,9 +91,9 @@ export default function WelcomeScreen() {
           fullWidth={false}
           loading={loadingDemo}
           style={{ marginTop: 8 }}
-          onPress={() => {
+          onPress={async () => {
             setLoadingDemo(true);
-            loadDemoData();
+            await enterDemo(settings.language);
             setLoadingDemo(false);
             router.replace('/(tabs)');
           }}

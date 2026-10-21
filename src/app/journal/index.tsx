@@ -11,6 +11,7 @@ import { xpEventId } from '@/services/rewardService';
 import { formatDate } from '@/utils/money';
 import { DAY_MS, nowIso } from '@/utils/dates';
 import { useHaptics } from '@/hooks/useHaptics';
+import { useNow } from '@/hooks/useNow';
 
 const TYPES: JournalEntryType[] = ['craving_overcome', 'workout_done', 'good_day', 'decision', 'gratitude', 'free'];
 const MOODS: Mood[] = ['calm', 'ok', 'tense', 'tired', 'irritated', 'sad'];
@@ -40,13 +41,14 @@ export default function JournalScreen() {
   const [toDelete, setToDelete] = useState<string | null>(null);
   const [gained, setGained] = useState<number | null>(null);
 
+  const now = useNow(60_000);
   const weekly = useMemo(() => {
-    const since = Date.now() - 7 * DAY_MS;
+    const since = now - 7 * DAY_MS;
     const recent = entries.filter((e) => new Date(e.date).getTime() >= since);
     const counts: Partial<Record<JournalEntryType, number>> = {};
     for (const e of recent) counts[e.type] = (counts[e.type] ?? 0) + 1;
     return { total: recent.length, counts };
-  }, [entries]);
+  }, [entries, now]);
 
   const save = () => {
     if (!text.trim()) return;

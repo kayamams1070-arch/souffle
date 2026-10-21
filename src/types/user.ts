@@ -44,6 +44,17 @@ export interface SmokingProfile {
   fagerstromAnswers?: number[];
 }
 
+/**
+ * Declared habits valid from `effectiveFrom`. When the user edits consumption or price,
+ * a new snapshot is appended so past savings keep using the values that applied then.
+ */
+export interface HabitsSnapshot {
+  effectiveFrom: string;
+  cigarettesPerDay: number;
+  cigarettesPerPack: number;
+  packPriceCents: number;
+}
+
 export interface User {
   id: string;
   firstName: string;
@@ -61,6 +72,13 @@ export interface User {
   /** ISO date-time when the reduction plan started (goal = reduce). */
   reductionStartDate?: string;
   smokingBaselinePerDay: number;
+  /**
+   * Start of savings tracking. Set once (first quit date or reduction start) and never
+   * moved forward by a relapse, a new quit date or a goal switch, so savings are never lost.
+   */
+  savingsStartDate?: string;
+  /** Dated history of declared habits (ascending). Missing = current values since the start. */
+  habitsHistory?: HabitsSnapshot[];
 
   sportLevel: SportLevel;
   intensityPreference: IntensityPreference;

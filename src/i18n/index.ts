@@ -25,6 +25,7 @@ let initialized = false;
 
 export function initI18n(language: Language): typeof i18n {
   if (!initialized) {
+    // eslint-disable-next-line import/no-named-as-default-member
     void i18n.use(initReactI18next).init({
       resources: {
         fr: { translation: fr },
@@ -38,12 +39,14 @@ export function initI18n(language: Language): typeof i18n {
     });
     initialized = true;
   } else if (i18n.language !== language) {
+    // eslint-disable-next-line import/no-named-as-default-member
     void i18n.changeLanguage(language);
   }
   return i18n;
 }
 
 export function setLanguage(language: Language): void {
+  // eslint-disable-next-line import/no-named-as-default-member
   if (i18n.language !== language) void i18n.changeLanguage(language);
 }
 

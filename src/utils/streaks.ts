@@ -11,6 +11,7 @@
  */
 import type { RewardState, ShieldUse, SmokingEvent, StreakFreeze, StreakInfo, User } from '@/types';
 import { addDaysToKey, DAY_MS, dayKey, dayKeyToDate, daysBetweenKeys } from './dates';
+import { savingsStart } from './calculations';
 
 export const SHIELD_COOLDOWN_DAYS = 7;
 /** A shield can only protect today or yesterday (no arbitrary retroactive use). */
@@ -138,14 +139,22 @@ export function computeStreakInfo(
   };
 }
 
-/** Total complete smoke-free days since quit date (not only consecutive). */
-export function totalSmokeFreeDays(
-  user: User,
-  events: SmokingEvent[],
-  now = Date.now()
-): number {
-  const first = firstCountableDay(user);
-  if (!first) return 0;
+/** First full local day after an instant (the instant's own day if it is exactly midnight). */
+export function firstFullDayAfter(iso: string): string {
+  const d = new Date(iso);
+  const midnight = dayKeyToDate(dayKey(d));
+  return d.getTime() === midnight.getTime() ? dayKey(d) : addDaysToKey(dayKey(d), 1);
+}
+
+/**
+ * Total complete smoke-free days (not only consecutive) since tracking started. Uses the
+ * pinned savings start so a new quit date after a relapse never erases earlier days.
+ * Only meaningful for the quit goal: in reduction mode a day without a logged cigarette
+ * is not certain abstinence, so 0 is returned.
+ */
+export function totalSmokeFreeDays(user: User, events: SmokingEvent[], now = Date.now()): number {
+  if (user.goal !== 'quit' || !user.quitDate) return 0;
+  const first = firstFullDayAfter(savingsStart(user));
   const yesterday = addDaysToKey(dayKey(now), -1);
   const span = daysBetweenKeys(first, yesterday);
   if (span < 0) return 0;

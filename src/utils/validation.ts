@@ -37,6 +37,17 @@ export const userSchema = z.object({
   reductionTargetPerDay: z.number().int().min(0).max(100).optional(),
   reductionStartDate: isoDate.optional(),
   smokingBaselinePerDay: z.number().int().min(1).max(100),
+  savingsStartDate: isoDate.optional(),
+  habitsHistory: z
+    .array(
+      z.object({
+        effectiveFrom: isoDate,
+        cigarettesPerDay: z.number().int().min(1).max(100),
+        cigarettesPerPack: z.number().int().min(1).max(50),
+        packPriceCents: z.number().int().min(1).max(100_000),
+      })
+    )
+    .optional(),
   sportLevel: z.enum(['beginner', 'intermediate', 'advanced']),
   intensityPreference: z.enum(['gentle', 'moderate', 'dynamic']),
   limitations: z.array(limitationSchema),
@@ -87,6 +98,68 @@ export const smokingEventSchema = z.object({
   context: z.string().max(300).optional(),
   decision: z.enum(['continue_quit', 'new_quit_date', 'switch_to_reduce', 'reduction_log']).optional(),
   shieldUsed: z.boolean().optional(),
+});
+
+export const workoutSessionSchema = z.object({
+  id: z.string(),
+  workoutId: z.string(),
+  startedAt: isoDate,
+  completedAt: isoDate.optional(),
+  durationSeconds: z.number().min(0),
+  completed: z.boolean(),
+  perceivedEffort: z.number().int().min(1).max(5).optional(),
+  notes: z.string().max(300).optional(),
+  level: z.enum(['beginner', 'intermediate', 'advanced']),
+  blocksCompleted: z.number().int().min(0),
+  totalBlocks: z.number().int().min(0),
+});
+
+export const breathingTestSchema = z.object({
+  id: z.string(),
+  date: isoDate,
+  protocol: z.literal('souffle_v1'),
+  exhaleSeconds: z.number().min(0).max(120),
+  perceivedEffort: z.number().int().min(1).max(5),
+  breathlessness: z.number().int().min(0).max(10),
+  note: z.string().max(300).optional(),
+});
+
+const dayKeySchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
+const moodSchema = z.enum(['calm', 'tense', 'sad', 'tired', 'irritated', 'ok']);
+
+export const journalEntrySchema = z.object({
+  id: z.string(),
+  date: isoDate,
+  type: z.enum(['craving_overcome', 'workout_done', 'good_day', 'decision', 'gratitude', 'free']),
+  text: z.string().max(500),
+  mood: moodSchema.optional(),
+});
+
+export const sleepEntrySchema = z.object({
+  id: z.string(),
+  day: dayKeySchema,
+  durationMinutes: z.number().int().min(0).max(24 * 60),
+  quality: z.number().int().min(1).max(5),
+  note: z.string().max(200).optional(),
+});
+
+export const coughEntrySchema = z.object({
+  id: z.string(),
+  day: dayKeySchema,
+  intensity: z.number().int().min(0).max(10),
+  frequency: z.enum(['rare', 'sometimes', 'often', 'constant']),
+  note: z.string().max(300).optional(),
+});
+
+export const challengeSchema = z.object({
+  id: z.string(),
+  title: z.string().max(80),
+  startDay: dayKeySchema,
+  endDay: dayKeySchema,
+  kind: z.enum(['smoke_free_days', 'workouts', 'cravings_overcome']),
+  target: z.number().int().min(1).max(1000),
+  createdAt: isoDate,
+  isDemo: z.boolean(),
 });
 
 /** Form schemas (onboarding). Values arrive as strings from text inputs. */

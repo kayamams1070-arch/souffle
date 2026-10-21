@@ -78,18 +78,7 @@ export default function HomeScreen() {
           tenYears={savings.projectionTenYearsCents}
           language={settings.language}
           project={user.savingsProject}
-          onPress={() => router.push('/health/benefits')}
-        />
-      ) : null}
-      {reduction ? (
-        <SavingsCard
-          savedCents={reduction.savedCents}
-          avoided={reduction.cigarettesAvoided}
-          oneYear={reduction.projectionOneYearCents}
-          fiveYears={reduction.projectionFiveYearsCents}
-          tenYears={reduction.projectionTenYearsCents}
-          language={settings.language}
-          project={user.savingsProject}
+          reduction={user.goal === 'reduce'}
           onPress={() => router.push('/health/benefits')}
         />
       ) : null}

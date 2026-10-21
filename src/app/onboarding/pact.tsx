@@ -47,6 +47,7 @@ export default function PactStep() {
       reductionTargetPerDay: draft.goal === 'reduce' ? draft.reductionTargetPerDay : undefined,
       reductionStartDate: draft.goal === 'reduce' ? now : undefined,
       smokingBaselinePerDay: smoking.cigarettesPerDay,
+      savingsStartDate: draft.goal === 'reduce' ? now : (draft.quitDate ?? now),
       sportLevel: draft.sportLevel ?? 'beginner',
       intensityPreference: draft.intensityPreference ?? 'gentle',
       limitations: draft.limitations ?? [],

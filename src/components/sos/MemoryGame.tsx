@@ -14,6 +14,9 @@ interface Card {
   matched: boolean;
 }
 
+/** Wall clock, read only inside event handlers. */
+const clock = () => Date.now();
+
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i -= 1) {
@@ -133,11 +136,11 @@ export function NumberOrderGame({ onWin }: { onWin: (seconds: number) => void })
       haptics.warning();
       return;
     }
-    const start = startedAt ?? Date.now();
+    const start = startedAt ?? clock();
     if (startedAt === null) setStartedAt(start);
     haptics.selection();
     if (n === 16) {
-      const seconds = Math.round((Date.now() - start) / 1000);
+      const seconds = Math.round((clock() - start) / 1000);
       setDone(seconds);
       onWin(seconds);
     }

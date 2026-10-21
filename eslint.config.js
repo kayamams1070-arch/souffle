@@ -12,4 +12,9 @@ module.exports = defineConfig([
       'no-console': ['warn', { allow: ['warn', 'error'] }],
     },
   },
+  {
+    // Jest mocks must be declared with require() inside jest.mock factories.
+    files: ['src/__tests__/**'],
+    rules: { '@typescript-eslint/no-require-imports': 'off' },
+  },
 ]);

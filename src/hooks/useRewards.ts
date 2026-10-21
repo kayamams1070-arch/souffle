@@ -1,5 +1,8 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useCravingStore, useRewardStore, useUserStore, useWorkoutStore } from '@/store';
+import { useCelebrationStore } from '@/store/useCelebrationStore';
+import { useNow } from './useNow';
+import { dayKey } from '@/utils/dates';
 import { evaluateBadges } from '@/services/rewardService';
 import { computeStreakInfo } from '@/utils/streaks';
 import { levelProgress } from '@/utils/calculations';
@@ -25,23 +28,28 @@ export function useStreak(): StreakInfo {
 
 /**
  * Keeps badges and the best streak in sync with the facts. Runs whenever the underlying
- * data changes; returns the ids of badges unlocked during this app session so screens
- * can celebrate them.
+ * data changes or the local day changes (a streak grows at midnight without any action).
+ * Newly unlocked badges are pushed to the celebration store so screens can show them.
  */
 export function useRewardsSync(): { newlyUnlocked: string[]; dismiss: () => void } {
   const user = useUserStore((s) => s.user);
   const cravings = useCravingStore((s) => s.cravings);
   const smokingEvents = useCravingStore((s) => s.smokingEvents);
   const sessions = useWorkoutStore((s) => s.sessions);
-  const rewards = useRewardStore();
-  const [newlyUnlocked, setNewlyUnlocked] = useState<string[]>([]);
+  const shieldUses = useRewardStore((s) => s.shieldUses);
+  const freezes = useRewardStore((s) => s.freezes);
+  const newlyUnlocked = useCelebrationStore((s) => s.pendingBadges);
+  const dismiss = useCelebrationStore((s) => s.dismiss);
+  const today = dayKey(useNow(60_000));
   const lastRun = useRef<string>('');
 
   useEffect(() => {
     if (!user) return;
-    const signature = `${cravings.length}:${smokingEvents.length}:${sessions.filter((s) => s.completed).length}:${rewards.shieldUses.length}:${rewards.freezes.length}:${user.personalPactSignedAt ?? ''}`;
+    const completed = sessions.filter((s) => s.completed).length;
+    const signature = `${today}:${user.id}:${user.quitDate ?? ''}:${cravings.length}:${smokingEvents.length}:${completed}:${shieldUses.length}:${freezes.length}:${user.personalPactSignedAt ?? ''}`;
     if (signature === lastRun.current) return;
     lastRun.current = signature;
+    const rewards = useRewardStore.getState();
     const info = computeStreakInfo(user, smokingEvents, rewards);
     rewards.recordBestStreak(info.currentDays);
     const ids = evaluateBadges({
@@ -51,11 +59,9 @@ export function useRewardsSync(): { newlyUnlocked: string[]; dismiss: () => void
       sessions,
       rewards: { ...rewards, bestStreakDays: Math.max(rewards.bestStreakDays, info.currentDays) },
     });
-    const fresh = rewards.unlockBadges(ids);
-    if (fresh.length > 0) setNewlyUnlocked((prev) => [...prev, ...fresh]);
-  }, [user, cravings, smokingEvents, sessions, rewards]);
+    useCelebrationStore.getState().push(rewards.unlockBadges(ids));
+  }, [user, cravings, smokingEvents, sessions, shieldUses, freezes, today]);
 
-  const dismiss = useCallback(() => setNewlyUnlocked([]), []);
   return { newlyUnlocked, dismiss };
 }
 

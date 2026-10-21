@@ -23,6 +23,8 @@ interface Template {
   cooldownSeconds: number;
   /** Number of rounds of the main circuit per phase */
   rounds: number[];
+  /** Rounds for mobility / recovery sessions (gentler, fixed). */
+  mobilityRounds: number;
 }
 
 const TEMPLATES: Record<SportLevel, Template> = {
@@ -34,11 +36,13 @@ const TEMPLATES: Record<SportLevel, Template> = {
       mobility: ['shoulder_mobility', 'cat_cow', 'hip_stretch', 'hamstring_stretch'],
     },
     cooldown: ['recovery_breathing'],
-    work: [30, 35, 40, 40, 45, 45],
-    rest: [30, 25, 25, 20, 20, 20],
+    // ~10 min per session (warm-up and cool-down included), progression through work time.
+    work: [25, 30, 35, 40, 40, 45],
+    rest: [30, 30, 25, 25, 20, 20],
     warmupSeconds: 45,
     cooldownSeconds: 60,
-    rounds: [1, 1, 2, 2, 2, 2],
+    rounds: [2, 2, 2, 2, 2, 2],
+    mobilityRounds: 2,
   },
   intermediate: {
     warmup: ['march', 'arm_circles', 'step_jacks'],
@@ -48,11 +52,13 @@ const TEMPLATES: Record<SportLevel, Template> = {
       mobility: ['cat_cow', 'hip_stretch', 'shoulder_mobility', 'hamstring_stretch', 'child_pose'],
     },
     cooldown: ['hamstring_stretch', 'recovery_breathing'],
-    work: [40, 40, 45, 45, 50, 50],
+    // ~20 min per session.
+    work: [35, 40, 40, 45, 45, 50],
     rest: [25, 20, 20, 15, 15, 15],
     warmupSeconds: 50,
     cooldownSeconds: 60,
-    rounds: [2, 2, 3, 3, 3, 3],
+    rounds: [3, 3, 3, 3, 3, 3],
+    mobilityRounds: 2,
   },
   advanced: {
     warmup: ['march', 'arm_circles', 'step_jacks', 'high_knees'],
@@ -62,11 +68,13 @@ const TEMPLATES: Record<SportLevel, Template> = {
       mobility: ['cat_cow', 'hip_stretch', 'shoulder_mobility', 'hamstring_stretch', 'child_pose', 'seated_twist'],
     },
     cooldown: ['hamstring_stretch', 'hip_stretch', 'recovery_breathing'],
-    work: [45, 45, 50, 50, 55, 60],
-    rest: [20, 20, 15, 15, 15, 10],
+    // ~25-30 min per session.
+    work: [45, 45, 50, 50, 55, 55],
+    rest: [20, 20, 15, 15, 15, 15],
     warmupSeconds: 45,
     cooldownSeconds: 60,
-    rounds: [3, 3, 3, 4, 4, 4],
+    rounds: [3, 3, 3, 3, 3, 3],
+    mobilityRounds: 2,
   },
 };
 
@@ -90,7 +98,7 @@ function buildProgramWorkout(level: SportLevel, week: number, type: SessionType)
   const blocks: WorkoutBlock[] = [];
   for (const id of tpl.warmup) blocks.push({ exerciseId: id, durationSeconds: tpl.warmupSeconds, restSeconds: 5 });
   const mainRest = type === 'mobility' ? 10 : rest;
-  const mainRounds = type === 'mobility' ? Math.max(1, rounds - 1) : rounds;
+  const mainRounds = type === 'mobility' ? tpl.mobilityRounds : rounds;
   for (let r = 0; r < mainRounds; r += 1) {
     for (const id of tpl.main[type]) {
       blocks.push({ exerciseId: id, durationSeconds: type === 'mobility' ? work + 10 : work, restSeconds: mainRest });
@@ -197,7 +205,7 @@ export const SOS_WORKOUT: Workout = {
     b('wall_pushup', 35, 10),
     b('high_knees', 35, 10),
     b('shoulder_mobility', 35, 10),
-    b('recovery_breathing', 45, 0),
+    b('recovery_breathing', 65, 0),
   ],
 };
 

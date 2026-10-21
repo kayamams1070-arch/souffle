@@ -19,7 +19,7 @@ export default function DistractionScreen() {
   const [grounding, setGrounding] = useState<Record<string, boolean>>({});
   const [startedAt] = useState(() => Date.now());
   const now = useNow(1000);
-  const [won, setWon] = useState(false);
+  const [gameWon, setWon] = useState(false);
 
   useEffect(() => {
     if (!session.active) session.begin({ intervention: 'distraction' });
@@ -33,9 +33,7 @@ export default function DistractionScreen() {
   };
 
   const groundingDone = GROUNDING_STEPS.every((s) => grounding[s]);
-  useEffect(() => {
-    if (groundingDone) setWon(true);
-  }, [groundingDone]);
+  const won = gameWon || groundingDone;
 
   return (
     <Screen footer={<AppButton label={t('common.finish')} icon="checkmark" onPress={finish} />}>

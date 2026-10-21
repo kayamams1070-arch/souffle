@@ -12,6 +12,7 @@ import { adaptWorkout, currentProgramWeek, effectiveLevel, isLevelAvailable, unl
 import { computeWorkoutStats } from '@/services/analyticsService';
 import { LEVEL_UNLOCK } from '@/utils/constants';
 import { formatDate } from '@/utils/money';
+import { useNow } from '@/hooks/useNow';
 import type { SportLevel } from '@/types';
 
 export default function SportScreen() {
@@ -24,6 +25,7 @@ export default function SportScreen() {
   const setActiveLevel = useWorkoutStore((s) => s.setActiveLevel);
   const language = useSettingsStore((s) => s.settings.language);
   const [viewWeek, setViewWeek] = useState<number | null>(null);
+  const now = useNow(60_000);
 
   const stats = useMemo(() => computeWorkoutStats(sessions), [sessions]);
   const week = useMemo(() => currentProgramWeek(sessions), [sessions]);
@@ -36,7 +38,7 @@ export default function SportScreen() {
 
   const doneThisWeekIds = new Set(
     sessions
-      .filter((s) => s.completed && Date.now() - new Date(s.completedAt ?? s.startedAt).getTime() < 7 * 24 * 3600 * 1000)
+      .filter((s) => s.completed && now - new Date(s.completedAt ?? s.startedAt).getTime() < 7 * 24 * 3600 * 1000)
       .map((s) => s.workoutId)
   );
 

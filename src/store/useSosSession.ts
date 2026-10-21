@@ -35,9 +35,10 @@ export const useSosSession = create<SosSessionState>((set, get) => ({
       active: true,
       startedAt: new Date().toISOString(),
       intervention: data.intervention,
-      intensity: data.intensity ?? get().intensity,
-      trigger: data.trigger ?? get().trigger,
-      cravingId: data.cravingId ?? get().cravingId,
+      // A new session never inherits the intake of a previous, unsaved one.
+      intensity: data.intensity ?? null,
+      trigger: data.trigger ?? null,
+      cravingId: data.cravingId ?? null,
       durationSeconds: 0,
       completed: false,
     }),

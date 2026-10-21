@@ -13,10 +13,12 @@ interface Props {
   tenYears: number;
   language: Language;
   project?: User['savingsProject'];
+  /** Reduction goal: projections are based on the target, not on full abstinence. */
+  reduction?: boolean;
   onPress?: () => void;
 }
 
-export function SavingsCard({ savedCents, avoided, oneYear, fiveYears, tenYears, language, project, onPress }: Props) {
+export function SavingsCard({ savedCents, avoided, oneYear, fiveYears, tenYears, language, project, reduction, onPress }: Props) {
   const { t } = useTranslation();
   return (
     <AppCard tone="accent" onPress={onPress} accessibilityLabel={t('dashboard.savings.a11y', { amount: formatCents(savedCents, language, 2), count: avoided })}>
@@ -56,7 +58,7 @@ export function SavingsCard({ savedCents, avoided, oneYear, fiveYears, tenYears,
         ))}
       </View>
       <AppText variant="caption" tone="accent" style={{ marginTop: 8 }}>
-        {t('dashboard.savings.disclaimer')}
+        {reduction ? t('dashboard.savings.disclaimerReduction') : t('dashboard.savings.disclaimer')}
       </AppText>
     </AppCard>
   );

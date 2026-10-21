@@ -12,7 +12,7 @@ export default function GoalSettingsScreen() {
   const { t } = useTranslation();
   const user = useUserStore((s) => s.user);
   const switchGoal = useUserStore((s) => s.switchGoal);
-  const updateUser = useUserStore((s) => s.updateUser);
+  const setQuitDate = useUserStore((s) => s.setQuitDate);
   const language = useSettingsStore((s) => s.settings.language);
   const [goal, setGoal] = useState<QuitGoal>(user?.goal ?? 'quit');
   const [choice, setChoice] = useState<QuitChoice | 'keep'>('keep');
@@ -24,8 +24,13 @@ export default function GoalSettingsScreen() {
 
   const apply = () => {
     if (goal === 'quit') {
-      switchGoal('quit', { quitDate: newQuitDate ?? new Date().toISOString() });
-      if (newQuitDate) updateUser({ quitDate: newQuitDate });
+      const date = newQuitDate ?? new Date().toISOString();
+      if (user.goal === 'quit') {
+        // Same attempt, corrected date: savings may start earlier, never later.
+        if (choice !== 'keep') setQuitDate(date, { correction: true });
+      } else {
+        switchGoal('quit', { quitDate: date });
+      }
     } else {
       switchGoal('reduce', { reductionTargetPerDay: target });
     }

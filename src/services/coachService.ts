@@ -69,7 +69,7 @@ const KEYWORDS: Record<Exclude<CoachIntent, 'unknown'>, string[]> = {
   sleep: ['dormi', 'sommeil', 'insomn', 'slaap', 'geslapen', 'sleep', 'slept', 'insomnia'],
   proud: ['fier', 'réussi', 'content', 'victoire', 'trots', 'gelukt', 'blij', 'proud', 'managed', 'happy', 'victory'],
   motivation: ['motiv', 'envie d\'arrêter', 'abandonn', 'à quoi bon', 'opgeven', 'motivatie', 'give up', 'what\'s the point', 'motivation'],
-  craving_general: ['envie', 'fumer', 'cigarette', 'clope', 'zin in', 'roken', 'sigaret', 'craving', 'smoke', 'urge'],
+  craving_general: ['envie', 'fumer', 'cigarette', 'clope', 'zin in', 'roken', 'sigaret', 'craving', 'smoke', 'smoking', 'urge'],
 };
 
 /** Ordered detection: safety first, then specific intents, generic last. */
@@ -89,10 +89,36 @@ const DETECTION_ORDER: Exclude<CoachIntent, 'unknown'>[] = [
   'craving_general',
 ];
 
+/** Keywords that must match a whole word (they are prefixes of unrelated words otherwise). */
+const WHOLE_WORD = new Set(['moe', 'mad', 'boos', 'fier', 'blij', 'content', 'rage', 'smoke', 'urge', 'pain', 'hurt']);
+
+const LETTER = '[a-z\\u00e0-\\u00ff\\u0153\\u00e6]';
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/** Normalizes apostrophes so "j’ai" (typographic) matches "j'ai". */
+function normalize(text: string): string {
+  return text.toLowerCase().replace(/[\u2019\u2018`´]/g, "'");
+}
+
+const PATTERNS: Record<Exclude<CoachIntent, 'unknown'>, RegExp[]> = Object.fromEntries(
+  (Object.entries(KEYWORDS) as [Exclude<CoachIntent, 'unknown'>, string[]][]).map(([intent, words]) => [
+    intent,
+    words.map((w) => {
+      // Keywords match at the start of a word; short ambiguous ones must match a whole word.
+      // Explicit letter class (no lookbehind / \\p{L}) so the regex works on every JS engine.
+      const end = WHOLE_WORD.has(w) ? `(?!${LETTER})` : '';
+      return new RegExp(`(?:^|[^a-z\u00e0-\u00ff\u0153\u00e6])${escapeRegExp(normalize(w))}${end}`);
+    }),
+  ])
+) as Record<Exclude<CoachIntent, 'unknown'>, RegExp[]>;
+
 export function detectIntent(message: string): CoachIntent {
-  const text = message.toLowerCase();
+  const text = normalize(message);
   for (const intent of DETECTION_ORDER) {
-    if (KEYWORDS[intent].some((k) => text.includes(k))) return intent;
+    if (PATTERNS[intent].some((re) => re.test(text))) return intent;
   }
   return 'unknown';
 }

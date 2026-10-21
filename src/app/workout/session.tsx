@@ -3,7 +3,8 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { EmptyState, Screen } from '@/components/ui';
 import { WorkoutPlayer, type WorkoutResult } from '@/components/workouts/WorkoutPlayer';
-import { useUserStore, useWorkoutStore } from '@/store';
+import { useRewardStore, useUserStore, useWorkoutStore } from '@/store';
+import { xpEventId } from '@/services/rewardService';
 import { getWorkout } from '@/data/workouts';
 import { adaptWorkout } from '@/services/recommendationService';
 
@@ -14,6 +15,7 @@ export default function WorkoutSessionScreen() {
   const user = useUserStore((s) => s.user);
   const completeSession = useWorkoutStore((s) => s.completeSession);
   const abandonSession = useWorkoutStore((s) => s.abandonSession);
+  const awardXp = useRewardStore((s) => s.awardXp);
   const base = workoutId ? getWorkout(workoutId) : undefined;
   const workout = useMemo(() => (base && user ? adaptWorkout(base, user.limitations, user.intensityPreference) : base), [base, user]);
 
@@ -25,15 +27,17 @@ export default function WorkoutSessionScreen() {
     );
   }
 
-  const onDone = (result: WorkoutResult) => {
-    completeSession(sessionId, { durationSeconds: result.durationSeconds, blocksCompleted: result.blocksCompleted });
+  /** Completes the session and awards XP once (idempotent event id). */
+  const complete = (result: WorkoutResult) => {
+    const session = completeSession(sessionId, { durationSeconds: result.durationSeconds, blocksCompleted: result.blocksCompleted });
+    if (session?.completed) awardXp(xpEventId.workout(session.id), 'workout_completed');
     router.replace({ pathname: '/workout/complete', params: { sessionId, from: from ?? '' } });
   };
+  const onDone = (result: WorkoutResult) => complete(result);
   const onExit = (result: WorkoutResult) => {
     // A session stopped after at least half of the blocks still counts as completed (gentle rule).
     if (result.blocksCompleted >= Math.ceil(result.totalBlocks / 2)) {
-      completeSession(sessionId, { durationSeconds: result.durationSeconds, blocksCompleted: result.blocksCompleted });
-      router.replace({ pathname: '/workout/complete', params: { sessionId, from: from ?? '' } });
+      complete(result);
       return;
     }
     abandonSession(sessionId, { durationSeconds: result.durationSeconds, blocksCompleted: result.blocksCompleted });

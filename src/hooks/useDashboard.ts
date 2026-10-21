@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useCravingStore, useUserStore, useWorkoutStore } from '@/store';
-import { computeQuitSavings, computeReductionStats, getSmokeFreeState } from '@/utils/calculations';
+import { computeReductionStats, computeSavings, getSmokeFreeState } from '@/utils/calculations';
 import { milestoneStatus } from '@/data/healthMilestones';
 import { nextProgramWorkout } from '@/services/recommendationService';
 import { useNow } from './useNow';
@@ -15,7 +15,7 @@ export function useDashboard() {
   const smokeFree = useMemo(() => (user ? getSmokeFreeState(user, smokingEvents, now) : null), [user, smokingEvents, now]);
   // Savings only need a refresh every minute; derive from a coarser instant.
   const minute = Math.floor(now / 60_000) * 60_000;
-  const savings = useMemo(() => (user && user.goal === 'quit' ? computeQuitSavings(user, smokingEvents, minute) : null), [user, smokingEvents, minute]);
+  const savings = useMemo(() => (user ? computeSavings(user, smokingEvents, minute) : null), [user, smokingEvents, minute]);
   const reduction = useMemo(() => (user && user.goal === 'reduce' ? computeReductionStats(user, smokingEvents, minute) : null), [user, smokingEvents, minute]);
   const milestones = useMemo(() => {
     if (!smokeFree || smokeFree.status !== 'running') return milestoneStatus(0);

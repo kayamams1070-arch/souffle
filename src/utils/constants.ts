@@ -2,7 +2,12 @@ import type { XpEventType } from '@/types';
 
 export const APP_NAME = 'Souffle';
 export const APP_VERSION = '1.0.0';
-export const SCHEMA_VERSION = 1;
+/**
+ * Persisted schema version. History:
+ * 1 - initial schema
+ * 2 - user.savingsStartDate pinned (savings never reset by a new quit date / goal switch)
+ */
+export const SCHEMA_VERSION = 2;
 
 /** Centralized XP rules. Each event id is rewarded at most once (see rewardService). */
 export const XP_RULES: Record<XpEventType, number> = {

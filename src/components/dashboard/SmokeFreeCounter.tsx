@@ -94,7 +94,7 @@ export function ReductionCounter({ stats }: { stats: ReductionSummary }) {
         {over ? t('dashboard.reduction.overTarget') : t('dashboard.reduction.underTarget', { left: stats.target - stats.todaySmoked })}
       </AppText>
       <AppText variant="caption" tone="secondary" style={{ marginTop: 4 }}>
-        {t('dashboard.reduction.summary', { avoided: stats.cigarettesAvoided, days: stats.daysUnderTarget, total: stats.daysOnPlan })}
+        {t('dashboard.reduction.summary', { days: stats.daysUnderTarget, total: stats.daysOnPlan })}
       </AppText>
     </AppCard>
   );

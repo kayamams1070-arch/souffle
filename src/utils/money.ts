@@ -1,4 +1,13 @@
 import type { Language } from '@/types';
+import { dayKeyToDate } from './dates';
+
+const DAY_KEY = /^\d{4}-\d{2}-\d{2}$/;
+
+/** Parses an ISO instant, or a local day key (YYYY-MM-DD) as local midnight. */
+function parseDateValue(value: string | Date): Date {
+  if (value instanceof Date) return value;
+  return DAY_KEY.test(value) ? dayKeyToDate(value) : new Date(value);
+}
 
 const LOCALE_BY_LANGUAGE: Record<Language, string> = {
   fr: 'fr-BE',
@@ -34,7 +43,7 @@ export function formatNumber(value: number, language: Language, maximumFractionD
 }
 
 export function formatDate(value: string | Date, language: Language, withTime = false): string {
-  const d = typeof value === 'string' ? new Date(value) : value;
+  const d = parseDateValue(value);
   try {
     return new Intl.DateTimeFormat(localeFor(language), {
       day: 'numeric',
@@ -48,7 +57,7 @@ export function formatDate(value: string | Date, language: Language, withTime = 
 }
 
 export function formatTime(value: string | Date, language: Language): string {
-  const d = typeof value === 'string' ? new Date(value) : value;
+  const d = parseDateValue(value);
   try {
     return new Intl.DateTimeFormat(localeFor(language), { hour: '2-digit', minute: '2-digit' }).format(
       d

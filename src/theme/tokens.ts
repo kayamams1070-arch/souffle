@@ -12,9 +12,12 @@ export const palette = {
   sageLight: '#D6E6DC',
   offWhite: '#F5F2EC',
   softOrange: '#E8A87C',
-  softOrangeDark: '#B86F3D',
+  /** Darkened soft orange: white text on it reaches 5.3:1 (WCAG AA). */
+  softOrangeDark: '#9E5A2B',
   textPrimary: '#24313D',
   textSecondary: '#687582',
+  /** Secondary text variant reaching >= 4.5:1 on every light surface (brief allows adjusting). */
+  textSecondaryAA: '#5A6673',
   darkBackground: '#121A22',
   darkSurface: '#1C2833',
   darkSurfaceAlt: '#243444',
@@ -61,7 +64,7 @@ export const lightColors: ThemeColors = {
   surfaceAlt: '#ECEAE3',
   border: '#DAD6CC',
   text: palette.textPrimary,
-  textSecondary: palette.textSecondary,
+  textSecondary: palette.textSecondaryAA,
   textOnPrimary: palette.white,
   primary: palette.deepBlue,
   primarySoft: '#DCE5F0',
@@ -80,7 +83,7 @@ export const lightColors: ThemeColors = {
   sos: palette.softOrangeDark,
   sosText: palette.white,
   tabBar: palette.white,
-  tabInactive: palette.textSecondary,
+  tabInactive: palette.textSecondaryAA,
   overlay: 'rgba(18, 26, 34, 0.55)',
   chart: [palette.deepBlue, palette.sageDark, palette.softOrangeDark, '#6A5D8F', '#3C7A89'],
 };
@@ -92,7 +95,8 @@ export const darkColors: ThemeColors = {
   border: '#34475A',
   text: '#F2F4F6',
   textSecondary: '#AFBBC7',
-  textOnPrimary: palette.white,
+  /** Light primary in dark mode: dark text keeps 8:1 contrast (white would be 2.2:1). */
+  textOnPrimary: palette.darkBackground,
   primary: '#8FB3E2',
   primarySoft: '#263D5A',
   accent: palette.sage,
