@@ -71,7 +71,11 @@ export const useJournalStore = create<JournalState>()(
       storage: createJSONStorage(() => zustandStorage),
       partialize: (s) => ({ entries: s.entries, sleep: s.sleep, cough: s.cough, challenges: s.challenges }),
       migrate: (persisted, version) => migrateJournalState(persisted, version),
-      onRehydrateStorage: () => (state) => state?._setHydrated(true),
+      // Even if a stored value is corrupt, never leave the app stuck on the splash screen.
+      onRehydrateStorage: () => (_state, error) => {
+        if (error) console.warn('[storage] rehydration failed', error);
+        useJournalStore.setState({ hydrated: true });
+      },
     }
   )
 );

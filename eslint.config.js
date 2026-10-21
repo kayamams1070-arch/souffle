@@ -5,7 +5,7 @@ const expoConfig = require('eslint-config-expo/flat');
 module.exports = defineConfig([
   expoConfig,
   {
-    ignores: ['dist/*', 'node_modules/*', '.expo/*', 'android/*', 'ios/*', 'coverage/*'],
+    ignores: ['dist/*', 'node_modules/*', 'e2e/node_modules/*', '.expo/*', 'android/*', 'ios/*', 'coverage/*'],
   },
   {
     rules: {
@@ -19,7 +19,7 @@ module.exports = defineConfig([
   },
   {
     // Node CLI scripts (i18n check, locale builder).
-    files: ['scripts/**/*.js'],
+    files: ['scripts/**/*.js', 'e2e/**/*.js'],
     languageOptions: { globals: { __dirname: 'readonly', require: 'readonly', module: 'writable', process: 'readonly' } },
     rules: { 'no-console': 'off' },
   },

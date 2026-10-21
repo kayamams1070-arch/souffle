@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useCravingStore, useSettingsStore, useUserStore } from '@/store';
-import { applyPlans, installNotificationHandler, planNotifications, scheduleMilestone, getPermissionStatus } from '@/services/notificationService';
+import { applyPlans, installNotificationHandler, moveOutOfQuietHours, planNotifications, scheduleMilestone, getPermissionStatus } from '@/services/notificationService';
 import { computeForecast } from '@/services/cravingPredictionService';
 import { HEALTH_MILESTONES } from '@/data/healthMilestones';
 import { getSmokeFreeSince } from '@/utils/calculations';
@@ -17,6 +17,7 @@ export function useNotificationSync(): void {
   const cravings = useCravingStore((s) => s.cravings);
   const smokingEvents = useCravingStore((s) => s.smokingEvents);
   const last = useRef('');
+  const queue = useRef<Promise<void>>(Promise.resolve());
 
   useEffect(() => {
     installNotificationHandler();
@@ -30,7 +31,8 @@ export function useNotificationSync(): void {
     const signature = JSON.stringify({ prefs, lang: settings.language, peakHour, since, onboarding: user?.onboardingCompleted });
     if (signature === last.current) return;
     last.current = signature;
-    void (async () => {
+    // Runs are chained so two quick preference changes never interleave cancel / schedule.
+    queue.current = queue.current.then(async () => {
       if (!prefs.enabled || !user?.onboardingCompleted) {
         await applyPlans([]);
         return;
@@ -46,12 +48,12 @@ export function useNotificationSync(): void {
       if (prefs.categories.milestone && since) {
         const start = new Date(since).getTime();
         for (const m of HEALTH_MILESTONES) {
-          const at = new Date(start + m.afterMinutes * 60_000);
+          const at = moveOutOfQuietHours(new Date(start + m.afterMinutes * 60_000), prefs);
           if (at.getTime() > Date.now()) {
             await scheduleMilestone(m.id, t('notifications.milestone.title'), t('notifications.milestone.body', { label: milestoneLabel(m, t), title: t(`health.milestones.${m.key}.title`) }), at);
           }
         }
       }
-    })();
+    }).catch(() => undefined);
   }, [settings.notifications, settings.language, cravings, smokingEvents, user]);
 }

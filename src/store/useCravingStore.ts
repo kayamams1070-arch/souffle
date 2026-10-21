@@ -76,7 +76,11 @@ export const useCravingStore = create<CravingState>()(
       storage: createJSONStorage(() => zustandStorage),
       partialize: (s) => ({ cravings: s.cravings, smokingEvents: s.smokingEvents }),
       migrate: (persisted, version) => migrateCravingState(persisted, version),
-      onRehydrateStorage: () => (state) => state?._setHydrated(true),
+      // Even if a stored value is corrupt, never leave the app stuck on the splash screen.
+      onRehydrateStorage: () => (_state, error) => {
+        if (error) console.warn('[storage] rehydration failed', error);
+        useCravingStore.setState({ hydrated: true });
+      },
     }
   )
 );

@@ -64,16 +64,16 @@ export default function NotificationSettingsScreen() {
           <AppCard title={t('settings.notifications.quietHours')} subtitle={t('settings.notifications.quietHoursHint')}>
             <View style={{ flexDirection: 'row', gap: 12 }}>
               <View style={{ flex: 1 }}>
-                <NumberStepper label={t('settings.notifications.quietFrom')} value={prefs.quietStartHour} onChange={(v) => updateNotifications({ quietStartHour: v })} min={0} max={23} unit="h" />
+                <NumberStepper label={t('settings.notifications.quietFrom')} value={prefs.quietStartHour} onChange={(v) => updateNotifications({ quietStartHour: v })} min={0} max={23} unit={t('units.h')} />
               </View>
               <View style={{ flex: 1 }}>
-                <NumberStepper label={t('settings.notifications.quietTo')} value={prefs.quietEndHour} onChange={(v) => updateNotifications({ quietEndHour: v })} min={0} max={23} unit="h" />
+                <NumberStepper label={t('settings.notifications.quietTo')} value={prefs.quietEndHour} onChange={(v) => updateNotifications({ quietEndHour: v })} min={0} max={23} unit={t('units.h')} />
               </View>
             </View>
           </AppCard>
           {prefs.categories.workout_reminder ? (
             <AppCard title={t('settings.notifications.workoutTitle')}>
-              <NumberStepper label={t('settings.notifications.hour')} value={prefs.workoutReminderHour} onChange={(v) => updateNotifications({ workoutReminderHour: v })} min={0} max={23} unit="h" />
+              <NumberStepper label={t('settings.notifications.hour')} value={prefs.workoutReminderHour} onChange={(v) => updateNotifications({ workoutReminderHour: v })} min={0} max={23} unit={t('units.h')} />
               <View style={{ marginTop: 12 }}>
                 <ChipGroup
                   label={t('settings.notifications.days')}
@@ -92,7 +92,7 @@ export default function NotificationSettingsScreen() {
           ) : null}
           {prefs.categories.journal_reminder ? (
             <AppCard title={t('settings.notifications.journalTitle')}>
-              <NumberStepper label={t('settings.notifications.hour')} value={prefs.journalReminderHour} onChange={(v) => updateNotifications({ journalReminderHour: v })} min={0} max={23} unit="h" />
+              <NumberStepper label={t('settings.notifications.hour')} value={prefs.journalReminderHour} onChange={(v) => updateNotifications({ journalReminderHour: v })} min={0} max={23} unit={t('units.h')} />
             </AppCard>
           ) : null}
         </>

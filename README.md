@@ -48,7 +48,7 @@ Depuis *Profil → Confidentialité et données* : **Réinitialiser la démonstr
 ```bash
 npm run typecheck     # TypeScript strict
 npm run lint          # ESLint (config Expo)
-npm test              # Jest : 148 tests unitaires et d'intégration
+npm test              # Jest : 160 tests unitaires et d'intégration
 npm run i18n:check    # toutes les clés utilisées existent en FR, NL et EN
 npm run check         # les quatre à la suite
 ```
@@ -122,7 +122,8 @@ Principes :
 
 - **Calculs centralisés et purs** (`utils/calculations.ts`, `utils/streaks.ts`) : compteur, économies, réduction, séries, bouclier, gel. Le temps sans tabac est toujours recalculé à partir de dates ISO, jamais d'un compteur stocké.
 - **Économies jamais perdues** : `savingsStartDate` est fixé une fois ; une rechute, une nouvelle date d'arrêt ou un passage en réduction ne l'effacent pas. Les habitudes déclarées sont versionnées (`habitsHistory`) : changer le prix du paquet n'affecte pas les économies passées.
-- **Récompenses idempotentes** : chaque XP est lié à un identifiant d'événement unique ; les badges ne sont jamais retirés.
+- **Récompenses idempotentes** : chaque XP est lié à un identifiant d'événement unique (y compris les jalons santé, récompensés une seule fois) ; les badges ne sont jamais retirés.
+- **Série, bouclier, pause** : le bouclier protège une cigarette d'aujourd'hui ou d'hier, une fois tous les 7 jours. La pause (maladie, voyage) dure 1 à 14 jours, une fois tous les 30 jours, et ne peut pas masquer une cigarette déjà notée.
 - **Minuteurs exacts** : `useCountdown` calcule le temps restant à partir de l'horloge murale ; pause, arrière-plan ou ralentissement ne créent pas de dérive.
 - **Stockage** : uniquement via `storageService` (clés centralisées, préfixe `souffle.`), schéma versionné (v2), migrations dans `migrationService` (testées).
 - **Coach local** : règles explicites par mots-clés (FR / NL / EN), demande de précision s'il ne comprend pas. L'interface `CoachProvider` permet de brancher une IA distante plus tard.

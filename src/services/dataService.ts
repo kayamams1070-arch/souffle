@@ -98,6 +98,34 @@ const rewardSchema = z.object({
   bestStreakDays: z.number().min(0),
 });
 
+const hour = z.number().int().min(0).max(23);
+/** Settings coming from a file are validated field by field; unknown or invalid values are rejected. */
+const settingsImportSchema = z
+  .object({
+    language: z.enum(['fr', 'nl', 'en']),
+    languageChosen: z.boolean(),
+    theme: z.enum(['system', 'light', 'dark']),
+    fontScale: z.enum(['normal', 'large', 'xlarge']),
+    highContrast: z.boolean(),
+    reduceMotion: z.boolean(),
+    hapticsEnabled: z.boolean(),
+    soundEnabled: z.boolean(),
+    voiceGuidanceEnabled: z.boolean(),
+    cravingForecastEnabled: z.boolean(),
+    notifications: z
+      .object({
+        enabled: z.boolean(),
+        categories: z.record(z.enum(['workout_reminder', 'encouragement', 'trigger_preparation', 'weekly_summary', 'milestone', 'pact_reminder', 'journal_reminder']), z.boolean()),
+        quietStartHour: hour,
+        quietEndHour: hour,
+        workoutReminderHour: hour,
+        workoutReminderDays: z.array(z.number().int().min(0).max(6)),
+        journalReminderHour: hour,
+      })
+      .partial(),
+  })
+  .partial();
+
 const envelopeSchema = z.object({
   schemaVersion: z.number().int().min(1),
   exportedAt: z.string(),
@@ -172,8 +200,18 @@ export function applySnapshot(input: unknown): ImportResult {
         : { xp: 0, events: [], badges: [], shieldUses: [], freezes: [], bestStreakDays: 0 }
     );
   useJournalStore.getState().replaceAll({ entries: entries.items, sleep: sleep.items, cough: cough.items, challenges: challenges.items });
-  if (d.settings && typeof d.settings === 'object') {
-    useSettingsStore.getState().update(d.settings as Partial<Settings>);
+  const settings = settingsImportSchema.safeParse(d.settings);
+  if (d.settings !== undefined && settings.success) {
+    const current = useSettingsStore.getState().settings;
+    const { notifications, ...rest } = settings.data;
+    useSettingsStore.getState().update({
+      ...rest,
+      // Never import demo mode: it is set only by enterDemo.
+      demoMode: current.demoMode,
+      notifications: notifications
+        ? { ...current.notifications, ...notifications, categories: { ...current.notifications.categories, ...(notifications.categories ?? {}) } }
+        : current.notifications,
+    });
   }
   const rewardsSkipped = d.rewards !== undefined && !rewards.success ? 1 : 0;
   const skipped =
@@ -221,7 +259,8 @@ export function isDemoActive(): boolean {
 export async function enterDemo(language: Settings['language'] = useSettingsStore.getState().settings.language): Promise<{ backedUp: boolean }> {
   let backedUp = false;
   const current = useUserStore.getState().user;
-  if (current && !isDemoActive()) {
+  // An existing backup (real profile) is never overwritten.
+  if (current && !isDemoActive() && !(await hasDemoBackup())) {
     await writeRaw(STORAGE_KEYS.demoBackup, serializeSnapshot(snapshotData()));
     backedUp = true;
   }

@@ -473,7 +473,7 @@
       "avoided_one": "{{count}} sigaret vermeden",
       "avoided_other": "{{count}} sigaretten vermeden",
       "disclaimer": "Theoretische projecties op basis van de gewoonten die je hebt opgegeven. Dit is geen geld dat echt opzij is gezet.",
-      "disclaimerReduction": "Theoretische projecties als je elke dag je minderdoel haalt, op basis van je opgegeven gewoonten.",
+      "disclaimerReduction": "Deze schatting gaat ervan uit dat je elke sigaret noteert. De projecties gaan ervan uit dat je je doel elke dag haalt.",
       "project": "Voor: {{title}}",
       "title": "Geschatte besparing",
       "y1": "Over 1 jaar",
@@ -1163,7 +1163,8 @@
     "what": "Je profiel (optionele voornaam, gewoonten, doel, pact), je zin om te roken, je genoteerde sigaretten, je trainingen, je dagboek, je slaap en je hoest als je die invult, je badges en je instellingen. Er worden geen overbodige medische gegevens gevraagd.",
     "whatTitle": "Welke gegevens?",
     "where": "Alleen in de lokale opslag van de app, op deze telefoon. Souffle heeft geen account, geen server en geen advertenties, en verstuurt geen gezondheidsgegevens.",
-    "whereTitle": "Waar worden ze bewaard?"
+    "whereTitle": "Waar worden ze bewaard?",
+    "deleteDemoNote": "Let op: je zit in de demomodus. Verwijderen wist ook de back-up van je echte profiel. Verlaat eerst de demo om die terug te krijgen."
   },
   "profile": {
     "anonymous": "Jij",
@@ -1664,7 +1665,9 @@
       "errors": {
         "active": "Er loopt al een pauze of er is er al een gepland op deze data.",
         "past": "Een pauze kan niet in het verleden beginnen.",
-        "too_long": "De duur moet tussen 1 en 14 dagen liggen."
+        "too_long": "De duur moet tussen 1 en 14 dagen liggen.",
+        "cooldown": "Er werd de voorbije 30 dagen al een pauze gebruikt.",
+        "smoked": "Er is vandaag al een sigaret genoteerd: een pauze kan die niet verbergen. Daarvoor dient het schild."
       },
       "reasons": {
         "illness": "Ziekte",

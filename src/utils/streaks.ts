@@ -17,6 +17,8 @@ export const SHIELD_COOLDOWN_DAYS = 7;
 /** A shield can only protect today or yesterday (no arbitrary retroactive use). */
 export const SHIELD_MAX_RETRO_DAYS = 1;
 export const FREEZE_MAX_DAYS = 14;
+/** A new freeze can start at most once every 30 days (distinct from the weekly shield). */
+export const FREEZE_COOLDOWN_DAYS = 30;
 
 export function firstCountableDay(user: User): string | null {
   if (user.goal !== 'quit' || !user.quitDate) return null;
@@ -109,11 +111,16 @@ export function canStartFreeze(
   freezes: StreakFreeze[],
   startDay: string,
   days: number,
-  now = Date.now()
-): { ok: boolean; reason?: 'active' | 'too_long' | 'past' } {
+  now = Date.now(),
+  events: SmokingEvent[] = []
+): { ok: boolean; reason?: 'active' | 'too_long' | 'past' | 'cooldown' | 'smoked' } {
   if (days < 1 || days > FREEZE_MAX_DAYS) return { ok: false, reason: 'too_long' };
   if (daysBetweenKeys(dayKey(now), startDay) < 0) return { ok: false, reason: 'past' };
   if (activeFreeze(freezes, now)) return { ok: false, reason: 'active' };
+  // A freeze cannot hide a cigarette already logged on its first day (use the shield for that).
+  if (smokedOnDay(startDay, events)) return { ok: false, reason: 'smoked' };
+  const recent = freezes.some((f) => Math.abs(daysBetweenKeys(f.startDay, startDay)) < FREEZE_COOLDOWN_DAYS);
+  if (recent) return { ok: false, reason: 'cooldown' };
   const endDay = addDaysToKey(startDay, days - 1);
   const overlaps = freezes.some((f) => !(f.endDay < startDay || f.startDay > endDay));
   if (overlaps) return { ok: false, reason: 'active' };

@@ -5,7 +5,7 @@ import { STORAGE_KEYS, zustandStorage } from '@/services/storageService';
 import { migrateRewardState } from '@/services/migrationService';
 import { SCHEMA_VERSION, XP_RULES } from '@/utils/constants';
 import { createId } from '@/utils/ids';
-import { nowIso } from '@/utils/dates';
+import { addDaysToKey, nowIso } from '@/utils/dates';
 
 export interface RewardStoreState extends RewardState {
   hydrated: boolean;
@@ -19,6 +19,8 @@ export interface RewardStoreState extends RewardState {
   useShield: (protectedDay: string) => ShieldUse;
   addFreeze: (freeze: Omit<StreakFreeze, 'id'>) => StreakFreeze;
   cancelFreeze: (id: string) => void;
+  /** Ends a freeze early: days already passed stay frozen, a freeze not started yet is removed. */
+  endFreeze: (id: string, today: string) => void;
   recordBestStreak: (days: number) => void;
   replaceAll: (data: RewardState) => void;
   reset: () => void;
@@ -64,6 +66,17 @@ export const useRewardStore = create<RewardStoreState>()(
         return freeze;
       },
       cancelFreeze: (id) => set({ freezes: get().freezes.filter((f) => f.id !== id) }),
+      endFreeze: (id, today) =>
+        set({
+          freezes: get()
+            .freezes.map((f) => {
+              if (f.id !== id) return f;
+              if (f.startDay >= today) return null;
+              const yesterday = addDaysToKey(today, -1);
+              return { ...f, endDay: yesterday < f.endDay ? yesterday : f.endDay };
+            })
+            .filter((f): f is StreakFreeze => f !== null),
+        }),
       recordBestStreak: (days) => {
         if (days > get().bestStreakDays) set({ bestStreakDays: days });
       },
@@ -93,7 +106,11 @@ export const useRewardStore = create<RewardStoreState>()(
         bestStreakDays: s.bestStreakDays,
       }),
       migrate: (persisted, version) => migrateRewardState(persisted, version),
-      onRehydrateStorage: () => (state) => state?._setHydrated(true),
+      // Even if a stored value is corrupt, never leave the app stuck on the splash screen.
+      onRehydrateStorage: () => (_state, error) => {
+        if (error) console.warn('[storage] rehydration failed', error);
+        useRewardStore.setState({ hydrated: true });
+      },
     }
   )
 );

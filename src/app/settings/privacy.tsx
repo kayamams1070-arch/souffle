@@ -133,6 +133,11 @@ export default function PrivacyScreen() {
       {user ? (
         <AppCard title={t('privacy.deleteTitle')} tone="danger">
           <AppText variant="bodySmall">{t('privacy.deleteText')}</AppText>
+          {settings.demoMode && backup ? (
+            <AppText variant="bodySmall" weight="semibold" style={{ marginTop: 6 }}>
+              {t('privacy.deleteDemoNote')}
+            </AppText>
+          ) : null}
           <AppButton label={t('privacy.deleteButton')} variant="danger" icon="trash-outline" style={{ marginTop: 10 }} onPress={() => setConfirmDelete(true)} />
         </AppCard>
       ) : null}

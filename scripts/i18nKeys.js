@@ -116,7 +116,7 @@ const DYNAMIC = {
   'sos.distraction.grounding.*': ['see5', 'touch4', 'hear3', 'smell2', 'taste1'],
   'sos.feedback.message.*': OUTCOMES,
   'sos.feedback.thanks.*': OUTCOMES,
-  'streak.freeze.errors.*': ['active', 'too_long', 'past'],
+  'streak.freeze.errors.*': ['active', 'too_long', 'past', 'cooldown', 'smoked'],
   'streak.freeze.reasons.*': ['illness', 'travel', 'other'],
   'surf.steps.*.text': ['recognize', 'observe', 'breathe', 'evolve', 'choose'],
   'surf.steps.*.title': ['recognize', 'observe', 'breathe', 'evolve', 'choose'],

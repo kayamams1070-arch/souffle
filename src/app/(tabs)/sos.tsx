@@ -100,7 +100,10 @@ export default function SosScreen() {
               />
             ) : null}
             {suggestion?.workout ? (
-              <AppButton label={t('sos.suggestedWorkout', { title: t(`workouts.${suggestion.workout.key}.title`) })} variant="accent" icon="fitness-outline" onPress={() => router.push({ pathname: '/workout/[id]', params: { id: suggestion.workout!.id, from: 'sos' } })} />
+              <AppButton label={t('sos.suggestedWorkout', { title: t(`workouts.${suggestion.workout.key}.title`) })} variant="accent" icon="fitness-outline" onPress={() => {
+                  begin({ intervention: 'workout', intensity, trigger });
+                  router.push({ pathname: '/workout/[id]', params: { id: suggestion.workout!.id, from: 'sos' } });
+                }} />
             ) : null}
           </View>
         ) : null}

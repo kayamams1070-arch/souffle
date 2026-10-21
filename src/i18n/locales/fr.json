@@ -473,7 +473,7 @@
       "avoided_one": "{{count}} cigarette évitée",
       "avoided_other": "{{count}} cigarettes évitées",
       "disclaimer": "Projections théoriques calculées à partir des habitudes que tu as déclarées. Ce n'est pas de l'argent réellement mis de côté.",
-      "disclaimerReduction": "Projections théoriques si tu tiens ton objectif de réduction chaque jour, à partir de tes habitudes déclarées.",
+      "disclaimerReduction": "Estimation qui suppose que tu notes chaque cigarette. Les projections supposent que tu tiens ton objectif chaque jour.",
       "project": "Pour : {{title}}",
       "title": "Économies estimées",
       "y1": "En 1 an",
@@ -1163,7 +1163,8 @@
     "what": "Ton profil (prénom facultatif, habitudes, objectif, pacte), tes envies, tes cigarettes notées, tes séances, ton journal, ton sommeil et ta toux si tu les renseignes, tes badges et tes réglages. Aucune donnée médicale superflue n'est demandée.",
     "whatTitle": "Quelles données ?",
     "where": "Uniquement dans le stockage local de l'application, sur ce téléphone. Souffle n'a ni compte, ni serveur, ni publicité, et n'envoie aucune donnée de santé.",
-    "whereTitle": "Où sont-elles conservées ?"
+    "whereTitle": "Où sont-elles conservées ?",
+    "deleteDemoNote": "Attention : tu es en mode démonstration. La suppression efface aussi la sauvegarde de ton vrai profil. Quitte d'abord la démo pour la récupérer."
   },
   "profile": {
     "anonymous": "Toi",
@@ -1664,7 +1665,9 @@
       "errors": {
         "active": "Une pause est déjà en cours ou prévue sur ces dates.",
         "past": "Une pause ne peut pas commencer dans le passé.",
-        "too_long": "La durée doit être comprise entre 1 et 14 jours."
+        "too_long": "La durée doit être comprise entre 1 et 14 jours.",
+        "cooldown": "Une pause a déjà été utilisée ces 30 derniers jours.",
+        "smoked": "Une cigarette est déjà notée aujourd'hui : la pause ne peut pas la masquer. Le bouclier sert à ça."
       },
       "reasons": {
         "illness": "Maladie",

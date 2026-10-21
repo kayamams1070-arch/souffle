@@ -473,7 +473,7 @@
       "avoided_one": "{{count}} cigarette avoided",
       "avoided_other": "{{count}} cigarettes avoided",
       "disclaimer": "Theoretical projections based on the habits you reported. This is not money actually set aside.",
-      "disclaimerReduction": "Theoretical projections if you meet your reduction goal every day, based on the habits you reported.",
+      "disclaimerReduction": "This estimate assumes you log every cigarette. Projections assume you meet your target every day.",
       "project": "For: {{title}}",
       "title": "Estimated savings",
       "y1": "In 1 year",
@@ -1163,7 +1163,8 @@
     "what": "Your profile (optional first name, habits, goal, pact), your cravings, the cigarettes you log, your workouts, your journal, your sleep and cough if you fill them in, your badges and your settings. No unnecessary medical data is requested.",
     "whatTitle": "What data?",
     "where": "Only in the app's local storage, on this phone. Souffle has no account, no server and no ads, and sends no health data.",
-    "whereTitle": "Where is it kept?"
+    "whereTitle": "Where is it kept?",
+    "deleteDemoNote": "Careful: you are in demo mode. Deleting also erases the backup of your real profile. Exit the demo first to get it back."
   },
   "profile": {
     "anonymous": "You",
@@ -1664,7 +1665,9 @@
       "errors": {
         "active": "A pause is already running or planned for these dates.",
         "past": "A pause can't start in the past.",
-        "too_long": "The duration must be between 1 and 14 days."
+        "too_long": "The duration must be between 1 and 14 days.",
+        "cooldown": "A pause has already been used in the last 30 days.",
+        "smoked": "A cigarette is already logged today: a pause cannot hide it. That is what the shield is for."
       },
       "reasons": {
         "illness": "Illness",

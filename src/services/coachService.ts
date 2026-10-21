@@ -57,7 +57,7 @@ export interface CoachProvider {
 }
 
 const KEYWORDS: Record<Exclude<CoachIntent, 'unknown'>, string[]> = {
-  pain: ['douleur', 'mal au', 'mal aux', 'blessé', 'blessure', 'vertige', 'malaise', 'pijn', 'duizelig', 'blessure', 'geblesseerd', 'pain', 'hurt', 'injur', 'dizzy', 'faint', 'chest'],
+  pain: ['douleur', 'mal au', 'mal aux', 'blessé', 'blessure', 'vertige', 'malaise', 'pijn', 'duizelig', 'blessure', 'geblesseerd', 'in pain', 'painful', 'hurt', 'injur', 'dizzy', 'faint', 'chest'],
   relapsed: ['rechut', 'j\'ai fumé', 'jai fumé', 'craqué', 'fumé une', 'teruggevallen', 'gerookt', 'relaps', 'smoked', 'slipped', 'gave in'],
   craving_coffee: ['café', 'koffie', 'coffee'],
   tired: ['fatigu', 'épuis', 'crevé', 'moe', 'uitgeput', 'tired', 'exhausted', 'drained'],
@@ -90,7 +90,7 @@ const DETECTION_ORDER: Exclude<CoachIntent, 'unknown'>[] = [
 ];
 
 /** Keywords that must match a whole word (they are prefixes of unrelated words otherwise). */
-const WHOLE_WORD = new Set(['moe', 'mad', 'boos', 'fier', 'blij', 'content', 'rage', 'smoke', 'urge', 'pain', 'hurt']);
+const WHOLE_WORD = new Set(['moe', 'mad', 'boos', 'fier', 'blij', 'content', 'rage', 'smoke', 'urge']);
 
 const LETTER = '[a-z\\u00e0-\\u00ff\\u0153\\u00e6]';
 

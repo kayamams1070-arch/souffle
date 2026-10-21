@@ -79,6 +79,15 @@ export function clampHour(hour: number, prefs: Pick<NotificationPreferences, 'qu
   return prefs.quietEndHour % 24;
 }
 
+/** Moves an instant falling in quiet hours to the end of the quiet window (same or next day). */
+export function moveOutOfQuietHours(at: Date, prefs: Pick<NotificationPreferences, 'quietStartHour' | 'quietEndHour'>): Date {
+  if (isHourAllowed(at.getHours(), prefs)) return at;
+  const moved = new Date(at.getTime());
+  moved.setHours(prefs.quietEndHour % 24, 0, 0, 0);
+  if (moved.getTime() <= at.getTime()) moved.setDate(moved.getDate() + 1);
+  return moved;
+}
+
 export interface PlannedNotification {
   id: string;
   title: string;

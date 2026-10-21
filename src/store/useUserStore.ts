@@ -55,10 +55,15 @@ export const useUserStore = create<UserState>()(
         const current = get().user;
         if (!current) return;
         const pinned = pinnedSavingsStart(current);
+        const now = Date.now();
         let savingsStartDate = pinned;
-        if (options?.correction) {
-          // Nothing elapsed yet (future start): follow the new date. Otherwise only move earlier.
-          savingsStartDate = new Date(pinned).getTime() > Date.now() || quitDateIso < pinned ? quitDateIso : pinned;
+        if (new Date(pinned).getTime() > now) {
+          // Tracking had not started yet (future quit date): follow the new date.
+          savingsStartDate = quitDateIso;
+        } else if (options?.correction) {
+          // Corrected date: earlier moves the start back; a postponed (future) date means the
+          // person still smokes until then, so savings restart from that new date.
+          if (quitDateIso < pinned || new Date(quitDateIso).getTime() > now) savingsStartDate = quitDateIso;
         }
         get().updateUser({ goal: 'quit', quitDate: quitDateIso, savingsStartDate });
       },
@@ -115,8 +120,9 @@ export const useUserStore = create<UserState>()(
       storage: createJSONStorage(() => zustandStorage),
       partialize: (s) => ({ user: s.user, draft: s.draft }),
       migrate: (persisted, version) => migrateUserState(persisted, version),
-      onRehydrateStorage: () => (state) => {
-        state?._setHydrated(true);
+      onRehydrateStorage: () => (_state, error) => {
+        if (error) console.warn('[storage] rehydration failed', error);
+        useUserStore.setState({ hydrated: true });
       },
     }
   )

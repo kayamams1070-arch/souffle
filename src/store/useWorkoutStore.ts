@@ -103,7 +103,11 @@ export const useWorkoutStore = create<WorkoutState>()(
         activeLevel: s.activeLevel,
       }),
       migrate: (persisted, version) => migrateWorkoutState(persisted, version),
-      onRehydrateStorage: () => (state) => state?._setHydrated(true),
+      // Even if a stored value is corrupt, never leave the app stuck on the splash screen.
+      onRehydrateStorage: () => (_state, error) => {
+        if (error) console.warn('[storage] rehydration failed', error);
+        useWorkoutStore.setState({ hydrated: true });
+      },
     }
   )
 );

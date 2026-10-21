@@ -15,11 +15,12 @@ export default function GoalSettingsScreen() {
   const setQuitDate = useUserStore((s) => s.setQuitDate);
   const language = useSettingsStore((s) => s.settings.language);
   const [goal, setGoal] = useState<QuitGoal>(user?.goal ?? 'quit');
-  const [choice, setChoice] = useState<QuitChoice | 'keep'>('keep');
+  const [choice, setChoice] = useState<QuitChoice | 'keep'>(() => (user?.goal === 'quit' && user.quitDate ? 'keep' : 'now'));
   const [pastDays, setPastDays] = useState(1);
   const [target, setTarget] = useState(user?.reductionTargetPerDay ?? Math.max(1, Math.round((user?.smokingBaselinePerDay ?? 10) * 0.75)));
   const [confirm, setConfirm] = useState(false);
-  const newQuitDate = useMemo(() => (choice === 'keep' ? user?.quitDate : quitDateForChoice(choice, pastDays)), [choice, pastDays, user?.quitDate]);
+  const keptDate = user?.goal === 'quit' ? user.quitDate : undefined;
+  const newQuitDate = useMemo(() => (choice === 'keep' ? keptDate : quitDateForChoice(choice, pastDays)), [choice, pastDays, keptDate]);
   if (!user) return null;
 
   const apply = () => {
@@ -54,7 +55,7 @@ export default function GoalSettingsScreen() {
           <ChipGroup
             label={t('onboarding.goals.quitDate')}
             options={[
-              ...(user.quitDate ? [{ value: 'keep' as const, label: t('goalSettings.keepDate') }] : []),
+              ...(user.goal === 'quit' && user.quitDate ? [{ value: 'keep' as const, label: t('goalSettings.keepDate') }] : []),
               { value: 'now', label: t('onboarding.goals.choice.now') },
               { value: 'tomorrow', label: t('onboarding.goals.choice.tomorrow') },
               { value: 'in3', label: t('onboarding.goals.choice.in3') },

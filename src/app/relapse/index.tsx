@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import { View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
@@ -29,7 +29,9 @@ export default function RelapseScreen() {
   const rewards = useRewardStore();
   const streak = useStreak();
   const sos = useSosSession();
-  const isReduction = mode === 'reduction' || user?.goal === 'reduce';
+  // Mode frozen when the screen opens: switching to reduction here must not change this screen.
+  const [isReduction] = useState(() => mode === 'reduction' || useUserStore.getState().user?.goal === 'reduce');
+  const savingRef = useRef(false);
 
   const [cigarettes, setCigarettes] = useState(1);
   const [hoursAgo, setHoursAgo] = useState<number>(0);
@@ -49,6 +51,8 @@ export default function RelapseScreen() {
   if (!user) return null;
 
   const save = () => {
+    if (savingRef.current) return; // ignore a double tap on Confirm
+    savingRef.current = true;
     const event = addSmokingEvent({
       occurredAt,
       cigarettes,

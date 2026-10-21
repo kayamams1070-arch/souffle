@@ -9,6 +9,7 @@ import { canStartFreeze, FREEZE_MAX_DAYS, SHIELD_COOLDOWN_DAYS, smokedOnDay, isD
 import { addDaysToKey, dayKey } from '@/utils/dates';
 import { formatDate } from '@/utils/money';
 import type { StreakFreeze } from '@/types';
+import { useNow } from '@/hooks/useNow';
 
 export default function StreakScreen() {
   const theme = useAppTheme();
@@ -21,8 +22,9 @@ export default function StreakScreen() {
   const [freezeDays, setFreezeDays] = useState(3);
   const [reason, setReason] = useState<StreakFreeze['reason']>('illness');
   const [confirmFreeze, setConfirmFreeze] = useState(false);
-  const today = dayKey();
-  const freezeCheck = useMemo(() => canStartFreeze(rewards.freezes, today, freezeDays), [rewards.freezes, today, freezeDays]);
+  const now = useNow(60_000);
+  const today = dayKey(now);
+  const freezeCheck = useMemo(() => canStartFreeze(rewards.freezes, today, freezeDays, now, events), [rewards.freezes, today, freezeDays, now, events]);
 
   // Last 14 days calendar
   const days = useMemo(() => {
@@ -116,7 +118,7 @@ export default function StreakScreen() {
         {rewards.freezes.length > 0 ? (
           <View style={{ marginTop: 8 }}>
             {rewards.freezes.slice(-5).reverse().map((f) => (
-              <ListRow key={f.id} icon="snow-outline" title={`${formatDate(f.startDay, language)} → ${formatDate(f.endDay, language)}`} subtitle={t(`streak.freeze.reasons.${f.reason}`)} chevron={false} right={f.endDay >= today ? <AppButton label={t('common.cancel')} variant="ghost" size="sm" fullWidth={false} onPress={() => rewards.cancelFreeze(f.id)} /> : undefined} />
+              <ListRow key={f.id} icon="snow-outline" title={`${formatDate(f.startDay, language)} → ${formatDate(f.endDay, language)}`} subtitle={t(`streak.freeze.reasons.${f.reason}`)} chevron={false} right={f.endDay >= today ? <AppButton label={t('common.cancel')} variant="ghost" size="sm" fullWidth={false} onPress={() => rewards.endFreeze(f.id, today)} /> : undefined} />
             ))}
           </View>
         ) : null}

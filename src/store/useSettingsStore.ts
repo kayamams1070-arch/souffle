@@ -103,7 +103,11 @@ export const useSettingsStore = create<SettingsState>()(
           },
         };
       },
-      onRehydrateStorage: () => (state) => state?._setHydrated(true),
+      // Even if a stored value is corrupt, never leave the app stuck on the splash screen.
+      onRehydrateStorage: () => (_state, error) => {
+        if (error) console.warn('[storage] rehydration failed', error);
+        useSettingsStore.setState({ hydrated: true });
+      },
     }
   )
 );
