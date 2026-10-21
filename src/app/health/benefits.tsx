@@ -144,9 +144,11 @@ export default function BenefitsScreen() {
       <AppCard title={t('benefits.limitsTitle')} tone="alt">
         <AppText variant="bodySmall">{t('benefits.limits')}</AppText>
         <View style={{ marginTop: 8, gap: 4 }}>
-          {Object.entries(HEALTH_SOURCES).map(([id, s]) => (
-            <AppButton key={id} label={s.label} variant="ghost" size="sm" icon="link-outline" onPress={() => void Linking.openURL(s.url).catch(() => undefined)} />
-          ))}
+          {Object.entries(HEALTH_SOURCES)
+            .filter(([, s]) => (user?.smoking.substance ?? 'tobacco') === 'both' || s.substance === (user?.smoking.substance ?? 'tobacco'))
+            .map(([id, s]) => (
+              <AppButton key={id} label={s.label} variant="ghost" size="sm" icon="link-outline" onPress={() => void Linking.openURL(s.url).catch(() => undefined)} />
+            ))}
         </View>
       </AppCard>
     </Screen>

@@ -153,5 +153,10 @@
     "cigs": "joints",
     "cigsPerDay": "joints/jour",
     "cigsToday": "joints aujourd'hui"
+  },
+  "health": {
+    "timeline": {
+      "subtitle": "Repères généraux issus de sources de santé et d'études, non mesurés par ton téléphone."
+    }
   }
 }

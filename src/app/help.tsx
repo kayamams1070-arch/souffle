@@ -21,6 +21,7 @@ export default function HelpScreen() {
   const { t } = useTranslation();
   const language = useSettingsStore((s) => s.settings.language);
   const substance = useUserStore((s) => s.user?.smoking.substance ?? 'tobacco');
+  const mixed = useUserStore((s) => s.user?.smoking.substance !== 'tobacco' && Boolean(s.user?.smoking.cannabis?.mixedWithTobacco));
   const open = (url: string) => void Linking.openURL(url).catch(() => undefined);
   const topics: HelpResource['topic'][] = substance === 'both' ? ['tobacco', 'cannabis'] : [substance];
   const order = COUNTRY_ORDER[language];
@@ -58,6 +59,7 @@ export default function HelpScreen() {
             ))}
         </View>
       ))}
+      {mixed ? <Banner text={t('help.mixedNote')} icon="information-circle-outline" tone="warm" /> : null}
       <Banner text={t('about.helpNote')} icon="medkit-outline" />
       <AppText variant="caption" tone="secondary">
         {t('help.checked')}

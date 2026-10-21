@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
 import { useRouter } from 'expo-router';
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, useForm, useWatch } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { OnboardingHeader } from '@/components/onboarding/OnboardingHeader';
-import { AppButton, AppText, ChipGroup, Screen, TextField } from '@/components/ui';
+import { AppButton, AppText, Banner, ChipGroup, Screen, TextField } from '@/components/ui';
 import { useUserStore } from '@/store';
 import { profileFormSchema, zodResolver, type ProfileFormValues } from '@/utils/validation';
 import { parseEurosToCents } from '@/utils/money';
@@ -22,7 +22,7 @@ export default function ProfileStep() {
 
   const cannabis = draft.smoking?.cannabis;
   const [mixed, setMixed] = React.useState<'yes' | 'no'>(cannabis?.mixedWithTobacco ? 'yes' : 'no');
-  const { control, handleSubmit, formState, watch, setValue } = useForm<ProfileFormValues>({
+  const { control, handleSubmit, formState, setValue } = useForm<ProfileFormValues>({
     resolver: zodResolver(profileFormSchema),
     defaultValues: {
       firstName: draft.firstName ?? '',
@@ -40,7 +40,7 @@ export default function ProfileStep() {
     mode: 'onBlur',
   });
 
-  const substance: Substance = watch('substance');
+  const substance: Substance = useWatch({ control, name: 'substance' });
   const usesTobacco = substance !== 'cannabis';
   const usesCannabis = substance !== 'tobacco';
 
@@ -69,7 +69,7 @@ export default function ProfileStep() {
               yearsUsing: Number(values.yearsUsing),
               gramsPerJoint: Number(values.gramsPerJoint.replace(',', '.')),
               pricePerGramCents: parseEurosToCents(values.pricePerGram) ?? 0,
-              mixedWithTobacco: values.substance === 'both' ? mixed === 'yes' : undefined,
+              mixedWithTobacco: mixed === 'yes',
               cuditAnswers: previousTests?.cannabis?.cuditAnswers,
               cuditScore: previousTests?.cannabis?.cuditScore,
               cuditLevel: previousTests?.cannabis?.cuditLevel,
@@ -204,7 +204,7 @@ export default function ProfileStep() {
           <AppText variant="bodySmall" tone="secondary">
             {t('onboarding.profile.cannabisHint')}
           </AppText>
-          {substance === 'both' ? (
+          {usesCannabis ? (
             <ChipGroup
               label={t('onboarding.profile.mixed')}
               options={[
@@ -215,6 +215,9 @@ export default function ProfileStep() {
               onChange={(v) => setMixed(v)}
               compact
             />
+          ) : null}
+          {mixed === 'yes' ? (
+            <Banner text={substance === 'cannabis' ? t('onboarding.profile.mixedNoteCannabis') : t('onboarding.profile.mixedNoteBoth')} icon="information-circle-outline" />
           ) : null}
         </>
       ) : null}

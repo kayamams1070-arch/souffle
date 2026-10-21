@@ -143,5 +143,10 @@
     "cigs": "conso.",
     "cigsPerDay": "conso./jour",
     "cigsToday": "conso. aujourd'hui"
+  },
+  "health": {
+    "timeline": {
+      "subtitle": "Repères généraux issus de sources de santé et d'études, non mesurés par ton téléphone."
+    }
   }
 }

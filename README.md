@@ -1,6 +1,6 @@
 # Souffle
 
-Application mobile iOS et Android pour aider les adultes à arrêter de fumer ou à réduire leur consommation : bouton SOS envie, respiration guidée, sport à domicile sur 12 semaines, suivi des envies, économies, badges, gestion bienveillante des rechutes. Tout fonctionne hors ligne, les données restent sur le téléphone.
+Application mobile iOS et Android pour aider les adultes à arrêter ou réduire le tabac, le cannabis, ou les deux : bouton SOS envie, respiration guidée, sport à domicile sur 12 semaines, suivi des envies, économies, badges, gestion bienveillante des rechutes. Tout fonctionne hors ligne, les données restent sur le téléphone.
 
 Stack : Expo SDK 58 (React Native 0.88, React 19), TypeScript strict, Expo Router, Zustand + AsyncStorage, Zod, React Hook Form, i18next (FR / NL / EN), Reanimated, expo-notifications, expo-haptics, expo-speech, expo-print, expo-sharing, expo-file-system.
 
@@ -43,12 +43,24 @@ Depuis *Profil → Confidentialité et données* : **Réinitialiser la démonstr
 
 ---
 
+### Tabac, cannabis ou les deux
+
+Au premier écran du profil, la personne choisit ce qu'elle fume :
+
+- **Tabac** : cigarettes par jour, prix du paquet, test de Fagerström.
+- **Cannabis** : joints par jour, grammes par joint, prix du gramme, joints roulés avec du tabac ou non, test CUDIT-R.
+- **Les deux** : les deux séries de questions et les deux tests. Cigarettes et joints sont comptés ensemble pour la réduction ; chaque consommation notée précise « cigarette » ou « joint » et les économies utilisent le prix exact de chacun.
+
+Tous les textes s'adaptent (« Sans cannabis depuis », « Noter un joint », « joints évités »…) grâce à des surcouches de traduction (`src/i18n/locales/overlays/<langue>.<cannabis|both>.json`) qui ne redéfinissent que les phrases concernées. La chronologie santé, les sources et les lignes d'aide suivent aussi la substance. Le choix se modifie à tout moment dans *Profil → Mes habitudes* ; les économies passées sont conservées.
+
+---
+
 ## 2. Vérifications
 
 ```bash
 npm run typecheck     # TypeScript strict
 npm run lint          # ESLint (config Expo)
-npm test              # Jest : 160 tests unitaires et d'intégration
+npm test              # Jest : 176 tests unitaires et d'intégration
 npm run i18n:check    # toutes les clés utilisées existent en FR, NL et EN
 npm run check         # les quatre à la suite
 ```
@@ -61,12 +73,15 @@ cd e2e && npm install
 node serve.js ../dist 8088 &          # petit serveur statique
 CHROME_PATH=/chemin/vers/chrome node flow.js ./shots
 CHROME_PATH=/chemin/vers/chrome node flow2.js ./shots
+CHROME_PATH=/chemin/vers/chrome node flow3.js ./shots
 ```
 
 `flow.js` (28 vérifications) : onboarding complet, Fagerström, compteur, économies, persistance après rechargement, SOS respiration (pause / reprise / fin), feedback, journal des envies, séance complète avec adaptation aux limitations, XP et badges, rechute, thème sombre, néerlandais et anglais, export JSON, PDF, suppression des données, mode démo.
 `flow2.js` (16 vérifications) : objectif de réduction, mini-séance SOS 5 min, jeux de distraction, craving surf, coach, journal de victoires, sommeil, toux, défis, partage famille, test de souffle, import JSON, très grand texte + contraste élevé, bouclier sur une vraie série.
 
-Les deux scénarios pilotent le temps avec une horloge simulée (minuteurs de 2, 3 et 5 minutes et séances de 10 minutes exécutés jusqu'au bout).
+`flow3.js` (12 vérifications) : parcours cannabis complet (profil, CUDIT-R, économies en joints, chronologie du sevrage, lignes d'aide cannabis, joint noté), passage à « les deux » (choix cigarette / joint), textes adaptés en néerlandais et en anglais, persistance.
+
+Les scénarios pilotent le temps avec une horloge simulée (minuteurs de 2, 3 et 5 minutes et séances de 10 minutes exécutés jusqu'au bout).
 
 ---
 
@@ -112,7 +127,7 @@ src/
                   challenge, notification, audio, haptic, future/ (interfaces V2)
   data/           exercices, séances, programme 12 semaines, badges, jalons santé, démo
   utils/          calculs purs (compteur, économies, séries, Fagerström), dates, monnaie, validation
-  i18n/           fr.json, nl.json, en.json (1 372 chaînes chacun)
+  i18n/           fr.json, nl.json, en.json (1 491 chaînes chacun) + overlays/ (textes cannabis et « les deux »)
   __tests__/      tests Jest
 scripts/          i18nKeys.js (contrôle des traductions), buildLocale.py
 e2e/              scénarios Playwright
@@ -132,7 +147,11 @@ Principes :
 
 - Test de Fagerström : barème de Heatherton et al. (1991) ; interprétation selon les NIDA Common Data Elements (NIH), CDE 2195870 : 0–2 très faible, 3–4 faible, 5 moyenne, 6–7 forte, 8–10 très forte.
 - Chronologie santé : OMS (*Health benefits of smoking cessation*) et NHS Wales 111 (*Quit smoking timeline*). Présentée comme repères généraux, variables selon les personnes, jamais mesurés par le téléphone.
-- Lignes d'aide : Tabacstop 0800 111 00 (Belgique, gratuit), Tabac Info Service 39 89 (France), Ikstopnu 0800-1995 (Pays-Bas), NHS Smokefree 0300 123 1044 (Royaume-Uni).
+- Lignes d'aide tabac : Tabacstop 0800 111 00 (Belgique, gratuit), Tabac Info Service 39 89 (France), Ikstopnu 0800-1995 (Pays-Bas), NHS Smokefree 0300 123 1044 (Royaume-Uni).
+- Cannabis, test CUDIT-R : Adamson et al. 2010 (libre d'utilisation selon PhenX), version française validée CUDIT-R-Fr (Luquiens et al. 2021, formulation tutoyée dans l'appli), seuils 8 (consommation à risque) et 12 (trouble possible) ; https://www.phenxtoolkit.org/protocols/view/510310. Pas de version néerlandaise validée : la version NL de l'appli est une traduction, signalée comme telle.
+- Cannabis, sevrage : Budney et al. 2003 (début jours 1 à 3, pic jours 2 à 6, la plupart des effets 4 à 14 jours), Bonnet & Preuss 2017 (jusqu'à 3 semaines), Royal Children's Hospital Melbourne (sommeil parfois perturbé plusieurs mois), Lee et al. 2014 (rêves et sommeil), Jellinek et Santé.fr (bénéfices décrits sans chiffres). Tabac dans les joints : FRANK (gouvernement britannique).
+- Grammes par joint : seulement un repère affiché (0,32 g, Ridgeway & Kilmer 2016, données américaines), jamais appliqué automatiquement.
+- Lignes d'aide cannabis : Infor-Drogues & Addictions 02 227 52 52 et De DrugLijn 078 15 10 20 (Belgique), Drogues Info Service 0 800 23 13 13 (France, gratuit, 8 h-2 h), Trimbos Drugs Infolijn 0900-1995 et Jellinek (Pays-Bas), FRANK 0300 123 6600 (Royaume-Uni, 24 h/24). Écran « Trouver de l'aide » avec appel direct.
 - Aucune estimation personnalisée d'espérance de vie ou de capacité pulmonaire.
 
 ---

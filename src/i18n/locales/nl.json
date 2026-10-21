@@ -202,6 +202,11 @@
     "subtitle": "Een eenvoudig, altijd hetzelfde protocol om je gevoel over tijd op te volgen.",
     "title": "Ademtest"
   },
+  "cannabisUse": {
+    "hazardous": "Riskant gebruik",
+    "low": "Gebruik met laag risico",
+    "possible_disorder": "Mogelijke cannabisgebruiksstoornis"
+  },
   "challenges": {
     "create": "Uitdaging aanmaken",
     "duration": "Duur",
@@ -346,6 +351,7 @@
     "finish": "Afronden",
     "increase": "Verhogen: {{label}}",
     "next": "Volgende",
+    "no": "Nee",
     "off": "Uit",
     "on": "Aan",
     "pause": "Pauze",
@@ -357,7 +363,12 @@
     "selected": "Geselecteerd",
     "start": "Starten",
     "tapToDismiss": "Tik om te sluiten",
-    "tapToEdit": "Tik om te bewerken"
+    "tapToEdit": "Tik om te bewerken",
+    "yes": "Ja"
+  },
+  "consumption": {
+    "cigarette": "Sigaret",
+    "joint": "Joint"
   },
   "cough": {
     "emptyText": "Noteer af en toe je hoest om te volgen hoe hij evolueert.",
@@ -742,11 +753,11 @@
       "days_other": "• {{count}} rookvrije dagen",
       "footer": "Bedankt om me aan te moedigen!",
       "header": "De vooruitgang van {{name}} met Souffle:",
+      "headerAnonymous": "Mijn vooruitgang met Souffle:",
       "savings": "• Ongeveer {{amount}} bespaard",
       "why": "• Mijn waarom: {{why}}",
       "workouts_one": "• {{count}} training",
-      "workouts_other": "• {{count}} trainingen",
-      "headerAnonymous": "Mijn vooruitgang met Souffle:"
+      "workouts_other": "• {{count}} trainingen"
     },
     "title": "Gezinsmodus",
     "vision": "In een volgende versie kan een naaste de overwinningen volgen die jij wilt delen en je aanmoedigingen sturen, met privé-uitdagingen en een anonieme, gemodereerde ruimte om uit te wisselen.",
@@ -810,6 +821,34 @@
       "years_other": "{{count}} jaar"
     },
     "milestones": {
+      "c1d": {
+        "description": "Tussen dag 1 en dag 3 verschijnen vaak ontwenningsverschijnselen: prikkelbaarheid, nervositeit, verstoorde slaap, minder eetlust. Dat is vaak, tijdelijk en betekent dat je lichaam zich aanpast.",
+        "title": "Ontwenning kan beginnen"
+      },
+      "c1m": {
+        "description": "Veel mensen beschrijven een helderder hoofd, betere concentratie en meer energie. Het verlies aan motivatie door regelmatig gebruik is omkeerbaar als je stopt.",
+        "title": "Een helderder hoofd"
+      },
+      "c1w": {
+        "description": "Voor veel mensen ligt het zwaarste deel van de ontwenning na de eerste week achter hen.",
+        "title": "De piek is voorbij"
+      },
+      "c2d": {
+        "description": "De ontwenning is meestal het sterkst tussen dag 2 en dag 6. Hou vol: dit is het moeilijkste stuk, en het duurt niet.",
+        "title": "De zwaarste dagen"
+      },
+      "c2w": {
+        "description": "De meeste ontwenningsverschijnselen duren 4 tot 14 dagen. Bij de meeste mensen nemen ze duidelijk af.",
+        "title": "De ontwenning neemt af"
+      },
+      "c3m": {
+        "description": "Cannabis verstoort de slaapcycli. Slaapproblemen houden vaak het langst aan, soms enkele maanden, en nemen daarna af. Blijven ze aanhouden, praat er dan over met een arts.",
+        "title": "Je slaap herstelt"
+      },
+      "c3w": {
+        "description": "Het ontwenningssyndroom duurt meestal tot 3 weken. Slaap en vreemde dromen kunnen langer nodig hebben om weer normaal te worden.",
+        "title": "De ontwenning is voorbij"
+      },
       "m1m": {
         "description": "Tussen 1 en 9 maanden nemen hoesten en kortademigheid af.",
         "title": "Hoest en kortademigheid"
@@ -856,6 +895,38 @@
       "upcoming": "Volgend",
       "varies": "(verschilt van persoon tot persoon)"
     }
+  },
+  "help": {
+    "callHint": "Opent de Telefoon-app met dit nummer",
+    "checked": "Nummers en openingsuren gecontroleerd op de officiële websites in oktober 2026. Ze kunnen veranderen: de website van elke dienst is leidend.",
+    "countries": {
+      "BE": "België",
+      "FR": "Frankrijk",
+      "NL": "Nederland",
+      "UK": "Verenigd Koninkrijk"
+    },
+    "mixedNote": "Je joints bevatten tabak: als je stopt met cannabis, kun je ook nicotineontwenning voelen. De stoplijnen voor tabak kunnen je daarbij helpen.",
+    "resources": {
+      "be": "Tabakologen aan de telefoon, gratis, elke dag van 15 tot 19 uur.",
+      "c_be_fr": "Gratis en anoniem luisterend oor over drugs, waaronder cannabis (in het Frans). Maandag tot woensdag 9-21 uur, donderdag 13-21 uur, vrijdag 9-17 uur, zaterdag 10-14 uur.",
+      "c_be_nl": "Vlaamse informatielijn over drugs, maandag tot vrijdag 10-20 uur, chat 12-18 uur. Gratis online hulpprogramma om te stoppen met cannabis.",
+      "c_fr": "Gratis en anoniem, elke dag van 8 tot 2 uur, ook via chat (in het Frans).",
+      "c_nl": "Drugs Infolijn van het Trimbos-instituut, op werkdagen van 9 tot 17 uur (betaalnummer).",
+      "c_nl_jellinek": "Gespecialiseerd centrum voor verslaving, met een online hulpprogramma om te stoppen of te minderen met cannabis.",
+      "c_uk": "Informatiedienst van de Britse overheid, 24/7, ook via sms naar 82111 (in het Engels).",
+      "fr": "Nationale hulplijn om te stoppen met roken, met tabakologen (in het Frans).",
+      "nl": "Gratis hulplijn om te stoppen met roken.",
+      "uk": "Nationale stoplijn van de NHS om te stoppen met roken (in het Engels)."
+    },
+    "rowSubtitle": "Hulplijnen en hulpwebsites, volgens je land",
+    "sosButton": "Met iemand praten",
+    "subtitle": "Gespecialiseerde diensten die zonder oordeel naar je luisteren. Wat een gesprek kost, hangt af van het nummer.",
+    "title": "Hulp zoeken",
+    "topics": {
+      "cannabis": "Stoppen met cannabis",
+      "tobacco": "Stoppen met roken"
+    },
+    "website": "Website"
   },
   "intensity": {
     "dynamic": "Dynamisch",
@@ -965,6 +1036,79 @@
     }
   },
   "onboarding": {
+    "cudit": {
+      "disclaimer": "Deze test is bedoeld voor screening, het is geen diagnose. Vragen uit de CUDIT-R (Adamson et al., 2010). Deze Nederlandse formulering is onze eigen vertaling van de Engelse versie, geen gevalideerde Nederlandse versie.",
+      "interpretation": {
+        "hazardous": "Je score (8 of meer) wijst op riskant gebruik. Minderen of stoppen kan je echt goed doen, en je hoeft het niet alleen te doen.",
+        "low": "Je score ligt onder de screeningsdrempel (8). Dat betekent niet dat je gebruik zonder risico is: wil je minderen of stoppen, dan helpt Souffle je daarbij.",
+        "possible_disorder": "Je score (12 of meer) wijst op een mogelijke cannabisgebruiksstoornis. Erover praten met een arts of een gespecialiseerde dienst kan je veel helpen; contacten vind je bij \"Hulp zoeken\"."
+      },
+      "q1": {
+        "a0": "Nooit",
+        "a1": "Maandelijks of minder",
+        "a2": "2 tot 4 keer per maand",
+        "a3": "2 tot 3 keer per week",
+        "a4": "4 keer per week of vaker",
+        "question": "Hoe vaak gebruik je cannabis?"
+      },
+      "q2": {
+        "a0": "Minder dan 1",
+        "a1": "1 of 2",
+        "a2": "3 of 4",
+        "a3": "5 of 6",
+        "a4": "7 of meer",
+        "question": "Hoeveel uur was je \"stoned\" op een gewone dag waarop je cannabis had gebruikt?"
+      },
+      "q3": {
+        "a0": "Nooit",
+        "a1": "Minder dan maandelijks",
+        "a2": "Maandelijks",
+        "a3": "Wekelijks",
+        "a4": "Dagelijks of bijna dagelijks",
+        "question": "Hoe vaak merkte je in de afgelopen 6 maanden dat je niet kon stoppen met cannabis gebruiken als je eenmaal begonnen was?"
+      },
+      "q4": {
+        "a0": "Nooit",
+        "a1": "Minder dan maandelijks",
+        "a2": "Maandelijks",
+        "a3": "Wekelijks",
+        "a4": "Dagelijks of bijna dagelijks",
+        "question": "Hoe vaak deed je in de afgelopen 6 maanden niet wat normaal van je verwacht werd, door je cannabisgebruik?"
+      },
+      "q5": {
+        "a0": "Nooit",
+        "a1": "Minder dan maandelijks",
+        "a2": "Maandelijks",
+        "a3": "Wekelijks",
+        "a4": "Dagelijks of bijna dagelijks",
+        "question": "Hoe vaak heb je in de afgelopen 6 maanden veel van je tijd besteed aan cannabis zien te krijgen, gebruiken of ervan bijkomen?"
+      },
+      "q6": {
+        "a0": "Nooit",
+        "a1": "Minder dan maandelijks",
+        "a2": "Maandelijks",
+        "a3": "Wekelijks",
+        "a4": "Dagelijks of bijna dagelijks",
+        "question": "Hoe vaak heb je in de afgelopen 6 maanden problemen gehad met je geheugen of concentratie na cannabisgebruik?"
+      },
+      "q7": {
+        "a0": "Nooit",
+        "a1": "Minder dan maandelijks",
+        "a2": "Maandelijks",
+        "a3": "Wekelijks",
+        "a4": "Dagelijks of bijna dagelijks",
+        "question": "Hoe vaak gebruik je cannabis in situaties die lichamelijk gevaarlijk kunnen zijn, zoals autorijden, machines bedienen of voor kinderen zorgen?"
+      },
+      "q8": {
+        "a0": "Nooit",
+        "a1": "Ja, maar niet in de afgelopen 6 maanden",
+        "a2": "Ja, in de afgelopen 6 maanden",
+        "question": "Heb je er ooit aan gedacht om minder cannabis te gebruiken of ermee te stoppen?"
+      },
+      "resultTitle": "Je score: {{score}}/{{max}}",
+      "subtitle": "Acht vragen uit de CUDIT-R, een erkende screeningstest. Ze gaan over de afgelopen 6 maanden.",
+      "title": "Je cannabisgebruik"
+    },
     "fagerstrom": {
       "disclaimer": "Deze score is een indicatie, geen diagnose. Hij legt je geen stopmethode op. Interpretatierichtlijnen: NIDA (NIH).",
       "interpretation": {
@@ -1068,10 +1212,12 @@
     "profile": {
       "age": "Leeftijd (optioneel)",
       "ageHint": "Souffle is bedoeld voor volwassenen.",
+      "cannabisHint": "Een schatting volstaat: die dient alleen om je besparing te berekenen. Ter referentie: een Amerikaanse studie schat gemiddeld 0,32 g cannabis per joint (Ridgeway en Kilmer, 2016). Pas aan aan je eigen gewoonten.",
       "cigarettesPerDay": "Sigaretten per dag",
       "cigarettesPerPack": "Sigaretten per pakje",
       "errors": {
         "age": "Vul een leeftijd in tussen 18 en 120 jaar, of laat leeg.",
+        "grams": "Geef een gewicht tussen 0,05 en 5 g op, bijvoorbeeld 0,3.",
         "invalid": "Controleer de ingevulde waarden.",
         "price": "Vul een geldige prijs in, bijvoorbeeld 9,50.",
         "range": "Deze waarde valt buiten de verwachte grenzen."
@@ -1081,11 +1227,19 @@
       "goal": "Je doel",
       "goalQuitHint": "Je kiest een datum en de rookvrij-teller start op dat moment.",
       "goalReduceHint": "Je stelt een maximum per dag in en noteert elke sigaret. Je kunt overstappen op volledig stoppen wanneer je wilt.",
+      "gramsPerJoint": "Gram per joint",
       "habitsTitle": "Je gewoonten",
+      "jointsPerDay": "Joints per dag",
+      "mixed": "Draai je je joints met tabak?",
+      "mixedNoteBoth": "Een joint met tabak bevat ook nicotine: door met allebei tegelijk te stoppen, blijf je niet via je joints afhankelijk van nicotine.",
+      "mixedNoteCannabis": "Een joint met tabak bevat ook nicotine. Als je stopt, kun je naast cannabisontwenning ook nicotineontwenning voelen. Wil je ook je tabak opvolgen, kies dan \"Allebei\".",
       "packPrice": "Prijs per pakje",
+      "pricePerGram": "Prijs per gram",
+      "substance": "Je rookt",
       "subtitle": "Met deze gegevens berekenen we je besparingen en passen we de tips aan. Je kunt ze later wijzigen.",
       "title": "Laten we kennismaken",
-      "yearsSmoking": "Aantal jaren gerookt"
+      "yearsSmoking": "Aantal jaren gerookt",
+      "yearsUsing": "Jaren gebruik"
     },
     "stepOf": "Stap {{step}} van {{total}}",
     "welcome": {
@@ -1125,6 +1279,7 @@
     "deleteButton": "Alles verwijderen",
     "deleteConfirmText": "Typ {{word}} hieronder om te bevestigen. Exporteer eerst je gegevens als je ze wilt bewaren.",
     "deleteConfirmTitle": "Definitief verwijderen?",
+    "deleteDemoNote": "Let op: je zit in de demomodus. Verwijderen wist ook de back-up van je echte profiel. Verlaat eerst de demo om die terug te krijgen.",
     "deleteText": "Wist definitief je profiel en alle gegevens van Souffle op deze telefoon, en ook de geplande herinneringen. Dit kan niet ongedaan worden gemaakt.",
     "deleteTitle": "Al mijn gegevens verwijderen",
     "deleteTypeWord": "Typ {{word}}",
@@ -1163,12 +1318,14 @@
     "what": "Je profiel (optionele voornaam, gewoonten, doel, pact), je zin om te roken, je genoteerde sigaretten, je trainingen, je dagboek, je slaap en je hoest als je die invult, je badges en je instellingen. Er worden geen overbodige medische gegevens gevraagd.",
     "whatTitle": "Welke gegevens?",
     "where": "Alleen in de lokale opslag van de app, op deze telefoon. Souffle heeft geen account, geen server en geen advertenties, en verstuurt geen gezondheidsgegevens.",
-    "whereTitle": "Waar worden ze bewaard?",
-    "deleteDemoNote": "Let op: je zit in de demomodus. Verwijderen wist ook de back-up van je echte profiel. Verlaat eerst de demo om die terug te krijgen."
+    "whereTitle": "Waar worden ze bewaard?"
   },
   "profile": {
     "anonymous": "Jij",
     "baselineNote": "Als je je verbruik of de prijs wijzigt, gelden de nieuwe waarden vanaf vandaag: je eerdere besparingen veranderen niet.",
+    "cannabisSummary_one": "{{count}} joint per dag gedurende {{years}} jaar · {{grams}} g per joint aan {{price}} per gram",
+    "cannabisSummary_other": "{{count}} joints per dag gedurende {{years}} jaar · {{grams}} g per joint aan {{price}} per gram",
+    "cudit": "CUDIT-R-test: {{score}}/32 ({{level}})",
     "editTitle": "Mijn profiel bewerken",
     "fagerstrom": "Fagerströmtest: {{score}}/10 ({{level}})",
     "habits": "Mijn gewoonten",
@@ -1330,6 +1487,7 @@
       "switch_to_reduce": "Ik wil voorlopig liever minderen"
     },
     "kept": "Nog altijd van jou: {{xp}} XP · behaalde badges: {{badges}} · beste reeks: {{best}} d.",
+    "kind": "Wat heb je gerookt?",
     "kindMessage": "Eén sigaret wist de vooruitgang die je al geboekt hebt niet uit. Laten we kijken wat er gebeurd is en de volgende stap voorbereiden.",
     "loggedText": "Je had de moed om het te noteren. Precies zo kom je vooruit.",
     "loggedTextReduction": "Bedankt voor je eerlijkheid: die maakt je opvolging nuttig.",
@@ -1664,10 +1822,10 @@
       "days": "Duur",
       "errors": {
         "active": "Er loopt al een pauze of er is er al een gepland op deze data.",
-        "past": "Een pauze kan niet in het verleden beginnen.",
-        "too_long": "De duur moet tussen 1 en 14 dagen liggen.",
         "cooldown": "Er werd de voorbije 30 dagen al een pauze gebruikt.",
-        "smoked": "Er is vandaag al een sigaret genoteerd: een pauze kan die niet verbergen. Daarvoor dient het schild."
+        "past": "Een pauze kan niet in het verleden beginnen.",
+        "smoked": "Er is vandaag al een sigaret genoteerd: een pauze kan die niet verbergen. Daarvoor dient het schild.",
+        "too_long": "De duur moet tussen 1 en 14 dagen liggen."
       },
       "reasons": {
         "illness": "Ziekte",
@@ -1696,6 +1854,11 @@
     },
     "subtitle": "Volledige rookvrije dagen, berekend volgens je lokale kalender.",
     "title": "Reeks en schild"
+  },
+  "substance": {
+    "both": "Allebei",
+    "cannabis": "Cannabis",
+    "tobacco": "Tabak"
   },
   "surf": {
     "disclaimer": "Zin om te roken verdwijnt niet altijd binnen 3 minuten. Het doel is ernaar te kijken zonder te gehoorzamen, niet om hem koste wat kost te laten verdwijnen.",
@@ -1756,6 +1919,7 @@
     "daysCount_other": "{{count}} dagen",
     "h": "u",
     "hours": "Uren",
+    "joints": "joints",
     "min": "min",
     "minutes": "Minuten",
     "s": "s"

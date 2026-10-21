@@ -150,3 +150,55 @@ describe('cannabis and mixed profiles', () => {
     }
   });
 });
+
+describe('CUDIT-R', () => {
+  // Imported lazily to keep this block self-contained.
+  const { computeCuditScore, cuditLevel, CUDIT_QUESTIONS, CUDIT_MAX_SCORE } = jest.requireActual('@/utils/cudit') as typeof import('@/utils/cudit');
+
+  it('follows the published scoring (0-4 per item, item 8 = 0/2/4, total 0-32)', () => {
+    expect(CUDIT_QUESTIONS).toHaveLength(8);
+    expect(CUDIT_QUESTIONS[7]!.points).toEqual([0, 2, 4]);
+    expect(computeCuditScore(CUDIT_QUESTIONS.map(() => 0))).toBe(0);
+    expect(computeCuditScore(CUDIT_QUESTIONS.map((q) => q.points.length - 1))).toBe(CUDIT_MAX_SCORE);
+    expect(CUDIT_MAX_SCORE).toBe(32);
+    // Item 8 "yes, during the past 6 months" is worth 4 points.
+    expect(computeCuditScore([0, 0, 0, 0, 0, 0, 0, 2])).toBe(4);
+    // Invalid indexes are ignored instead of crashing.
+    expect(computeCuditScore([9, -1])).toBe(0);
+  });
+
+  it('uses the 8 / 12 cut-offs', () => {
+    expect(cuditLevel(7)).toBe('low');
+    expect(cuditLevel(8)).toBe('hazardous');
+    expect(cuditLevel(11)).toBe('hazardous');
+    expect(cuditLevel(12)).toBe('possible_disorder');
+  });
+});
+
+describe('health timelines per substance', () => {
+  const { milestonesFor, milestoneStatus, CANNABIS_MILESTONES, TOBACCO_MILESTONES } = jest.requireActual('@/data/healthMilestones') as typeof import('@/data/healthMilestones');
+  const { HEALTH_SOURCES } = jest.requireActual('@/utils/constants') as typeof import('@/utils/constants');
+
+  it('picks the right timeline and merges both in time order', () => {
+    expect(milestonesFor('tobacco')).toBe(TOBACCO_MILESTONES);
+    expect(milestonesFor('cannabis')).toBe(CANNABIS_MILESTONES);
+    const both = milestonesFor('both');
+    expect(both).toHaveLength(TOBACCO_MILESTONES.length + CANNABIS_MILESTONES.length);
+    expect(both.map((m) => m.afterMinutes)).toEqual([...both.map((m) => m.afterMinutes)].sort((a, b) => a - b));
+    expect(new Set(both.map((m) => m.id)).size).toBe(both.length);
+  });
+
+  it('every cannabis milestone cites a cannabis source', () => {
+    for (const m of CANNABIS_MILESTONES) {
+      expect(m.substance).toBe('cannabis');
+      expect(m.sourceIds.length).toBeGreaterThan(0);
+      for (const id of m.sourceIds) expect(HEALTH_SOURCES[id]?.substance).toBe('cannabis');
+    }
+  });
+
+  it('reports reached and next milestones for cannabis', () => {
+    const s = milestoneStatus(3 * 24 * 60, 'cannabis');
+    expect(s.reached.map((m) => m.id)).toEqual(['c1d', 'c2d']);
+    expect(s.next?.id).toBe('c1w');
+  });
+});

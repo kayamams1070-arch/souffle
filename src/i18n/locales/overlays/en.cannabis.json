@@ -1,1 +1,162 @@
-{}
+{
+  "about": {
+    "helpNote": "Your doctor, your pharmacist or an addiction service can also support you, without judgement."
+  },
+  "badges": {
+    "categories": {
+      "smoke_free": "Cannabis-free"
+    },
+    "comeback": {
+      "description": "You got back on track after a joint."
+    },
+    "smoke_free_1d": {
+      "description": "A full day cannabis-free."
+    },
+    "smoke_free_1m": {
+      "description": "30 cannabis-free days in a row."
+    },
+    "smoke_free_1w": {
+      "description": "7 cannabis-free days in a row."
+    },
+    "smoke_free_1y": {
+      "description": "365 cannabis-free days in a row."
+    },
+    "smoke_free_3m": {
+      "description": "90 cannabis-free days in a row."
+    }
+  },
+  "benefits": {
+    "spentLogged": "Minus {{amount}} for the joints you logged."
+  },
+  "challenges": {
+    "kindLabels": {
+      "smoke_free_days": "Cannabis-free days"
+    },
+    "kinds": {
+      "smoke_free_days_one": "{{count}} cannabis-free day",
+      "smoke_free_days_other": "{{count}} cannabis-free days"
+    }
+  },
+  "coach": {
+    "actions": {
+      "relapse": "Log the joint, no judgement"
+    },
+    "placeholder": "For example: I want to smoke a joint in the evening",
+    "prompts": {
+      "coffee": "I want to smoke after my coffee"
+    },
+    "replies": {
+      "craving_coffee": {
+        "why": "Some moments become linked to smoking a joint. Changing place and keeping your hands busy helps break that link."
+      },
+      "relapsed": {
+        "message": "One joint doesn't erase your journey. Let's log it together, no judgement."
+      }
+    }
+  },
+  "dashboard": {
+    "counter": {
+      "a11y": "Cannabis-free for: {{days}} d, {{hours}} h and {{minutes}} min",
+      "title": "Cannabis-free for"
+    },
+    "reduction": {
+      "a11y": "Joints logged today: {{smoked}}, with a target of {{target}}",
+      "logCigarette": "Log a joint",
+      "underTarget": "{{left}} left before you reach today's goal. Every joint you skip counts."
+    },
+    "savings": {
+      "a11y_one": "Estimated savings: {{amount}}, {{count}} joint avoided",
+      "a11y_other": "Estimated savings: {{amount}}, {{count}} joints avoided",
+      "avoided_one": "{{count}} joint avoided",
+      "avoided_other": "{{count}} joints avoided",
+      "disclaimerReduction": "This estimate assumes you log every joint. Projections assume you meet your target every day."
+    },
+    "smokedButton": "I smoked a joint",
+    "smokedHint": "Log a joint without losing your progress",
+    "sosButton": "I want to smoke"
+  },
+  "family": {
+    "share": {
+      "days": "Cannabis-free days"
+    },
+    "summary": {
+      "days_one": "• {{count}} cannabis-free day",
+      "days_other": "• {{count}} cannabis-free days"
+    }
+  },
+  "goalSettings": {
+    "reduceNote": "Your baseline: {{baseline}} joints a day."
+  },
+  "onboarding": {
+    "goals": {
+      "baseline_one": "Right now: {{count}} joint a day",
+      "baseline_other": "Right now: {{count}} joints a day"
+    },
+    "profile": {
+      "goalQuitHint": "You choose a date and the cannabis-free counter starts at that moment.",
+      "goalReduceHint": "You set a maximum number of joints per day and log each one. You can switch to quitting completely whenever you want."
+    },
+    "welcome": {
+      "how_kind": "No guilt: if you smoke a joint, your progress is still yours."
+    }
+  },
+  "privacy": {
+    "counts": "Currently: cravings {{cravings}} · joints logged {{smoking}} · workouts {{sessions}} · journal, sleep and cough {{journal}}.",
+    "what": "Your profile (optional first name, habits, goal, pact), your cravings, the joints you log, your workouts, your journal, your sleep and cough if you fill them in, your badges and your settings. No unnecessary medical data is requested."
+  },
+  "progress": {
+    "smokeFreeDays": "Cannabis-free days"
+  },
+  "relapse": {
+    "confirmMessage_one": "{{count}} joint will be added to your history. Your XP, badges and workouts are still yours.",
+    "confirmMessage_other": "{{count}} joints will be added to your history. Your XP, badges and workouts are still yours.",
+    "confirmWithShield": "The joint will be logged and your shield will protect your streak. Everything you've achieved stays intact.",
+    "count": "Number of joints",
+    "decisionHints": {
+      "continue_quit": "Your counter restarts from this joint. Your best streak, badges and past savings are kept.",
+      "reduction_log": "The joint is added to today's tracking."
+    },
+    "kindMessage": "One joint doesn't wipe out the progress you've already made. Let's look at what happened and prepare the next step.",
+    "loggedTitleReduction": "Joint logged",
+    "reductionHint": "Logging every joint lets you track your reduction honestly.",
+    "title": "I smoked a joint",
+    "titleReduction": "Log a joint"
+  },
+  "reports": {
+    "content": "Goal, cannabis-free days or reduction progress, joints avoided and estimated savings, workouts and exercise time, craving trends, common triggers, wins, and sleep and cough if filled in.",
+    "pdf": {
+      "cigarettesAvoided": "Joints avoided (estimate)",
+      "cigarettesLogged": "Joints logged",
+      "estimates": "Joints avoided and savings are estimates calculated from the habits you reported.",
+      "smokeFreeDays": "Cannabis-free days"
+    }
+  },
+  "streak": {
+    "freeze": {
+      "errors": {
+        "smoked": "A joint is already logged today: a pause cannot hide it. That is what the shield is for."
+      }
+    },
+    "legend": {
+      "smokeFree": "cannabis-free",
+      "smoked": "joint"
+    },
+    "shield": {
+      "explain": "The shield protects your streak once every {{days}} days, for a joint logged today or yesterday. You choose to use it yourself when you log a joint."
+    },
+    "subtitle": "Full cannabis-free days, calculated using your local calendar."
+  },
+  "xp": {
+    "milestone": "Cannabis-free milestone"
+  },
+  "units": {
+    "cigs": "joints",
+    "cigsPerDay": "joints/day",
+    "cigsToday": "joints today"
+  },
+  "health": {
+    "timeline": {
+      "subtitle": "General guides from health sources and studies, not measured by your phone."
+    }
+  }
+}

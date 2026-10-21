@@ -14,6 +14,8 @@ import enBoth from './locales/overlays/en.both.json';
 
 type Resource = Record<string, unknown>;
 
+const clone = <T,>(value: T): T => JSON.parse(JSON.stringify(value)) as T;
+
 const BASE: Record<Language, Resource> = { fr, nl, en };
 
 /**
@@ -47,10 +49,11 @@ export function initI18n(language: Language): typeof i18n {
   if (!initialized) {
     // eslint-disable-next-line import/no-named-as-default-member
     void i18n.use(initReactI18next).init({
+      // Copies: i18next merges overlays into its store, the imported base must stay intact.
       resources: {
-        fr: { translation: fr },
-        nl: { translation: nl },
-        en: { translation: en },
+        fr: { translation: clone(fr) },
+        nl: { translation: clone(nl) },
+        en: { translation: clone(en) },
       },
       lng: language,
       fallbackLng: 'fr',
@@ -72,6 +75,17 @@ export function setLanguage(language: Language): void {
   if (i18n.language !== language) void i18n.changeLanguage(language);
 }
 
+function deepMerge(target: Resource, source: Resource): void {
+  for (const [key, value] of Object.entries(source)) {
+    const existing = target[key];
+    if (value && typeof value === 'object' && existing && typeof existing === 'object') {
+      deepMerge(existing as Resource, value as Resource);
+    } else {
+      target[key] = value;
+    }
+  }
+}
+
 let currentSubstance: Substance = 'tobacco';
 
 /**
@@ -82,9 +96,11 @@ export function setSubstance(substance: Substance): void {
   if (substance === currentSubstance) return;
   currentSubstance = substance;
   for (const lang of SUPPORTED_LANGUAGES) {
-    // Reset to the base wording, then apply the overlay (keys only ever overwrite base keys).
-    i18n.addResourceBundle(lang, 'translation', BASE[lang], true, true);
-    if (substance !== 'tobacco') i18n.addResourceBundle(lang, 'translation', SUBSTANCE_OVERLAYS[substance][lang], true, true);
+    // Fresh copy of the base wording, then the overlay (which only overwrites base keys).
+    const bundle = clone(BASE[lang]);
+    if (substance !== 'tobacco') deepMerge(bundle, SUBSTANCE_OVERLAYS[substance][lang]);
+    i18n.removeResourceBundle(lang, 'translation');
+    i18n.addResourceBundle(lang, 'translation', bundle, true, true);
   }
 }
 

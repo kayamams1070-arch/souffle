@@ -202,6 +202,11 @@
     "subtitle": "A simple protocol, the same every time, to track how you feel over time.",
     "title": "Breathing test"
   },
+  "cannabisUse": {
+    "hazardous": "Hazardous use",
+    "low": "Lower-risk use",
+    "possible_disorder": "Possible cannabis use disorder"
+  },
   "challenges": {
     "create": "Create challenge",
     "duration": "Duration",
@@ -346,6 +351,7 @@
     "finish": "Finish",
     "increase": "Increase: {{label}}",
     "next": "Next",
+    "no": "No",
     "off": "Off",
     "on": "On",
     "pause": "Pause",
@@ -357,7 +363,12 @@
     "selected": "Selected",
     "start": "Start",
     "tapToDismiss": "Tap to close",
-    "tapToEdit": "Tap to edit"
+    "tapToEdit": "Tap to edit",
+    "yes": "Yes"
+  },
+  "consumption": {
+    "cigarette": "Cigarette",
+    "joint": "Joint"
   },
   "cough": {
     "emptyText": "Note your cough from time to time to see how it changes.",
@@ -742,11 +753,11 @@
       "days_other": "• {{count}} smoke-free days",
       "footer": "Thanks for cheering me on!",
       "header": "{{name}}'s progress with Souffle:",
+      "headerAnonymous": "My progress with Souffle:",
       "savings": "• About {{amount}} saved",
       "why": "• My why: {{why}}",
       "workouts_one": "• {{count}} workout",
-      "workouts_other": "• {{count}} workouts",
-      "headerAnonymous": "My progress with Souffle:"
+      "workouts_other": "• {{count}} workouts"
     },
     "title": "Family mode",
     "vision": "In a future version, someone close to you will be able to follow the wins you choose to share and send you encouragement, with private challenges and an anonymous, moderated discussion space.",
@@ -810,6 +821,34 @@
       "years_other": "{{count}} years"
     },
     "milestones": {
+      "c1d": {
+        "description": "Between day 1 and day 3, withdrawal signs often show up: irritability, nervousness, disturbed sleep, less appetite. It's common, temporary, and it means your body is readjusting.",
+        "title": "Withdrawal may show up"
+      },
+      "c1m": {
+        "description": "Many people describe a clearer head, better focus and more energy. The loss of motivation linked to regular use is reversible once you stop.",
+        "title": "A clearer head"
+      },
+      "c1w": {
+        "description": "For many people, the worst of the withdrawal is behind them after the first week.",
+        "title": "The peak has passed"
+      },
+      "c2d": {
+        "description": "Withdrawal is usually strongest between day 2 and day 6. Hang in there: it's the hardest stretch, and it doesn't last.",
+        "title": "The toughest days"
+      },
+      "c2w": {
+        "description": "Most withdrawal signs last 4 to 14 days. For most people they ease off clearly.",
+        "title": "Withdrawal fades"
+      },
+      "c3m": {
+        "description": "Cannabis disrupts sleep cycles. Sleep problems are often the most stubborn, sometimes for several months, then they ease. If they persist, talk to a doctor.",
+        "title": "Sleep recovers"
+      },
+      "c3w": {
+        "description": "Withdrawal syndrome usually lasts up to 3 weeks. Sleep and strange dreams can take longer to get back to normal.",
+        "title": "Withdrawal ends"
+      },
       "m1m": {
         "description": "Between 1 and 9 months, coughing and shortness of breath decrease.",
         "title": "Cough and breathlessness"
@@ -856,6 +895,38 @@
       "upcoming": "Next",
       "varies": "(varies from person to person)"
     }
+  },
+  "help": {
+    "callHint": "Opens the Phone app with this number",
+    "checked": "Numbers and hours checked on the official websites in October 2026. They may change: each service's website is the reference.",
+    "countries": {
+      "BE": "Belgium",
+      "FR": "France",
+      "NL": "Netherlands",
+      "UK": "United Kingdom"
+    },
+    "mixedNote": "Your joints contain tobacco: when you quit cannabis, you may also feel nicotine withdrawal. Stop-smoking helplines can help you with that part.",
+    "resources": {
+      "be": "Stop-smoking specialists by phone, free, every day from 3 pm to 7 pm (French/Dutch).",
+      "c_be_fr": "Free, anonymous helpline about drugs, including cannabis (in French). Monday to Wednesday 9 am-9 pm, Thursday 1 pm-9 pm, Friday 9 am-5 pm, Saturday 10 am-2 pm.",
+      "c_be_nl": "Flemish drug information line (in Dutch), Monday to Friday 10 am-8 pm, chat 12 pm-6 pm. Free online programme to help you quit cannabis.",
+      "c_fr": "Free and anonymous, every day from 8 am to 2 am, also by chat (in French).",
+      "c_nl": "Trimbos drug information line, weekdays 9 am to 5 pm (paid number, in Dutch).",
+      "c_nl_jellinek": "Addiction specialist centre, with an online programme to help you quit or cut down on cannabis.",
+      "c_uk": "UK government information service, 24/7, also by text to 82111 (in English).",
+      "fr": "National stop-smoking helpline, with tobacco specialists.",
+      "nl": "Free helpline to quit smoking (in Dutch).",
+      "uk": "NHS national stop-smoking helpline (in English)."
+    },
+    "rowSubtitle": "Helplines and support websites for your country",
+    "sosButton": "Talk to someone",
+    "subtitle": "Specialist services that listen without judgement. What a call costs depends on the number.",
+    "title": "Find help",
+    "topics": {
+      "cannabis": "Quit cannabis",
+      "tobacco": "Quit smoking"
+    },
+    "website": "Website"
   },
   "intensity": {
     "dynamic": "Dynamic",
@@ -965,6 +1036,79 @@
     }
   },
   "onboarding": {
+    "cudit": {
+      "disclaimer": "This is a screening test, not a diagnosis. CUDIT-R questions (Adamson et al., 2010), official English wording.",
+      "interpretation": {
+        "hazardous": "Your score (8 or more) points to hazardous use. Cutting down or quitting can really make a difference, and you don't have to do it alone.",
+        "low": "Your score is below the screening threshold (8). That doesn't mean your use is risk-free: if you want to cut down or quit, Souffle is here to help.",
+        "possible_disorder": "Your score (12 or more) points to a possible cannabis use disorder. Talking to a doctor or a specialist service can really help; you'll find contacts in \"Find help\"."
+      },
+      "q1": {
+        "a0": "Never",
+        "a1": "Monthly or less",
+        "a2": "2-4 times a month",
+        "a3": "2-3 times a week",
+        "a4": "4 or more times a week",
+        "question": "How often do you use cannabis?"
+      },
+      "q2": {
+        "a0": "Less than 1",
+        "a1": "1 or 2",
+        "a2": "3 or 4",
+        "a3": "5 or 6",
+        "a4": "7 or more",
+        "question": "How many hours were you \"stoned\" on a typical day when you had been using cannabis?"
+      },
+      "q3": {
+        "a0": "Never",
+        "a1": "Less than monthly",
+        "a2": "Monthly",
+        "a3": "Weekly",
+        "a4": "Daily or almost daily",
+        "question": "How often during the past 6 months did you find that you were not able to stop using cannabis once you had started?"
+      },
+      "q4": {
+        "a0": "Never",
+        "a1": "Less than monthly",
+        "a2": "Monthly",
+        "a3": "Weekly",
+        "a4": "Daily or almost daily",
+        "question": "How often during the past 6 months did you fail to do what was normally expected from you because of using cannabis?"
+      },
+      "q5": {
+        "a0": "Never",
+        "a1": "Less than monthly",
+        "a2": "Monthly",
+        "a3": "Weekly",
+        "a4": "Daily or almost daily",
+        "question": "How often in the past 6 months have you devoted a great deal of your time to getting, using, or recovering from cannabis?"
+      },
+      "q6": {
+        "a0": "Never",
+        "a1": "Less than monthly",
+        "a2": "Monthly",
+        "a3": "Weekly",
+        "a4": "Daily or almost daily",
+        "question": "How often in the past 6 months have you had a problem with your memory or concentration after using cannabis?"
+      },
+      "q7": {
+        "a0": "Never",
+        "a1": "Less than monthly",
+        "a2": "Monthly",
+        "a3": "Weekly",
+        "a4": "Daily or almost daily",
+        "question": "How often do you use cannabis in situations that could be physically hazardous, such as driving, operating machinery, or caring for children?"
+      },
+      "q8": {
+        "a0": "Never",
+        "a1": "Yes, but not in the past 6 months",
+        "a2": "Yes, during the past 6 months",
+        "question": "Have you ever thought about cutting down, or stopping, your use of cannabis?"
+      },
+      "resultTitle": "Your score: {{score}}/{{max}}",
+      "subtitle": "Eight questions from the CUDIT-R, a recognised screening test. They cover the past 6 months.",
+      "title": "Your cannabis use"
+    },
     "fagerstrom": {
       "disclaimer": "This score is an indicator, not a diagnosis. It doesn't commit you to any particular way of quitting. Interpretation guides: NIDA (NIH).",
       "interpretation": {
@@ -1068,10 +1212,12 @@
     "profile": {
       "age": "Age (optional)",
       "ageHint": "Souffle is designed for adults.",
+      "cannabisHint": "A rough estimate is enough: it's only used to calculate your savings. For reference, a US study estimates an average of 0.32 g of cannabis per joint (Ridgeway and Kilmer, 2016). Adjust to your habits.",
       "cigarettesPerDay": "Cigarettes per day",
       "cigarettesPerPack": "Cigarettes per pack",
       "errors": {
         "age": "Enter an age between 18 and 120, or leave it blank.",
+        "grams": "Enter a weight between 0.05 and 5 g, for example 0.3.",
         "invalid": "Check the values you entered.",
         "price": "Enter a valid price, for example 9.50.",
         "range": "This value is outside the expected range."
@@ -1081,11 +1227,19 @@
       "goal": "Your goal",
       "goalQuitHint": "You choose a date and the smoke-free counter starts at that moment.",
       "goalReduceHint": "You set a maximum number per day and log each cigarette. You can switch to quitting completely whenever you want.",
+      "gramsPerJoint": "Grams per joint",
       "habitsTitle": "Your habits",
+      "jointsPerDay": "Joints per day",
+      "mixed": "Do you roll your joints with tobacco?",
+      "mixedNoteBoth": "A joint rolled with tobacco also contains nicotine: quitting both at the same time keeps you from staying hooked on nicotine through joints.",
+      "mixedNoteCannabis": "A joint rolled with tobacco also contains nicotine. When you quit, you may feel nicotine withdrawal on top of cannabis withdrawal. If you want to track tobacco too, choose \"Both\".",
       "packPrice": "Pack price",
+      "pricePerGram": "Price per gram",
+      "substance": "You smoke",
       "subtitle": "This information is used to calculate your savings and tailor the advice. You can change it later.",
       "title": "Let's get to know you",
-      "yearsSmoking": "Years of smoking"
+      "yearsSmoking": "Years of smoking",
+      "yearsUsing": "Years of use"
     },
     "stepOf": "Step {{step}} of {{total}}",
     "welcome": {
@@ -1125,6 +1279,7 @@
     "deleteButton": "Delete everything",
     "deleteConfirmText": "To confirm, type {{word}} below. Export your data first if you want to keep it.",
     "deleteConfirmTitle": "Delete permanently?",
+    "deleteDemoNote": "Careful: you are in demo mode. Deleting also erases the backup of your real profile. Exit the demo first to get it back.",
     "deleteText": "Permanently erases your profile and all Souffle data on this phone, as well as scheduled reminders. This cannot be undone.",
     "deleteTitle": "Delete all my data",
     "deleteTypeWord": "Type {{word}}",
@@ -1163,12 +1318,14 @@
     "what": "Your profile (optional first name, habits, goal, pact), your cravings, the cigarettes you log, your workouts, your journal, your sleep and cough if you fill them in, your badges and your settings. No unnecessary medical data is requested.",
     "whatTitle": "What data?",
     "where": "Only in the app's local storage, on this phone. Souffle has no account, no server and no ads, and sends no health data.",
-    "whereTitle": "Where is it kept?",
-    "deleteDemoNote": "Careful: you are in demo mode. Deleting also erases the backup of your real profile. Exit the demo first to get it back."
+    "whereTitle": "Where is it kept?"
   },
   "profile": {
     "anonymous": "You",
     "baselineNote": "If you change your consumption or the price, the new values apply from today: your past savings don't change.",
+    "cannabisSummary_one": "{{count}} joint a day for {{years}} years · {{grams}} g per joint at {{price}} a gram",
+    "cannabisSummary_other": "{{count}} joints a day for {{years}} years · {{grams}} g per joint at {{price}} a gram",
+    "cudit": "CUDIT-R test: {{score}}/32 ({{level}})",
     "editTitle": "Edit my profile",
     "fagerstrom": "Fagerström test: {{score}}/10 ({{level}})",
     "habits": "My habits",
@@ -1330,6 +1487,7 @@
       "switch_to_reduce": "I'd rather cut down for now"
     },
     "kept": "Still yours: {{xp}} XP · badges earned: {{badges}} · best streak: {{best}} d.",
+    "kind": "What did you smoke?",
     "kindMessage": "One cigarette doesn't wipe out the progress you've already made. Let's look at what happened and prepare the next step.",
     "loggedText": "You had the courage to log it. That's exactly how you move forward.",
     "loggedTextReduction": "Thanks for being honest: that's what makes your tracking useful.",
@@ -1664,10 +1822,10 @@
       "days": "Duration",
       "errors": {
         "active": "A pause is already running or planned for these dates.",
-        "past": "A pause can't start in the past.",
-        "too_long": "The duration must be between 1 and 14 days.",
         "cooldown": "A pause has already been used in the last 30 days.",
-        "smoked": "A cigarette is already logged today: a pause cannot hide it. That is what the shield is for."
+        "past": "A pause can't start in the past.",
+        "smoked": "A cigarette is already logged today: a pause cannot hide it. That is what the shield is for.",
+        "too_long": "The duration must be between 1 and 14 days."
       },
       "reasons": {
         "illness": "Illness",
@@ -1696,6 +1854,11 @@
     },
     "subtitle": "Full smoke-free days, calculated using your local calendar.",
     "title": "Streak and shield"
+  },
+  "substance": {
+    "both": "Both",
+    "cannabis": "Cannabis",
+    "tobacco": "Tobacco"
   },
   "surf": {
     "disclaimer": "A craving doesn't always go away in 3 minutes. The aim is to watch it without obeying it, not to make it disappear at all costs.",
@@ -1756,6 +1919,7 @@
     "daysCount_other": "{{count}} days",
     "h": "h",
     "hours": "Hours",
+    "joints": "joints",
     "min": "min",
     "minutes": "Minutes",
     "s": "s"

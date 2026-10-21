@@ -821,6 +821,34 @@
       "years_other": "{{count}} ans"
     },
     "milestones": {
+      "c1d": {
+        "description": "Entre le 1er et le 3e jour, des signes de manque apparaissent souvent : irritabilité, nervosité, sommeil perturbé, moins d'appétit. C'est fréquent, temporaire, et ça veut dire que ton corps se réajuste.",
+        "title": "Le manque peut apparaître"
+      },
+      "c1m": {
+        "description": "Beaucoup de personnes décrivent une tête plus claire, une meilleure concentration et plus d'énergie. La perte de motivation liée à une consommation régulière est réversible à l'arrêt.",
+        "title": "Une tête plus claire"
+      },
+      "c1w": {
+        "description": "Pour beaucoup de personnes, le plus fort du manque est derrière elles après la première semaine.",
+        "title": "Le pic est passé"
+      },
+      "c2d": {
+        "description": "Le manque est en général le plus fort entre le 2e et le 6e jour. Tiens bon : c'est le cap le plus difficile, et il ne dure pas.",
+        "title": "Les jours les plus durs"
+      },
+      "c2w": {
+        "description": "La plupart des signes de manque durent de 4 à 14 jours. Ils s'atténuent nettement pour la majorité des personnes.",
+        "title": "Le manque recule"
+      },
+      "c3m": {
+        "description": "Le cannabis perturbe les cycles du sommeil. Les troubles du sommeil sont souvent les plus tenaces, parfois plusieurs mois, puis s'atténuent. S'ils persistent, parles-en à un médecin.",
+        "title": "Le sommeil se rétablit"
+      },
+      "c3w": {
+        "description": "Le syndrome de sevrage dure en général jusqu'à 3 semaines. Le sommeil et les rêves étranges peuvent mettre plus longtemps à revenir à la normale.",
+        "title": "Le sevrage se termine"
+      },
       "m1m": {
         "description": "Entre 1 et 9 mois, la toux et l'essoufflement diminuent.",
         "title": "Toux et essoufflement"
@@ -867,6 +895,38 @@
       "upcoming": "Prochain",
       "varies": "(variable selon les personnes)"
     }
+  },
+  "help": {
+    "callHint": "Ouvre l'application Téléphone avec ce numéro",
+    "checked": "Numéros et horaires vérifiés sur les sites officiels en octobre 2026. Ils peuvent changer : le site de chaque service fait foi.",
+    "countries": {
+      "BE": "Belgique",
+      "FR": "France",
+      "NL": "Pays-Bas",
+      "UK": "Royaume-Uni"
+    },
+    "mixedNote": "Tes joints contiennent du tabac : en arrêtant le cannabis, tu peux aussi ressentir un manque de nicotine. Les lignes d'aide au tabac peuvent t'aider pour cette partie.",
+    "resources": {
+      "be": "Tabacologues au téléphone, gratuit, tous les jours de 15 h à 19 h.",
+      "c_be_fr": "Écoute gratuite et anonyme sur les drogues, dont le cannabis. Du lundi au mercredi 9 h-21 h, jeudi 13 h-21 h, vendredi 9 h-17 h, samedi 10 h-14 h.",
+      "c_be_nl": "Ligne d'information flamande sur les drogues (en néerlandais), du lundi au vendredi 10 h-20 h, chat 12 h-18 h. Programme d'aide en ligne gratuit pour arrêter le cannabis.",
+      "c_fr": "Gratuit et anonyme, tous les jours de 8 h à 2 h, aussi par chat.",
+      "c_nl": "Ligne d'information du Trimbos sur les drogues, en semaine de 9 h à 17 h (numéro payant, en néerlandais).",
+      "c_nl_jellinek": "Centre spécialisé en addictions, avec un programme d'aide en ligne pour arrêter ou réduire le cannabis.",
+      "c_uk": "Service d'information du gouvernement britannique, 24 h/24 et 7 j/7, aussi par SMS au 82111 (en anglais).",
+      "fr": "Ligne nationale d'aide à l'arrêt du tabac, avec des tabacologues.",
+      "nl": "Ligne d'aide gratuite pour arrêter de fumer (en néerlandais).",
+      "uk": "Ligne nationale du NHS pour arrêter de fumer (en anglais)."
+    },
+    "rowSubtitle": "Lignes d'écoute et sites d'aide, selon ton pays",
+    "sosButton": "Parler à quelqu'un",
+    "subtitle": "Des services spécialisés qui t'écoutent sans jugement. Le coût de l'appel dépend du numéro.",
+    "title": "Trouver de l'aide",
+    "topics": {
+      "cannabis": "Arrêter le cannabis",
+      "tobacco": "Arrêter le tabac"
+    },
+    "website": "Site web"
   },
   "intensity": {
     "dynamic": "Dynamique",
@@ -976,6 +1036,79 @@
     }
   },
   "onboarding": {
+    "cudit": {
+      "disclaimer": "Ce test sert au repérage, ce n'est pas un diagnostic. Questions du CUDIT-R (Adamson et al., 2010), version française validée CUDIT-R-Fr, formulées ici avec le tutoiement.",
+      "interpretation": {
+        "hazardous": "Ton score (8 ou plus) indique une consommation à risque. Réduire ou arrêter peut vraiment t'apporter du mieux, et tu n'as pas à le faire seul.",
+        "low": "Ton score est sous le seuil de repérage (8). Ça ne veut pas dire que ta consommation est sans risque : si tu veux réduire ou arrêter, Souffle est là pour t'aider.",
+        "possible_disorder": "Ton score (12 ou plus) indique un trouble lié à l'usage du cannabis possible. En parler à un médecin ou à un service spécialisé peut beaucoup t'aider ; tu trouveras des contacts dans « Trouver de l'aide »."
+      },
+      "q1": {
+        "a0": "Jamais",
+        "a1": "1 fois par mois ou moins",
+        "a2": "2 à 4 fois par mois",
+        "a3": "2 à 3 fois par semaine",
+        "a4": "4 fois par semaine ou plus",
+        "question": "À quelle fréquence consommes-tu du cannabis ?"
+      },
+      "q2": {
+        "a0": "Moins d'1 heure",
+        "a1": "1 ou 2 heures",
+        "a2": "3 ou 4 heures",
+        "a3": "5 ou 6 heures",
+        "a4": "7 heures ou plus",
+        "question": "Combien d'heures es-tu « défoncé » un jour typique où tu consommes du cannabis ?"
+      },
+      "q3": {
+        "a0": "Jamais",
+        "a1": "Moins d'1 fois par mois",
+        "a2": "Environ 1 fois par mois",
+        "a3": "Environ 1 fois par semaine",
+        "a4": "Tous les jours ou presque",
+        "question": "Au cours des 6 derniers mois, à quelle fréquence as-tu constaté que tu n'étais plus capable de t'arrêter de fumer du cannabis une fois que tu avais commencé ?"
+      },
+      "q4": {
+        "a0": "Jamais",
+        "a1": "Moins d'1 fois par mois",
+        "a2": "Environ 1 fois par mois",
+        "a3": "Environ 1 fois par semaine",
+        "a4": "Tous les jours ou presque",
+        "question": "Au cours des 6 derniers mois, combien de fois ta consommation de cannabis t'a-t-elle empêché de faire ce qui était normalement attendu de toi ?"
+      },
+      "q5": {
+        "a0": "Jamais",
+        "a1": "Moins d'1 fois par mois",
+        "a2": "Environ 1 fois par mois",
+        "a3": "Environ 1 fois par semaine",
+        "a4": "Tous les jours ou presque",
+        "question": "Au cours des 6 derniers mois, combien de fois as-tu passé une grande partie de ton temps à chercher à te procurer ou à consommer du cannabis, ou à te remettre de ses effets ?"
+      },
+      "q6": {
+        "a0": "Jamais",
+        "a1": "Moins d'1 fois par mois",
+        "a2": "Environ 1 fois par mois",
+        "a3": "Environ 1 fois par semaine",
+        "a4": "Tous les jours ou presque",
+        "question": "Au cours des 6 derniers mois, combien de fois as-tu eu des problèmes de mémoire ou de concentration après avoir fumé du cannabis ?"
+      },
+      "q7": {
+        "a0": "Jamais",
+        "a1": "Moins d'1 fois par mois",
+        "a2": "Environ 1 fois par mois",
+        "a3": "Environ 1 fois par semaine",
+        "a4": "Tous les jours ou presque",
+        "question": "À quelle fréquence consommes-tu du cannabis dans des situations qui pourraient être dangereuses, par exemple conduire un véhicule, utiliser une machine ou t'occuper d'enfants ?"
+      },
+      "q8": {
+        "a0": "Jamais",
+        "a1": "Oui, mais pas au cours des 6 derniers mois",
+        "a2": "Oui, au cours des 6 derniers mois",
+        "question": "As-tu déjà envisagé de réduire ou d'arrêter ta consommation de cannabis ?"
+      },
+      "resultTitle": "Ton score : {{score}}/{{max}}",
+      "subtitle": "Huit questions du CUDIT-R, un test de repérage reconnu. Elles portent sur les 6 derniers mois.",
+      "title": "Ta consommation de cannabis"
+    },
     "fagerstrom": {
       "disclaimer": "Ce score est un indicateur, pas un diagnostic. Il ne t'impose aucune méthode d'arrêt. Repères d'interprétation : NIDA (NIH).",
       "interpretation": {
@@ -1079,7 +1212,7 @@
     "profile": {
       "age": "Âge (facultatif)",
       "ageHint": "Souffle s'adresse aux adultes.",
-      "cannabisHint": "Une estimation suffit : elle sert seulement à calculer tes économies. Tu pourras la corriger plus tard.",
+      "cannabisHint": "Une estimation suffit : elle sert seulement à calculer tes économies. Repère : une étude américaine estime en moyenne 0,32 g de cannabis par joint (Ridgeway et Kilmer, 2016). Adapte à tes habitudes.",
       "cigarettesPerDay": "Cigarettes par jour",
       "cigarettesPerPack": "Cigarettes par paquet",
       "errors": {
@@ -1098,13 +1231,15 @@
       "habitsTitle": "Tes habitudes",
       "jointsPerDay": "Joints par jour",
       "mixed": "Tu roules tes joints avec du tabac ?",
+      "mixedNoteBoth": "Un joint roulé avec du tabac contient aussi de la nicotine : arrêter les deux en même temps évite de rester dépendant à la nicotine par les joints.",
+      "mixedNoteCannabis": "Un joint roulé avec du tabac contient aussi de la nicotine. En arrêtant, tu peux ressentir un manque de nicotine en plus de celui du cannabis. Si tu veux suivre aussi le tabac, choisis « Les deux ».",
       "packPrice": "Prix du paquet",
       "pricePerGram": "Prix du gramme",
       "substance": "Tu fumes",
       "subtitle": "Ces informations servent à calculer tes économies et à adapter les conseils. Tu pourras les modifier plus tard.",
       "title": "Faisons connaissance",
       "yearsSmoking": "Années de tabagisme",
-      "yearsUsing": "Années de consommation"
+      "yearsUsing": "Années d'usage"
     },
     "stepOf": "Étape {{step}} sur {{total}}",
     "welcome": {

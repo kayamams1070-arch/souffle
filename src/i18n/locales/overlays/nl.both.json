@@ -1,1 +1,152 @@
-{}
+{
+  "about": {
+    "helpNote": "Ook je huisarts, je apotheker, een tabakoloog of een gespecialiseerde verslavingsdienst kan je begeleiden, onder meer met hulpmiddelen om te stoppen met roken."
+  },
+  "badges": {
+    "categories": {
+      "smoke_free": "Zonder roken"
+    },
+    "comeback": {
+      "description": "Je hebt de draad weer opgepakt na een keer gebruiken."
+    },
+    "smoke_free_1d": {
+      "description": "Een volledige dag zonder tabak en cannabis."
+    },
+    "smoke_free_1m": {
+      "description": "30 dagen na elkaar zonder tabak en cannabis."
+    },
+    "smoke_free_1w": {
+      "description": "7 dagen na elkaar zonder tabak en cannabis."
+    },
+    "smoke_free_1y": {
+      "description": "365 dagen na elkaar zonder tabak en cannabis."
+    },
+    "smoke_free_3m": {
+      "description": "90 dagen na elkaar zonder tabak en cannabis."
+    }
+  },
+  "benefits": {
+    "spentLogged": "Waarvan afgetrokken: {{amount}} voor de sigaretten en joints die je hebt genoteerd."
+  },
+  "challenges": {
+    "kindLabels": {
+      "smoke_free_days": "Dagen zonder roken"
+    },
+    "kinds": {
+      "smoke_free_days_one": "{{count}} dag zonder roken",
+      "smoke_free_days_other": "{{count}} dagen zonder roken"
+    }
+  },
+  "coach": {
+    "actions": {
+      "relapse": "Het gebruik noteren, zonder oordeel"
+    },
+    "replies": {
+      "relapsed": {
+        "message": "Eén sigaret of joint wist je weg niet uit. Laten we het samen noteren, zonder oordeel."
+      }
+    }
+  },
+  "dashboard": {
+    "counter": {
+      "a11y": "Zonder tabak en cannabis sinds: {{days}} d, {{hours}} u en {{minutes}} min",
+      "title": "Zonder tabak en cannabis sinds"
+    },
+    "reduction": {
+      "a11y": "Vandaag genoteerd gebruik: {{smoked}}, met een doel van {{target}}",
+      "logCigarette": "Gebruik noteren",
+      "underTarget": "Nog {{left}} tot je dagdoel. Elke sigaret of joint minder telt."
+    },
+    "savings": {
+      "a11y_one": "Geschatte besparing: {{amount}}, {{count}} keer gebruik vermeden",
+      "a11y_other": "Geschatte besparing: {{amount}}, {{count}} keer gebruik vermeden",
+      "avoided_one": "{{count}} sigaret of joint vermeden",
+      "avoided_other": "{{count}} sigaretten en joints vermeden",
+      "disclaimerReduction": "Deze schatting gaat ervan uit dat je elke sigaret en elke joint noteert. De projecties gaan ervan uit dat je je doel elke dag haalt."
+    },
+    "smokedHint": "Een sigaret of joint noteren zonder je vooruitgang te verliezen"
+  },
+  "family": {
+    "share": {
+      "days": "Dagen zonder roken"
+    },
+    "summary": {
+      "days_one": "• {{count}} dag zonder tabak en cannabis",
+      "days_other": "• {{count}} dagen zonder tabak en cannabis"
+    }
+  },
+  "goalSettings": {
+    "reduceNote": "Je referentieverbruik: {{baseline}} sigaretten en joints per dag, samen geteld."
+  },
+  "onboarding": {
+    "goals": {
+      "baseline_one": "Vandaag: {{count}} keer gebruik per dag (sigaretten en joints)",
+      "baseline_other": "Vandaag: {{count}} keer gebruik per dag (sigaretten en joints)"
+    },
+    "profile": {
+      "goalQuitHint": "Je kiest een datum en de teller zonder tabak en cannabis start op dat moment.",
+      "goalReduceHint": "Je stelt een maximum per dag in, sigaretten en joints samen geteld, en noteert elke keer dat je gebruikt. Je kunt overstappen op volledig stoppen wanneer je wilt."
+    },
+    "welcome": {
+      "how_kind": "Geen schuldgevoel: als je een sigaret of joint rookt, blijft je vooruitgang behouden."
+    }
+  },
+  "privacy": {
+    "counts": "Nu: zin {{cravings}} · genoteerd gebruik {{smoking}} · trainingen {{sessions}} · dagboek, slaap en hoest {{journal}}.",
+    "what": "Je profiel (optionele voornaam, gewoonten, doel, pact), je zin om te roken, je genoteerde sigaretten en joints, je trainingen, je dagboek, je slaap en je hoest als je die invult, je badges en je instellingen. Er worden geen overbodige medische gegevens gevraagd."
+  },
+  "progress": {
+    "smokeFreeDays": "Dagen zonder roken"
+  },
+  "relapse": {
+    "confirmMessage_one": "{{count}} keer gebruik wordt toegevoegd aan je geschiedenis. Je XP, badges en trainingen blijven behouden.",
+    "confirmMessage_other": "{{count}} keer gebruik wordt toegevoegd aan je geschiedenis. Je XP, badges en trainingen blijven behouden.",
+    "confirmWithShield": "Het gebruik wordt genoteerd en je schild beschermt je reeks. Wat je bereikt hebt, blijft intact.",
+    "count": "Aantal",
+    "decisionHints": {
+      "continue_quit": "Je teller start opnieuw vanaf dit moment. Je record, je badges en je eerdere besparingen blijven bewaard.",
+      "reduction_log": "Het gebruik wordt toegevoegd aan je opvolging van vandaag."
+    },
+    "kindMessage": "Eén sigaret of joint wist de vooruitgang die je al geboekt hebt niet uit. Laten we kijken wat er gebeurd is en de volgende stap voorbereiden.",
+    "loggedTitleReduction": "Gebruik genoteerd",
+    "reductionHint": "Door elke sigaret en elke joint te noteren, volg je je minderen eerlijk op.",
+    "titleReduction": "Gebruik noteren"
+  },
+  "reports": {
+    "content": "Doel, dagen zonder tabak en cannabis of verloop van het minderen, vermeden gebruik en geschatte besparing, trainingen en sporttijd, verloop van je zin om te roken, vaak voorkomende triggers, overwinningen, slaap en hoest als je die invult.",
+    "pdf": {
+      "cigarettesAvoided": "Vermeden sigaretten en joints (schatting)",
+      "cigarettesLogged": "Genoteerde sigaretten en joints",
+      "estimates": "Vermeden gebruik en besparingen zijn schattingen, berekend op basis van de opgegeven gewoonten.",
+      "smokeFreeDays": "Dagen zonder roken"
+    }
+  },
+  "streak": {
+    "freeze": {
+      "errors": {
+        "smoked": "Er is vandaag al gebruik genoteerd: een pauze kan dat niet verbergen. Daarvoor dient het schild."
+      }
+    },
+    "legend": {
+      "smokeFree": "zonder roken",
+      "smoked": "gebruik"
+    },
+    "shield": {
+      "explain": "Het schild beschermt je reeks één keer om de {{days}} dagen, voor gebruik dat je vandaag of gisteren noteert. Je kiest het zelf op het moment dat je het noteert."
+    },
+    "subtitle": "Volledige dagen zonder tabak en cannabis, berekend volgens je lokale kalender."
+  },
+  "xp": {
+    "milestone": "Mijlpaal zonder roken"
+  },
+  "units": {
+    "cigs": "keer",
+    "cigsPerDay": "keer/dag",
+    "cigsToday": "keer vandaag"
+  },
+  "health": {
+    "timeline": {
+      "subtitle": "Algemene richtpunten uit gezondheidsbronnen en studies, niet gemeten door je telefoon."
+    }
+  }
+}

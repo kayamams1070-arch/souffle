@@ -52,10 +52,9 @@ export default function EditProfileScreen() {
       return;
     }
     // Keep the Fagerström consistency: the Q4 answer depends on daily consumption.
-    const answers = usesTobacco && user.smoking.fagerstromAnswers ? [...user.smoking.fagerstromAnswers] : user.smoking.fagerstromAnswers;
-    if (answers && usesTobacco) {
-      answers[3] = c <= 10 ? 0 : c <= 20 ? 1 : c <= 30 ? 2 : 3;
-    }
+    const saved = user.smoking.fagerstromAnswers;
+    const answers =
+      saved && usesTobacco ? saved.map((a, i) => (i === 3 ? (c <= 10 ? 0 : c <= 20 ? 1 : c <= 30 ? 2 : 3) : a)) : saved;
     const score = answers ? computeFagerstromScore(answers) : user.smoking.dependenceScore;
     const cannabis = usesCannabis
       ? {
@@ -64,7 +63,7 @@ export default function EditProfileScreen() {
           yearsUsing: yu,
           gramsPerJoint: g,
           pricePerGramCents: gp ?? 0,
-          mixedWithTobacco: substance === 'both' ? (weed?.mixedWithTobacco ?? false) : undefined,
+          mixedWithTobacco: weed?.mixedWithTobacco ?? false,
         }
       : weed;
     // Substance first, so the versioned habits below know about cannabis.
