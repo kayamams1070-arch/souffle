@@ -745,7 +745,8 @@
       "savings": "• Ongeveer {{amount}} bespaard",
       "why": "• Mijn waarom: {{why}}",
       "workouts_one": "• {{count}} training",
-      "workouts_other": "• {{count}} trainingen"
+      "workouts_other": "• {{count}} trainingen",
+      "headerAnonymous": "Mijn vooruitgang met Souffle:"
     },
     "title": "Gezinsmodus",
     "vision": "In een volgende versie kan een naaste de overwinningen volgen die jij wilt delen en je aanmoedigingen sturen, met privé-uitdagingen en een anonieme, gemodereerde ruimte om uit te wisselen.",

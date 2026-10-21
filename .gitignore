@@ -14,3 +14,7 @@ android/
 .DS_Store
 coverage/
 .env*.local
+
+# E2E
+e2e/node_modules/
+e2e/shots/

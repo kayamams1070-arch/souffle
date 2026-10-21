@@ -1,0 +1,13 @@
+{
+  "name": "souffle-e2e",
+  "private": true,
+  "description": "End-to-end scenarios run against the web export (React Native Web) with Playwright.",
+  "scripts": {
+    "serve": "node serve.js ../dist 8088",
+    "flow": "node flow.js ./shots",
+    "flow2": "node flow2.js ./shots"
+  },
+  "devDependencies": {
+    "playwright-core": "1.56.1"
+  }
+}

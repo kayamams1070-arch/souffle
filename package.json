@@ -63,11 +63,13 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "doctor": "expo-doctor",
-    "check": "npm run typecheck && npm run lint && npm test",
+    "check": "npm run typecheck && npm run lint && npm test && npm run i18n:check",
     "prebuild": "expo prebuild",
     "build:android:preview": "eas build --platform android --profile preview",
     "build:android:prod": "eas build --platform android --profile production",
-    "build:ios:prod": "eas build --platform ios --profile production"
+    "build:ios:prod": "eas build --platform ios --profile production",
+    "i18n:check": "node scripts/i18nKeys.js",
+    "export:web": "expo export --platform web --output-dir dist"
   },
   "private": true,
   "jest": {
@@ -82,7 +84,8 @@
       "/node_modules/",
       "setup.ts",
       "helpers.ts",
-      "globalSetup.js"
+      "globalSetup.js",
+      "/e2e/"
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@sentry/react-native|native-base|react-native-svg|zustand)"

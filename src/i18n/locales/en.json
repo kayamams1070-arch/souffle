@@ -745,7 +745,8 @@
       "savings": "• About {{amount}} saved",
       "why": "• My why: {{why}}",
       "workouts_one": "• {{count}} workout",
-      "workouts_other": "• {{count}} workouts"
+      "workouts_other": "• {{count}} workouts",
+      "headerAnonymous": "My progress with Souffle:"
     },
     "title": "Family mode",
     "vision": "In a future version, someone close to you will be able to follow the wins you choose to share and send you encouragement, with private challenges and an anonymous, moderated discussion space.",

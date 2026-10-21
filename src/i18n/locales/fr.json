@@ -745,7 +745,8 @@
       "savings": "• Environ {{amount}} économisés",
       "why": "• Mon pourquoi : {{why}}",
       "workouts_one": "• {{count}} séance de sport",
-      "workouts_other": "• {{count}} séances de sport"
+      "workouts_other": "• {{count}} séances de sport",
+      "headerAnonymous": "Mes progrès avec Souffle :"
     },
     "title": "Mode famille",
     "vision": "Dans une prochaine version, un proche pourra suivre les victoires que tu choisis de partager et t'envoyer des encouragements, avec des défis privés et un espace d'échange anonyme et modéré.",

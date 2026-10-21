@@ -30,7 +30,7 @@ export default function FamilyScreen() {
 
   const summary = useMemo(() => {
     if (!user) return '';
-    const lines: string[] = [t('family.summary.header', { name: user.firstName || t('profile.anonymous') })];
+    const lines: string[] = [user.firstName ? t('family.summary.header', { name: user.firstName }) : t('family.summary.headerAnonymous')];
     if (selected.days && user.goal === 'quit') lines.push(t('family.summary.days', { count: totalSmokeFreeDays(user, events, now) }));
     if (selected.savings) lines.push(t('family.summary.savings', { amount: formatCents(computeSavings(user, events, now).savedCents, language) }));
     if (selected.workouts) lines.push(t('family.summary.workouts', { count: sessions.filter((s) => s.completed).length }));
