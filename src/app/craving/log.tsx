@@ -88,7 +88,7 @@ export default function CravingLogScreen() {
       <ScaleSelector label={t('craving.intensity')} value={intensity} onChange={setIntensity} min={1} max={10} minLabel={t('craving.intensityLow')} maxLabel={t('craving.intensityHigh')} />
       <ChipGroup label={t('craving.trigger')} options={TRIGGERS.map((tr) => ({ value: tr, label: t(`triggers.${tr}`) }))} value={trigger} onChange={setTrigger} compact />
       {suggestion && trigger ? (
-        <Banner text={`${t(`alternatives.${trigger}.title`)} ${t(`alternatives.${trigger}.text`)}${suggestion.softened ? ` ${t('sos.softened')}` : ''}`} tone="success" icon="bulb-outline" />
+        <Banner text={`${t('craving.suggestion', { title: t(`alternatives.${trigger}.title`), text: t(`alternatives.${trigger}.text`) })}${suggestion.softened ? ` ${t('sos.softened')}` : ''}`} tone="success" icon="bulb-outline" />
       ) : null}
       <ChipGroup label={t('craving.mood')} options={MOODS.map((m) => ({ value: m, label: t(`moods.${m}`) }))} value={mood} onChange={setMood} compact />
       <ChipGroup label={t('craving.location')} options={LOCATIONS.map((l) => ({ value: l, label: t(`locations.${l}`) }))} value={location} onChange={setLocation} compact />

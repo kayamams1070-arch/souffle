@@ -143,19 +143,19 @@ export function WorkoutPlayer({ workout, onDone, onExit, title }: Props) {
               <View style={{ gap: 6, marginTop: 6 }}>
                 <AppText variant="bodySmall">
                   <AppText variant="bodySmall" weight="semibold">
-                    {t('workout.easier')}:{' '}
+                    {t('workout.easier')}{t('common.colon')}{' '}
                   </AppText>
                   {t(`exercises.${exercise.key}.easier`)}
                 </AppText>
                 <AppText variant="bodySmall">
                   <AppText variant="bodySmall" weight="semibold">
-                    {t('workout.harder')}:{' '}
+                    {t('workout.harder')}{t('common.colon')}{' '}
                   </AppText>
                   {t(`exercises.${exercise.key}.harder`)}
                 </AppText>
                 <AppText variant="bodySmall" tone="warm">
                   <AppText variant="bodySmall" weight="semibold" tone="warm">
-                    {t('workout.safety')}:{' '}
+                    {t('workout.safety')}{t('common.colon')}{' '}
                   </AppText>
                   {t(`exercises.${exercise.key}.safety`)}
                 </AppText>

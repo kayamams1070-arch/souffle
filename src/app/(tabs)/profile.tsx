@@ -7,7 +7,7 @@ import { useAppTheme } from '@/theme/ThemeContext';
 import { AppButton, AppCard, AppText, Banner, ListRow, Screen } from '@/components/ui';
 import { useSettingsStore, useUserStore } from '@/store';
 import { formatCents, formatDate } from '@/utils/money';
-import { APP_VERSION } from '@/utils/constants';
+import { APP_NAME, APP_VERSION } from '@/utils/constants';
 
 export default function ProfileScreen() {
   const theme = useAppTheme();
@@ -63,7 +63,7 @@ export default function ProfileScreen() {
         <ListRow icon="lock-closed-outline" title={t('settings.privacy.title')} subtitle={t('settings.privacy.subtitle')} onPress={() => router.push('/settings/privacy')} />
         <ListRow icon="document-outline" title={t('reports.title')} subtitle={t('reports.subtitle')} onPress={() => router.push('/reports')} />
         <ListRow icon="people-outline" title={t('family.title')} subtitle={t('family.subtitle')} onPress={() => router.push('/family')} />
-        <ListRow icon="information-circle-outline" title={t('about.title')} subtitle={`Souffle ${APP_VERSION}`} onPress={() => router.push('/settings/about')} />
+        <ListRow icon="information-circle-outline" title={t('about.title')} subtitle={`${APP_NAME} ${APP_VERSION}`} onPress={() => router.push('/settings/about')} />
       </AppCard>
 
       {user.goal === 'quit' ? <AppButton label={t('dashboard.smokedButton')} variant="ghost" icon="cloud-outline" onPress={() => router.push('/relapse')} /> : null}

@@ -38,7 +38,8 @@ export function Screen({
 }: ScreenProps) {
   const theme = useAppTheme();
   const insets = useSafeAreaInsets();
-  const paddingBottom = insideTabs ? theme.spacing.xl : Math.max(insets.bottom, theme.spacing.lg);
+  // Inside tabs, leave room for the raised SOS tab button.
+  const paddingBottom = insideTabs ? theme.spacing.xxxl + theme.spacing.lg : Math.max(insets.bottom, theme.spacing.lg);
 
   const header =
     title || subtitle ? (

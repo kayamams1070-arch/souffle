@@ -1,1 +1,1899 @@
-{}
+{
+  "about": {
+    "emergency": "Pijn op de borst, onwel voelen, ernstige ademhalingsproblemen: bel meteen 112.",
+    "emergencyTitle": "In geval van nood",
+    "helpNote": "Ook je huisarts, je apotheker of een tabakoloog kan je begeleiden, onder meer met hulpmiddelen om te stoppen met roken.",
+    "helpSubtitle": "Er bestaan gratis hulplijnen. Hulp vragen is een kracht, geen mislukking.",
+    "helpTitle": "Hulp zoeken",
+    "limits": {
+      "coach": "De coach werkt met lokale regels, niet met een verbonden AI.",
+      "community": "De gezinsmodus, gedeelde uitdagingen en het forum hebben een server nodig: ze zijn nog niet beschikbaar.",
+      "notifications": "Meldingen hangen af van het systeem van je telefoon en kunnen vertraagd zijn.",
+      "offline": "Alles werkt offline: er is geen back-up in de cloud. Denk eraan je gegevens te exporteren.",
+      "widget": "De widget voor het startscherm vereist een gecompileerde versie van de app: hij zit niet in deze versie."
+    },
+    "limitsTitle": "Beperkingen van deze versie",
+    "notMedical": "Souffle is een hulpmiddel voor gedragsbegeleiding. Het is geen medisch hulpmiddel en vervangt niet het advies van een zorgverlener.",
+    "schema": "gegevensschema v{{version}}",
+    "sourcesTitle": "Bronnen",
+    "title": "Over Souffle",
+    "what": "Souffle helpt je door momenten van zin om te roken heen met korte acties, sporten thuis en het opvolgen van je vooruitgang. Gezondheidsschattingen zijn algemene richtpunten, nooit metingen.",
+    "whatTitle": "Wat Souffle doet"
+  },
+  "alternatives": {
+    "after_meal": {
+      "text": "Wandel vijf minuten, buiten of ter plaatse.",
+      "title": "Na het eten"
+    },
+    "alcohol": {
+      "text": "Alcohol maakt je minder alert. Wissel af met water, ga even weg en kijk naar je zin zonder eraan toe te geven.",
+      "title": "Alcohol"
+    },
+    "anger": {
+      "text": "Een paar aangepaste cardiobewegingen helpen om spanning kwijt te raken.",
+      "title": "Boosheid"
+    },
+    "boredom": {
+      "text": "Start een kleine fysieke uitdaging of een geheugenspel om je handen en je hoofd bezig te houden.",
+      "title": "Verveling"
+    },
+    "coffee": {
+      "text": "Drink je koffie op een andere plek dan gewoonlijk en doe daarna twee minuten stretchoefeningen.",
+      "title": "Koffie"
+    },
+    "fatigue": {
+      "text": "Kies voor herstel: wat mobiliteit of een rustige ademhaling.",
+      "title": "Vermoeidheid"
+    },
+    "night": {
+      "text": "Blijf rustig: trage ademhaling of craving surf, zonder te fel scherm.",
+      "title": "'s Nachts"
+    },
+    "other": {
+      "text": "Twee minuten begeleide ademhaling, kies daarna je volgende actie.",
+      "title": "Een idee"
+    },
+    "social": {
+      "text": "Bereid een eenvoudige weigerzin voor (\"Nee bedankt, ik stop\") en houd een vervangende actie klaar: een glas water, een kauwgom.",
+      "title": "In groep"
+    },
+    "stress": {
+      "text": "Een begeleide ademhaling of wat zachte yoga helpt om de spanning te laten zakken.",
+      "title": "Stress"
+    }
+  },
+  "badges": {
+    "categories": {
+      "consistency": "Regelmaat",
+      "craving": "Zin overwonnen",
+      "smoke_free": "Rookvrij",
+      "sport": "Sport"
+    },
+    "comeback": {
+      "description": "Je hebt de draad weer opgepakt na een sigaret.",
+      "title": "De comeback"
+    },
+    "cravings_1": {
+      "description": "De eerste keer dat je je zin hebt overwonnen.",
+      "title": "Eerste golf"
+    },
+    "cravings_10": {
+      "description": "Je komt steeds beter door momenten van zin om te roken heen.",
+      "title": "10 keer zin overwonnen"
+    },
+    "cravings_100": {
+      "description": "Je hebt je zin om te roken echt onder controle.",
+      "title": "100 keer zin overwonnen"
+    },
+    "eventsCount_one": "{{count}} beloonde actie tot nu toe.",
+    "eventsCount_other": "{{count}} beloonde acties tot nu toe.",
+    "locked": "Nog te ontgrendelen",
+    "pact_signed": {
+      "description": "Je hebt je persoonlijke pact ondertekend.",
+      "title": "Toegewijd"
+    },
+    "regular_week": {
+      "description": "3 trainingen afgerond in dezelfde week.",
+      "title": "Regelmatige week"
+    },
+    "smoke_free_1d": {
+      "description": "Een volledige dag rookvrij.",
+      "title": "Eerste dag"
+    },
+    "smoke_free_1m": {
+      "description": "30 dagen na elkaar rookvrij.",
+      "title": "Eerste maand"
+    },
+    "smoke_free_1w": {
+      "description": "7 dagen na elkaar rookvrij.",
+      "title": "Eerste week"
+    },
+    "smoke_free_1y": {
+      "description": "365 dagen na elkaar rookvrij.",
+      "title": "Een jaar"
+    },
+    "smoke_free_3m": {
+      "description": "90 dagen na elkaar rookvrij.",
+      "title": "Drie maanden"
+    },
+    "subtitle": "Behaalde badges blijven voor altijd van jou.",
+    "title": "Badges",
+    "unlockedOn": "Behaald op {{date}}",
+    "unlockedToast_one": "Nieuwe badge ontgrendeld!",
+    "unlockedToast_other": "{{count}} nieuwe badges ontgrendeld!",
+    "workouts_1": {
+      "description": "Je eerste training afgerond.",
+      "title": "Eerste stap"
+    },
+    "workouts_10": {
+      "description": "10 trainingen afgerond.",
+      "title": "10 trainingen"
+    },
+    "workouts_100": {
+      "description": "100 trainingen afgerond. Indrukwekkend.",
+      "title": "100 trainingen"
+    },
+    "workouts_50": {
+      "description": "50 trainingen afgerond.",
+      "title": "50 trainingen"
+    },
+    "xpRules": "Zo verdien je XP",
+    "xpRulesHint": "Elke actie wordt maar één keer beloond."
+  },
+  "benefits": {
+    "kinds": {
+      "hobby": "Een hobby",
+      "other": "Iets anders",
+      "purchase": "Een aankoop",
+      "savings": "Spaargeld",
+      "travel": "Een reis"
+    },
+    "limits": "Souffle berekent niet hoeveel levensverwachting je wint en ook niet je longcapaciteit: daarvoor zijn een gevalideerd medisch model en echte metingen nodig. De getoonde richtpunten zijn algemeen, komen uit bronnen van de volksgezondheid en verschillen van persoon tot persoon.",
+    "limitsTitle": "Wat Souffle niet berekent",
+    "notForReduction": "niet berekend in de minderen-modus",
+    "projectHint": "Koppel een project aan je besparingen",
+    "projectName": "Naam van het project",
+    "projectNameRequired": "Geef je project een naam.",
+    "projectNote": "Het gaat om theoretische besparingen: het geld wordt niet automatisch opzijgezet.",
+    "projectProgress": "{{saved}} van {{target}}",
+    "projectReached": "Doel bereikt, in theorie! Jij beslist hoe je ervan geniet.",
+    "projectSubtitle": "Koppel je besparingen aan iets wat voor jou belangrijk is.",
+    "projectTarget": "Beoogd bedrag (optioneel)",
+    "projectTargetHint": "Bijvoorbeeld 600",
+    "projectTargetInvalid": "Vul een geldig bedrag in, bijvoorbeeld 600.",
+    "projectTitle": "Mijn spaarproject",
+    "savedTitle": "Geschatte besparing sinds het begin",
+    "spentLogged": "Waarvan afgetrokken: {{amount}} voor de sigaretten die je hebt genoteerd.",
+    "subtitle": "Je besparingen en gezondheidsrichtpunten, met hun bronnen en beperkingen.",
+    "timelineFuture": "De tijdlijn start op je stopdatum.",
+    "timelineReduction": "Deze richtpunten gaan over volledig stoppen. In de minderen-modus zijn de voordelen beperkter en kunnen ze niet betrouwbaar worden geschat.",
+    "title": "Voordelen"
+  },
+  "breathingTest": {
+    "breathlessness": "Kortademigheid",
+    "cardHint": "Volg hoe je je voelt, zonder maximale inspanning.",
+    "cardSubtitle": "Om de 2 weken, 2 minuten",
+    "chartSummary": "Opgegeven kortademigheid: {{first}}/10 bij de eerste test, {{last}}/10 bij de laatste.",
+    "comparison": "Opgegeven kortademigheid: {{prev}}/10 de vorige keer, {{now}}/10 vandaag.",
+    "dueAgain": "Dit is een goed moment om hem opnieuw te doen.",
+    "effort": "Ervaren inspanning",
+    "exhaleSafety": "Het is niet de bedoeling om het zo lang mogelijk vol te houden: een trage, comfortabele uitademing is genoeg.",
+    "exhaleSeconds": "Geschatte duur van de uitademing",
+    "history": "Je opgegeven kortademigheid",
+    "historyHint": "Van 0 (geen) tot 10 (zeer sterk)",
+    "lastTest": "Laatste test op {{date}}.",
+    "marchHint": "Houd een tempo aan waarbij je nog kunt praten. Stop als je je onwel voelt.",
+    "nextIn_one": "Volgende test aangeraden over {{count}} dag.",
+    "nextIn_other": "Volgende test aangeraden over {{count}} dagen.",
+    "none": "Geen",
+    "notMedical": "Deze test is niet medisch en meet je longcapaciteit niet. Hij registreert alleen hoe je je voelt. Stop als je je onwel voelt.",
+    "protocol": {
+      "calm": "Ga zitten en adem 30 seconden rustig.",
+      "exhale": "Adem traag en comfortabel uit en schat hoe lang het duurt. Forceer niets en houd nooit je adem in.",
+      "march": "Stap 30 seconden ter plaatse in een comfortabel tempo.",
+      "rate": "Noteer de ervaren inspanning en je kortademigheid."
+    },
+    "protocolTitle": "Het protocol",
+    "savedText": "Doe hem opnieuw over ongeveer 2 weken, in dezelfde omstandigheden, om te vergelijken.",
+    "savedTitle": "Test opgeslagen",
+    "skipStep": "Deze stap overslaan",
+    "start": "Test starten",
+    "strong": "Zeer sterk",
+    "subtitle": "Een eenvoudig, altijd hetzelfde protocol om je gevoel over tijd op te volgen.",
+    "title": "Ademtest"
+  },
+  "challenges": {
+    "create": "Uitdaging aanmaken",
+    "duration": "Duur",
+    "emptyText": "Maak een eerste eenvoudige uitdaging, bijvoorbeeld 3 trainingen in 7 dagen.",
+    "emptyTitle": "Geen uitdagingen",
+    "kindLabels": {
+      "cravings_overcome": "Zin overwonnen",
+      "smoke_free_days": "Rookvrije dagen",
+      "workouts": "Trainingen"
+    },
+    "kinds": {
+      "cravings_overcome_one": "{{count}} keer zin overwonnen",
+      "cravings_overcome_other": "{{count}} keer zin overwonnen",
+      "smoke_free_days_one": "{{count}} rookvrije dag",
+      "smoke_free_days_other": "{{count}} rookvrije dagen",
+      "workouts_one": "{{count}} training",
+      "workouts_other": "{{count}} trainingen"
+    },
+    "localOnly": "Lokale uitdagingen: ze blijven op je telefoon, zonder deelnemers op afstand.",
+    "name": "Naam (optioneel)",
+    "newTitle": "Nieuwe uitdaging",
+    "progress": "{{value}} / {{target}}",
+    "status": {
+      "active": "Bezig",
+      "completed": "Gelukt, goed gedaan!",
+      "ended": "Afgelopen. Elke poging telt.",
+      "upcoming": "Binnenkort"
+    },
+    "subtitle": "Persoonlijke uitdagingen, op jouw tempo.",
+    "target": "Doel",
+    "title": "Uitdagingen"
+  },
+  "coach": {
+    "actions": {
+      "breathing": "Begeleide ademhaling (2 min)",
+      "distraction": "Afleidingsspel",
+      "journal": "Mijn dagboek openen",
+      "medical": "Als de pijn of het onwel voelen aanhoudt of erger wordt, neem dan contact op met een zorgverlener. Bel in geval van nood 112.",
+      "pact": "Mijn pact herlezen",
+      "relapse": "De sigaret noteren, zonder oordeel",
+      "rest": "Rust uit: voorlopig geen oefeningen.",
+      "surf": "Craving surf (3 min)",
+      "workout": "Voorgestelde training bekijken"
+    },
+    "alternative": "Zachter",
+    "cardHint": "Vertel hoe je je voelt, de coach stelt een actie voor.",
+    "limits": "De coach herkent trefwoorden. Begrijpt hij je niet, dan stelt hij je een vraag in plaats van te gokken. Hij vervangt geen zorgverlener.",
+    "localNote": "Deze coach werkt op je telefoon met eenvoudige, transparante regels. Het is geen verbonden artificiële intelligentie.",
+    "moodOptional": "Je stemming (optioneel)",
+    "placeholder": "Bijvoorbeeld: ik heb zin om te roken bij mijn koffie",
+    "prompts": {
+      "coffee": "Ik heb zin om te roken bij mijn koffie",
+      "missed": "Ik heb twee trainingen gemist",
+      "no_sport": "Ik heb deze week niet gesport",
+      "relapsed": "Ik heb net gerookt",
+      "stress": "Ik ben gestrest",
+      "tired": "Ik ben moe"
+    },
+    "quickPrompts": "Veelvoorkomende situaties",
+    "replies": {
+      "anger": {
+        "message": "Werk de spanning weg met de anti-boosheidtraining, een paar minuten is genoeg.",
+        "why": "Bewegen helpt om de lichamelijke spanning door boosheid te verminderen."
+      },
+      "anger_gentle": {
+        "message": "Adem eerst, rustig. De boosheid zakt wel weer.",
+        "why": "Je hebt beperkingen aangegeven: een rustige ademhaling past beter dan een zware inspanning."
+      },
+      "boredom": {
+        "message": "Houd je hoofd bezig met een spelletje, of beweeg een paar minuten.",
+        "why": "Verveling laat ruimte voor zin om te roken. Een korte, boeiende activiteit helpt je erdoor."
+      },
+      "craving_coffee": {
+        "message": "Verander het ritueel: drink je koffie ergens anders en doe daarna de korte anti-koffieroutine.",
+        "why": "Koffie en sigaretten horen vaak bij elkaar. Van plek veranderen en je handen bezighouden helpt om die band te doorbreken."
+      },
+      "craving_general": {
+        "message": "Begin met 2 minuten begeleide ademhaling.",
+        "why": "Zin om te roken komt op en zakt weer weg. Ademen helpt je door dat moment heen."
+      },
+      "missed_sessions": {
+        "message": "Dat is niet erg. Begin opnieuw met een korte training, op jouw tempo.",
+        "why": "Regelmaat bouw je op over tijd, niet door alles in één keer in te halen."
+      },
+      "motivation": {
+        "message": "Herlees je pact: je redenen zijn er nog altijd.",
+        "why": "Motivatie schommelt, dat is normaal. Terugdenken aan je waarom helpt om op koers te blijven."
+      },
+      "no_sport": {
+        "message": "Geen probleem. Een reset-training van een paar minuten is genoeg om de week weer op gang te trekken.",
+        "why": "Opnieuw beginnen met een korte training is makkelijker dan met een zware."
+      },
+      "pain": {
+        "message": "Zorg eerst goed voor jezelf: nu geen oefeningen.",
+        "why": "Pijn, duizeligheid of onwel voelen zijn signalen om te respecteren. Sporten kan weer wanneer je je beter voelt."
+      },
+      "proud": {
+        "message": "Goed gedaan! Bewaar deze overwinning in je dagboek.",
+        "why": "Je successen herlezen helpt enorm op moeilijkere momenten."
+      },
+      "relapsed": {
+        "message": "Eén sigaret wist je weg niet uit. Laten we hem samen noteren, zonder oordeel.",
+        "why": "Noteren wat er gebeurd is helpt om je voor te bereiden op de volgende keer. Je XP, badges en eerdere besparingen blijven behouden."
+      },
+      "sleep": {
+        "message": "Noteer je nacht in je dagboek en kies vanavond een rustgevende training.",
+        "why": "Slaap en zin om te roken hangen vaak samen. Ze noteren helpt je om je eigen patronen te herkennen."
+      },
+      "stress": {
+        "message": "Twee minuten begeleide ademhaling om de druk te laten zakken.",
+        "why": "Langer uitademen dan inademen helpt je lichaam tot rust te komen."
+      },
+      "tired": {
+        "message": "Een zachte mobiliteitstraining, of gewoon rust.",
+        "why": "Vermoeidheid maakt zin om te roken sterker. Luister naar je lichaam: herstellen hoort ook bij het programma."
+      },
+      "unknown": {
+        "message": "Ik weet niet zeker of ik je goed begrijp. Welke van deze situaties lijkt het meest op de jouwe?",
+        "why": "Ik herken alleen een paar specifieke situaties: kies er hieronder een."
+      }
+    },
+    "send": "Versturen",
+    "subtitle": "Concrete tips voor jouw situatie.",
+    "thisWeek_one": "Deze week: {{count}} training.",
+    "thisWeek_other": "Deze week: {{count}} trainingen.",
+    "title": "Coach",
+    "youSaid": "Je schreef",
+    "yourMessage": "Je bericht"
+  },
+  "common": {
+    "back": "Terug",
+    "backHome": "Terug naar start",
+    "cancel": "Annuleren",
+    "colon": ":",
+    "confirm": "Bevestigen",
+    "continue": "Doorgaan",
+    "decrease": "Verlagen: {{label}}",
+    "delete": "Verwijderen",
+    "deleteConfirm": "Dit item verwijderen?",
+    "done": "Klaar",
+    "edit": "Bewerken",
+    "finish": "Afronden",
+    "increase": "Verhogen: {{label}}",
+    "next": "Volgende",
+    "off": "Uit",
+    "on": "Aan",
+    "pause": "Pauze",
+    "previous": "Vorige",
+    "remaining": "resterend",
+    "resume": "Hervatten",
+    "save": "Opslaan",
+    "saved": "Opgeslagen.",
+    "selected": "Geselecteerd",
+    "start": "Starten",
+    "tapToDismiss": "Tik om te sluiten",
+    "tapToEdit": "Tik om te bewerken"
+  },
+  "cough": {
+    "emptyText": "Noteer af en toe je hoest om te volgen hoe hij evolueert.",
+    "emptyTitle": "Geen observaties",
+    "frequencies": {
+      "constant": "Bijna voortdurend",
+      "often": "Vaak",
+      "rare": "Zelden",
+      "sometimes": "Soms"
+    },
+    "frequency": "Ervaren frequentie",
+    "history": "Geschiedenis",
+    "intensity": "Intensiteit",
+    "medical": "Als de hoest verontrustend is, aanhoudt of erger wordt (bloed, koorts, ernstige kortademigheid, pijn op de borst), raadpleeg dan een zorgverlener.",
+    "needMore": "Een trend verschijnt vanaf 4 observaties.",
+    "newEntry": "Nieuwe observatie",
+    "none": "Geen",
+    "note": "Observaties (optioneel)",
+    "strong": "Zeer sterk",
+    "subtitle": "Volg hoe je je voelt, zonder enige diagnose.",
+    "title": "Hoest",
+    "today": "Vandaag",
+    "trend": "Verloop",
+    "trendSummary_one": "{{count}} observatie: intensiteit {{first}}/10 aan het begin, {{last}}/10 aan het einde.",
+    "trendSummary_other": "{{count}} observaties: intensiteit {{first}}/10 aan het begin, {{last}}/10 aan het einde.",
+    "trends": {
+      "improving": "Je opgegeven hoest lijkt af te nemen.",
+      "stable": "Je opgegeven hoest lijkt stabiel.",
+      "worsening": "Je opgegeven hoest lijkt toe te nemen. Als dit aanhoudt, praat er dan over met een zorgverlener."
+    },
+    "yesterday": "Gisteren"
+  },
+  "craving": {
+    "actionTaken": "Gekozen actie",
+    "charts": {
+      "byHour": "Zin om te roken per uur",
+      "byHourSummary": "Meest voorkomende uur: {{hour}} u.",
+      "byWeekday": "Zin om te roken per weekdag",
+      "byWeekdaySummary": "Meest voorkomende dag: {{day}}.",
+      "interventions": "Wat jou het meest helpt",
+      "interventionsHint": "Op basis van de resultaten die je hebt aangegeven.",
+      "last14": "Laatste 14 dagen",
+      "last14Summary_one": "{{count}} keer zin genoteerd in de laatste 14 dagen.",
+      "last14Summary_other": "{{count}} keer zin genoteerd in de laatste 14 dagen.",
+      "triggers": "Vaak voorkomende triggers"
+    },
+    "context": "Context (optioneel)",
+    "editTitle": "Zin bewerken",
+    "emptyDescription": "Noteer wanneer je zin hebt om te roken om je risicomomenten te ontdekken en te zien wat jou het meest helpt.",
+    "emptyTitle": "Nog niets genoteerd",
+    "errors": {
+      "required": "Vul minstens de intensiteit en de trigger in."
+    },
+    "historyTitle": "Logboek zin om te roken",
+    "intensity": "Intensiteit",
+    "intensityHigh": "Zeer sterk",
+    "intensityLow": "Licht",
+    "list": "Geschiedenis",
+    "location": "Waar ben je? (optioneel)",
+    "logSubtitle": "Een paar seconden is genoeg. Deze notities helpen je om je risicomomenten te herkennen.",
+    "logTitle": "Zin noteren",
+    "mood": "Stemming (optioneel)",
+    "moreHidden_one": "{{count}} oudere notitie wordt niet getoond.",
+    "moreHidden_other": "{{count}} oudere notities worden niet getoond.",
+    "outcome": "Resultaat",
+    "startSuggested": "Starten: {{action}}",
+    "stats": {
+      "avgIntensity": "Gemiddelde intensiteit",
+      "count": "Keer zin genoteerd",
+      "fewData": "De grafieken verschijnen vanaf 3 notities in de periode.",
+      "noOutcome": "Geen resultaat genoteerd",
+      "overcome": "Keer zin overwonnen",
+      "overcomeRate": "Slaagpercentage"
+    },
+    "suggestion": "{{title}}: {{text}}",
+    "timeAuto": "Het tijdstip wordt automatisch opgeslagen.",
+    "trigger": "Trigger"
+  },
+  "dashboard": {
+    "best_one": "Record: {{count}} dag",
+    "best_other": "Record: {{count}} dagen",
+    "counter": {
+      "a11y": "Rookvrij sinds: {{days}} d, {{hours}} u en {{minutes}} min",
+      "futureA11y": "Je stop begint over: {{days}} d, {{hours}} u en {{minutes}} min",
+      "futureHint": "Gebruik deze tijd om je voor te bereiden: herken je risicomomenten en test de SOS-knop.",
+      "futureTitle": "Je stopt op",
+      "noDate": "Je hebt nog geen stopdatum gekozen.",
+      "setDate": "Mijn datum kiezen",
+      "since": "Sinds {{date}}",
+      "title": "Rookvrij sinds"
+    },
+    "emptyHint": "Welkom! Tik de volgende keer dat je zin krijgt op de oranje knop. Je kunt ook je eerste training starten.",
+    "frozen": "Gepauzeerd",
+    "greeting": "Hallo",
+    "greetingName": "Hallo {{name}}",
+    "level": "Niveau {{level}} · {{current}}/{{needed}}",
+    "nextWorkout": "Volgende aanbevolen training",
+    "pactHint": "Lees opnieuw waarom je begonnen bent.",
+    "pactTitle": "Mijn pact",
+    "recentBadges": "Recente badges",
+    "reduction": {
+      "a11y": "Vandaag genoteerde sigaretten: {{smoked}}, met een doel van {{target}}",
+      "logCigarette": "Sigaret noteren",
+      "overTarget": "Doel vandaag overschreden. Dat is niet erg: morgen is een nieuwe dag.",
+      "summary_one": "Doel gehaald op {{count}} dag van de {{total}}. Minderen helpt, maar is niet hetzelfde als volledig stoppen.",
+      "summary_other": "Doel gehaald op {{count}} dagen van de {{total}}. Minderen helpt, maar is niet hetzelfde als volledig stoppen.",
+      "title": "Vandaag",
+      "underTarget": "Nog {{left}} tot je dagdoel. Elke sigaret minder telt."
+    },
+    "savings": {
+      "a11y_one": "Geschatte besparing: {{amount}}, {{count}} sigaret vermeden",
+      "a11y_other": "Geschatte besparing: {{amount}}, {{count}} sigaretten vermeden",
+      "avoided_one": "{{count}} sigaret vermeden",
+      "avoided_other": "{{count}} sigaretten vermeden",
+      "disclaimer": "Theoretische projecties op basis van de gewoonten die je hebt opgegeven. Dit is geen geld dat echt opzij is gezet.",
+      "disclaimerReduction": "Theoretische projecties als je elke dag je minderdoel haalt, op basis van je opgegeven gewoonten.",
+      "project": "Voor: {{title}}",
+      "title": "Geschatte besparing",
+      "y1": "Over 1 jaar",
+      "y10": "Over 10 jaar",
+      "y5": "Over 5 jaar"
+    },
+    "shield": "Schild",
+    "shieldHint": "1 keer per week",
+    "shieldReady": "Beschikbaar",
+    "shieldUsed": "Gebruikt",
+    "smokedButton": "Ik heb gerookt",
+    "smokedHint": "Een sigaret noteren zonder je vooruitgang te verliezen",
+    "sosButton": "Ik heb zin om te roken",
+    "sosHint": "Open directe hulp in een paar seconden",
+    "streak": "Reeks",
+    "subtitle": "Stap voor stap, op jouw tempo.",
+    "workouts": "Trainingen",
+    "workoutsHint": "afgerond",
+    "xp": "Ervaring"
+  },
+  "demo": {
+    "activeText": "De getoonde gegevens zijn fictief. Je persoonlijke gegevens, als die er waren, zijn apart bewaard en worden teruggezet wanneer je de demo verlaat.",
+    "banner": "Demomodus: profiel en gegevens zijn volledig fictief.",
+    "confirmText": "Je gegevens worden op deze telefoon opzijgezet en tijdelijk vervangen door een fictief profiel. Ze komen ongewijzigd terug wanneer je de demo verlaat.",
+    "confirmTitle": "Demo starten?",
+    "exit": "Demo verlaten",
+    "exitRestore": "Demo verlaten en mijn gegevens terugzetten",
+    "inactiveText": "Laad een fictief profiel om de app te ontdekken. Je huidige gegevens worden op de telefoon opzijgezet en teruggezet wanneer je de demo verlaat.",
+    "load": "Demo laden",
+    "reset": "Demo opnieuw instellen",
+    "tag": "demo",
+    "title": "Demomodus",
+    "welcomeHint": "Wil je eerst zien hoe de app eruitziet? Laad een fictief profiel, duidelijk als demo aangeduid. Je kunt het op elk moment verlaten."
+  },
+  "dependence": {
+    "high": "Sterke afhankelijkheid",
+    "low": "Lage afhankelijkheid",
+    "medium": "Gemiddelde afhankelijkheid",
+    "very_high": "Zeer sterke afhankelijkheid",
+    "very_low": "Zeer lage afhankelijkheid"
+  },
+  "exercises": {
+    "arm_circles": {
+      "easier": "Maak kleinere cirkels, ellebogen licht gebogen.",
+      "harder": "Maak de cirkels geleidelijk groter.",
+      "instructions": "Strek je armen opzij en maak kleine cirkels naar voren, daarna naar achteren.",
+      "name": "Armcirkels",
+      "safety": "Stop als je pijn in je schouder voelt."
+    },
+    "box_breathing_soft": {
+      "easier": "Laat de pauzes weg en adem doorlopend.",
+      "harder": "Maak elke fase rustig wat langer.",
+      "instructions": "Adem 4 seconden in, pauzeer even als dat comfortabel is, adem 4 seconden uit en pauzeer dan kort.",
+      "name": "Zachte vierkantsademhaling",
+      "safety": "Bij het minste ongemak: ga terug naar een natuurlijke ademhaling."
+    },
+    "calf_raise": {
+      "easier": "Houd je handen op de rugleuning van een stoel.",
+      "harder": "Doe het op één been, terwijl je je vasthoudt.",
+      "instructions": "Kom langzaam op je tenen staan en zak dan weer.",
+      "name": "Op de tenen staan",
+      "safety": "Houd een stevig steunpunt binnen handbereik."
+    },
+    "cat_cow": {
+      "easier": "Maak de beweging kleiner.",
+      "harder": "Vertraag en maak elke ademhaling langer.",
+      "instructions": "Op handen en knieën: maak je rug rond bij het uitademen en hol hem zacht bij het inademen.",
+      "name": "Kat-koe",
+      "safety": "Langzame beweging, zonder je onderrug te forceren."
+    },
+    "chair_squat": {
+      "easier": "Steun met je handen op je dijen of op de armleuningen.",
+      "harder": "Raak de zitting alleen even aan, zonder te gaan zitten.",
+      "instructions": "Voeten op heupbreedte: ga langzaam op de stoel zitten en kom weer recht door door je hielen te duwen.",
+      "name": "Squat op een stoel",
+      "safety": "Knieën in lijn met je voeten, stevige stoel tegen een muur."
+    },
+    "child_pose": {
+      "easier": "Leg een kussen onder je billen of onder je voorhoofd.",
+      "harder": "Spreid je knieën voor een diepere stretch.",
+      "instructions": "Ga geknield op je hielen zitten en strek je armen voor je uit, voorhoofd naar de grond.",
+      "name": "Kindhouding",
+      "safety": "Vermijd deze houding als je knieën pijn doen."
+    },
+    "dead_bug": {
+      "easier": "Beweeg alleen je benen, één tegelijk.",
+      "harder": "Strek arm en been verder uit, langzamer.",
+      "instructions": "Op je rug, armen naar het plafond, knieën 90° gebogen. Strek langzaam een arm en het tegenovergestelde been, en wissel dan af.",
+      "name": "Dead bug",
+      "safety": "Houd je onderrug in contact met de grond."
+    },
+    "glute_bridge": {
+      "easier": "Kom minder hoog.",
+      "harder": "Houd 3 seconden vast bovenaan de beweging.",
+      "instructions": "Op je rug, knieën gebogen: til je bekken op door je bilspieren aan te spannen en zak dan langzaam terug.",
+      "name": "Bilbrug",
+      "safety": "Vermijd een holle onderrug."
+    },
+    "hamstring_stretch": {
+      "easier": "Buig je knie lichtjes.",
+      "harder": "Breng je bovenlichaam rustig dichter bij je been.",
+      "instructions": "Eén been gestrekt voor je, hiel op de grond: buig je bovenlichaam naar voren met een rechte rug. Wissel van kant.",
+      "name": "Stretch van de achterkant van de dijen",
+      "safety": "Niet veren: houd de positie vast."
+    },
+    "high_knees": {
+      "easier": "Stap ter plaatse met hoge knieën, zonder te huppelen.",
+      "harder": "Verhoog het tempo.",
+      "instructions": "Breng je knieën dynamisch omhoog en zwaai met je armen mee.",
+      "name": "Knieheffen",
+      "safety": "Zet je voeten zacht neer, op je voorvoet."
+    },
+    "hip_stretch": {
+      "easier": "Houd de positie zonder voorover te buigen.",
+      "harder": "Buig iets verder voorover, met een rechte rug.",
+      "instructions": "Zit op een stoel, leg een enkel op de andere knie en buig lichtjes voorover. Wissel van kant.",
+      "name": "Heupstretch",
+      "safety": "Zachte stretch, nooit pijnlijk."
+    },
+    "incline_pushup": {
+      "easier": "Gebruik een hoger steunpunt, of de muur.",
+      "harder": "Gebruik een lager steunpunt, zoals een stoel tegen een muur.",
+      "instructions": "Handen op een tafel of een stevig oppervlak, lichaam in één lijn. Breng je borst naar de rand en duw je weer weg.",
+      "name": "Schuine push-ups",
+      "safety": "Controleer dat de steun niet kan wegschuiven."
+    },
+    "jumping_jacks": {
+      "easier": "Versie zonder springen: zet één been tegelijk opzij terwijl je je armen heft.",
+      "harder": "Verhoog het tempo.",
+      "instructions": "Spring met armen en benen wijd en kom terug met je voeten tegen elkaar.",
+      "name": "Jumping jacks",
+      "safety": "Land zacht. Schakel over op de versie zonder springen bij het minste ongemak."
+    },
+    "lunge": {
+      "easier": "Houd de rugleuning van een stoel vast en maak de beweging kleiner.",
+      "harder": "Doe een achterwaartse lunge, langzamer.",
+      "instructions": "Zet een grote stap vooruit, zak door beide knieën te buigen en kom terug. Wissel van been.",
+      "name": "Aangepaste lunges",
+      "safety": "Je voorste knie blijft boven je enkel."
+    },
+    "march": {
+      "easier": "Blijf dicht bij een muur en til alleen je hielen op.",
+      "harder": "Breng je knieën hoger en versnel lichtjes.",
+      "instructions": "Til je knieën op een comfortabele hoogte en zwaai met je armen, rechte rug, regelmatige ademhaling.",
+      "name": "Ter plaatse stappen",
+      "safety": "Houd een tempo aan waarbij je nog kunt praten."
+    },
+    "mountain_climber_slow": {
+      "easier": "Handen op een stoel die tegen een muur staat.",
+      "harder": "Verhoog het tempo en houd je rug recht.",
+      "instructions": "Steunend op je handen: breng langzaam een knie naar je borst, en dan de andere.",
+      "name": "Langzame mountain climbers",
+      "safety": "Polsen onder je schouders, bekken stabiel."
+    },
+    "neck_rolls": {
+      "easier": "Maak de bewegingen kleiner.",
+      "harder": "Houd elke positie vast gedurende één trage ademhaling.",
+      "instructions": "Kantel je hoofd zacht naar een schouder en dan naar de andere. Kijk daarna naar rechts en naar links, zonder te forceren.",
+      "name": "Nekmobiliteit",
+      "safety": "Vermijd volledige en snelle draaibewegingen van je hoofd."
+    },
+    "plank_knees": {
+      "easier": "Doe kortere reeksen, met pauzes.",
+      "harder": "Steun op je voeten als dat comfortabel is.",
+      "instructions": "Steunend op je onderarmen en knieën: breng hoofd, rug en bekken in één lijn. Adem rustig.",
+      "name": "Plank op de knieën",
+      "safety": "Houd je adem niet in. Stop als het trekt in je onderrug."
+    },
+    "recovery_breathing": {
+      "easier": "Adem gewoon op je eigen tempo.",
+      "harder": "Maak de uitademing iets langer, zonder te forceren.",
+      "instructions": "Adem zacht in door je neus en langer uit door je mond, schouders ontspannen.",
+      "name": "Herstelademhaling",
+      "safety": "Houd nooit je adem in."
+    },
+    "seated_forward_fold": {
+      "easier": "Houd je handen op je dijen.",
+      "harder": "Laat je handen naar de grond zakken.",
+      "instructions": "Zit op de rand van een stoel en buig je bovenlichaam langzaam naar je dijen, armen ontspannen.",
+      "name": "Zittende voorwaartse buiging",
+      "safety": "Kom langzaam weer omhoog om duizeligheid te vermijden."
+    },
+    "seated_leg_extension": {
+      "easier": "Strek je been maar half.",
+      "harder": "Houd je been 5 seconden gestrekt.",
+      "instructions": "Zit op de rand van een stoel, strek een been voor je uit, houd 2 seconden vast, zet het neer en wissel van been.",
+      "name": "Zittende beenstrekking",
+      "safety": "Houd je rug recht, zonder achterover te leunen."
+    },
+    "seated_twist": {
+      "easier": "Draai minder ver.",
+      "harder": "Houd elke kant 3 ademhalingen vast.",
+      "instructions": "Zit op een stoel en draai je bovenlichaam zacht naar rechts met behulp van de rugleuning, daarna naar links.",
+      "name": "Zittende draai",
+      "safety": "Maak je lang voor je draait, zonder te forceren."
+    },
+    "shadow_boxing": {
+      "easier": "Langzamer, ellebogen licht gebogen.",
+      "harder": "Voeg een kleine zijstap toe tussen de reeksen.",
+      "instructions": "Voeten uit elkaar: geef soepele stoten in de lucht en wissel je armen af.",
+      "name": "Schaduwboksen",
+      "safety": "Strek je elleboog nooit volledig."
+    },
+    "shoulder_mobility": {
+      "easier": "Maak kleinere cirkels.",
+      "harder": "Voeg grote cirkels met je armen toe.",
+      "instructions": "Rol je schouders naar achteren en dan naar voren, met een ontspannen nek.",
+      "name": "Schoudermobiliteit",
+      "safety": "Blijf binnen een comfortabele bewegingsruimte."
+    },
+    "side_plank_knees": {
+      "easier": "Til je bekken maar een paar seconden op en leg het dan weer neer.",
+      "harder": "Strek je benen, steun op je voeten.",
+      "instructions": "Lig op je zij, steunend op je onderarm, knieën gebogen. Til je bekken op. Wissel halverwege van kant.",
+      "name": "Aangepaste zijplank",
+      "safety": "Elleboog goed onder je schouder."
+    },
+    "squat": {
+      "easier": "Zak minder diep, of doe een squat op een stoel.",
+      "harder": "Zak langzaam in 3 seconden.",
+      "instructions": "Voeten uit elkaar: zak alsof je gaat zitten, gewicht op je hielen, en kom omhoog terwijl je uitademt.",
+      "name": "Squat",
+      "safety": "Knieën in lijn met je voeten, rechte rug."
+    },
+    "standing_balance": {
+      "easier": "Houd een hand op de stoel.",
+      "harder": "Laat de stoel een paar seconden los, maar houd hem binnen handbereik.",
+      "instructions": "Naast een stoel: til een voet van de grond en houd je evenwicht, wissel dan van voet.",
+      "name": "Staand evenwicht",
+      "safety": "Blijf altijd dicht bij een stevig steunpunt."
+    },
+    "step_jacks": {
+      "easier": "Hef je armen maar tot schouderhoogte.",
+      "harder": "Versnel en blijf in controle.",
+      "instructions": "Zet een been opzij terwijl je je armen heft, kom terug en wissel af.",
+      "name": "Jumping jacks zonder springen",
+      "safety": "Gecontroleerde beweging, zonder schokken."
+    },
+    "wall_pushup": {
+      "easier": "Zet je voeten dichter bij de muur.",
+      "harder": "Zet je voeten verder van de muur.",
+      "instructions": "Handen op schouderhoogte tegen de muur, voeten iets naar achteren. Buig je ellebogen om je borst naar de muur te brengen en duw je weer weg.",
+      "name": "Push-ups tegen de muur",
+      "safety": "Houd je lichaam in één lijn, zonder holle rug."
+    }
+  },
+  "family": {
+    "notAvailable": "Deze functies hebben een server nodig en zijn nog niet beschikbaar. De app verstuurt geen uitnodigingen.",
+    "privacy": "Er worden geen contactgegevens van je naasten gevraagd of opgeslagen.",
+    "share": {
+      "cravings": "Overwonnen zin en overwinningen",
+      "days": "Rookvrije dagen",
+      "savings": "Geschatte besparing",
+      "why": "Mijn waarom",
+      "workouts": "Trainingen"
+    },
+    "shareButton": "Dit overzicht delen",
+    "shareSubtitle": "Kies wat je wilt delen. Jij verstuurt de tekst zelf, naar wie je wilt.",
+    "shareTitle": "Een overzicht delen",
+    "shared": "Overzicht klaar om te delen.",
+    "subtitle": "Deel je vooruitgang met een naaste, op jouw manier.",
+    "summary": {
+      "cravings_one": "• {{count}} keer zin overwonnen · genoteerde overwinningen: {{victories}}",
+      "cravings_other": "• {{count}} keer zin overwonnen · genoteerde overwinningen: {{victories}}",
+      "days_one": "• {{count}} rookvrije dag",
+      "days_other": "• {{count}} rookvrije dagen",
+      "footer": "Bedankt om me aan te moedigen!",
+      "header": "De vooruitgang van {{name}} met Souffle:",
+      "savings": "• Ongeveer {{amount}} bespaard",
+      "why": "• Mijn waarom: {{why}}",
+      "workouts_one": "• {{count}} training",
+      "workouts_other": "• {{count}} trainingen"
+    },
+    "title": "Gezinsmodus",
+    "vision": "In een volgende versie kan een naaste de overwinningen volgen die jij wilt delen en je aanmoedigingen sturen, met privé-uitdagingen en een anonieme, gemodereerde ruimte om uit te wisselen.",
+    "visionTitle": "Binnenkort"
+  },
+  "forecast": {
+    "bestIntervention_one": "Volgens je antwoorden hielp {{intervention}} je in {{percent}}% van de gevallen ({{count}} poging).",
+    "bestIntervention_other": "Volgens je antwoorden hielp {{intervention}} je in {{percent}}% van de gevallen ({{count}} pogingen).",
+    "confidence": {
+      "high_one": "Redelijke betrouwbaarheid ({{count}} observatie)",
+      "high_other": "Redelijke betrouwbaarheid ({{count}} observaties)",
+      "low_one": "Lage betrouwbaarheid ({{count}} observatie)",
+      "low_other": "Lage betrouwbaarheid ({{count}} observaties)",
+      "medium_one": "Gemiddelde betrouwbaarheid ({{count}} observatie)",
+      "medium_other": "Gemiddelde betrouwbaarheid ({{count}} observaties)"
+    },
+    "disclaimer": "Trend geschat op basis van je notities, geen zekere voorspelling.",
+    "noPattern": "Je zin om te roken is verspreid, zonder duidelijk piekmoment. Blijf noteren, de trend wordt steeds nauwkeuriger.",
+    "notEnough_one": "Nog niet genoeg observaties ({{count}} keer zin genoteerd, {{min}} nodig). Er wordt geen trend verzonnen.",
+    "notEnough_other": "Nog niet genoeg observaties ({{count}} keer zin genoteerd, {{min}} nodig). Er wordt geen trend verzonnen.",
+    "nowInPeak": "Dit is een van je gebruikelijke momenten. Een korte actieve pauze kan helpen, als je dat wilt.",
+    "peakSlot": "Je noteert vaak zin om te roken {{slot}} ({{percent}}%).",
+    "peakWeekday": "Op {{day}} heb je vaker zin ({{percent}}% van de keren).",
+    "slots": {
+      "afternoon": "in de namiddag",
+      "evening": "'s avonds",
+      "midday": "rond de middag",
+      "morning": "'s ochtends",
+      "night": "'s nachts"
+    },
+    "title": "Weerbericht van je zin",
+    "topTrigger": "Vaak voorkomende trigger: {{trigger}} ({{percent}}%)."
+  },
+  "goal": {
+    "quit": "Volledig stoppen",
+    "reduce": "Geleidelijk minderen"
+  },
+  "goalSettings": {
+    "confirmMessage": "Je dashboard wordt bijgewerkt. Je geschiedenis blijft intact.",
+    "confirmTitle": "Deze wijziging toepassen?",
+    "historyKept": "Je hele geschiedenis blijft bewaard: zin om te roken, trainingen, badges, XP en besparingen.",
+    "keepDate": "Mijn datum behouden",
+    "quitNote": "De datum aanpassen kan je besparingen vroeger laten beginnen, nooit later: je eerdere besparingen blijven behouden.",
+    "reduceNote": "Je referentieverbruik: {{baseline}} sigaretten per dag.",
+    "subtitle": "Verander van doel of pas je datum aan zonder je geschiedenis te verliezen.",
+    "title": "Doel en datum"
+  },
+  "health": {
+    "after": {
+      "days_one": "{{count}} dag",
+      "days_other": "{{count}} dagen",
+      "hours_one": "{{count}} uur",
+      "hours_other": "{{count}} uur",
+      "minutes_one": "{{count}} minuut",
+      "minutes_other": "{{count}} minuten",
+      "months_one": "{{count}} maand",
+      "months_other": "{{count}} maanden",
+      "weeks_one": "{{count}} week",
+      "weeks_other": "{{count}} weken",
+      "years_one": "{{count}} jaar",
+      "years_other": "{{count}} jaar"
+    },
+    "milestones": {
+      "m1m": {
+        "description": "Tussen 1 en 9 maanden nemen hoesten en kortademigheid af.",
+        "title": "Hoest en kortademigheid"
+      },
+      "m1y": {
+        "description": "Na een jaar is het risico op een coronaire hartziekte ongeveer half zo groot als dat van iemand die rookt.",
+        "title": "Hart"
+      },
+      "m20min": {
+        "description": "Je hartslag en bloeddruk beginnen te dalen.",
+        "title": "Hart en bloeddruk"
+      },
+      "m24h": {
+        "description": "Het koolmonoxide is uit je lichaam verdwenen en je longen beginnen vrij te komen.",
+        "title": "Koolmonoxide verwijderd"
+      },
+      "m2w": {
+        "description": "Tussen 2 en 12 weken verbetert de bloedsomloop en neemt de longfunctie toe.",
+        "title": "Bloedsomloop"
+      },
+      "m3m": {
+        "description": "Tussen 3 en 9 maanden nemen hoesten, verstopte bijholten, vermoeidheid en kortademigheid af. Luchtweginfecties worden minder waarschijnlijk.",
+        "title": "Luchtwegen"
+      },
+      "m48h": {
+        "description": "Er zit geen nicotine meer in je lichaam. Je smaak en reuk beginnen te verbeteren.",
+        "title": "Smaak en reuk"
+      },
+      "m72h": {
+        "description": "Ademen gaat vaak makkelijker en je energie komt terug.",
+        "title": "Makkelijker ademen"
+      },
+      "m8h": {
+        "description": "De hoeveelheid koolmonoxide en nicotine in je bloed is ongeveer gehalveerd.",
+        "title": "Minder koolmonoxide"
+      }
+    },
+    "timeline": {
+      "next": "Volgend richtpunt: {{label}}",
+      "reached": "Bereikt",
+      "seeAll": "Volledige tijdlijn en bronnen bekijken",
+      "subtitle": "Algemene richtpunten uit bronnen van de volksgezondheid, niet gemeten door je telefoon.",
+      "title": "Je lichaam herstelt",
+      "upcoming": "Volgend",
+      "varies": "(verschilt van persoon tot persoon)"
+    }
+  },
+  "intensity": {
+    "dynamic": "Dynamisch",
+    "gentle": "Zacht",
+    "moderate": "Matig"
+  },
+  "interventions": {
+    "breathing": "Ademhaling",
+    "craving_surf": "Craving surf",
+    "distraction": "Afleiding",
+    "none": "Geen actie",
+    "replacement_ritual": "Vervangend ritueel",
+    "workout": "Mini-training"
+  },
+  "journal": {
+    "deleteTitle": "Dit item verwijderen?",
+    "emptyText": "Noteer een eerste overwinning, ook al is ze klein.",
+    "emptyTitle": "Je dagboek is leeg",
+    "newEntry": "Nieuw item",
+    "noObligation": "Geen verplichting: schrijf wanneer je er zin in hebt.",
+    "placeholders": {
+      "craving_overcome": "Wat hielp je erdoorheen?",
+      "decision": "Welke keuze heb je voor jezelf gemaakt?",
+      "free": "Schrijf wat je wilt.",
+      "good_day": "Wat maakte dit een goede dag?",
+      "gratitude": "Waar ben je vandaag dankbaar voor?",
+      "workout_done": "Hoe voelde je je tijdens de training?"
+    },
+    "reminderSettings": "Herinneringen voor het dagboek instellen",
+    "saved": "Opgeslagen! +{{xp}} XP",
+    "savedNoXp": "Opgeslagen!",
+    "subtitle": "Kleine en grote, ze tellen allemaal mee.",
+    "text": "Je tekst",
+    "timeline": "Tijdlijn",
+    "title": "Overwinningsdagboek",
+    "types": {
+      "craving_overcome": "Zin overwonnen",
+      "decision": "Positieve beslissing",
+      "free": "Vrije notitie",
+      "good_day": "Goede dag",
+      "gratitude": "Dankbaarheid",
+      "workout_done": "Training afgerond"
+    },
+    "weekly": "Jouw week",
+    "weeklyTotal_one": "{{count}} item in de laatste 7 dagen",
+    "weeklyTotal_other": "{{count}} items in de laatste 7 dagen"
+  },
+  "level": {
+    "advanced": "Gevorderd",
+    "beginner": "Beginner",
+    "intermediate": "Gemiddeld"
+  },
+  "limitations": {
+    "back": "Rug",
+    "balance": "Evenwicht",
+    "breathing": "Ademhalingsklachten",
+    "knees": "Knieën",
+    "no_jumping": "Niet springen",
+    "other": "Iets anders",
+    "pregnancy": "Zwangerschap",
+    "shoulders": "Schouders",
+    "wrists": "Polsen"
+  },
+  "locations": {
+    "home": "Thuis",
+    "other": "Ergens anders",
+    "outside": "Buiten",
+    "social": "Met anderen",
+    "work": "Op het werk"
+  },
+  "moods": {
+    "calm": "Rustig",
+    "irritated": "Geïrriteerd",
+    "ok": "Gaat wel",
+    "sad": "Verdrietig",
+    "tense": "Gespannen",
+    "tired": "Moe"
+  },
+  "notifications": {
+    "encouragement": {
+      "body": "Je hebt al mooie vooruitgang geboekt. Krijg je zin om te roken? Je SOS-knop staat klaar om je te helpen.",
+      "title": "Je komt vooruit"
+    },
+    "journal": {
+      "body": "Als je zin hebt, noteer wat er goed ging.",
+      "title": "Een overwinning vandaag?"
+    },
+    "milestone": {
+      "body": "{{label}}: {{title}}. Proficiat met de weg die je al hebt afgelegd.",
+      "title": "Nieuw richtpunt bereikt"
+    },
+    "pact": {
+      "body": "Neem even een minuut om te herlezen waarom je begonnen bent.",
+      "title": "Je pact"
+    },
+    "trigger": {
+      "body": "Je noteert vaak zin om te roken {{slot}}. Een korte actieve pauze kan helpen, als je dat wilt.",
+      "title": "Je gebruikelijke moment komt eraan"
+    },
+    "weekly": {
+      "body": "Bekijk even je vooruitgang van deze week. Elke kleine overwinning telt.",
+      "title": "Je weekoverzicht"
+    },
+    "workout": {
+      "body": "Een paar minuten bewegen vandaag, op jouw tempo. Je training wacht op je.",
+      "title": "Een korte training?"
+    }
+  },
+  "onboarding": {
+    "fagerstrom": {
+      "disclaimer": "Deze score is een indicatie, geen diagnose. Hij legt je geen stopmethode op. Interpretatierichtlijnen: NIDA (NIH).",
+      "interpretation": {
+        "high": "Je lichamelijke afhankelijkheid lijkt sterk. Begeleiding door een professional (arts, tabakoloog, apotheker) kan de eerste weken echt makkelijker maken.",
+        "low": "Je lichamelijke afhankelijkheid lijkt laag. Zin om te roken door gewoonten kan toch sterk zijn: bereid je strategieën voor.",
+        "medium": "Je lichamelijke afhankelijkheid lijkt gemiddeld. Een zorgverlener kan je helpen, bijvoorbeeld met nicotinevervangers, als je dat wilt.",
+        "very_high": "Je lichamelijke afhankelijkheid lijkt zeer sterk. Aarzel niet om je door een professional te laten begeleiden: dat is een hulpbron, geen mislukking.",
+        "very_low": "Je lichamelijke afhankelijkheid lijkt zeer laag. Gewoonten en situaties blijven belangrijk: Souffle helpt je om ze te herkennen."
+      },
+      "q1": {
+        "a0": "Binnen 5 minuten",
+        "a1": "6 tot 30 minuten",
+        "a2": "31 tot 60 minuten",
+        "a3": "Na 60 minuten",
+        "question": "Hoe snel na het wakker worden rook je je eerste sigaret?"
+      },
+      "q2": {
+        "a0": "Ja",
+        "a1": "Nee",
+        "question": "Vind je het moeilijk om niet te roken op plaatsen waar het verboden is (bioscoop, bibliotheek, openbaar vervoer…)?"
+      },
+      "q3": {
+        "a0": "De eerste van de ochtend",
+        "a1": "Elke andere",
+        "question": "Welke sigaret zou je het moeilijkst kunnen missen?"
+      },
+      "q4": {
+        "a0": "10 of minder",
+        "a1": "11 tot 20",
+        "a2": "21 tot 30",
+        "a3": "31 of meer",
+        "question": "Hoeveel sigaretten rook je per dag?"
+      },
+      "q5": {
+        "a0": "Ja",
+        "a1": "Nee",
+        "question": "Rook je in de eerste uren na het wakker worden vaker (kort na elkaar) dan in de rest van de dag?"
+      },
+      "q6": {
+        "a0": "Ja",
+        "a1": "Nee",
+        "question": "Rook je als je zo ziek bent dat je bijna de hele dag in bed moet blijven?"
+      },
+      "resultTitle": "Je score: {{score}} / {{max}}",
+      "subtitle": "Zes gevalideerde vragen om je lichamelijke afhankelijkheid van nicotine in te schatten.",
+      "title": "Fagerströmtest"
+    },
+    "goals": {
+      "baseline_one": "Vandaag: {{count}} sigaret per dag",
+      "baseline_other": "Vandaag: {{count}} sigaretten per dag",
+      "choice": {
+        "in14": "Over 2 weken",
+        "in3": "Over 3 dagen",
+        "in7": "Over een week",
+        "now": "Nu",
+        "past": "Ik ben al gestopt",
+        "tomorrow": "Morgenochtend"
+      },
+      "firstWorkoutTitle": "Je eerste aanbevolen training",
+      "monthlySavings": "Ongeveer {{amount}} bespaard per maand, op basis van je gewoonten.",
+      "pastDays": "Sinds hoeveel dagen?",
+      "quitDate": "Stopdatum",
+      "quitDateIs": "Je stopdatum",
+      "reduceNote": "Minderen is echte vooruitgang, maar de gezondheidsvoordelen zijn duidelijk groter als je volledig stopt. Je kunt op elk moment van doel veranderen.",
+      "reductionSavings": "Ongeveer {{amount}} bespaard per maand als je dit doel haalt.",
+      "subtitleQuit": "Kies het moment waarop je stopt. De teller start vanaf die echte datum.",
+      "subtitleReduce": "Stel je dagdoel in. Je kunt het aanpassen wanneer je wilt.",
+      "target": "Maximum per dag",
+      "targetSummary": "Doel: {{target}} per dag",
+      "title": "Je plan"
+    },
+    "health": {
+      "intensity": "Gewenste intensiteit",
+      "level": "Je sportniveau",
+      "levelHint": {
+        "advanced": "Trainingen van 25 tot 30 minuten, aanpasbare intensiteit.",
+        "beginner": "Trainingen van ongeveer 10 minuten, zonder impact, met veel herstel.",
+        "intermediate": "Trainingen van ongeveer 20 minuten met een geleidelijke opbouw."
+      },
+      "limitations": "Beperkingen om rekening mee te houden (optioneel)",
+      "note": "Toelichting (optioneel)",
+      "noteHint": "Bijvoorbeeld: gevoelige rechterknie. Blijft op je telefoon.",
+      "safety": "Heb je een gezondheidsprobleem, vraag dan advies aan een zorgverlener voor je weer gaat bewegen. Stop elke oefening bij pijn, duizeligheid of als je je onwel voelt.",
+      "subtitle": "Om je aangepaste trainingen voor te stellen. Er worden geen medische details gevraagd.",
+      "title": "Lichaamsbeweging"
+    },
+    "pact": {
+      "contractTitle": "Mijn engagement",
+      "editLater": "Je kunt je pact op elk moment herlezen en aanpassen.",
+      "invalid": "Sommige antwoorden zijn niet geldig. Controleer de vorige stappen.",
+      "missing": "Er ontbreekt informatie uit de stap \"Laten we kennismaken\". Ga terug om ze aan te vullen.",
+      "reasons": "Wat belangrijk is voor jou",
+      "sign": "Ik onderteken mijn pact",
+      "signature": "Je handtekening",
+      "signatureHint": "Je voornaam of je initialen.",
+      "subtitle": "Waarom wil je stoppen? Je antwoord wordt je op moeilijke momenten in herinnering gebracht.",
+      "title": "Je persoonlijke pact",
+      "why": "In je eigen woorden",
+      "whyHint": "Bijvoorbeeld: om met mijn kinderen te voetballen zonder buiten adem te raken."
+    },
+    "profile": {
+      "age": "Leeftijd (optioneel)",
+      "ageHint": "Souffle is bedoeld voor volwassenen.",
+      "cigarettesPerDay": "Sigaretten per dag",
+      "cigarettesPerPack": "Sigaretten per pakje",
+      "errors": {
+        "age": "Vul een leeftijd in tussen 18 en 120 jaar, of laat leeg.",
+        "invalid": "Controleer de ingevulde waarden.",
+        "price": "Vul een geldige prijs in, bijvoorbeeld 9,50.",
+        "range": "Deze waarde valt buiten de verwachte grenzen."
+      },
+      "firstName": "Voornaam (optioneel)",
+      "firstNameHint": "Om de berichten persoonlijker te maken.",
+      "goal": "Je doel",
+      "goalQuitHint": "Je kiest een datum en de rookvrij-teller start op dat moment.",
+      "goalReduceHint": "Je stelt een maximum per dag in en noteert elke sigaret. Je kunt overstappen op volledig stoppen wanneer je wilt.",
+      "habitsTitle": "Je gewoonten",
+      "packPrice": "Prijs per pakje",
+      "subtitle": "Met deze gegevens berekenen we je besparingen en passen we de tips aan. Je kunt ze later wijzigen.",
+      "title": "Laten we kennismaken",
+      "yearsSmoking": "Aantal jaren gerookt"
+    },
+    "stepOf": "Stap {{step}} van {{total}}",
+    "welcome": {
+      "how": "Ontdek hoe het werkt",
+      "howTitle": "Zo helpt Souffle je",
+      "how_kind": "Geen schuldgevoel: als je een sigaret rookt, blijft je vooruitgang behouden.",
+      "how_sos": "Krijg je zin om te roken? De SOS-knop stelt een korte actie voor: ademen, bewegen of jezelf afleiden.",
+      "how_sport": "Een sportprogramma voor thuis van 12 weken, aangepast aan je niveau en je grenzen.",
+      "how_track": "Je volgt je zin om te roken, je besparingen en je vooruitgang. Alles blijft op je telefoon.",
+      "privacy": "Privacybeleid",
+      "privacyNote": "Je antwoorden blijven op deze telefoon. Geen account, geen server.",
+      "resume": "Verdergaan waar ik was",
+      "start": "Beginnen",
+      "tagline": "Elke keer dat je zin hebt, is een kans om op adem te komen."
+    }
+  },
+  "outcomes": {
+    "partly_passed": "De zin is afgenomen",
+    "passed": "De zin is voorbij",
+    "persisted": "De zin is er nog"
+  },
+  "pact": {
+    "noWhy": "Je hebt je waarom nog niet opgeschreven.",
+    "reminder": "Je redenen zijn er nog altijd, ook na een moeilijke dag.",
+    "signedOn": "Ondertekend op {{date}} door {{signature}}",
+    "text": "Ik kies ervoor om vooruit te gaan op mijn eigen tempo. Ook als het even moeilijk gaat, kan ik opnieuw beginnen. Elke stap vooruit telt.",
+    "title": "Mijn pact",
+    "why": "Waarom ik stop"
+  },
+  "periods": {
+    "30d": "30 dagen",
+    "7d": "7 dagen",
+    "all": "Alles"
+  },
+  "privacy": {
+    "counts": "Nu: zin {{cravings}} · genoteerde sigaretten {{smoking}} · trainingen {{sessions}} · dagboek, slaap en hoest {{journal}}.",
+    "deleteButton": "Alles verwijderen",
+    "deleteConfirmText": "Typ {{word}} hieronder om te bevestigen. Exporteer eerst je gegevens als je ze wilt bewaren.",
+    "deleteConfirmTitle": "Definitief verwijderen?",
+    "deleteText": "Wist definitief je profiel en alle gegevens van Souffle op deze telefoon, en ook de geplande herinneringen. Dit kan niet ongedaan worden gemaakt.",
+    "deleteTitle": "Al mijn gegevens verwijderen",
+    "deleteTypeWord": "Typ {{word}}",
+    "deleteWord": "VERWIJDEREN",
+    "deleteWordMismatch": "Het woord komt niet overeen.",
+    "errors": {
+      "canceled": "Bewerking geannuleerd.",
+      "invalid_user": "Het profiel in dit bestand is ongeldig. Er is niets gewijzigd.",
+      "newer_version": "Dit bestand komt van een nieuwere versie van Souffle. Werk de app bij om het te importeren.",
+      "not_json": "Dit bestand is geen leesbare Souffle-export.",
+      "not_souffle": "Dit bestand komt niet van Souffle.",
+      "print_failed": "De PDF kon niet worden gemaakt. Probeer het zo meteen opnieuw.",
+      "read_failed": "Dit bestand kan niet worden gelezen.",
+      "sharing_unavailable": "Bestanden delen is niet beschikbaar op dit toestel.",
+      "write_failed": "Het bestand kon niet worden aangemaakt. Controleer de beschikbare opslagruimte en probeer opnieuw."
+    },
+    "exportDone": "Export klaar. Kies waar je het wilt opslaan of delen.",
+    "exportHint": "Een volledig JSON-bestand dat je kunt bewaren of later opnieuw kunt importeren.",
+    "exportJson": "Exporteren (JSON)",
+    "exportTitle": "Mijn gegevens exporteren",
+    "gdprNote": "Lokale opslag beperkt de risico's sterk, maar volstaat op zich niet om naleving van de AVG (GDPR) te garanderen. De verwerkingen, toestemmingen en gebruikte diensten staan beschreven in de documentatie van het project.",
+    "importConfirmText": "De huidige gegevens worden vervangen door die uit het bestand. Exporteer eerst als je ze wilt bewaren.",
+    "importConfirmTitle": "Je gegevens vervangen?",
+    "importDone": "Import voltooid.",
+    "importDoneSkipped_one": "Import voltooid. {{count}} ongeldig element is overgeslagen.",
+    "importDoneSkipped_other": "Import voltooid. {{count}} ongeldige elementen zijn overgeslagen.",
+    "importHint": "Zet een bestand terug dat uit Souffle is geëxporteerd. De inhoud wordt gecontroleerd voor de import.",
+    "importJson": "Een bestand importeren",
+    "importTitle": "Een back-up importeren",
+    "permissions": "Meldingen (optioneel, voor herinneringen) en trillingen. Geen locatie, geen contacten, geen microfoon, geen camera.",
+    "permissionsTitle": "Toestemmingen",
+    "reportPdf": "Een PDF-rapport maken",
+    "subtitle": "Je gegevens zijn van jou en blijven op je telefoon.",
+    "thirdParty": "Er zijn geen statistiek- of advertentietools ingebouwd. Meldingen en spraaksynthese gebruiken de systeemdiensten van je telefoon. Een bestand verlaat je telefoon alleen als je het zelf deelt.",
+    "thirdPartyTitle": "Diensten van derden",
+    "what": "Je profiel (optionele voornaam, gewoonten, doel, pact), je zin om te roken, je genoteerde sigaretten, je trainingen, je dagboek, je slaap en je hoest als je die invult, je badges en je instellingen. Er worden geen overbodige medische gegevens gevraagd.",
+    "whatTitle": "Welke gegevens?",
+    "where": "Alleen in de lokale opslag van de app, op deze telefoon. Souffle heeft geen account, geen server en geen advertenties, en verstuurt geen gezondheidsgegevens.",
+    "whereTitle": "Waar worden ze bewaard?"
+  },
+  "profile": {
+    "anonymous": "Jij",
+    "baselineNote": "Als je je verbruik of de prijs wijzigt, gelden de nieuwe waarden vanaf vandaag: je eerdere besparingen veranderen niet.",
+    "editTitle": "Mijn profiel bewerken",
+    "fagerstrom": "Fagerströmtest: {{score}}/10 ({{level}})",
+    "habits": "Mijn gewoonten",
+    "habitsSummary": "{{cigs}} sigaretten per dag gedurende {{years}} jaar · pakje van {{perPack}} aan {{price}}",
+    "quitDate": "Stopdatum: {{date}}"
+  },
+  "program": {
+    "backToCurrent": "Huidige week",
+    "doneThisWeek": "{{done}}/{{total}} deze week",
+    "goal": "Doel",
+    "hardDay": "Moeilijke dag",
+    "phaseWeeks": "weken {{from}} tot {{to}}",
+    "phases": {
+      "autonomy": {
+        "description": "Je weet wat je moet doen als je zin krijgt: sport wordt een echt hulpmiddel tegen terugval.",
+        "title": "Zelfstandigheid"
+      },
+      "basics": {
+        "description": "Je beheerst de basisbewegingen en houdt een regelmatig ritme aan.",
+        "title": "Regelmaat en basis"
+      },
+      "consolidation": {
+        "description": "Je verstevigt wat je bereikt hebt en past de intensiteit aan je gevoel aan.",
+        "title": "Consolidatie"
+      },
+      "endurance": {
+        "description": "Je conditie groeit: iets langere en gecoördineerde reeksen.",
+        "title": "Uithouding en coördinatie"
+      },
+      "habit": {
+        "description": "Korte, regelmatige trainingen. Het doel is bewegen, niet presteren.",
+        "title": "De gewoonte opbouwen"
+      },
+      "progress": {
+        "description": "De inspanningen worden iets langer, het herstel blijft ruim.",
+        "title": "Zachte opbouw"
+      }
+    },
+    "review": "Terugblik",
+    "sessionsPerWeek_one": "{{count}} training aanbevolen deze week.",
+    "sessionsPerWeek_other": "{{count}} aanbevolen trainingen deze week, met rustdagen ertussen.",
+    "weekLabel": "Week {{week}}",
+    "weeks": {
+      "w1": {
+        "goal": "3 korte trainingen doen, ook al zijn ze onvolledig.",
+        "hardDay": "5 minuten ter plaatse stappen is genoeg.",
+        "review": "Welk moment van de dag paste jou het best?"
+      },
+      "w10": {
+        "goal": "De ademtest opnieuw doen en vergelijken.",
+        "hardDay": "Alleen mobiliteit en ademhaling.",
+        "review": "Wat is er veranderd sinds het begin?"
+      },
+      "w11": {
+        "goal": "Sport gebruiken als antwoord op zin om te roken.",
+        "hardDay": "De SOS-training van 5 minuten.",
+        "review": "Welke situaties blijven het moeilijkst?"
+      },
+      "w12": {
+        "goal": "Je routine voor de toekomst opbouwen.",
+        "hardDay": "Kies zelf je training.",
+        "review": "Proficiat met deze 12 weken. Wat is je plan om verder te gaan?"
+      },
+      "w2": {
+        "goal": "Dezelfde trainingsdagen aanhouden.",
+        "hardDay": "Kies de mobiliteitstraining.",
+        "review": "Merkte je na een training een effect op je zin om te roken?"
+      },
+      "w3": {
+        "goal": "De squat op een stoel en de push-ups tegen de muur goed onder de knie krijgen.",
+        "hardDay": "Doe alleen de opwarming en de cooling-down.",
+        "review": "Welke oefening voelt makkelijker dan in het begin?"
+      },
+      "w4": {
+        "goal": "3 trainingen doen zonder je te haasten.",
+        "hardDay": "Gebruik de anti-vermoeidheidstraining.",
+        "review": "Noteer je ervaren inspanning na elke training."
+      },
+      "w5": {
+        "goal": "De inspanningen iets langer maken.",
+        "hardDay": "Blijf op het niveau van vorige week.",
+        "review": "Vergelijk je ademhaling met week 1."
+      },
+      "w6": {
+        "goal": "De ademtest opnieuw doen.",
+        "hardDay": "Een ademhalingstraining telt ook.",
+        "review": "Wat helpt je om regelmatig te blijven?"
+      },
+      "w7": {
+        "goal": "Werken aan je uithouding met de cardiotraining.",
+        "hardDay": "Kies bij elke oefening de variant zonder springen.",
+        "review": "Herstel je sneller?"
+      },
+      "w8": {
+        "goal": "Coördinatie en evenwicht verbeteren.",
+        "hardDay": "Een korte thematraining is genoeg.",
+        "review": "Zoek de training die je het meeste deugd doet."
+      },
+      "w9": {
+        "goal": "Het ritme van 3 trainingen per week verstevigen.",
+        "hardDay": "Doe de helft van de training: dat is al goed.",
+        "review": "Wat is jouw beste moment om te bewegen?"
+      }
+    }
+  },
+  "progress": {
+    "badgesCount_one": "{{count}} badge van {{total}}",
+    "badgesCount_other": "{{count}} badges van {{total}}",
+    "coughHint_one": "{{count}} observatie",
+    "coughHint_other": "{{count}} observaties",
+    "cravingsHint_one": "{{count}} keer zin genoteerd",
+    "cravingsHint_other": "{{count}} keer zin genoteerd",
+    "journalHint_one": "{{count}} item",
+    "journalHint_other": "{{count}} items",
+    "levelTitle": "Niveau {{level}}",
+    "nextLevel": "Nog {{xp}} XP tot het volgende niveau",
+    "ofCravings_one": "van {{count}} keer zin genoteerd",
+    "ofCravings_other": "van {{count}} keer zin genoteerd",
+    "sections": "Al je opvolging",
+    "sleepHint_one": "{{count}} nacht genoteerd",
+    "sleepHint_other": "{{count}} nachten genoteerd",
+    "smokeFreeDays": "Rookvrije dagen",
+    "smokeFreeDaysHint": "in totaal, ook niet na elkaar",
+    "title": "Vooruitgang",
+    "xpTotal": "{{xp}} XP in totaal"
+  },
+  "reasons": {
+    "breath": "Weer vrij ademen",
+    "children": "Het voorbeeld voor de kinderen",
+    "family": "Mijn gezin",
+    "freedom": "Mijn vrijheid",
+    "health": "Mijn gezondheid",
+    "money": "Mijn financiën",
+    "other": "Andere reden"
+  },
+  "relapse": {
+    "actions": {
+      "breathing": "2 minuten ademen",
+      "pact": "Mijn pact herlezen",
+      "plan": "Mijn plan aanpassen",
+      "reset": "Reset-training van 5 minuten",
+      "stretch": "Zachte stretchoefeningen"
+    },
+    "confirmMessage_one": "{{count}} sigaret wordt toegevoegd aan je geschiedenis. Je XP, badges en trainingen blijven behouden.",
+    "confirmMessage_other": "{{count}} sigaretten worden toegevoegd aan je geschiedenis. Je XP, badges en trainingen blijven behouden.",
+    "confirmTitle": "Opslaan?",
+    "confirmWithShield": "De sigaret wordt genoteerd en je schild beschermt je reeks. Wat je bereikt hebt, blijft intact.",
+    "count": "Aantal sigaretten",
+    "decision": "En nu?",
+    "decisionHints": {
+      "continue_quit": "Je teller start opnieuw vanaf deze sigaret. Je record, je badges en je eerdere besparingen blijven bewaard.",
+      "new_quit_date": "De teller start opnieuw vanaf nu. Je hele geschiedenis blijft bewaard.",
+      "reduction_log": "De sigaret wordt toegevoegd aan je opvolging van vandaag.",
+      "switch_to_reduce": "Je schakelt over naar de minderen-modus met een dagdoel. Je kunt terug naar stoppen wanneer je wilt."
+    },
+    "decisions": {
+      "continue_quit": "Het was een uitschuiver, ik blijf gestopt",
+      "new_quit_date": "Ik begin opnieuw vanaf een nieuwe datum",
+      "switch_to_reduce": "Ik wil voorlopig liever minderen"
+    },
+    "kept": "Nog altijd van jou: {{xp}} XP · behaalde badges: {{badges}} · beste reeks: {{best}} d.",
+    "kindMessage": "Eén sigaret wist de vooruitgang die je al geboekt hebt niet uit. Laten we kijken wat er gebeurd is en de volgende stap voorbereiden.",
+    "loggedText": "Je had de moed om het te noteren. Precies zo kom je vooruit.",
+    "loggedTextReduction": "Bedankt voor je eerlijkheid: die maakt je opvolging nuttig.",
+    "loggedTitle": "Genoteerd, zonder oordeel",
+    "loggedTitleReduction": "Sigaret genoteerd",
+    "nextStep": "Je volgende stap",
+    "reductionHint": "Door elke sigaret te noteren, volg je je minderen eerlijk op.",
+    "shield": {
+      "already": "Deze dag is al beschermd.",
+      "cooldown": "Je schild is deze week al gebruikt.",
+      "ok_one": "Bescherm je reeks van {{count}} dag. Eén keer per week beschikbaar.",
+      "ok_other": "Bescherm je reeks van {{count}} dagen. Eén keer per week beschikbaar.",
+      "title": "Mijn schild gebruiken",
+      "too_old": "Het schild kan alleen vandaag of gisteren beschermen."
+    },
+    "shieldApplied_one": "Je schild heeft je reeks beschermd: {{count}} dag.",
+    "shieldApplied_other": "Je schild heeft je reeks beschermd: {{count}} dagen.",
+    "situation": "Situatie (optioneel)",
+    "streakNow_one": "Je huidige reeks: {{count}} dag. Vanaf nu begint een nieuwe.",
+    "streakNow_other": "Je huidige reeks: {{count}} dagen. Vanaf nu begint een nieuwe.",
+    "title": "Ik heb gerookt",
+    "titleReduction": "Sigaret noteren",
+    "when": "Wanneer?",
+    "whenHoursAgo_one": "{{count}} u geleden",
+    "whenHoursAgo_other": "{{count}} u geleden",
+    "whenNow": "Net nu",
+    "yourWhy": "Je waarom"
+  },
+  "reports": {
+    "content": "Doel, rookvrije dagen of verloop van het minderen, vermeden sigaretten en geschatte besparing, trainingen en sporttijd, verloop van je zin om te roken, vaak voorkomende triggers, overwinningen, slaap en hoest als je die invult.",
+    "contentTitle": "Inhoud van het rapport",
+    "done": "Rapport klaar.",
+    "empty": "Weinig of geen gegevens in deze periode: het rapport vermeldt dat duidelijk.",
+    "generate": "PDF maken",
+    "minutes_one": "{{count}} minuut",
+    "minutes_other": "{{count}} minuten",
+    "overcome_one": "{{count}} overwonnen",
+    "overcome_other": "{{count}} overwonnen",
+    "pdf": {
+      "avgIntensity": "Gemiddelde intensiteit",
+      "cigarettesAvoided": "Vermeden sigaretten (schatting)",
+      "cigarettesLogged": "Genoteerde sigaretten",
+      "cough": "Hoest",
+      "coughValue_one": "gemiddelde intensiteit {{avg}}/10 (van {{first}} tot {{last}}, {{count}} observatie)",
+      "coughValue_other": "gemiddelde intensiteit {{avg}}/10 (van {{first}} tot {{last}}, {{count}} observaties)",
+      "cravings": "Zin om te roken",
+      "cravingsCount": "Keer zin genoteerd",
+      "cravingsOvercome": "Keer zin overwonnen",
+      "daysOf_one": "{{count}} dag van {{total}}",
+      "daysOf_other": "{{count}} dagen van {{total}}",
+      "daysUnderTarget": "Dagen onder het doel",
+      "disclaimer": "Dit document is een persoonlijk logboek. Het vervangt geen medische beoordeling.",
+      "empty": "In deze periode zijn weinig gegevens geregistreerd.",
+      "estimates": "Vermeden sigaretten en besparingen zijn schattingen, berekend op basis van de opgegeven gewoonten.",
+      "generated": "Gemaakt op {{date}} op het toestel, zonder verbinding.",
+      "goal": "Doel",
+      "health": "Slaap en hoest",
+      "intensityTrend": "Verloop van de intensiteit",
+      "intensityTrendValue": "{{first}}/10 aan het begin van de periode, {{second}}/10 aan het einde",
+      "noVictories": "Geen overwinningen genoteerd in deze periode.",
+      "saved": "Geschatte besparing",
+      "sleep": "Slaap",
+      "sleepValue_one": "gemiddeld {{duration}}, kwaliteit {{quality}}/5 ({{count}} nacht genoteerd)",
+      "sleepValue_other": "gemiddeld {{duration}}, kwaliteit {{quality}}/5 ({{count}} nachten genoteerd)",
+      "smokeFreeDays": "Rookvrije dagen",
+      "summary": "Samenvatting",
+      "title": "Souffle: persoonlijk rapport",
+      "topTriggers": "Vaak voorkomende triggers",
+      "victories": "Overwinningen",
+      "workoutMinutes": "Minuten activiteit",
+      "workouts": "Afgeronde trainingen"
+    },
+    "periods": {
+      "current_month": "Deze maand",
+      "last_30_days": "Laatste 30 dagen",
+      "previous_month": "Vorige maand"
+    },
+    "subtitle": "Een maandelijkse samenvatting, gemaakt op je telefoon, die je kunt opslaan of delen.",
+    "title": "PDF-rapport"
+  },
+  "settings": {
+    "accessibility": {
+      "note": "Souffle werkt met schermlezers (VoiceOver, TalkBack). Geen enkele informatie wordt alleen via kleur overgebracht.",
+      "subtitle": "Pas de app aan zodat hij comfortabel voor je is.",
+      "title": "Weergave en toegankelijkheid"
+    },
+    "enableReduceMotion": "Animaties beperken",
+    "fontSize": {
+      "large": "Groot",
+      "normal": "Normaal",
+      "preview": "Voorbeeld: elke keer dat je zin hebt, is een kans om op adem te komen.",
+      "title": "Tekstgrootte",
+      "xlarge": "Zeer groot"
+    },
+    "forecast": "Weerbericht van je zin",
+    "forecastHint": "Trends tonen die berekend zijn op basis van je zin om te roken.",
+    "haptics": "Trillingen",
+    "hapticsHint": "Zachte tactiele feedback, bijvoorbeeld om de ademhaling te volgen.",
+    "hapticsUnavailable": "Niet beschikbaar op dit toestel. De visuele en gesproken begeleiding blijft actief.",
+    "highContrast": "Hoog contrast",
+    "highContrastHint": "Sterkere kleuren en zichtbare randen.",
+    "language": {
+      "device": "Taal van de telefoon",
+      "deviceHint": "Momenteel: {{language}}",
+      "en": "Engels",
+      "formats": "Datums, tijden en bedragen worden getoond in het formaat van de gekozen taal.",
+      "fr": "Frans",
+      "native": {
+        "en": "English",
+        "fr": "Français",
+        "nl": "Nederlands"
+      },
+      "nl": "Nederlands",
+      "subtitle": "Kies de taal van de app.",
+      "supported": "Beschikbare talen: Frans, Nederlands en Engels.",
+      "title": "Taal"
+    },
+    "notifications": {
+      "bestEffort": "Het systeem van je telefoon kan sommige meldingen vertragen of bundelen: Souffle kan het exacte tijdstip niet garanderen.",
+      "categories": "Soorten herinneringen",
+      "category": {
+        "encouragement": "Aanmoedigingen",
+        "journal_reminder": "Herinnering voor het dagboek",
+        "milestone": "Bereikte gezondheidsrichtpunten",
+        "pact_reminder": "Herinnering aan je pact",
+        "trigger_preparation": "Voorbereiding op risicomomenten",
+        "weekly_summary": "Weekoverzicht",
+        "workout_reminder": "Trainingsherinnering"
+      },
+      "categoryHint": {
+        "encouragement": "Eén keer per week.",
+        "journal_reminder": "Elke dag op het gekozen tijdstip. Nooit verplicht.",
+        "milestone": "Wanneer een richtpunt op de gezondheidstijdlijn is bereikt.",
+        "pact_reminder": "Eén keer per week, op zaterdag.",
+        "trigger_preparation": "Kort voor je gebruikelijke moment, alleen als er een duidelijke trend is.",
+        "weekly_summary": "Maandagavond.",
+        "workout_reminder": "Op de gekozen dagen en het gekozen tijdstip."
+      },
+      "days": "Dagen",
+      "denied": "Meldingen zijn geblokkeerd in de instellingen van je telefoon.",
+      "enable": "Meldingen toestaan",
+      "enableHint": "Er wordt niets via een server verstuurd: de herinneringen worden op je telefoon ingepland.",
+      "hour": "Tijdstip",
+      "journalTitle": "Herinnering voor het dagboek",
+      "openSettings": "Instellingen van de telefoon openen",
+      "quietFrom": "Van",
+      "quietHours": "Stille uren",
+      "quietHoursHint": "Geen herinneringen tijdens deze uren.",
+      "quietTo": "Tot",
+      "subtitle": "Lokale, vriendelijke herinneringen die je volledig kunt instellen.",
+      "title": "Meldingen",
+      "webUnsupported": "Meldingen zijn niet beschikbaar in de webdemoversie.",
+      "workoutTitle": "Trainingsherinnering"
+    },
+    "privacy": {
+      "subtitle": "Exporteren, importeren en verwijderen",
+      "title": "Privacy en gegevens"
+    },
+    "reduceMotion": "Animaties beperken",
+    "reduceMotionHint": "Schakelt overgangen uit en maakt de ademcirkel statisch.",
+    "systemReduceMotion": "Je telefoon vraagt om animaties te beperken. Wil je deze instelling ook in Souffle toepassen?",
+    "theme": {
+      "dark": "Donker",
+      "light": "Licht",
+      "system": "Automatisch",
+      "title": "Thema"
+    },
+    "title": "Instellingen",
+    "voice": "Gesproken begeleiding",
+    "voiceHint": "Gebruikt de spraaksynthese van je telefoon, zonder verbinding."
+  },
+  "sleep": {
+    "average7": "Gemiddelde van je laatste 7 genoteerde nachten",
+    "comparisonText": "Na een slechte nacht had je overdag gemiddeld {{low}} keer zin, tegenover {{good}} na een goede nacht.",
+    "comparisonTitle": "Slaap en zin om te roken",
+    "emptyText": "Je slaap opvolgen is optioneel.",
+    "emptyTitle": "Nog geen nachten genoteerd",
+    "great": "Uitstekend",
+    "history": "Geschiedenis",
+    "lastNight": "Afgelopen nacht",
+    "needMore": "De vergelijking met je zin om te roken verschijnt na minstens 3 goede en 3 slechte genoteerde nachten.",
+    "newEntry": "Mijn nacht",
+    "nightBefore": "De nacht ervoor",
+    "noCausal": "Dit is gewoon een vergelijking van je notities, geen oorzakelijk verband.",
+    "note": "Opmerking (optioneel)",
+    "poor": "Slecht",
+    "quality": "Kwaliteit",
+    "subtitle": "Noteer je nachten, als je dat wilt.",
+    "title": "Slaap",
+    "trend": "Slaapkwaliteit",
+    "trendSummary_one": "Kwaliteit van je laatste genoteerde nacht, van 1 tot 5.",
+    "trendSummary_other": "Kwaliteit van je laatste {{count}} genoteerde nachten, van 1 tot 5."
+  },
+  "sos": {
+    "bestForYou": "Volgens je antwoorden helpt {{intervention}} je vaak ({{percent}}%).",
+    "breathing": {
+      "comfort": "Voel je ongemak? Adem dan gewoon op je eigen tempo.",
+      "exhale": "Adem uit",
+      "hint": "Adem {{inhale}} s in, {{exhale}} s uit. Zonder te forceren, zonder je adem in te houden.",
+      "inhale": "Adem in",
+      "ready": "Daar gaan we",
+      "title": "Adem mee met de cirkel",
+      "voice": "Gesproken begeleiding"
+    },
+    "distraction": {
+      "elapsed": "Verstreken tijd: {{seconds}} s",
+      "grounding": {
+        "done": "Goed gedaan. Je aandacht is terug in het hier en nu.",
+        "hear3": "3 geluiden die je hoort",
+        "hint": "Neem de tijd om rondom je op te merken:",
+        "see5": "5 dingen die je ziet",
+        "smell2": "2 geuren die je ruikt",
+        "taste1": "1 smaak in je mond",
+        "title": "Gronding 5-4-3-2-1",
+        "touch4": "4 dingen die je kunt aanraken"
+      },
+      "memory": {
+        "cardDown": "Verborgen kaart",
+        "cardUp": "Omgedraaide kaart",
+        "hint": "Zoek de paren met dezelfde icoontjes.",
+        "moves_one": "{{count}} zet",
+        "moves_other": "{{count}} zetten",
+        "restart": "Opnieuw beginnen",
+        "title": "Memory",
+        "won_one": "Goed gedaan! Alle paren in {{count}} zet.",
+        "won_other": "Goed gedaan! Alle paren in {{count}} zetten."
+      },
+      "order": {
+        "hint": "Tik de getallen van 1 tot 16 in volgorde aan, zo rustig mogelijk.",
+        "next": "Volgende: {{n}}",
+        "title": "Cijfers",
+        "won_one": "Klaar in {{count}} seconde!",
+        "won_other": "Klaar in {{count}} seconden!"
+      },
+      "subtitle": "Een paar minuten spelen om de zin te laten wegtrekken.",
+      "title": "Denk aan iets anders"
+    },
+    "feedback": {
+      "duration": "{{intervention}} · {{time}}",
+      "intensityBefore": "Hoe sterk was je zin in het begin?",
+      "journal": "Deze overwinning in mijn dagboek noteren",
+      "message": {
+        "partly_passed": "Je zin is afgenomen: je hebt weer wat controle. Je kunt meteen een andere actie doen als je wilt.",
+        "passed": "Je bent net door een moment van zin heen gegaan. Elke keer telt.",
+        "persisted": "Soms is de zin hardnekkiger. Je kunt een andere optie proberen, of nog wat tijd laten verstrijken."
+      },
+      "surf": "Craving surf proberen",
+      "thanks": {
+        "partly_passed": "Dat is al echte vooruitgang",
+        "passed": "Goed gedaan!",
+        "persisted": "Bedankt om het te proberen"
+      },
+      "title": "Hoe is je zin nu?",
+      "triggerOptional": "Wat lokte hem uit? (optioneel)",
+      "tryAnother": "Een andere optie proberen"
+    },
+    "footer": "Zin om te roken zakt meestal vanzelf weer. Elke keer dat je erdoorheen gaat, train je jezelf.",
+    "intake": {
+      "hide": "Verbergen",
+      "show": "Mijn zin beschrijven (optioneel)"
+    },
+    "logOnly": "Alleen de zin noteren",
+    "options": {
+      "breathing": {
+        "subtitle": "Begeleide ademhaling",
+        "title": "Ik heb 2 minuten"
+      },
+      "distraction": {
+        "subtitle": "Korte spelletjes en een grondingsoefening",
+        "title": "Aan iets anders denken"
+      },
+      "workout": {
+        "subtitle": "Zachte mini-training, zonder materiaal",
+        "title": "Ik heb 5 minuten"
+      }
+    },
+    "softened": "(Zachte versie, aangepast aan wat je hebt aangegeven.)",
+    "subtitle": "Kies een actie. Je kunt op elk moment stoppen.",
+    "suggestedWorkout": "Aanbevolen training: {{title}}",
+    "surf": "Begeleide craving surf (3 min)",
+    "surfHint": "Je zin bekijken zonder oordeel, met gesproken begeleiding",
+    "title": "Zin om te roken?",
+    "workout": {
+      "adapted": "De oefeningen zijn aangepast aan de beperkingen die je hebt aangegeven.",
+      "intensity": "Intensiteit",
+      "subtitle_one": "Ongeveer {{count}} minuut, op jouw tempo. Je kunt stoppen wanneer je wilt.",
+      "subtitle_other": "Ongeveer {{count}} minuten, op jouw tempo. Je kunt stoppen wanneer je wilt.",
+      "title": "Mini-training van 5 minuten"
+    }
+  },
+  "sport": {
+    "adaptedNote": "De oefeningen worden automatisch vervangen volgens de beperkingen die je hebt aangegeven.",
+    "history": {
+      "empty": "Je afgeronde trainingen verschijnen hier. De eerste is vaak de belangrijkste.",
+      "emptyTitle": "Nog geen trainingen",
+      "last": "Laatste training: {{date}}",
+      "list": "Alle trainingen",
+      "title": "Trainingsgeschiedenis",
+      "weekly": "Trainingen per week",
+      "weeklySummary_one": "{{count}} training afgerond in totaal, {{minutes}} minuten activiteit.",
+      "weeklySummary_other": "{{count}} trainingen afgerond in totaal, {{minutes}} minuten activiteit."
+    },
+    "level": {
+      "allUnlocked": "Alle niveaus zijn ontgrendeld.",
+      "neverForced": "Je bent nooit verplicht om een niveau hoger te gaan.",
+      "subtitle": "Je kunt op hetzelfde niveau blijven of op elk moment een niveau lager gaan.",
+      "title": "Je niveau",
+      "unlockAdvanced": "Gevorderd niveau: na {{workouts}} trainingen, verspreid over minstens {{weeks}} weken.",
+      "unlockIntermediate": "Gemiddeld niveau: na {{workouts}} trainingen, verspreid over minstens {{weeks}} weken."
+    },
+    "stats": {
+      "completed": "Afgeronde trainingen",
+      "minutes": "Minuten activiteit",
+      "minutesHint_one": "{{count}} minuut activiteit",
+      "minutesHint_other": "{{count}} minuten activiteit",
+      "thisWeek": "Deze week"
+    },
+    "thematic": {
+      "subtitle": "Voor een specifiek moment: stress, boosheid, verveling, koffie, vermoeidheid.",
+      "title": "Thematrainingen"
+    },
+    "title": "Sport"
+  },
+  "streak": {
+    "best": "Record",
+    "calendar": "Laatste 14 dagen",
+    "freeze": {
+      "active": "Je reeks is gepauzeerd tot {{date}}. Deze dagen tellen niet mee en breken je reeks niet.",
+      "confirmMessage_one": "Je reeks wordt {{count}} dag gepauzeerd, vanaf vandaag. Je kunt de pauze annuleren.",
+      "confirmMessage_other": "Je reeks wordt {{count}} dagen gepauzeerd, vanaf vandaag. Je kunt de pauze annuleren.",
+      "confirmTitle": "Pauzeren?",
+      "days": "Duur",
+      "errors": {
+        "active": "Er loopt al een pauze of er is er al een gepland op deze data.",
+        "past": "Een pauze kan niet in het verleden beginnen.",
+        "too_long": "De duur moet tussen 1 en 14 dagen liggen."
+      },
+      "reasons": {
+        "illness": "Ziekte",
+        "other": "Iets anders",
+        "travel": "Reis"
+      },
+      "start": "Mijn reeks pauzeren",
+      "subtitle": "Bij ziekte of op reis: tot {{max}} dagen, één pauze tegelijk.",
+      "title": "Reekspauze"
+    },
+    "legend": {
+      "frozen": "gepauzeerd",
+      "notCounted": "voor het stoppen",
+      "shielded": "beschermd",
+      "smokeFree": "rookvrij",
+      "smoked": "sigaret",
+      "today": "vandaag"
+    },
+    "rule": "Een dag telt pas mee als hij voorbij is. De stopdag zelf telt niet mee als hij al begonnen is.",
+    "shield": {
+      "available": "Beschikbaar",
+      "explain": "Het schild beschermt je reeks één keer om de {{days}} dagen, voor een sigaret die je vandaag of gisteren noteert. Je kiest het zelf wanneer je een sigaret noteert.",
+      "title": "Schild",
+      "unavailable": "Opnieuw beschikbaar op {{date}}",
+      "usedOn": "Dag van {{date}} beschermd"
+    },
+    "subtitle": "Volledige rookvrije dagen, berekend volgens je lokale kalender.",
+    "title": "Reeks en schild"
+  },
+  "surf": {
+    "disclaimer": "Zin om te roken verdwijnt niet altijd binnen 3 minuten. Het doel is ernaar te kijken zonder te gehoorzamen, niet om hem koste wat kost te laten verdwijnen.",
+    "stepOf": "Stap {{step}} van {{total}}",
+    "steps": {
+      "breathe": {
+        "text": "Adem normaal, zonder te forceren. Laat de lucht in- en uitstromen, op je eigen tempo.",
+        "title": "Ademen"
+      },
+      "choose": {
+        "text": "Kies nu bewust je volgende actie: een glas water drinken, wat bewegen, of gewoon verdergaan met je dag.",
+        "title": "Kiezen"
+      },
+      "evolve": {
+        "text": "Verandert de intensiteit van je zin? Hij kan stijgen en daarna weer dalen. Je hoeft niets anders te doen dan kijken.",
+        "title": "De golf bekijken"
+      },
+      "observe": {
+        "text": "Waar voel je hem in je lichaam? In je keel, je borst, je handen? Beschrijf hem als een nieuwsgierige toeschouwer.",
+        "title": "Observeren"
+      },
+      "recognize": {
+        "text": "Merk je zin op, zonder oordeel. Zeg gewoon tegen jezelf: ik heb zin om te roken, en dat gevoel gaat veranderen.",
+        "title": "Herkennen"
+      }
+    },
+    "subtitle": "Zin om te roken komt op, bereikt een piek en zakt weer, zoals een golf. Kijk ernaar zonder oordeel.",
+    "title": "Craving surf",
+    "voiceHint": "Gebruikt de spraaksynthese van je telefoon, zonder verbinding. De tekst blijft zichtbaar."
+  },
+  "tabs": {
+    "home": "Start",
+    "profile": "Profiel",
+    "progress": "Vooruitgang",
+    "sos": "SOS",
+    "sosA11y": "SOS zin om te roken: directe hulp",
+    "sport": "Sport"
+  },
+  "triggers": {
+    "after_meal": "Na het eten",
+    "alcohol": "Alcohol",
+    "anger": "Boosheid",
+    "boredom": "Verveling",
+    "coffee": "Koffie",
+    "fatigue": "Vermoeidheid",
+    "night": "Nacht",
+    "other": "Iets anders",
+    "social": "Sociale context",
+    "stress": "Stress"
+  },
+  "units": {
+    "cigs": "sig.",
+    "cigsPerDay": "sig./dag",
+    "cigsToday": "sig. vandaag",
+    "d": "d",
+    "days": "dagen",
+    "daysCount_one": "{{count}} dag",
+    "daysCount_other": "{{count}} dagen",
+    "h": "u",
+    "hours": "Uren",
+    "min": "min",
+    "minutes": "Minuten",
+    "s": "s"
+  },
+  "weekdays": {
+    "0": "zondag",
+    "1": "maandag",
+    "2": "dinsdag",
+    "3": "woensdag",
+    "4": "donderdag",
+    "5": "vrijdag",
+    "6": "zaterdag"
+  },
+  "weekdaysShort": {
+    "0": "Zo",
+    "1": "Ma",
+    "2": "Di",
+    "3": "Wo",
+    "4": "Do",
+    "5": "Vr",
+    "6": "Za"
+  },
+  "workout": {
+    "aboutMinutes_one": "Ongeveer {{count}} minuut",
+    "aboutMinutes_other": "Ongeveer {{count}} minuten",
+    "adaptedCount_one": "{{count}} oefening vervangen door een variant die past bij je beperkingen.",
+    "adaptedCount_other": "{{count}} oefeningen vervangen door varianten die passen bij je beperkingen.",
+    "blockOf": "Oefening {{current}} van {{total}}",
+    "complete": {
+      "abandonedText": "De training telt deze keer niet als afgerond, maar elke minuut beweging telt.",
+      "abandonedTitle": "Je hebt bewogen, en dat is goed",
+      "effort": "Ervaren inspanning",
+      "effortHigh": "Heel moeilijk",
+      "effortLow": "Heel makkelijk",
+      "effortShort": "inspanning {{value}}/5",
+      "noPressure": "Geen druk: je kunt opnieuw beginnen wanneer je wilt.",
+      "notes": "Notities (optioneel)",
+      "text": "Goed gedaan. Elke training versterkt je adem en je zelfvertrouwen.",
+      "title": "Training afgerond!"
+    },
+    "duration": "Duur",
+    "easier": "Makkelijker",
+    "exercises": "Oefeningen",
+    "exercisesCount_one": "{{count}} oefening",
+    "exercisesCount_other": "{{count}} oefeningen",
+    "go": "Daar gaan we",
+    "harder": "Moeilijker",
+    "hideVariants": "Varianten verbergen",
+    "level": "Niveau",
+    "next": "Hierna",
+    "notFound": "Training niet gevonden",
+    "reps_one": "Ongeveer {{count}} herhaling",
+    "reps_other": "Ongeveer {{count}} herhalingen",
+    "rest": "Herstel",
+    "restShort": "rust",
+    "safety": "Veiligheid",
+    "showVariants": "Varianten en veiligheid",
+    "skip": "Overslaan",
+    "stop": "Training stoppen",
+    "stopConfirm": "Stoppen",
+    "stopIfPain": "Stop onmiddellijk bij pijn, duizeligheid, als je je onwel voelt of bij ongewone kortademigheid.",
+    "stopMessage": "Wat je al gedaan hebt, telt. Heb je minstens de helft van de oefeningen gedaan, dan telt de training als afgerond.",
+    "stopTitle": "Nu stoppen?"
+  },
+  "workouts": {
+    "advanced_cardio": {
+      "description": "Aanpasbare intensiteit: elke oefening heeft een zachtere variant.",
+      "title": "Gevorderde cardio"
+    },
+    "advanced_mobility": {
+      "description": "Om te herstellen tussen twee intensievere trainingen.",
+      "title": "Mobiliteit en herstel"
+    },
+    "advanced_strength": {
+      "description": "Volledig circuit voor boven- en onderlichaam.",
+      "title": "Gevorderde krachttraining"
+    },
+    "beginner_cardio": {
+      "description": "Ter plaatse stappen en bewegingen zonder springen om je adem op gang te brengen.",
+      "title": "Zachte cardio"
+    },
+    "beginner_mobility": {
+      "description": "Mobiliteit en stretching om spanning los te laten.",
+      "title": "Mobiliteit en ontspanning"
+    },
+    "beginner_strength": {
+      "description": "Squats op een stoel, push-ups tegen de muur en lichte core-oefeningen. Zonder springen.",
+      "title": "Zachte krachttraining"
+    },
+    "intermediate_cardio": {
+      "description": "Dynamische reeksen met actief herstel.",
+      "title": "Gemiddelde cardio"
+    },
+    "intermediate_mobility": {
+      "description": "Een hersteltraining voor je hele lichaam.",
+      "title": "Volledige mobiliteit"
+    },
+    "intermediate_strength": {
+      "description": "Squats, schuine push-ups, core-oefeningen en lunges, met een geleidelijke opbouw.",
+      "title": "Opbouwende krachttraining"
+    },
+    "sos_5min": {
+      "description": "5 haalbare minuten: stappen, squats op een stoel, push-ups tegen de muur en dan herstel.",
+      "title": "SOS-mini-training"
+    },
+    "theme_anger": {
+      "description": "Spanning kwijtraken met dynamische bewegingen en daarna weer tot rust komen.",
+      "title": "Anti-boosheid"
+    },
+    "theme_boredom": {
+      "description": "Een kleine, gevarieerde uitdaging om lichaam en geest bezig te houden.",
+      "title": "Anti-verveling"
+    },
+    "theme_calm": {
+      "description": "Langzame stretching en ademhaling om de druk te laten zakken.",
+      "title": "Tot rust komen"
+    },
+    "theme_coffee": {
+      "description": "Een korte routine voor na je koffie, op een andere plek dan gewoonlijk.",
+      "title": "Anti-koffie"
+    },
+    "theme_fatigue": {
+      "description": "Zachte mobiliteit en ademhaling, zonder zware inspanning.",
+      "title": "Anti-vermoeidheid"
+    },
+    "theme_reset": {
+      "description": "Een paar minuten om opnieuw te starten, zonder oordeel.",
+      "title": "Reset na een terugval"
+    },
+    "theme_stress": {
+      "description": "Langzame bewegingen en ademhaling om de spanning te laten zakken.",
+      "title": "Anti-stress"
+    }
+  },
+  "xp": {
+    "breathing_test": "Ademtest",
+    "craving_overcome": "Zin overwonnen",
+    "journal_entry": "Notitie in het dagboek",
+    "milestone": "Rookvrije mijlpaal",
+    "relapse_recovery": "Herstart na een uitschuiver",
+    "sos_completed": "SOS-oefening afgerond",
+    "victory": "Persoonlijke overwinning",
+    "workout_completed": "Training afgerond"
+  }
+}

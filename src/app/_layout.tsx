@@ -9,12 +9,15 @@ import { AppThemeProvider, useAppTheme } from '@/theme/ThemeContext';
 import { useStoresHydrated, useSettingsStore } from '@/store';
 import { detectDeviceLanguage, initI18n, setLanguage } from '@/i18n';
 import { useNotificationSync } from '@/hooks/useNotifications';
+import { useRewardsSync } from '@/hooks/useRewards';
 
 void SplashScreen.preventAutoHideAsync().catch(() => undefined);
 
 function RootNavigator() {
   const theme = useAppTheme();
   useNotificationSync();
+  // Badges and best streak are evaluated app-wide, whatever screen is open.
+  useRewardsSync();
   return (
     <View style={{ flex: 1, backgroundColor: theme.colors.background }}>
       <StatusBar style={theme.isDark ? 'light' : 'dark'} />

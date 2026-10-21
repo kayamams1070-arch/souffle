@@ -17,4 +17,10 @@ module.exports = defineConfig([
     files: ['src/__tests__/**'],
     rules: { '@typescript-eslint/no-require-imports': 'off' },
   },
+  {
+    // Node CLI scripts (i18n check, locale builder).
+    files: ['scripts/**/*.js'],
+    languageOptions: { globals: { __dirname: 'readonly', require: 'readonly', module: 'writable', process: 'readonly' } },
+    rules: { 'no-console': 'off' },
+  },
 ]);

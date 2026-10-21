@@ -80,7 +80,7 @@ export default function JournalScreen() {
         <AppText tone="accent">{t('journal.weeklyTotal', { count: weekly.total })}</AppText>
         {Object.entries(weekly.counts).map(([k, v]) => (
           <AppText key={k} variant="bodySmall" tone="accent">
-            • {t(`journal.types.${k}`)}: {v}
+            • {t(`journal.types.${k}`)}{t('common.colon')} {v}
           </AppText>
         ))}
         <AppText variant="caption" tone="accent" style={{ marginTop: 6 }}>

@@ -9,6 +9,7 @@ import { useUserStore, useSettingsStore } from '@/store';
 import { SUPPORTED_LANGUAGES } from '@/i18n';
 import { ChipGroup } from '@/components/ui/FormControls';
 import { enterDemo } from '@/services/dataService';
+import { APP_NAME } from '@/utils/constants';
 
 export default function WelcomeScreen() {
   const theme = useAppTheme();
@@ -45,7 +46,7 @@ export default function WelcomeScreen() {
           <Ionicons name="leaf" size={48} color={theme.colors.accent} />
         </View>
         <AppText variant="display" align="center">
-          Souffle
+          {APP_NAME}
         </AppText>
         <AppText variant="h3" align="center" weight="medium" tone="secondary">
           {t('onboarding.welcome.tagline')}
@@ -54,7 +55,7 @@ export default function WelcomeScreen() {
 
       <ChipGroup
         label={t('settings.language.title')}
-        options={SUPPORTED_LANGUAGES.map((l) => ({ value: l, label: t(`settings.language.${l}`) }))}
+        options={SUPPORTED_LANGUAGES.map((l) => ({ value: l, label: t(`settings.language.native.${l}`) }))}
         value={settings.language}
         onChange={(l) => setLanguage(l)}
         compact

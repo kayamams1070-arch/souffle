@@ -112,7 +112,7 @@ export default function RelapseScreen() {
               {t('relapse.kept', { xp: rewards.xp, badges: rewards.badges.length, best: Math.max(rewards.bestStreakDays, streak.bestDays) })}
             </AppText>
             <AppText variant="bodySmall" tone="accent" style={{ marginTop: 4 }}>
-              {saved.shieldUsed ? t('relapse.shieldApplied', { days: newStreak }) : t('relapse.streakNow', { days: newStreak })}
+              {saved.shieldUsed ? t('relapse.shieldApplied', { count: newStreak }) : t('relapse.streakNow', { count: newStreak })}
             </AppText>
           </AppCard>
         ) : null}
@@ -159,7 +159,7 @@ export default function RelapseScreen() {
           </AppText>
           {streakAtRisk ? (
             <AppCard tone={shieldCheck.ok ? 'warm' : 'alt'}>
-              <SwitchRow label={t('relapse.shield.title')} description={shieldCheck.ok ? t('relapse.shield.ok', { days: streak.currentDays }) : t(`relapse.shield.${shieldCheck.reason ?? 'cooldown'}`)} value={useShieldNow} onChange={setUseShieldNow} disabled={!shieldCheck.ok} />
+              <SwitchRow label={t('relapse.shield.title')} description={shieldCheck.ok ? t('relapse.shield.ok', { count: streak.currentDays }) : t(`relapse.shield.${shieldCheck.reason ?? 'cooldown'}`)} value={useShieldNow} onChange={setUseShieldNow} disabled={!shieldCheck.ok} />
             </AppCard>
           ) : null}
         </>

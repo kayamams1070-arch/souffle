@@ -18,7 +18,7 @@ export interface StatCardProps {
 export function StatCard({ label, value, hint, icon, tone = 'default', onPress, style }: StatCardProps) {
   const theme = useAppTheme();
   return (
-    <AppCard tone={tone} onPress={onPress} style={[{ flex: 1, minWidth: 140 }, style]} accessibilityLabel={`${label}: ${value}. ${hint ?? ''}`}>
+    <AppCard tone={tone} onPress={onPress} style={[{ flex: 1, minWidth: 0 }, style]} accessibilityLabel={`${label}: ${value}. ${hint ?? ''}`}>
       <View style={{ gap: 6 }}>
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
           {icon ? <Ionicons name={icon} size={theme.fs(16)} color={theme.colors.textSecondary} /> : null}

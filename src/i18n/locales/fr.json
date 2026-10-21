@@ -1,1 +1,1899 @@
-{}
+{
+  "about": {
+    "emergency": "Douleur dans la poitrine, malaise, difficulté importante à respirer : appelle immédiatement le 112.",
+    "emergencyTitle": "En cas d'urgence",
+    "helpNote": "Ton médecin, ton pharmacien ou un tabacologue peuvent aussi t'accompagner, notamment avec des traitements d'aide à l'arrêt.",
+    "helpSubtitle": "Des lignes d'aide gratuites existent. Se faire accompagner est une force, pas un échec.",
+    "helpTitle": "Se faire aider",
+    "limits": {
+      "coach": "Le coach repose sur des règles locales, pas sur une IA connectée.",
+      "community": "Le mode famille, les défis partagés et le forum nécessitent un serveur : ils ne sont pas encore disponibles.",
+      "notifications": "Les notifications dépendent du système du téléphone et peuvent être retardées.",
+      "offline": "Tout fonctionne hors ligne : aucune sauvegarde dans le cloud. Pense à exporter tes données.",
+      "widget": "Le widget d'écran d'accueil nécessite une version compilée de l'application : il n'est pas inclus dans cette version."
+    },
+    "limitsTitle": "Limites de cette version",
+    "notMedical": "Souffle est un outil d'accompagnement comportemental. Ce n'est pas un dispositif médical et il ne remplace pas l'avis d'un professionnel de santé.",
+    "schema": "schéma de données v{{version}}",
+    "sourcesTitle": "Sources",
+    "title": "À propos",
+    "what": "Souffle t'aide à traverser les envies grâce à des actions courtes, au sport à la maison et au suivi de tes progrès. Les estimations de santé sont des repères généraux, jamais des mesures.",
+    "whatTitle": "Ce que fait Souffle"
+  },
+  "alternatives": {
+    "after_meal": {
+      "text": "Marche cinq minutes, dehors ou sur place.",
+      "title": "Après le repas"
+    },
+    "alcohol": {
+      "text": "L'alcool baisse la vigilance. Alterne avec de l'eau, éloigne-toi un moment et observe l'envie sans y céder.",
+      "title": "Alcool"
+    },
+    "anger": {
+      "text": "Quelques mouvements cardio adaptés aident à évacuer la tension.",
+      "title": "Colère"
+    },
+    "boredom": {
+      "text": "Lance un mini-défi physique ou un jeu de mémoire pour occuper tes mains et ton esprit.",
+      "title": "Ennui"
+    },
+    "coffee": {
+      "text": "Bois ton café à un autre endroit que d'habitude, puis fais deux minutes d'étirements.",
+      "title": "Café"
+    },
+    "fatigue": {
+      "text": "Choisis la récupération : un peu de mobilité ou une respiration calme.",
+      "title": "Fatigue"
+    },
+    "night": {
+      "text": "Reste au calme : respiration lente ou craving surf, sans écran trop lumineux.",
+      "title": "La nuit"
+    },
+    "other": {
+      "text": "Deux minutes de respiration guidée, puis choisis ta prochaine action.",
+      "title": "Une idée"
+    },
+    "social": {
+      "text": "Prépare une phrase de refus simple (« Non merci, j'arrête ») et garde une action de remplacement : un verre d'eau, un chewing-gum.",
+      "title": "En groupe"
+    },
+    "stress": {
+      "text": "Une respiration guidée ou un peu de yoga doux aide à faire redescendre la tension.",
+      "title": "Stress"
+    }
+  },
+  "badges": {
+    "categories": {
+      "consistency": "Régularité",
+      "craving": "Envies surmontées",
+      "smoke_free": "Sans tabac",
+      "sport": "Sport"
+    },
+    "comeback": {
+      "description": "Tu as repris le chemin après une cigarette.",
+      "title": "Le retour"
+    },
+    "cravings_1": {
+      "description": "Ta première envie surmontée.",
+      "title": "Première vague"
+    },
+    "cravings_10": {
+      "description": "Tu sais de mieux en mieux traverser les envies.",
+      "title": "10 envies surmontées"
+    },
+    "cravings_100": {
+      "description": "Une vraie maîtrise des envies.",
+      "title": "100 envies surmontées"
+    },
+    "eventsCount_one": "{{count}} action récompensée jusqu'ici.",
+    "eventsCount_other": "{{count}} actions récompensées jusqu'ici.",
+    "locked": "À débloquer",
+    "pact_signed": {
+      "description": "Tu as signé ton pacte personnel.",
+      "title": "Engagé"
+    },
+    "regular_week": {
+      "description": "3 séances terminées dans la même semaine.",
+      "title": "Semaine régulière"
+    },
+    "smoke_free_1d": {
+      "description": "Une journée complète sans tabac.",
+      "title": "Première journée"
+    },
+    "smoke_free_1m": {
+      "description": "30 jours sans tabac d'affilée.",
+      "title": "Premier mois"
+    },
+    "smoke_free_1w": {
+      "description": "7 jours sans tabac d'affilée.",
+      "title": "Première semaine"
+    },
+    "smoke_free_1y": {
+      "description": "365 jours sans tabac d'affilée.",
+      "title": "Une année"
+    },
+    "smoke_free_3m": {
+      "description": "90 jours sans tabac d'affilée.",
+      "title": "Trois mois"
+    },
+    "subtitle": "Les badges obtenus restent acquis pour toujours.",
+    "title": "Badges",
+    "unlockedOn": "Obtenu le {{date}}",
+    "unlockedToast_one": "Nouveau badge débloqué !",
+    "unlockedToast_other": "{{count}} nouveaux badges débloqués !",
+    "workouts_1": {
+      "description": "Ta première séance terminée.",
+      "title": "Premier pas"
+    },
+    "workouts_10": {
+      "description": "10 séances terminées.",
+      "title": "10 séances"
+    },
+    "workouts_100": {
+      "description": "100 séances terminées. Impressionnant.",
+      "title": "100 séances"
+    },
+    "workouts_50": {
+      "description": "50 séances terminées.",
+      "title": "50 séances"
+    },
+    "xpRules": "Comment gagner des XP",
+    "xpRulesHint": "Chaque action n'est récompensée qu'une seule fois."
+  },
+  "benefits": {
+    "kinds": {
+      "hobby": "Un loisir",
+      "other": "Autre",
+      "purchase": "Un achat",
+      "savings": "De l'épargne",
+      "travel": "Un voyage"
+    },
+    "limits": "Souffle ne calcule ni ton espérance de vie gagnée ni ta capacité pulmonaire : il faudrait un modèle médical validé et des mesures réelles. Les repères affichés sont généraux, issus de sources de santé publique, et varient selon les personnes.",
+    "limitsTitle": "Ce que Souffle ne calcule pas",
+    "notForReduction": "en mode réduction, non calculé",
+    "projectHint": "Associer un projet à tes économies",
+    "projectName": "Nom du projet",
+    "projectNameRequired": "Donne un nom à ton projet.",
+    "projectNote": "Il s'agit d'économies théoriques : l'argent n'est pas mis de côté automatiquement.",
+    "projectProgress": "{{saved}} sur {{target}}",
+    "projectReached": "Objectif atteint, en théorie ! À toi de décider comment en profiter.",
+    "projectSubtitle": "Associe tes économies à quelque chose qui compte pour toi.",
+    "projectTarget": "Montant visé (facultatif)",
+    "projectTargetHint": "Par exemple 600",
+    "projectTargetInvalid": "Indique un montant valide, par exemple 600.",
+    "projectTitle": "Mon projet d'épargne",
+    "savedTitle": "Économies estimées depuis le début",
+    "spentLogged": "Dont déduit : {{amount}} pour les cigarettes que tu as notées.",
+    "subtitle": "Tes économies et des repères de santé, avec leurs sources et leurs limites.",
+    "timelineFuture": "La chronologie démarrera à ta date d'arrêt.",
+    "timelineReduction": "Ces repères concernent l'arrêt complet. En mode réduction, les bénéfices sont plus limités et ne peuvent pas être estimés de façon fiable.",
+    "title": "Bénéfices"
+  },
+  "breathingTest": {
+    "breathlessness": "Essoufflement",
+    "cardHint": "Suis l'évolution de ton ressenti, sans effort maximal.",
+    "cardSubtitle": "Toutes les 2 semaines, 2 minutes",
+    "chartSummary": "Essoufflement déclaré : {{first}}/10 au premier test, {{last}}/10 au dernier.",
+    "comparison": "Essoufflement déclaré : {{prev}}/10 la dernière fois, {{now}}/10 aujourd'hui.",
+    "dueAgain": "C'est le bon moment pour le refaire.",
+    "effort": "Effort ressenti",
+    "exhaleSafety": "Il ne s'agit pas de tenir le plus longtemps possible : une expiration lente et confortable suffit.",
+    "exhaleSeconds": "Durée estimée de l'expiration",
+    "history": "Ton essoufflement déclaré",
+    "historyHint": "De 0 (aucun) à 10 (très fort)",
+    "lastTest": "Dernier test le {{date}}.",
+    "marchHint": "Garde un rythme où tu peux parler. Arrête si tu ressens un malaise.",
+    "nextIn_one": "Prochain test conseillé dans {{count}} jour.",
+    "nextIn_other": "Prochain test conseillé dans {{count}} jours.",
+    "none": "Aucun",
+    "notMedical": "Ce test n'est pas médical et ne mesure pas ta capacité pulmonaire. Il enregistre uniquement tes sensations. Arrête en cas de malaise.",
+    "protocol": {
+      "calm": "Assieds-toi et respire calmement pendant 30 secondes.",
+      "exhale": "Expire lentement et confortablement, et estime la durée. Ne force pas et ne retiens jamais ton souffle.",
+      "march": "Marche sur place à un rythme confortable pendant 30 secondes.",
+      "rate": "Note l'effort ressenti et ton essoufflement."
+    },
+    "protocolTitle": "Le protocole",
+    "savedText": "Refais-le dans environ 2 semaines, dans les mêmes conditions, pour comparer.",
+    "savedTitle": "Test enregistré",
+    "skipStep": "Passer cette étape",
+    "start": "Commencer le test",
+    "strong": "Très fort",
+    "subtitle": "Un protocole simple et identique pour suivre tes sensations dans le temps.",
+    "title": "Test de souffle"
+  },
+  "challenges": {
+    "create": "Créer le défi",
+    "duration": "Durée",
+    "emptyText": "Crée un premier défi simple, par exemple 3 séances en 7 jours.",
+    "emptyTitle": "Aucun défi",
+    "kindLabels": {
+      "cravings_overcome": "Envies surmontées",
+      "smoke_free_days": "Jours sans tabac",
+      "workouts": "Séances"
+    },
+    "kinds": {
+      "cravings_overcome_one": "{{count}} envie surmontée",
+      "cravings_overcome_other": "{{count}} envies surmontées",
+      "smoke_free_days_one": "{{count}} jour sans tabac",
+      "smoke_free_days_other": "{{count}} jours sans tabac",
+      "workouts_one": "{{count}} séance",
+      "workouts_other": "{{count}} séances"
+    },
+    "localOnly": "Défis locaux : ils restent sur ton téléphone, sans participants distants.",
+    "name": "Nom (facultatif)",
+    "newTitle": "Nouveau défi",
+    "progress": "{{value}} / {{target}}",
+    "status": {
+      "active": "En cours",
+      "completed": "Réussi, bravo !",
+      "ended": "Terminé. Chaque essai compte.",
+      "upcoming": "À venir"
+    },
+    "subtitle": "Des défis personnels, à ton rythme.",
+    "target": "Objectif",
+    "title": "Défis"
+  },
+  "coach": {
+    "actions": {
+      "breathing": "Respiration guidée (2 min)",
+      "distraction": "Jeu de distraction",
+      "journal": "Ouvrir mon journal",
+      "medical": "Si la douleur ou le malaise persiste ou s'aggrave, contacte un professionnel de santé. En cas d'urgence, appelle le 112.",
+      "pact": "Relire mon pacte",
+      "relapse": "Noter la cigarette, sans jugement",
+      "rest": "Repose-toi : aucun exercice pour le moment.",
+      "surf": "Craving surf (3 min)",
+      "workout": "Voir la séance proposée"
+    },
+    "alternative": "Plus doux",
+    "cardHint": "Dis-lui comment tu te sens, il te propose une action.",
+    "limits": "Le coach reconnaît des mots-clés. S'il ne comprend pas, il te pose une question plutôt que de deviner. Il ne remplace pas un professionnel de santé.",
+    "localNote": "Ce coach fonctionne sur ton téléphone avec des règles simples et transparentes. Ce n'est pas une intelligence artificielle connectée.",
+    "moodOptional": "Ton humeur (facultatif)",
+    "placeholder": "Par exemple : j'ai envie de fumer après le café",
+    "prompts": {
+      "coffee": "J'ai envie de fumer après le café",
+      "missed": "J'ai raté deux séances",
+      "no_sport": "Je n'ai pas fait de sport cette semaine",
+      "relapsed": "Je viens de rechuter",
+      "stress": "Je suis stressé",
+      "tired": "Je suis fatigué"
+    },
+    "quickPrompts": "Situations fréquentes",
+    "replies": {
+      "anger": {
+        "message": "Évacue la tension avec la séance anti-colère, quelques minutes suffisent.",
+        "why": "Bouger aide à faire baisser la tension physique liée à la colère."
+      },
+      "anger_gentle": {
+        "message": "Respire d'abord, lentement. La colère va redescendre.",
+        "why": "Tu as indiqué des limitations : une respiration calme est plus adaptée qu'un effort intense."
+      },
+      "boredom": {
+        "message": "Occupe ton esprit avec un petit jeu, ou bouge quelques minutes.",
+        "why": "L'ennui laisse de la place aux envies. Une activité courte et prenante aide à passer le cap."
+      },
+      "craving_coffee": {
+        "message": "Change le rituel : bois ton café ailleurs, puis fais la courte routine anti-café.",
+        "why": "Le café et la cigarette sont souvent associés. Changer de lieu et occuper ses mains aide à casser ce lien."
+      },
+      "craving_general": {
+        "message": "Commence par 2 minutes de respiration guidée.",
+        "why": "Une envie monte puis redescend. Respirer t'aide à traverser ce moment."
+      },
+      "missed_sessions": {
+        "message": "Ce n'est pas grave. Reprends avec une séance courte, à ton rythme.",
+        "why": "La régularité se construit dans le temps, pas en rattrapant tout d'un coup."
+      },
+      "motivation": {
+        "message": "Relis ton pacte : tes raisons sont toujours là.",
+        "why": "La motivation varie, c'est normal. Revenir à ton pourquoi aide à garder le cap."
+      },
+      "no_sport": {
+        "message": "Pas de souci. Une séance reset de quelques minutes suffit pour relancer la semaine.",
+        "why": "Reprendre avec une séance courte est plus facile qu'une grosse séance."
+      },
+      "pain": {
+        "message": "Prends soin de toi d'abord : pas d'exercice maintenant.",
+        "why": "Une douleur, un vertige ou un malaise sont des signaux à respecter. Le sport reprendra quand tu te sentiras mieux."
+      },
+      "proud": {
+        "message": "Bravo ! Garde une trace de cette victoire dans ton journal.",
+        "why": "Relire ses réussites aide beaucoup dans les moments plus difficiles."
+      },
+      "relapsed": {
+        "message": "Une cigarette n'efface pas ton chemin. Notons-la ensemble, sans jugement.",
+        "why": "Noter ce qui s'est passé aide à préparer la prochaine fois. Tes XP, badges et économies passées restent acquis."
+      },
+      "sleep": {
+        "message": "Note ta nuit dans ton journal et choisis une séance de retour au calme ce soir.",
+        "why": "Le sommeil et les envies sont souvent liés. Les noter t'aide à repérer tes propres tendances."
+      },
+      "stress": {
+        "message": "Deux minutes de respiration guidée pour relâcher la pression.",
+        "why": "Une expiration plus longue que l'inspiration aide le corps à se calmer."
+      },
+      "tired": {
+        "message": "Une séance douce de mobilité, ou simplement du repos.",
+        "why": "La fatigue rend les envies plus fortes. Écoute ton corps : récupérer fait aussi partie du programme."
+      },
+      "unknown": {
+        "message": "Je ne suis pas sûr d'avoir compris. Laquelle de ces situations se rapproche le plus de la tienne ?",
+        "why": "Je reconnais seulement quelques situations précises : choisis-en une ci-dessous."
+      }
+    },
+    "send": "Envoyer",
+    "subtitle": "Des conseils concrets selon ta situation.",
+    "thisWeek_one": "Cette semaine : {{count}} séance.",
+    "thisWeek_other": "Cette semaine : {{count}} séances.",
+    "title": "Coach",
+    "youSaid": "Tu as écrit",
+    "yourMessage": "Ton message"
+  },
+  "common": {
+    "back": "Retour",
+    "backHome": "Retour à l'accueil",
+    "cancel": "Annuler",
+    "colon": " :",
+    "confirm": "Confirmer",
+    "continue": "Continuer",
+    "decrease": "Diminuer : {{label}}",
+    "delete": "Supprimer",
+    "deleteConfirm": "Supprimer cette entrée ?",
+    "done": "Terminé",
+    "edit": "Modifier",
+    "finish": "Terminer",
+    "increase": "Augmenter : {{label}}",
+    "next": "Suivant",
+    "off": "Désactivées",
+    "on": "Activées",
+    "pause": "Pause",
+    "previous": "Précédent",
+    "remaining": "restant",
+    "resume": "Reprendre",
+    "save": "Enregistrer",
+    "saved": "Enregistré.",
+    "selected": "Sélectionné",
+    "start": "Commencer",
+    "tapToDismiss": "Touche pour fermer",
+    "tapToEdit": "Touche pour modifier"
+  },
+  "cough": {
+    "emptyText": "Note ta toux de temps en temps pour suivre son évolution.",
+    "emptyTitle": "Aucune observation",
+    "frequencies": {
+      "constant": "Presque tout le temps",
+      "often": "Souvent",
+      "rare": "Rare",
+      "sometimes": "Parfois"
+    },
+    "frequency": "Fréquence ressentie",
+    "history": "Historique",
+    "intensity": "Intensité",
+    "medical": "Si la toux est inquiétante, persiste ou s'aggrave (sang, fièvre, essoufflement important, douleur thoracique), consulte un professionnel de santé.",
+    "needMore": "Une tendance apparaîtra à partir de 4 observations.",
+    "newEntry": "Nouvelle observation",
+    "none": "Aucune",
+    "note": "Observations (facultatif)",
+    "strong": "Très forte",
+    "subtitle": "Suivre ton ressenti, sans aucun diagnostic.",
+    "title": "Toux",
+    "today": "Aujourd'hui",
+    "trend": "Évolution",
+    "trendSummary_one": "{{count}} observation : intensité {{first}}/10 au début, {{last}}/10 à la fin.",
+    "trendSummary_other": "{{count}} observations : intensité {{first}}/10 au début, {{last}}/10 à la fin.",
+    "trends": {
+      "improving": "Ta toux déclarée semble diminuer.",
+      "stable": "Ta toux déclarée semble stable.",
+      "worsening": "Ta toux déclarée semble augmenter. Si cela persiste, parles-en à un professionnel de santé."
+    },
+    "yesterday": "Hier"
+  },
+  "craving": {
+    "actionTaken": "Action choisie",
+    "charts": {
+      "byHour": "Envies par heure",
+      "byHourSummary": "Heure la plus fréquente : {{hour}} h.",
+      "byWeekday": "Envies par jour de la semaine",
+      "byWeekdaySummary": "Jour le plus fréquent : {{day}}.",
+      "interventions": "Ce qui t'aide le plus",
+      "interventionsHint": "D'après les résultats que tu as indiqués.",
+      "last14": "14 derniers jours",
+      "last14Summary_one": "{{count}} envie notée sur les 14 derniers jours.",
+      "last14Summary_other": "{{count}} envies notées sur les 14 derniers jours.",
+      "triggers": "Déclencheurs fréquents"
+    },
+    "context": "Contexte (facultatif)",
+    "editTitle": "Modifier l'envie",
+    "emptyDescription": "Note tes envies pour découvrir tes moments à risque et ce qui t'aide le plus.",
+    "emptyTitle": "Aucune envie notée",
+    "errors": {
+      "required": "Indique au moins l'intensité et le déclencheur."
+    },
+    "historyTitle": "Journal des envies",
+    "intensity": "Intensité",
+    "intensityHigh": "Très forte",
+    "intensityLow": "Légère",
+    "list": "Historique",
+    "location": "Où es-tu ? (facultatif)",
+    "logSubtitle": "Quelques secondes suffisent. Ces notes t'aident à repérer tes moments à risque.",
+    "logTitle": "Noter une envie",
+    "mood": "Humeur (facultatif)",
+    "moreHidden_one": "{{count}} envie plus ancienne n'est pas affichée.",
+    "moreHidden_other": "{{count}} envies plus anciennes ne sont pas affichées.",
+    "outcome": "Résultat",
+    "startSuggested": "Commencer : {{action}}",
+    "stats": {
+      "avgIntensity": "Intensité moyenne",
+      "count": "Envies notées",
+      "fewData": "Les graphiques apparaissent à partir de 3 envies notées sur la période.",
+      "noOutcome": "Aucun résultat noté",
+      "overcome": "Envies surmontées",
+      "overcomeRate": "Taux de réussite"
+    },
+    "suggestion": "{{title}} : {{text}}",
+    "timeAuto": "L'heure est enregistrée automatiquement.",
+    "trigger": "Déclencheur"
+  },
+  "dashboard": {
+    "best_one": "Record : {{count}} jour",
+    "best_other": "Record : {{count}} jours",
+    "counter": {
+      "a11y": "Sans tabac depuis : {{days}} j, {{hours}} h et {{minutes}} min",
+      "futureA11y": "Ton arrêt commence dans : {{days}} j, {{hours}} h et {{minutes}} min",
+      "futureHint": "Profite de ce temps pour te préparer : repère tes moments à risque et teste le bouton SOS.",
+      "futureTitle": "Ton arrêt commence le",
+      "noDate": "Tu n'as pas encore choisi de date d'arrêt.",
+      "setDate": "Choisir ma date",
+      "since": "Depuis le {{date}}",
+      "title": "Sans tabac depuis"
+    },
+    "emptyHint": "Bienvenue ! La prochaine fois qu'une envie arrive, touche le bouton orange. Tu peux aussi commencer ta première séance de sport.",
+    "frozen": "En pause",
+    "greeting": "Bonjour",
+    "greetingName": "Bonjour {{name}}",
+    "level": "Niveau {{level}} · {{current}}/{{needed}}",
+    "nextWorkout": "Prochaine séance conseillée",
+    "pactHint": "Relis pourquoi tu as commencé.",
+    "pactTitle": "Mon pacte",
+    "recentBadges": "Badges récents",
+    "reduction": {
+      "a11y": "Cigarettes notées aujourd'hui : {{smoked}}, pour un objectif de {{target}}",
+      "logCigarette": "Noter une cigarette",
+      "overTarget": "Objectif dépassé aujourd'hui. Ce n'est pas grave : demain est une nouvelle journée.",
+      "summary_one": "Objectif tenu {{count}} jour sur {{total}}. La réduction aide, mais elle n'équivaut pas à un arrêt complet.",
+      "summary_other": "Objectif tenu {{count}} jours sur {{total}}. La réduction aide, mais elle n'équivaut pas à un arrêt complet.",
+      "title": "Aujourd'hui",
+      "underTarget": "Encore {{left}} avant ton objectif du jour. Chaque cigarette en moins compte."
+    },
+    "savings": {
+      "a11y_one": "Économies estimées : {{amount}}, {{count}} cigarette évitée",
+      "a11y_other": "Économies estimées : {{amount}}, {{count}} cigarettes évitées",
+      "avoided_one": "{{count}} cigarette évitée",
+      "avoided_other": "{{count}} cigarettes évitées",
+      "disclaimer": "Projections théoriques calculées à partir des habitudes que tu as déclarées. Ce n'est pas de l'argent réellement mis de côté.",
+      "disclaimerReduction": "Projections théoriques si tu tiens ton objectif de réduction chaque jour, à partir de tes habitudes déclarées.",
+      "project": "Pour : {{title}}",
+      "title": "Économies estimées",
+      "y1": "En 1 an",
+      "y10": "En 10 ans",
+      "y5": "En 5 ans"
+    },
+    "shield": "Bouclier",
+    "shieldHint": "1 fois par semaine",
+    "shieldReady": "Disponible",
+    "shieldUsed": "Utilisé",
+    "smokedButton": "J'ai fumé",
+    "smokedHint": "Noter une cigarette sans perdre tes progrès",
+    "sosButton": "J'ai envie de fumer",
+    "sosHint": "Ouvre l'aide immédiate en quelques secondes",
+    "streak": "Série",
+    "subtitle": "Un pas après l'autre, à ton rythme.",
+    "workouts": "Séances",
+    "workoutsHint": "terminées",
+    "xp": "Expérience"
+  },
+  "demo": {
+    "activeText": "Les données affichées sont fictives. Tes données personnelles, s'il y en avait, sont sauvegardées à part et seront restaurées quand tu quitteras la démo.",
+    "banner": "Mode démonstration : profil et données entièrement fictifs.",
+    "confirmText": "Tes données vont être mises de côté sur ce téléphone et remplacées temporairement par un profil fictif. Elles reviendront intactes quand tu quitteras la démo.",
+    "confirmTitle": "Lancer la démonstration ?",
+    "exit": "Quitter la démonstration",
+    "exitRestore": "Quitter la démo et retrouver mes données",
+    "inactiveText": "Charge un profil fictif pour découvrir l'application. Tes données actuelles sont mises de côté sur le téléphone, puis restaurées quand tu quittes la démo.",
+    "load": "Charger la démonstration",
+    "reset": "Réinitialiser la démonstration",
+    "tag": "démo",
+    "title": "Mode démonstration",
+    "welcomeHint": "Tu veux d'abord voir à quoi ressemble l'application ? Charge un profil fictif, clairement signalé. Tu pourras le quitter à tout moment."
+  },
+  "dependence": {
+    "high": "Dépendance forte",
+    "low": "Dépendance faible",
+    "medium": "Dépendance moyenne",
+    "very_high": "Dépendance très forte",
+    "very_low": "Dépendance très faible"
+  },
+  "exercises": {
+    "arm_circles": {
+      "easier": "Fais des cercles plus petits, coudes légèrement pliés.",
+      "harder": "Agrandis progressivement les cercles.",
+      "instructions": "Bras tendus sur les côtés, fais de petits cercles vers l'avant, puis vers l'arrière.",
+      "name": "Cercles de bras",
+      "safety": "Arrête si tu ressens une douleur à l'épaule."
+    },
+    "box_breathing_soft": {
+      "easier": "Supprime les pauses et respire en continu.",
+      "harder": "Allonge doucement chaque phase.",
+      "instructions": "Inspire 4 secondes, fais une courte pause si c'est confortable, expire 4 secondes, puis petite pause.",
+      "name": "Respiration carrée douce",
+      "safety": "Au moindre inconfort, reviens à une respiration naturelle."
+    },
+    "calf_raise": {
+      "easier": "Garde les mains sur le dossier d'une chaise.",
+      "harder": "Fais-le sur une seule jambe, en te tenant.",
+      "instructions": "Monte lentement sur la pointe des pieds, puis redescends.",
+      "name": "Montées sur la pointe des pieds",
+      "safety": "Garde un appui stable à portée de main."
+    },
+    "cat_cow": {
+      "easier": "Réduis l'amplitude.",
+      "harder": "Ralentis et allonge chaque respiration.",
+      "instructions": "À quatre pattes, arrondis le dos en expirant, puis creuse-le doucement en inspirant.",
+      "name": "Chat-vache",
+      "safety": "Mouvement lent, sans forcer sur le bas du dos."
+    },
+    "chair_squat": {
+      "easier": "Aide-toi des mains sur les cuisses ou sur les accoudoirs.",
+      "harder": "Effleure seulement l'assise sans t'asseoir.",
+      "instructions": "Pieds écartés à largeur de hanches, assieds-toi lentement sur la chaise, puis relève-toi en poussant dans les talons.",
+      "name": "Squat sur chaise",
+      "safety": "Genoux dans l'axe des pieds, chaise stable posée contre un mur."
+    },
+    "child_pose": {
+      "easier": "Glisse un coussin sous les fesses ou sous le front.",
+      "harder": "Écarte les genoux pour un étirement plus profond.",
+      "instructions": "À genoux, assieds-toi sur les talons et allonge les bras devant toi, front vers le sol.",
+      "name": "Posture de l'enfant",
+      "safety": "Évite cette posture si tes genoux sont douloureux."
+    },
+    "dead_bug": {
+      "easier": "Ne bouge que les jambes, une à la fois.",
+      "harder": "Allonge davantage bras et jambe, plus lentement.",
+      "instructions": "Sur le dos, bras vers le plafond, genoux pliés à 90°. Tends lentement un bras et la jambe opposée, puis alterne.",
+      "name": "Dead bug",
+      "safety": "Garde le bas du dos en contact avec le sol."
+    },
+    "glute_bridge": {
+      "easier": "Monte moins haut.",
+      "harder": "Tiens 3 secondes en haut du mouvement.",
+      "instructions": "Sur le dos, genoux pliés, soulève le bassin en serrant les fessiers, puis redescends lentement.",
+      "name": "Pont fessier",
+      "safety": "Évite de creuser le bas du dos."
+    },
+    "hamstring_stretch": {
+      "easier": "Plie légèrement le genou.",
+      "harder": "Rapproche doucement le buste de la jambe.",
+      "instructions": "Une jambe tendue devant toi, talon au sol, penche le buste en avant, dos droit. Change de côté.",
+      "name": "Étirement de l'arrière des cuisses",
+      "safety": "Pas de rebonds : tiens la position."
+    },
+    "high_knees": {
+      "easier": "Marche sur place en levant les genoux, sans sautiller.",
+      "harder": "Accélère le rythme.",
+      "instructions": "Monte les genoux de façon dynamique en balançant les bras.",
+      "name": "Montées de genoux",
+      "safety": "Pose les pieds en douceur, sur l'avant du pied."
+    },
+    "hip_stretch": {
+      "easier": "Garde la position sans te pencher.",
+      "harder": "Penche-toi un peu plus, dos droit.",
+      "instructions": "Assis sur une chaise, pose une cheville sur le genou opposé et penche-toi légèrement en avant. Change de côté.",
+      "name": "Étirement des hanches",
+      "safety": "Étirement doux, jamais douloureux."
+    },
+    "incline_pushup": {
+      "easier": "Utilise un appui plus haut, ou le mur.",
+      "harder": "Utilise un appui plus bas, comme une chaise contre un mur.",
+      "instructions": "Mains sur une table ou un plan stable, corps aligné. Descends la poitrine vers le bord, puis repousse.",
+      "name": "Pompes inclinées",
+      "safety": "Vérifie que le support ne peut pas glisser."
+    },
+    "jumping_jacks": {
+      "easier": "Version sans saut : écarte une jambe à la fois en levant les bras.",
+      "harder": "Accélère le rythme.",
+      "instructions": "Saute en écartant les bras et les jambes, puis reviens pieds joints.",
+      "name": "Jumping jacks",
+      "safety": "Atterris en douceur. Passe à la version sans saut au moindre inconfort."
+    },
+    "lunge": {
+      "easier": "Tiens le dossier d'une chaise et réduis l'amplitude.",
+      "harder": "Fais une fente arrière, plus lentement.",
+      "instructions": "Fais un grand pas en avant, descends en pliant les deux genoux, puis reviens. Alterne les jambes.",
+      "name": "Fentes adaptées",
+      "safety": "Le genou avant reste au-dessus de la cheville."
+    },
+    "march": {
+      "easier": "Reste près d'un mur et lève simplement les talons.",
+      "harder": "Monte les genoux plus haut et accélère légèrement.",
+      "instructions": "Lève les genoux à une hauteur confortable en balançant les bras, dos droit, respiration régulière.",
+      "name": "Marche sur place",
+      "safety": "Garde un rythme où tu peux encore parler."
+    },
+    "mountain_climber_slow": {
+      "easier": "Mains sur une chaise calée contre un mur.",
+      "harder": "Augmente le rythme en gardant le dos droit.",
+      "instructions": "En appui sur les mains, ramène un genou vers la poitrine, puis l'autre, lentement.",
+      "name": "Mountain climbers lents",
+      "safety": "Poignets sous les épaules, bassin stable."
+    },
+    "neck_rolls": {
+      "easier": "Réduis l'amplitude des mouvements.",
+      "harder": "Tiens chaque position pendant une respiration lente.",
+      "instructions": "Incline doucement la tête vers une épaule, puis vers l'autre. Regarde ensuite à droite et à gauche, sans forcer.",
+      "name": "Mobilité du cou",
+      "safety": "Évite les rotations complètes et rapides de la tête."
+    },
+    "plank_knees": {
+      "easier": "Fais des séries plus courtes, avec des pauses.",
+      "harder": "Passe en appui sur les pieds si c'est confortable.",
+      "instructions": "En appui sur les avant-bras et les genoux, aligne la tête, le dos et le bassin. Respire calmement.",
+      "name": "Gainage sur les genoux",
+      "safety": "Ne bloque pas ta respiration. Arrête si le bas du dos tire."
+    },
+    "recovery_breathing": {
+      "easier": "Respire simplement à ton rythme.",
+      "harder": "Allonge un peu l'expiration, sans forcer.",
+      "instructions": "Inspire doucement par le nez, expire plus longuement par la bouche, épaules relâchées.",
+      "name": "Respiration de récupération",
+      "safety": "Ne retiens jamais ton souffle."
+    },
+    "seated_forward_fold": {
+      "easier": "Garde les mains posées sur les cuisses.",
+      "harder": "Laisse les mains descendre vers le sol.",
+      "instructions": "Assis au bord d'une chaise, penche lentement le buste vers les cuisses, bras relâchés.",
+      "name": "Flexion avant assise",
+      "safety": "Remonte lentement pour éviter un vertige."
+    },
+    "seated_leg_extension": {
+      "easier": "Ne tends la jambe qu'à moitié.",
+      "harder": "Garde la jambe tendue 5 secondes.",
+      "instructions": "Assieds-toi au bord d'une chaise, tends une jambe devant toi, tiens 2 secondes, repose-la puis change de jambe.",
+      "name": "Extension de jambe assise",
+      "safety": "Garde le dos droit, sans te pencher en arrière."
+    },
+    "seated_twist": {
+      "easier": "Tourne moins loin.",
+      "harder": "Tiens chaque côté pendant 3 respirations.",
+      "instructions": "Assis sur une chaise, pivote doucement le buste vers la droite en t'aidant du dossier, puis vers la gauche.",
+      "name": "Torsion assise",
+      "safety": "Grandis-toi avant de tourner, sans forcer."
+    },
+    "shadow_boxing": {
+      "easier": "Plus lentement, coudes légèrement pliés.",
+      "harder": "Ajoute un petit pas de côté entre les séries.",
+      "instructions": "Pieds écartés, enchaîne des coups de poing souples dans le vide en alternant les bras.",
+      "name": "Boxe dans le vide",
+      "safety": "Ne tends jamais complètement le coude."
+    },
+    "shoulder_mobility": {
+      "easier": "Fais de plus petits cercles.",
+      "harder": "Ajoute de grands cercles avec les bras.",
+      "instructions": "Roule les épaules vers l'arrière, puis vers l'avant, en relâchant la nuque.",
+      "name": "Mobilité des épaules",
+      "safety": "Reste dans une amplitude confortable."
+    },
+    "side_plank_knees": {
+      "easier": "Soulève le bassin quelques secondes seulement, puis repose-le.",
+      "harder": "Tends les jambes, appui sur les pieds.",
+      "instructions": "Couche-toi sur le côté, en appui sur l'avant-bras, genoux pliés. Soulève le bassin. Change de côté à mi-temps.",
+      "name": "Planche latérale adaptée",
+      "safety": "Coude bien placé sous l'épaule."
+    },
+    "squat": {
+      "easier": "Descends moins bas, ou fais un squat sur chaise.",
+      "harder": "Descends lentement en 3 secondes.",
+      "instructions": "Pieds écartés, descends comme pour t'asseoir, poids dans les talons, puis remonte en expirant.",
+      "name": "Squat",
+      "safety": "Genoux dans l'axe des pieds, dos droit."
+    },
+    "standing_balance": {
+      "easier": "Garde une main sur la chaise.",
+      "harder": "Lâche la chaise quelques secondes, toujours à portée de main.",
+      "instructions": "À côté d'une chaise, lève un pied du sol et tiens l'équilibre, puis change de pied.",
+      "name": "Équilibre debout",
+      "safety": "Reste toujours près d'un appui stable."
+    },
+    "step_jacks": {
+      "easier": "Lève les bras seulement jusqu'aux épaules.",
+      "harder": "Accélère en gardant le contrôle.",
+      "instructions": "Écarte une jambe sur le côté en levant les bras, reviens, puis alterne.",
+      "name": "Jumping jacks sans saut",
+      "safety": "Mouvement contrôlé, sans à-coups."
+    },
+    "wall_pushup": {
+      "easier": "Rapproche les pieds du mur.",
+      "harder": "Éloigne davantage les pieds du mur.",
+      "instructions": "Mains sur le mur à hauteur d'épaules, pieds un peu en arrière. Plie les coudes pour approcher la poitrine du mur, puis repousse.",
+      "name": "Pompes contre un mur",
+      "safety": "Garde le corps aligné, sans creuser le dos."
+    }
+  },
+  "family": {
+    "notAvailable": "Ces fonctions nécessitent un serveur et ne sont pas encore disponibles. Aucune invitation n'est envoyée par l'application.",
+    "privacy": "Aucune coordonnée de tes proches n'est demandée ni enregistrée.",
+    "share": {
+      "cravings": "Envies surmontées et victoires",
+      "days": "Jours sans tabac",
+      "savings": "Économies estimées",
+      "why": "Mon pourquoi",
+      "workouts": "Séances de sport"
+    },
+    "shareButton": "Partager ce récapitulatif",
+    "shareSubtitle": "Choisis ce que tu veux partager. C'est toi qui envoies le texte, à qui tu veux.",
+    "shareTitle": "Partager un récapitulatif",
+    "shared": "Récapitulatif prêt à être partagé.",
+    "subtitle": "Partager tes progrès avec un proche, à ta manière.",
+    "summary": {
+      "cravings_one": "• {{count}} envie surmontée · victoires notées : {{victories}}",
+      "cravings_other": "• {{count}} envies surmontées · victoires notées : {{victories}}",
+      "days_one": "• {{count}} jour sans tabac",
+      "days_other": "• {{count}} jours sans tabac",
+      "footer": "Merci de m'encourager !",
+      "header": "Les progrès de {{name}} avec Souffle :",
+      "savings": "• Environ {{amount}} économisés",
+      "why": "• Mon pourquoi : {{why}}",
+      "workouts_one": "• {{count}} séance de sport",
+      "workouts_other": "• {{count}} séances de sport"
+    },
+    "title": "Mode famille",
+    "vision": "Dans une prochaine version, un proche pourra suivre les victoires que tu choisis de partager et t'envoyer des encouragements, avec des défis privés et un espace d'échange anonyme et modéré.",
+    "visionTitle": "À venir"
+  },
+  "forecast": {
+    "bestIntervention_one": "D'après tes réponses, {{intervention}} t'a aidé {{percent}} % du temps ({{count}} essai).",
+    "bestIntervention_other": "D'après tes réponses, {{intervention}} t'a aidé {{percent}} % du temps ({{count}} essais).",
+    "confidence": {
+      "high_one": "Confiance correcte ({{count}} observation)",
+      "high_other": "Confiance correcte ({{count}} observations)",
+      "low_one": "Confiance faible ({{count}} observation)",
+      "low_other": "Confiance faible ({{count}} observations)",
+      "medium_one": "Confiance moyenne ({{count}} observation)",
+      "medium_other": "Confiance moyenne ({{count}} observations)"
+    },
+    "disclaimer": "Tendance estimée à partir de tes notes, pas une prédiction certaine.",
+    "noPattern": "Tes envies sont réparties sans moment dominant. Continue à les noter, la tendance s'affinera.",
+    "notEnough_one": "Pas encore assez d'observations ({{count}} envie notée, {{min}} nécessaires). Aucune tendance n'est inventée.",
+    "notEnough_other": "Pas encore assez d'observations ({{count}} envies notées, {{min}} nécessaires). Aucune tendance n'est inventée.",
+    "nowInPeak": "C'est un de tes moments habituels. Une courte pause active peut aider, si cela te convient.",
+    "peakSlot": "Tu notes souvent des envies {{slot}} ({{percent}} %).",
+    "peakWeekday": "Le {{day}} revient plus souvent ({{percent}} % des envies).",
+    "slots": {
+      "afternoon": "l'après-midi",
+      "evening": "le soir",
+      "midday": "vers midi",
+      "morning": "le matin",
+      "night": "la nuit"
+    },
+    "title": "Météo des envies",
+    "topTrigger": "Déclencheur fréquent : {{trigger}} ({{percent}} %)."
+  },
+  "goal": {
+    "quit": "Arrêt complet",
+    "reduce": "Réduction progressive"
+  },
+  "goalSettings": {
+    "confirmMessage": "Ton tableau de bord sera mis à jour. Ton historique reste intact.",
+    "confirmTitle": "Appliquer ce changement ?",
+    "historyKept": "Tout ton historique est conservé : envies, séances, badges, XP et économies.",
+    "keepDate": "Garder ma date",
+    "quitNote": "Corriger la date peut faire commencer tes économies plus tôt, jamais plus tard : tes économies passées sont conservées.",
+    "reduceNote": "Ta consommation de référence : {{baseline}} cigarettes par jour.",
+    "subtitle": "Change d'objectif ou corrige ta date sans perdre ton historique.",
+    "title": "Objectif et date"
+  },
+  "health": {
+    "after": {
+      "days_one": "{{count}} jour",
+      "days_other": "{{count}} jours",
+      "hours_one": "{{count}} heure",
+      "hours_other": "{{count}} heures",
+      "minutes_one": "{{count}} minute",
+      "minutes_other": "{{count}} minutes",
+      "months_one": "{{count}} mois",
+      "months_other": "{{count}} mois",
+      "weeks_one": "{{count}} semaine",
+      "weeks_other": "{{count}} semaines",
+      "years_one": "{{count}} an",
+      "years_other": "{{count}} ans"
+    },
+    "milestones": {
+      "m1m": {
+        "description": "Entre 1 et 9 mois, la toux et l'essoufflement diminuent.",
+        "title": "Toux et essoufflement"
+      },
+      "m1y": {
+        "description": "Après un an, le risque de maladie coronarienne est environ deux fois plus faible que celui d'une personne qui fume.",
+        "title": "Cœur"
+      },
+      "m20min": {
+        "description": "La fréquence cardiaque et la tension artérielle commencent à baisser.",
+        "title": "Cœur et tension"
+      },
+      "m24h": {
+        "description": "Le monoxyde de carbone a été éliminé et les poumons commencent à se dégager.",
+        "title": "Monoxyde de carbone éliminé"
+      },
+      "m2w": {
+        "description": "Entre 2 et 12 semaines, la circulation s'améliore et la fonction pulmonaire augmente.",
+        "title": "Circulation"
+      },
+      "m3m": {
+        "description": "Entre 3 et 9 mois, la toux, la congestion des sinus, la fatigue et l'essoufflement diminuent. Les infections respiratoires deviennent moins probables.",
+        "title": "Voies respiratoires"
+      },
+      "m48h": {
+        "description": "Il n'y a plus de nicotine dans le corps. Le goût et l'odorat commencent à s'améliorer.",
+        "title": "Goût et odorat"
+      },
+      "m72h": {
+        "description": "Respirer devient souvent plus facile et l'énergie revient.",
+        "title": "Respiration plus facile"
+      },
+      "m8h": {
+        "description": "Les taux de monoxyde de carbone et de nicotine dans le sang ont environ diminué de moitié.",
+        "title": "Moins de monoxyde de carbone"
+      }
+    },
+    "timeline": {
+      "next": "Prochain repère : {{label}}",
+      "reached": "Atteint",
+      "seeAll": "Voir toute la chronologie et les sources",
+      "subtitle": "Repères généraux issus de sources de santé publique, non mesurés par ton téléphone.",
+      "title": "Ton corps récupère",
+      "upcoming": "Prochain",
+      "varies": "(variable selon les personnes)"
+    }
+  },
+  "intensity": {
+    "dynamic": "Dynamique",
+    "gentle": "Douce",
+    "moderate": "Modérée"
+  },
+  "interventions": {
+    "breathing": "Respiration",
+    "craving_surf": "Craving surf",
+    "distraction": "Distraction",
+    "none": "Aucune action",
+    "replacement_ritual": "Rituel de remplacement",
+    "workout": "Mini-séance"
+  },
+  "journal": {
+    "deleteTitle": "Supprimer cette entrée ?",
+    "emptyText": "Note une première victoire, même petite.",
+    "emptyTitle": "Ton journal est vide",
+    "newEntry": "Nouvelle entrée",
+    "noObligation": "Aucune obligation : écris quand tu en as envie.",
+    "placeholders": {
+      "craving_overcome": "Qu'est-ce qui t'a aidé à la traverser ?",
+      "decision": "Quel choix as-tu fait pour toi ?",
+      "free": "Écris ce que tu veux.",
+      "good_day": "Qu'est-ce qui a rendu cette journée réussie ?",
+      "gratitude": "Pour quoi es-tu reconnaissant aujourd'hui ?",
+      "workout_done": "Comment t'es-tu senti pendant la séance ?"
+    },
+    "reminderSettings": "Régler les rappels du journal",
+    "saved": "Enregistré ! +{{xp}} XP",
+    "savedNoXp": "Enregistré !",
+    "subtitle": "Les petites et les grandes, elles comptent toutes.",
+    "text": "Ton texte",
+    "timeline": "Chronologie",
+    "title": "Journal de victoires",
+    "types": {
+      "craving_overcome": "Envie surmontée",
+      "decision": "Décision positive",
+      "free": "Note libre",
+      "good_day": "Bonne journée",
+      "gratitude": "Gratitude",
+      "workout_done": "Séance terminée"
+    },
+    "weekly": "Ta semaine",
+    "weeklyTotal_one": "{{count}} entrée ces 7 derniers jours",
+    "weeklyTotal_other": "{{count}} entrées ces 7 derniers jours"
+  },
+  "level": {
+    "advanced": "Avancé",
+    "beginner": "Débutant",
+    "intermediate": "Intermédiaire"
+  },
+  "limitations": {
+    "back": "Dos",
+    "balance": "Équilibre",
+    "breathing": "Gêne respiratoire",
+    "knees": "Genoux",
+    "no_jumping": "Pas de sauts",
+    "other": "Autre",
+    "pregnancy": "Grossesse",
+    "shoulders": "Épaules",
+    "wrists": "Poignets"
+  },
+  "locations": {
+    "home": "À la maison",
+    "other": "Ailleurs",
+    "outside": "Dehors",
+    "social": "Avec d'autres",
+    "work": "Au travail"
+  },
+  "moods": {
+    "calm": "Calme",
+    "irritated": "Irrité",
+    "ok": "Ça va",
+    "sad": "Triste",
+    "tense": "Tendu",
+    "tired": "Fatigué"
+  },
+  "notifications": {
+    "encouragement": {
+      "body": "Tu as déjà fait de beaux progrès. Si une envie arrive, ton bouton SOS est là pour t'aider.",
+      "title": "Tu avances"
+    },
+    "journal": {
+      "body": "Si tu en as envie, note ce qui s'est bien passé.",
+      "title": "Une victoire aujourd'hui ?"
+    },
+    "milestone": {
+      "body": "{{label}} : {{title}}. Bravo pour ce chemin parcouru.",
+      "title": "Nouveau repère atteint"
+    },
+    "pact": {
+      "body": "Prends une minute pour relire pourquoi tu as commencé.",
+      "title": "Ton pacte"
+    },
+    "trigger": {
+      "body": "Tu notes souvent des envies {{slot}}. Une courte pause active peut aider, si cela te convient.",
+      "title": "Ton moment habituel approche"
+    },
+    "weekly": {
+      "body": "Jette un œil à tes progrès de la semaine. Chaque petite victoire compte.",
+      "title": "Ton bilan de la semaine"
+    },
+    "workout": {
+      "body": "Quelques minutes de mouvement aujourd'hui, à ton rythme. Ta séance t'attend.",
+      "title": "Une petite séance ?"
+    }
+  },
+  "onboarding": {
+    "fagerstrom": {
+      "disclaimer": "Ce score est un indicateur, pas un diagnostic. Il ne t'impose aucune méthode d'arrêt. Repères d'interprétation : NIDA (NIH).",
+      "interpretation": {
+        "high": "Ta dépendance physique semble forte. Un accompagnement par un professionnel (médecin, tabacologue, pharmacien) peut vraiment faciliter les premières semaines.",
+        "low": "Ta dépendance physique semble faible. Les envies liées aux habitudes peuvent quand même être fortes : prépare tes stratégies.",
+        "medium": "Ta dépendance physique semble moyenne. Un professionnel de santé peut t'aider, par exemple avec des substituts nicotiniques, si tu le souhaites.",
+        "very_high": "Ta dépendance physique semble très forte. N'hésite pas à te faire accompagner par un professionnel : c'est une ressource, pas un échec.",
+        "very_low": "Ta dépendance physique semble très faible. Les habitudes et les situations restent importantes : Souffle t'aide à les repérer."
+      },
+      "q1": {
+        "a0": "Dans les 5 minutes",
+        "a1": "6 à 30 minutes",
+        "a2": "31 à 60 minutes",
+        "a3": "Après 60 minutes",
+        "question": "Combien de temps après ton réveil fumes-tu ta première cigarette ?"
+      },
+      "q2": {
+        "a0": "Oui",
+        "a1": "Non",
+        "question": "Trouves-tu difficile de t'abstenir de fumer dans les endroits où c'est interdit (cinéma, bibliothèque, transports…) ?"
+      },
+      "q3": {
+        "a0": "La première du matin",
+        "a1": "N'importe quelle autre",
+        "question": "À quelle cigarette renoncerais-tu le plus difficilement ?"
+      },
+      "q4": {
+        "a0": "10 ou moins",
+        "a1": "11 à 20",
+        "a2": "21 à 30",
+        "a3": "31 ou plus",
+        "question": "Combien de cigarettes fumes-tu par jour ?"
+      },
+      "q5": {
+        "a0": "Oui",
+        "a1": "Non",
+        "question": "Fumes-tu à intervalles plus rapprochés durant les premières heures après le réveil que pendant le reste de la journée ?"
+      },
+      "q6": {
+        "a0": "Oui",
+        "a1": "Non",
+        "question": "Fumes-tu lorsque tu es malade au point de devoir rester au lit presque toute la journée ?"
+      },
+      "resultTitle": "Ton score : {{score}} / {{max}}",
+      "subtitle": "Six questions validées pour estimer ta dépendance physique à la nicotine.",
+      "title": "Test de Fagerström"
+    },
+    "goals": {
+      "baseline_one": "Aujourd'hui : {{count}} cigarette par jour",
+      "baseline_other": "Aujourd'hui : {{count}} cigarettes par jour",
+      "choice": {
+        "in14": "Dans 2 semaines",
+        "in3": "Dans 3 jours",
+        "in7": "Dans une semaine",
+        "now": "Maintenant",
+        "past": "J'ai déjà arrêté",
+        "tomorrow": "Demain matin"
+      },
+      "firstWorkoutTitle": "Ta première séance conseillée",
+      "monthlySavings": "Environ {{amount}} économisés par mois, d'après tes habitudes.",
+      "pastDays": "Depuis combien de jours ?",
+      "quitDate": "Date d'arrêt",
+      "quitDateIs": "Ta date d'arrêt",
+      "reduceNote": "Réduire est un vrai progrès, mais les bénéfices pour la santé sont nettement plus importants avec un arrêt complet. Tu pourras changer d'objectif à tout moment.",
+      "reductionSavings": "Environ {{amount}} économisés par mois si tu tiens cet objectif.",
+      "subtitleQuit": "Choisis le moment où tu arrêtes. Le compteur partira de cette date réelle.",
+      "subtitleReduce": "Fixe ton objectif quotidien. Tu pourras l'ajuster quand tu veux.",
+      "target": "Maximum par jour",
+      "targetSummary": "Objectif : {{target}} par jour",
+      "title": "Ton plan"
+    },
+    "health": {
+      "intensity": "Intensité préférée",
+      "level": "Ton niveau sportif",
+      "levelHint": {
+        "advanced": "Séances de 25 à 30 minutes, intensité modulable.",
+        "beginner": "Séances d'environ 10 minutes, sans impact, avec beaucoup de récupération.",
+        "intermediate": "Séances d'environ 20 minutes avec une progression graduelle."
+      },
+      "limitations": "Limitations à prendre en compte (facultatif)",
+      "note": "Précision (facultatif)",
+      "noteHint": "Par exemple : genou droit sensible. Reste sur ton téléphone.",
+      "safety": "En cas de problème de santé, demande l'avis d'un professionnel avant de reprendre une activité physique. Arrête tout exercice en cas de douleur, de vertige ou de malaise.",
+      "subtitle": "Pour te proposer des séances adaptées. Aucun détail médical n'est demandé.",
+      "title": "Activité physique"
+    },
+    "pact": {
+      "contractTitle": "Mon engagement",
+      "editLater": "Tu pourras relire et modifier ton pacte à tout moment.",
+      "invalid": "Certaines réponses ne sont pas valides. Vérifie les étapes précédentes.",
+      "missing": "Il manque des informations de l'étape « Faisons connaissance ». Reviens en arrière pour les compléter.",
+      "reasons": "Ce qui compte pour toi",
+      "sign": "Je signe mon pacte",
+      "signature": "Ta signature",
+      "signatureHint": "Ton prénom ou tes initiales.",
+      "subtitle": "Pourquoi veux-tu arrêter ? Ta réponse te sera rappelée dans les moments difficiles.",
+      "title": "Ton pacte personnel",
+      "why": "Avec tes mots",
+      "whyHint": "Par exemple : pour jouer au foot avec mes enfants sans être essoufflé."
+    },
+    "profile": {
+      "age": "Âge (facultatif)",
+      "ageHint": "Souffle s'adresse aux adultes.",
+      "cigarettesPerDay": "Cigarettes par jour",
+      "cigarettesPerPack": "Cigarettes par paquet",
+      "errors": {
+        "age": "Indique un âge entre 18 et 120 ans, ou laisse vide.",
+        "invalid": "Vérifie les valeurs saisies.",
+        "price": "Indique un prix valide, par exemple 9,50.",
+        "range": "Cette valeur n'est pas dans les limites attendues."
+      },
+      "firstName": "Prénom (facultatif)",
+      "firstNameHint": "Pour personnaliser les messages.",
+      "goal": "Ton objectif",
+      "goalQuitHint": "Tu choisis une date et le compteur sans tabac démarre à ce moment-là.",
+      "goalReduceHint": "Tu fixes un nombre maximum par jour et tu notes chaque cigarette. Tu pourras passer à l'arrêt complet quand tu le souhaites.",
+      "habitsTitle": "Tes habitudes",
+      "packPrice": "Prix du paquet",
+      "subtitle": "Ces informations servent à calculer tes économies et à adapter les conseils. Tu pourras les modifier plus tard.",
+      "title": "Faisons connaissance",
+      "yearsSmoking": "Années de tabagisme"
+    },
+    "stepOf": "Étape {{step}} sur {{total}}",
+    "welcome": {
+      "how": "Découvrir le fonctionnement",
+      "howTitle": "Comment Souffle t'accompagne",
+      "how_kind": "Aucune culpabilité : si tu fumes une cigarette, tes progrès restent acquis.",
+      "how_sos": "Quand une envie arrive, le bouton SOS te propose une action courte : respirer, bouger ou te distraire.",
+      "how_sport": "Un programme de sport à la maison sur 12 semaines, adapté à ton niveau et à tes limites.",
+      "how_track": "Tu suis tes envies, tes économies et tes progrès. Tout reste sur ton téléphone.",
+      "privacy": "Politique de confidentialité",
+      "privacyNote": "Tes réponses restent sur ce téléphone. Aucun compte, aucun serveur.",
+      "resume": "Reprendre où j'en étais",
+      "start": "Commencer",
+      "tagline": "Chaque envie est une occasion de reprendre ton souffle."
+    }
+  },
+  "outcomes": {
+    "partly_passed": "Elle a diminué",
+    "passed": "Elle est passée",
+    "persisted": "Elle est toujours présente"
+  },
+  "pact": {
+    "noWhy": "Tu n'as pas encore écrit ton pourquoi.",
+    "reminder": "Tes raisons sont toujours là, même après une journée difficile.",
+    "signedOn": "Signé le {{date}} par {{signature}}",
+    "text": "Je choisis d'avancer à mon rythme. Même si je rencontre une difficulté, je peux recommencer. Chaque progrès compte.",
+    "title": "Mon pacte",
+    "why": "Pourquoi j'arrête"
+  },
+  "periods": {
+    "30d": "30 jours",
+    "7d": "7 jours",
+    "all": "Tout"
+  },
+  "privacy": {
+    "counts": "Actuellement : envies {{cravings}} · cigarettes notées {{smoking}} · séances {{sessions}} · journal, sommeil et toux {{journal}}.",
+    "deleteButton": "Tout supprimer",
+    "deleteConfirmText": "Pour confirmer, écris {{word}} ci-dessous. Exporte tes données avant si tu veux les garder.",
+    "deleteConfirmTitle": "Supprimer définitivement ?",
+    "deleteText": "Efface définitivement ton profil et toutes les données de Souffle sur ce téléphone, ainsi que les rappels programmés. Cette action est irréversible.",
+    "deleteTitle": "Supprimer toutes mes données",
+    "deleteTypeWord": "Écris {{word}}",
+    "deleteWord": "SUPPRIMER",
+    "deleteWordMismatch": "Le mot ne correspond pas.",
+    "errors": {
+      "canceled": "Opération annulée.",
+      "invalid_user": "Le profil contenu dans ce fichier est invalide. Rien n'a été modifié.",
+      "newer_version": "Ce fichier vient d'une version plus récente de Souffle. Mets l'application à jour pour l'importer.",
+      "not_json": "Ce fichier n'est pas un export Souffle lisible.",
+      "not_souffle": "Ce fichier ne provient pas de Souffle.",
+      "print_failed": "Le PDF n'a pas pu être généré. Réessaie dans un instant.",
+      "read_failed": "Impossible de lire ce fichier.",
+      "sharing_unavailable": "Le partage de fichiers n'est pas disponible sur cet appareil.",
+      "write_failed": "Le fichier n'a pas pu être créé. Vérifie l'espace disponible et réessaie."
+    },
+    "exportDone": "Export prêt. Choisis où l'enregistrer ou le partager.",
+    "exportHint": "Un fichier JSON complet que tu peux conserver ou réimporter plus tard.",
+    "exportJson": "Exporter (JSON)",
+    "exportTitle": "Exporter mes données",
+    "gdprNote": "Le stockage local limite fortement les risques, mais ne suffit pas à lui seul à garantir la conformité au RGPD. Les traitements, autorisations et services utilisés sont décrits dans la documentation du projet.",
+    "importConfirmText": "Les données actuelles seront remplacées par celles du fichier. Pense à exporter d'abord si tu veux les garder.",
+    "importConfirmTitle": "Remplacer tes données ?",
+    "importDone": "Import terminé.",
+    "importDoneSkipped_one": "Import terminé. {{count}} élément invalide a été ignoré.",
+    "importDoneSkipped_other": "Import terminé. {{count}} éléments invalides ont été ignorés.",
+    "importHint": "Restaure un fichier exporté depuis Souffle. Le contenu est vérifié avant l'import.",
+    "importJson": "Importer un fichier",
+    "importTitle": "Importer une sauvegarde",
+    "permissions": "Notifications (facultatives, pour les rappels) et vibrations. Aucune localisation, aucun contact, aucun micro, aucun appareil photo.",
+    "permissionsTitle": "Autorisations",
+    "reportPdf": "Créer un rapport PDF",
+    "subtitle": "Tes données t'appartiennent et restent sur ton téléphone.",
+    "thirdParty": "Aucun outil de statistiques ou de publicité n'est intégré. Les notifications et la synthèse vocale utilisent les services du système de ton téléphone. Un fichier ne quitte le téléphone que si tu le partages toi-même.",
+    "thirdPartyTitle": "Services tiers",
+    "what": "Ton profil (prénom facultatif, habitudes, objectif, pacte), tes envies, tes cigarettes notées, tes séances, ton journal, ton sommeil et ta toux si tu les renseignes, tes badges et tes réglages. Aucune donnée médicale superflue n'est demandée.",
+    "whatTitle": "Quelles données ?",
+    "where": "Uniquement dans le stockage local de l'application, sur ce téléphone. Souffle n'a ni compte, ni serveur, ni publicité, et n'envoie aucune donnée de santé.",
+    "whereTitle": "Où sont-elles conservées ?"
+  },
+  "profile": {
+    "anonymous": "Toi",
+    "baselineNote": "Si tu modifies ta consommation ou le prix, les nouvelles valeurs s'appliquent à partir d'aujourd'hui : tes économies passées ne changent pas.",
+    "editTitle": "Modifier mon profil",
+    "fagerstrom": "Test de Fagerström : {{score}}/10 ({{level}})",
+    "habits": "Mes habitudes",
+    "habitsSummary": "{{cigs}} cigarettes par jour pendant {{years}} ans · paquet de {{perPack}} à {{price}}",
+    "quitDate": "Date d'arrêt : {{date}}"
+  },
+  "program": {
+    "backToCurrent": "Semaine actuelle",
+    "doneThisWeek": "{{done}}/{{total}} cette semaine",
+    "goal": "Objectif",
+    "hardDay": "Journée difficile",
+    "phaseWeeks": "semaines {{from}} à {{to}}",
+    "phases": {
+      "autonomy": {
+        "description": "Tu sais quoi faire quand une envie arrive : le sport devient un vrai outil anti-rechute.",
+        "title": "Autonomie"
+      },
+      "basics": {
+        "description": "Tu maîtrises les mouvements de base et tu gardes un rythme régulier.",
+        "title": "Régularité et bases"
+      },
+      "consolidation": {
+        "description": "Tu consolides tes acquis et tu ajustes l'intensité à ton ressenti.",
+        "title": "Consolidation"
+      },
+      "endurance": {
+        "description": "Ton souffle se construit : des enchaînements un peu plus longs et coordonnés.",
+        "title": "Endurance et coordination"
+      },
+      "habit": {
+        "description": "Des séances courtes et régulières. Le but est de bouger, pas de performer.",
+        "title": "Installer l'habitude"
+      },
+      "progress": {
+        "description": "Les temps d'effort s'allongent un peu, la récupération reste généreuse.",
+        "title": "Progression douce"
+      }
+    },
+    "review": "Bilan",
+    "sessionsPerWeek_one": "{{count}} séance conseillée cette semaine.",
+    "sessionsPerWeek_other": "{{count}} séances conseillées cette semaine, avec des jours de repos entre elles.",
+    "weekLabel": "Semaine {{week}}",
+    "weeks": {
+      "w1": {
+        "goal": "Faire 3 courtes séances, même incomplètes.",
+        "hardDay": "5 minutes de marche sur place suffisent.",
+        "review": "Quel moment de la journée t'a le mieux convenu ?"
+      },
+      "w10": {
+        "goal": "Refaire le test de souffle et comparer.",
+        "hardDay": "Mobilité et respiration uniquement.",
+        "review": "Qu'est-ce qui a changé depuis le début ?"
+      },
+      "w11": {
+        "goal": "Utiliser le sport comme réponse aux envies.",
+        "hardDay": "La séance SOS de 5 minutes.",
+        "review": "Quelles situations restent les plus difficiles ?"
+      },
+      "w12": {
+        "goal": "Construire ta routine pour la suite.",
+        "hardDay": "Choisis librement ta séance.",
+        "review": "Bravo pour ces 12 semaines. Quel est ton plan pour continuer ?"
+      },
+      "w2": {
+        "goal": "Garder les mêmes jours d'entraînement.",
+        "hardDay": "Choisis la séance de mobilité.",
+        "review": "As-tu remarqué un effet sur tes envies après une séance ?"
+      },
+      "w3": {
+        "goal": "Bien maîtriser le squat sur chaise et les pompes au mur.",
+        "hardDay": "Fais seulement l'échauffement et le retour au calme.",
+        "review": "Quel exercice te semble plus facile qu'au début ?"
+      },
+      "w4": {
+        "goal": "Enchaîner 3 séances sans te presser.",
+        "hardDay": "Utilise la séance anti-fatigue.",
+        "review": "Note ton effort ressenti après chaque séance."
+      },
+      "w5": {
+        "goal": "Allonger un peu les temps d'effort.",
+        "hardDay": "Reste au niveau de la semaine précédente.",
+        "review": "Compare ton souffle avec la semaine 1."
+      },
+      "w6": {
+        "goal": "Refaire le test de souffle.",
+        "hardDay": "Une séance de respiration compte aussi.",
+        "review": "Qu'est-ce qui t'aide à rester régulier ?"
+      },
+      "w7": {
+        "goal": "Travailler l'endurance avec la séance cardio.",
+        "hardDay": "Choisis la variante sans saut de chaque exercice.",
+        "review": "Ta récupération est-elle plus rapide ?"
+      },
+      "w8": {
+        "goal": "Améliorer la coordination et l'équilibre.",
+        "hardDay": "Une séance thématique courte suffit.",
+        "review": "Repère la séance qui te fait le plus de bien."
+      },
+      "w9": {
+        "goal": "Consolider le rythme de 3 séances par semaine.",
+        "hardDay": "Fais la moitié de la séance : c'est déjà bien.",
+        "review": "Quel est ton meilleur moment pour bouger ?"
+      }
+    }
+  },
+  "progress": {
+    "badgesCount_one": "{{count}} badge sur {{total}}",
+    "badgesCount_other": "{{count}} badges sur {{total}}",
+    "coughHint_one": "{{count}} observation",
+    "coughHint_other": "{{count}} observations",
+    "cravingsHint_one": "{{count}} envie notée",
+    "cravingsHint_other": "{{count}} envies notées",
+    "journalHint_one": "{{count}} entrée",
+    "journalHint_other": "{{count}} entrées",
+    "levelTitle": "Niveau {{level}}",
+    "nextLevel": "Encore {{xp}} XP avant le prochain niveau",
+    "ofCravings_one": "sur {{count}} envie notée",
+    "ofCravings_other": "sur {{count}} envies notées",
+    "sections": "Tout ton suivi",
+    "sleepHint_one": "{{count}} nuit notée",
+    "sleepHint_other": "{{count}} nuits notées",
+    "smokeFreeDays": "Jours sans tabac",
+    "smokeFreeDaysHint": "au total, même non consécutifs",
+    "title": "Progrès",
+    "xpTotal": "{{xp}} XP au total"
+  },
+  "reasons": {
+    "breath": "Retrouver mon souffle",
+    "children": "L'exemple pour les enfants",
+    "family": "Ma famille",
+    "freedom": "Ma liberté",
+    "health": "Ma santé",
+    "money": "Mes finances",
+    "other": "Autre raison"
+  },
+  "relapse": {
+    "actions": {
+      "breathing": "Respirer 2 minutes",
+      "pact": "Relire mon pacte",
+      "plan": "Ajuster mon plan",
+      "reset": "Séance reset de 5 minutes",
+      "stretch": "Étirements doux"
+    },
+    "confirmMessage_one": "{{count}} cigarette sera ajoutée à ton historique. Tes XP, badges et séances restent acquis.",
+    "confirmMessage_other": "{{count}} cigarettes seront ajoutées à ton historique. Tes XP, badges et séances restent acquis.",
+    "confirmTitle": "Enregistrer ?",
+    "confirmWithShield": "La cigarette sera notée et ton bouclier protégera ta série. Tes acquis restent intacts.",
+    "count": "Nombre de cigarettes",
+    "decision": "Et maintenant ?",
+    "decisionHints": {
+      "continue_quit": "Ton compteur repart de cette cigarette. Ton record, tes badges et tes économies passées sont conservés.",
+      "new_quit_date": "Le compteur repart de maintenant. Tout l'historique reste conservé.",
+      "reduction_log": "La cigarette est ajoutée à ton suivi du jour.",
+      "switch_to_reduce": "Tu passes en mode réduction avec un objectif quotidien. Tu pourras revenir à l'arrêt quand tu voudras."
+    },
+    "decisions": {
+      "continue_quit": "C'était un écart, je continue mon arrêt",
+      "new_quit_date": "Je repars d'une nouvelle date",
+      "switch_to_reduce": "Je préfère réduire pour l'instant"
+    },
+    "kept": "Toujours à toi : {{xp}} XP · badges obtenus : {{badges}} · meilleure série : {{best}} j.",
+    "kindMessage": "Une cigarette ne supprime pas les progrès que tu as déjà réalisés. Voyons ce qui s'est passé et préparons la prochaine étape.",
+    "loggedText": "Tu as eu le courage de le noter. C'est exactement comme ça qu'on avance.",
+    "loggedTextReduction": "Merci pour ton honnêteté : c'est elle qui rend ton suivi utile.",
+    "loggedTitle": "C'est noté, sans jugement",
+    "loggedTitleReduction": "Cigarette notée",
+    "nextStep": "Ta prochaine étape",
+    "reductionHint": "Noter chaque cigarette permet de suivre honnêtement ta réduction.",
+    "shield": {
+      "already": "Ce jour est déjà protégé.",
+      "cooldown": "Ton bouclier a déjà servi cette semaine.",
+      "ok_one": "Protège ta série de {{count}} jour. Disponible une fois par semaine.",
+      "ok_other": "Protège ta série de {{count}} jours. Disponible une fois par semaine.",
+      "title": "Utiliser mon bouclier",
+      "too_old": "Le bouclier ne peut protéger qu'aujourd'hui ou hier."
+    },
+    "shieldApplied_one": "Ton bouclier a protégé ta série : {{count}} jour.",
+    "shieldApplied_other": "Ton bouclier a protégé ta série : {{count}} jours.",
+    "situation": "Situation (facultatif)",
+    "streakNow_one": "Ta série actuelle : {{count}} jour. Une nouvelle commence dès maintenant.",
+    "streakNow_other": "Ta série actuelle : {{count}} jours. Une nouvelle commence dès maintenant.",
+    "title": "J'ai fumé",
+    "titleReduction": "Noter une cigarette",
+    "when": "Quand ?",
+    "whenHoursAgo_one": "Il y a {{count}} h",
+    "whenHoursAgo_other": "Il y a {{count}} h",
+    "whenNow": "À l'instant",
+    "yourWhy": "Ton pourquoi"
+  },
+  "reports": {
+    "content": "Objectif, jours sans tabac ou progression de la réduction, cigarettes évitées et économies estimées, séances et temps sportif, évolution des envies, déclencheurs fréquents, victoires, sommeil et toux si renseignés.",
+    "contentTitle": "Contenu du rapport",
+    "done": "Rapport prêt.",
+    "empty": "Peu ou pas de données sur cette période : le rapport l'indiquera clairement.",
+    "generate": "Générer le PDF",
+    "minutes_one": "{{count}} minute",
+    "minutes_other": "{{count}} minutes",
+    "overcome_one": "{{count}} surmontée",
+    "overcome_other": "{{count}} surmontées",
+    "pdf": {
+      "avgIntensity": "Intensité moyenne",
+      "cigarettesAvoided": "Cigarettes évitées (estimation)",
+      "cigarettesLogged": "Cigarettes notées",
+      "cough": "Toux",
+      "coughValue_one": "intensité moyenne {{avg}}/10 (de {{first}} à {{last}}, {{count}} observation)",
+      "coughValue_other": "intensité moyenne {{avg}}/10 (de {{first}} à {{last}}, {{count}} observations)",
+      "cravings": "Envies",
+      "cravingsCount": "Envies notées",
+      "cravingsOvercome": "Envies surmontées",
+      "daysOf_one": "{{count}} jour sur {{total}}",
+      "daysOf_other": "{{count}} jours sur {{total}}",
+      "daysUnderTarget": "Jours sous l'objectif",
+      "disclaimer": "Ce document est un journal personnel. Il ne remplace pas une évaluation médicale.",
+      "empty": "Peu de données ont été enregistrées sur cette période.",
+      "estimates": "Les cigarettes évitées et les économies sont des estimations calculées à partir des habitudes déclarées.",
+      "generated": "Généré le {{date}} sur l'appareil, sans connexion.",
+      "goal": "Objectif",
+      "health": "Sommeil et toux",
+      "intensityTrend": "Évolution de l'intensité",
+      "intensityTrendValue": "{{first}}/10 en début de période, {{second}}/10 en fin de période",
+      "noVictories": "Aucune victoire notée sur cette période.",
+      "saved": "Économies estimées",
+      "sleep": "Sommeil",
+      "sleepValue_one": "{{duration}} en moyenne, qualité {{quality}}/5 ({{count}} nuit notée)",
+      "sleepValue_other": "{{duration}} en moyenne, qualité {{quality}}/5 ({{count}} nuits notées)",
+      "smokeFreeDays": "Jours sans tabac",
+      "summary": "Résumé",
+      "title": "Souffle : rapport personnel",
+      "topTriggers": "Déclencheurs fréquents",
+      "victories": "Victoires",
+      "workoutMinutes": "Minutes d'activité",
+      "workouts": "Séances terminées"
+    },
+    "periods": {
+      "current_month": "Ce mois-ci",
+      "last_30_days": "30 derniers jours",
+      "previous_month": "Mois dernier"
+    },
+    "subtitle": "Un résumé mensuel généré sur ton téléphone, que tu peux enregistrer ou partager.",
+    "title": "Rapport PDF"
+  },
+  "settings": {
+    "accessibility": {
+      "note": "Souffle est compatible avec les lecteurs d'écran (VoiceOver, TalkBack). Aucune information n'est transmise uniquement par la couleur.",
+      "subtitle": "Adapte l'application à ton confort.",
+      "title": "Affichage et accessibilité"
+    },
+    "enableReduceMotion": "Réduire les animations",
+    "fontSize": {
+      "large": "Grande",
+      "normal": "Normale",
+      "preview": "Aperçu : chaque envie est une occasion de reprendre ton souffle.",
+      "title": "Taille du texte",
+      "xlarge": "Très grande"
+    },
+    "forecast": "Météo des envies",
+    "forecastHint": "Afficher les tendances calculées à partir de tes envies.",
+    "haptics": "Vibrations",
+    "hapticsHint": "Retours tactiles doux, par exemple pour suivre la respiration.",
+    "hapticsUnavailable": "Non disponibles sur cet appareil. Le guide visuel et vocal reste actif.",
+    "highContrast": "Contraste élevé",
+    "highContrastHint": "Couleurs plus marquées et bordures visibles.",
+    "language": {
+      "device": "Langue du téléphone",
+      "deviceHint": "Actuellement : {{language}}",
+      "en": "Anglais",
+      "formats": "Les dates, heures et montants s'affichent au format de la langue choisie.",
+      "fr": "Français",
+      "native": {
+        "en": "English",
+        "fr": "Français",
+        "nl": "Nederlands"
+      },
+      "nl": "Néerlandais",
+      "subtitle": "Choisis la langue de l'application.",
+      "supported": "Langues disponibles : français, néerlandais et anglais.",
+      "title": "Langue"
+    },
+    "notifications": {
+      "bestEffort": "Le système de ton téléphone peut retarder ou regrouper certaines notifications : Souffle ne peut pas garantir l'heure exacte de livraison.",
+      "categories": "Types de rappels",
+      "category": {
+        "encouragement": "Encouragements",
+        "journal_reminder": "Rappel du journal",
+        "milestone": "Repères santé atteints",
+        "pact_reminder": "Rappel du pacte",
+        "trigger_preparation": "Préparation aux moments à risque",
+        "weekly_summary": "Bilan de la semaine",
+        "workout_reminder": "Rappel de séance"
+      },
+      "categoryHint": {
+        "encouragement": "Une fois par semaine.",
+        "journal_reminder": "Chaque jour à l'heure choisie. Jamais obligatoire.",
+        "milestone": "Quand un repère de la chronologie santé est atteint.",
+        "pact_reminder": "Une fois par semaine, le samedi.",
+        "trigger_preparation": "Un peu avant ton moment habituel, seulement si une tendance claire existe.",
+        "weekly_summary": "Le lundi soir.",
+        "workout_reminder": "Les jours et à l'heure choisis."
+      },
+      "days": "Jours",
+      "denied": "Les notifications sont bloquées dans les réglages du téléphone.",
+      "enable": "Autoriser les notifications",
+      "enableHint": "Rien n'est envoyé par un serveur : les rappels sont programmés sur ton téléphone.",
+      "hour": "Heure",
+      "journalTitle": "Rappel du journal",
+      "openSettings": "Ouvrir les réglages du téléphone",
+      "quietFrom": "De",
+      "quietHours": "Plage de silence",
+      "quietHoursHint": "Aucun rappel pendant cette plage horaire.",
+      "quietTo": "À",
+      "subtitle": "Des rappels locaux, bienveillants et entièrement réglables.",
+      "title": "Notifications",
+      "webUnsupported": "Les notifications ne sont pas disponibles dans la version web de démonstration.",
+      "workoutTitle": "Rappel de séance"
+    },
+    "privacy": {
+      "subtitle": "Export, import et suppression",
+      "title": "Confidentialité et données"
+    },
+    "reduceMotion": "Réduire les animations",
+    "reduceMotionHint": "Désactive les transitions et rend le cercle de respiration statique.",
+    "systemReduceMotion": "Ton téléphone demande de réduire les animations. Veux-tu appliquer ce réglage dans Souffle ?",
+    "theme": {
+      "dark": "Sombre",
+      "light": "Clair",
+      "system": "Automatique",
+      "title": "Thème"
+    },
+    "title": "Réglages",
+    "voice": "Guide vocal",
+    "voiceHint": "Utilise la synthèse vocale du téléphone, sans connexion."
+  },
+  "sleep": {
+    "average7": "Moyenne de tes 7 dernières nuits notées",
+    "comparisonText": "Après une nuit difficile, tu as noté en moyenne {{low}} envies dans la journée, contre {{good}} après une bonne nuit.",
+    "comparisonTitle": "Sommeil et envies",
+    "emptyText": "Le suivi du sommeil est facultatif.",
+    "emptyTitle": "Aucune nuit notée",
+    "great": "Excellente",
+    "history": "Historique",
+    "lastNight": "Cette nuit",
+    "needMore": "La comparaison avec tes envies apparaîtra après au moins 3 bonnes et 3 mauvaises nuits notées.",
+    "newEntry": "Ma nuit",
+    "nightBefore": "La nuit précédente",
+    "noCausal": "C'est une simple comparaison de tes notes, pas un lien de cause à effet.",
+    "note": "Commentaire (facultatif)",
+    "poor": "Mauvaise",
+    "quality": "Qualité",
+    "subtitle": "Noter tes nuits, si tu le souhaites.",
+    "title": "Sommeil",
+    "trend": "Qualité du sommeil",
+    "trendSummary_one": "Qualité de ta dernière nuit notée, de 1 à 5.",
+    "trendSummary_other": "Qualité de tes {{count}} dernières nuits notées, de 1 à 5."
+  },
+  "sos": {
+    "bestForYou": "D'après tes réponses, {{intervention}} t'aide souvent ({{percent}} %).",
+    "breathing": {
+      "comfort": "Si tu ressens un inconfort, respire simplement à ton rythme.",
+      "exhale": "Expire",
+      "hint": "Inspire {{inhale}} s, expire {{exhale}} s. Sans forcer, sans retenir ton souffle.",
+      "inhale": "Inspire",
+      "ready": "C'est parti",
+      "title": "Respire avec le cercle",
+      "voice": "Guide vocal"
+    },
+    "distraction": {
+      "elapsed": "Temps écoulé : {{seconds}} s",
+      "grounding": {
+        "done": "Bien joué. Ton attention est revenue sur l'instant présent.",
+        "hear3": "3 sons que tu entends",
+        "hint": "Prends le temps de remarquer autour de toi :",
+        "see5": "5 choses que tu vois",
+        "smell2": "2 odeurs que tu perçois",
+        "taste1": "1 goût dans ta bouche",
+        "title": "Ancrage 5-4-3-2-1",
+        "touch4": "4 choses que tu peux toucher"
+      },
+      "memory": {
+        "cardDown": "Carte cachée",
+        "cardUp": "Carte retournée",
+        "hint": "Retrouve les paires d'icônes identiques.",
+        "moves_one": "{{count}} coup",
+        "moves_other": "{{count}} coups",
+        "restart": "Recommencer",
+        "title": "Mémoire",
+        "won_one": "Bravo ! Toutes les paires en {{count}} coup.",
+        "won_other": "Bravo ! Toutes les paires en {{count}} coups."
+      },
+      "order": {
+        "hint": "Touche les nombres de 1 à 16 dans l'ordre, le plus calmement possible.",
+        "next": "Prochain : {{n}}",
+        "title": "Chiffres",
+        "won_one": "Terminé en {{count}} seconde !",
+        "won_other": "Terminé en {{count}} secondes !"
+      },
+      "subtitle": "Quelques minutes de jeu pour laisser passer l'envie.",
+      "title": "Change d'idée"
+    },
+    "feedback": {
+      "duration": "{{intervention}} · {{time}}",
+      "intensityBefore": "Quelle était son intensité au départ ?",
+      "journal": "Noter cette victoire dans mon journal",
+      "message": {
+        "partly_passed": "L'envie a diminué : tu as repris un peu la main. Tu peux enchaîner avec une autre action si tu veux.",
+        "passed": "Tu viens de traverser une envie. Chaque fois compte.",
+        "persisted": "Certaines envies sont plus tenaces. Tu peux essayer une autre option, ou laisser passer encore un peu de temps."
+      },
+      "surf": "Essayer le craving surf",
+      "thanks": {
+        "partly_passed": "C'est déjà un vrai progrès",
+        "passed": "Bien joué !",
+        "persisted": "Merci d'avoir essayé"
+      },
+      "title": "Comment est ton envie maintenant ?",
+      "triggerOptional": "Qu'est-ce qui l'a déclenchée ? (facultatif)",
+      "tryAnother": "Essayer une autre option"
+    },
+    "footer": "Une envie finit souvent par diminuer. Chaque fois que tu la traverses, tu t'entraînes.",
+    "intake": {
+      "hide": "Masquer",
+      "show": "Préciser mon envie (facultatif)"
+    },
+    "logOnly": "Juste noter l'envie",
+    "options": {
+      "breathing": {
+        "subtitle": "Respiration guidée",
+        "title": "J'ai 2 minutes"
+      },
+      "distraction": {
+        "subtitle": "Jeux courts et exercice d'ancrage",
+        "title": "Me changer les idées"
+      },
+      "workout": {
+        "subtitle": "Mini-séance douce, sans matériel",
+        "title": "J'ai 5 minutes"
+      }
+    },
+    "softened": "(Version douce, adaptée à ce que tu as indiqué.)",
+    "subtitle": "Choisis une action. Tu peux t'arrêter à tout moment.",
+    "suggestedWorkout": "Séance conseillée : {{title}}",
+    "surf": "Craving surf guidé (3 min)",
+    "surfHint": "Observer l'envie sans la juger, avec un guide vocal",
+    "title": "Envie de fumer ?",
+    "workout": {
+      "adapted": "Les exercices sont adaptés aux limitations que tu as indiquées.",
+      "intensity": "Intensité",
+      "subtitle_one": "Environ {{count}} minute, à ton rythme. Tu peux arrêter quand tu veux.",
+      "subtitle_other": "Environ {{count}} minutes, à ton rythme. Tu peux arrêter quand tu veux.",
+      "title": "Mini-séance de 5 minutes"
+    }
+  },
+  "sport": {
+    "adaptedNote": "Les exercices sont automatiquement remplacés selon les limitations que tu as indiquées.",
+    "history": {
+      "empty": "Tes séances terminées apparaîtront ici. La première est souvent la plus importante.",
+      "emptyTitle": "Pas encore de séance",
+      "last": "Dernière séance : {{date}}",
+      "list": "Toutes les séances",
+      "title": "Historique des séances",
+      "weekly": "Séances par semaine",
+      "weeklySummary_one": "{{count}} séance terminée au total, {{minutes}} minutes d'activité.",
+      "weeklySummary_other": "{{count}} séances terminées au total, {{minutes}} minutes d'activité."
+    },
+    "level": {
+      "allUnlocked": "Tous les niveaux sont débloqués.",
+      "neverForced": "Tu n'es jamais obligé de monter de niveau.",
+      "subtitle": "Tu peux rester au même niveau ou redescendre à tout moment.",
+      "title": "Ton niveau",
+      "unlockAdvanced": "Niveau avancé : après {{workouts}} séances réparties sur au moins {{weeks}} semaines.",
+      "unlockIntermediate": "Niveau intermédiaire : après {{workouts}} séances réparties sur au moins {{weeks}} semaines."
+    },
+    "stats": {
+      "completed": "Séances terminées",
+      "minutes": "Minutes d'activité",
+      "minutesHint_one": "{{count}} minute d'activité",
+      "minutesHint_other": "{{count}} minutes d'activité",
+      "thisWeek": "Cette semaine"
+    },
+    "thematic": {
+      "subtitle": "Pour répondre à un moment précis : stress, colère, ennui, café, fatigue.",
+      "title": "Séances thématiques"
+    },
+    "title": "Sport"
+  },
+  "streak": {
+    "best": "Record",
+    "calendar": "14 derniers jours",
+    "freeze": {
+      "active": "Ta série est en pause jusqu'au {{date}}. Ces jours ne comptent pas et ne la cassent pas.",
+      "confirmMessage_one": "Ta série sera en pause pendant {{count}} jour, à partir d'aujourd'hui. Tu pourras annuler la pause.",
+      "confirmMessage_other": "Ta série sera en pause pendant {{count}} jours, à partir d'aujourd'hui. Tu pourras annuler la pause.",
+      "confirmTitle": "Mettre en pause ?",
+      "days": "Durée",
+      "errors": {
+        "active": "Une pause est déjà en cours ou prévue sur ces dates.",
+        "past": "Une pause ne peut pas commencer dans le passé.",
+        "too_long": "La durée doit être comprise entre 1 et 14 jours."
+      },
+      "reasons": {
+        "illness": "Maladie",
+        "other": "Autre",
+        "travel": "Voyage"
+      },
+      "start": "Mettre ma série en pause",
+      "subtitle": "En cas de maladie ou de voyage : jusqu'à {{max}} jours, une pause à la fois.",
+      "title": "Pause de série"
+    },
+    "legend": {
+      "frozen": "en pause",
+      "notCounted": "avant l'arrêt",
+      "shielded": "protégé",
+      "smokeFree": "sans tabac",
+      "smoked": "cigarette",
+      "today": "aujourd'hui"
+    },
+    "rule": "Une journée compte une fois terminée. Le jour d'arrêt, s'il est entamé, ne compte pas.",
+    "shield": {
+      "available": "Disponible",
+      "explain": "Le bouclier protège ta série une fois tous les {{days}} jours, pour une cigarette notée aujourd'hui ou hier. Tu le choisis toi-même lorsque tu notes une cigarette.",
+      "title": "Bouclier",
+      "unavailable": "De nouveau disponible le {{date}}",
+      "usedOn": "Journée du {{date}} protégée"
+    },
+    "subtitle": "Des journées complètes sans tabac, calculées selon ton calendrier local.",
+    "title": "Série et bouclier"
+  },
+  "surf": {
+    "disclaimer": "Une envie ne disparaît pas toujours en 3 minutes. L'objectif est de l'observer sans lui obéir, pas de la faire disparaître à tout prix.",
+    "stepOf": "Étape {{step}} sur {{total}}",
+    "steps": {
+      "breathe": {
+        "text": "Respire normalement, sans forcer. Laisse l'air entrer et sortir, à ton propre rythme.",
+        "title": "Respirer"
+      },
+      "choose": {
+        "text": "Maintenant, choisis consciemment ta prochaine action : boire un verre d'eau, bouger un peu, ou simplement continuer ta journée.",
+        "title": "Choisir"
+      },
+      "evolve": {
+        "text": "L'envie change-t-elle d'intensité ? Elle peut monter, puis baisser. Tu n'as rien à faire d'autre que l'observer.",
+        "title": "Regarder la vague"
+      },
+      "observe": {
+        "text": "Où la ressens-tu dans ton corps ? Dans la gorge, la poitrine, les mains ? Décris-la comme un observateur curieux.",
+        "title": "Observer"
+      },
+      "recognize": {
+        "text": "Remarque l'envie, sans la juger. Dis-toi simplement : j'ai envie de fumer, et c'est une sensation qui va évoluer.",
+        "title": "Reconnaître"
+      }
+    },
+    "subtitle": "Une envie monte, atteint un sommet puis redescend, comme une vague. Observe-la sans la juger.",
+    "title": "Craving surf",
+    "voiceHint": "Utilise la synthèse vocale de ton téléphone, sans connexion. Le texte reste affiché."
+  },
+  "tabs": {
+    "home": "Accueil",
+    "profile": "Profil",
+    "progress": "Progrès",
+    "sos": "SOS",
+    "sosA11y": "SOS envie : aide immédiate",
+    "sport": "Sport"
+  },
+  "triggers": {
+    "after_meal": "Après un repas",
+    "alcohol": "Alcool",
+    "anger": "Colère",
+    "boredom": "Ennui",
+    "coffee": "Café",
+    "fatigue": "Fatigue",
+    "night": "Nuit",
+    "other": "Autre",
+    "social": "Contexte social",
+    "stress": "Stress"
+  },
+  "units": {
+    "cigs": "cig.",
+    "cigsPerDay": "cig./jour",
+    "cigsToday": "cig. aujourd'hui",
+    "d": "j",
+    "days": "jours",
+    "daysCount_one": "{{count}} jour",
+    "daysCount_other": "{{count}} jours",
+    "h": "h",
+    "hours": "Heures",
+    "min": "min",
+    "minutes": "Minutes",
+    "s": "s"
+  },
+  "weekdays": {
+    "0": "dimanche",
+    "1": "lundi",
+    "2": "mardi",
+    "3": "mercredi",
+    "4": "jeudi",
+    "5": "vendredi",
+    "6": "samedi"
+  },
+  "weekdaysShort": {
+    "0": "Dim",
+    "1": "Lun",
+    "2": "Mar",
+    "3": "Mer",
+    "4": "Jeu",
+    "5": "Ven",
+    "6": "Sam"
+  },
+  "workout": {
+    "aboutMinutes_one": "Environ {{count}} minute",
+    "aboutMinutes_other": "Environ {{count}} minutes",
+    "adaptedCount_one": "{{count}} exercice remplacé par une variante adaptée à tes limitations.",
+    "adaptedCount_other": "{{count}} exercices remplacés par des variantes adaptées à tes limitations.",
+    "blockOf": "Exercice {{current}} sur {{total}}",
+    "complete": {
+      "abandonedText": "La séance n'est pas validée cette fois, mais chaque minute de mouvement compte.",
+      "abandonedTitle": "Tu as bougé, et c'est bien",
+      "effort": "Effort ressenti",
+      "effortHigh": "Très difficile",
+      "effortLow": "Très facile",
+      "effortShort": "effort {{value}}/5",
+      "noPressure": "Aucune pression : tu pourras recommencer quand tu veux.",
+      "notes": "Notes (facultatif)",
+      "text": "Bravo. Chaque séance renforce ton souffle et ta confiance.",
+      "title": "Séance terminée !"
+    },
+    "duration": "Durée",
+    "easier": "Plus facile",
+    "exercises": "Exercices",
+    "exercisesCount_one": "{{count}} exercice",
+    "exercisesCount_other": "{{count}} exercices",
+    "go": "C'est parti",
+    "harder": "Plus difficile",
+    "hideVariants": "Masquer les variantes",
+    "level": "Niveau",
+    "next": "Ensuite",
+    "notFound": "Séance introuvable",
+    "reps_one": "Environ {{count}} répétition",
+    "reps_other": "Environ {{count}} répétitions",
+    "rest": "Récupération",
+    "restShort": "de repos",
+    "safety": "Sécurité",
+    "showVariants": "Variantes et sécurité",
+    "skip": "Passer",
+    "stop": "Arrêter la séance",
+    "stopConfirm": "Arrêter",
+    "stopIfPain": "Arrête immédiatement en cas de douleur, de vertige, de malaise ou d'essoufflement inhabituel.",
+    "stopMessage": "Ce que tu as déjà fait compte. Si tu as réalisé au moins la moitié des exercices, la séance est validée.",
+    "stopTitle": "Arrêter maintenant ?"
+  },
+  "workouts": {
+    "advanced_cardio": {
+      "description": "Intensité modulable : chaque exercice a une variante plus douce.",
+      "title": "Cardio avancé"
+    },
+    "advanced_mobility": {
+      "description": "Pour récupérer entre deux séances plus intenses.",
+      "title": "Mobilité et récupération"
+    },
+    "advanced_strength": {
+      "description": "Circuit complet du haut et du bas du corps.",
+      "title": "Renforcement avancé"
+    },
+    "beginner_cardio": {
+      "description": "Marche sur place et mouvements sans saut pour réveiller le souffle.",
+      "title": "Cardio doux"
+    },
+    "beginner_mobility": {
+      "description": "Mobilité et étirements pour relâcher les tensions.",
+      "title": "Mobilité et détente"
+    },
+    "beginner_strength": {
+      "description": "Squats sur chaise, pompes au mur et gainage léger. Sans saut.",
+      "title": "Renforcement en douceur"
+    },
+    "intermediate_cardio": {
+      "description": "Enchaînements dynamiques avec récupération active.",
+      "title": "Cardio intermédiaire"
+    },
+    "intermediate_mobility": {
+      "description": "Une séance de récupération pour tout le corps.",
+      "title": "Mobilité complète"
+    },
+    "intermediate_strength": {
+      "description": "Squats, pompes inclinées, gainage et fentes, avec une progression graduelle.",
+      "title": "Renforcement progressif"
+    },
+    "sos_5min": {
+      "description": "5 minutes accessibles : marche, squats sur chaise, pompes au mur, puis récupération.",
+      "title": "Mini-séance SOS"
+    },
+    "theme_anger": {
+      "description": "Évacuer la tension avec des mouvements dynamiques, puis revenir au calme.",
+      "title": "Anti-colère"
+    },
+    "theme_boredom": {
+      "description": "Un petit défi varié pour occuper le corps et l'esprit.",
+      "title": "Anti-ennui"
+    },
+    "theme_calm": {
+      "description": "Étirements lents et respiration pour relâcher la pression.",
+      "title": "Retour au calme"
+    },
+    "theme_coffee": {
+      "description": "Une routine courte à faire après ton café, à un autre endroit que d'habitude.",
+      "title": "Anti-café"
+    },
+    "theme_fatigue": {
+      "description": "Mobilité douce et respiration, sans effort intense.",
+      "title": "Anti-fatigue"
+    },
+    "theme_reset": {
+      "description": "Quelques minutes pour repartir, sans jugement.",
+      "title": "Reset après rechute"
+    },
+    "theme_stress": {
+      "description": "Mouvements lents et respiration pour faire redescendre la tension.",
+      "title": "Anti-stress"
+    }
+  },
+  "xp": {
+    "breathing_test": "Test de souffle",
+    "craving_overcome": "Envie surmontée",
+    "journal_entry": "Note dans le journal",
+    "milestone": "Étape sans tabac",
+    "relapse_recovery": "Reprise après un écart",
+    "sos_completed": "Exercice SOS terminé",
+    "victory": "Victoire personnelle",
+    "workout_completed": "Séance terminée"
+  }
+}

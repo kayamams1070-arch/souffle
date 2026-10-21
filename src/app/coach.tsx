@@ -79,15 +79,20 @@ export default function CoachScreen() {
       {reply ? (
         <AppCard tone="primary">
           <AppText variant="caption" tone="secondary">
-            {t('coach.youSaid')}: {asked}
+            {t('coach.youSaid')}{t('common.colon')} {asked}
           </AppText>
           <View style={{ flexDirection: 'row', gap: 10, marginTop: 8 }}>
             <Ionicons name="chatbubble-ellipses" size={22} color={theme.colors.primary} />
             <View style={{ flex: 1, gap: 8 }}>
-              <AppText>{t(`coach.replies.${reply.key}.message`, reply.vars)}</AppText>
+              <AppText>{t(`coach.replies.${reply.key}.message`)}</AppText>
               <AppText variant="bodySmall" tone="secondary">
-                {t(`coach.replies.${reply.key}.why`, reply.vars)}
+                {t(`coach.replies.${reply.key}.why`)}
               </AppText>
+              {reply.vars?.thisWeek !== undefined ? (
+                <AppText variant="caption" tone="secondary">
+                  {t('coach.thisWeek', { count: Number(reply.vars.thisWeek) })}
+                </AppText>
+              ) : null}
             </View>
           </View>
           {reply.needsClarification ? (
@@ -97,7 +102,7 @@ export default function CoachScreen() {
           ) : (
             <View style={{ gap: 8, marginTop: 12 }}>
               {reply.action.type !== 'rest' && reply.action.type !== 'medical' ? <AppButton label={actionLabel(reply.action)} icon="play" onPress={() => run(reply.action)} /> : <Banner text={t(`coach.actions.${reply.action.type}`)} tone="warm" icon="medkit-outline" />}
-              {reply.alternative.type !== 'rest' && reply.alternative.type !== 'medical' ? <AppButton label={`${t('coach.alternative')}: ${actionLabel(reply.alternative)}`} variant="secondary" onPress={() => run(reply.alternative)} /> : <Banner text={t(`coach.actions.${reply.alternative.type}`)} tone="warm" icon="medkit-outline" />}
+              {reply.alternative.type !== 'rest' && reply.alternative.type !== 'medical' ? <AppButton label={`${t('coach.alternative')}${t('common.colon')} ${actionLabel(reply.alternative)}`} variant="secondary" onPress={() => run(reply.alternative)} /> : <Banner text={t(`coach.actions.${reply.alternative.type}`)} tone="warm" icon="medkit-outline" />}
             </View>
           )}
         </AppCard>

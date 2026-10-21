@@ -164,7 +164,7 @@ export const challengeSchema = z.object({
 
 /** Form schemas (onboarding). Values arrive as strings from text inputs. */
 export const profileFormSchema = z.object({
-  firstName: z.string().trim().max(40),
+  firstName: z.string().trim().max(40, 'range'),
   age: z.string().refine((v) => v === '' || (/^\d{1,3}$/.test(v) && Number(v) >= 18 && Number(v) <= 120), 'age'),
   cigarettesPerDay: z.string().refine((v) => /^\d{1,3}$/.test(v) && Number(v) >= 1 && Number(v) <= 100, 'range'),
   yearsSmoking: z.string().refine((v) => /^\d{1,2}$/.test(v) && Number(v) <= 80, 'range'),

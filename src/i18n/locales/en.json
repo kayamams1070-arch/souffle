@@ -1,1 +1,1899 @@
-{}
+{
+  "about": {
+    "emergency": "Chest pain, feeling unwell, serious difficulty breathing: call 112 straight away.",
+    "emergencyTitle": "In an emergency",
+    "helpNote": "Your doctor, your pharmacist or a stop-smoking specialist can also support you, including with stop-smoking treatments.",
+    "helpSubtitle": "Free helplines are available. Getting support is a strength, not a failure.",
+    "helpTitle": "Getting help",
+    "limits": {
+      "coach": "The coach runs on local rules, not on a connected AI.",
+      "community": "Family mode, shared challenges and the forum need a server: they are not available yet.",
+      "notifications": "Notifications depend on your phone's system and may be delayed.",
+      "offline": "Everything works offline: nothing is backed up to the cloud. Remember to export your data.",
+      "widget": "The home screen widget needs a compiled build of the app: it is not included in this version."
+    },
+    "limitsTitle": "Limits of this version",
+    "notMedical": "Souffle is a behavioural support tool. It is not a medical device and does not replace advice from a health professional.",
+    "schema": "data schema v{{version}}",
+    "sourcesTitle": "Sources",
+    "title": "About",
+    "what": "Souffle helps you get through cravings with short actions, home workouts and progress tracking. Health estimates are general guides, never measurements.",
+    "whatTitle": "What Souffle does"
+  },
+  "alternatives": {
+    "after_meal": {
+      "text": "Walk for five minutes, outside or on the spot.",
+      "title": "After a meal"
+    },
+    "alcohol": {
+      "text": "Alcohol lowers your guard. Alternate with water, step away for a moment and watch the craving without giving in.",
+      "title": "Alcohol"
+    },
+    "anger": {
+      "text": "A few suitable cardio moves help release the tension.",
+      "title": "Anger"
+    },
+    "boredom": {
+      "text": "Start a mini physical challenge or a memory game to keep your hands and mind busy.",
+      "title": "Boredom"
+    },
+    "coffee": {
+      "text": "Drink your coffee somewhere other than usual, then do two minutes of stretching.",
+      "title": "Coffee"
+    },
+    "fatigue": {
+      "text": "Choose recovery: a little mobility or some calm breathing.",
+      "title": "Tiredness"
+    },
+    "night": {
+      "text": "Stay calm: slow breathing or Craving surf, away from bright screens.",
+      "title": "At night"
+    },
+    "other": {
+      "text": "Two minutes of guided breathing, then choose your next action.",
+      "title": "An idea"
+    },
+    "social": {
+      "text": "Prepare a simple way to say no (“No thanks, I'm quitting”) and keep a replacement action ready: a glass of water, some chewing gum.",
+      "title": "With others"
+    },
+    "stress": {
+      "text": "Guided breathing or a little gentle yoga helps bring the tension down.",
+      "title": "Stress"
+    }
+  },
+  "badges": {
+    "categories": {
+      "consistency": "Consistency",
+      "craving": "Cravings overcome",
+      "smoke_free": "Smoke-free",
+      "sport": "Exercise"
+    },
+    "comeback": {
+      "description": "You got back on track after a cigarette.",
+      "title": "The comeback"
+    },
+    "cravings_1": {
+      "description": "Your first craving overcome.",
+      "title": "First wave"
+    },
+    "cravings_10": {
+      "description": "You're getting better and better at riding out cravings.",
+      "title": "10 cravings overcome"
+    },
+    "cravings_100": {
+      "description": "Real mastery of your cravings.",
+      "title": "100 cravings overcome"
+    },
+    "eventsCount_one": "{{count}} action rewarded so far.",
+    "eventsCount_other": "{{count}} actions rewarded so far.",
+    "locked": "To unlock",
+    "pact_signed": {
+      "description": "You signed your personal pact.",
+      "title": "Committed"
+    },
+    "regular_week": {
+      "description": "3 workouts completed in the same week.",
+      "title": "Steady week"
+    },
+    "smoke_free_1d": {
+      "description": "A full day smoke-free.",
+      "title": "First day"
+    },
+    "smoke_free_1m": {
+      "description": "30 smoke-free days in a row.",
+      "title": "First month"
+    },
+    "smoke_free_1w": {
+      "description": "7 smoke-free days in a row.",
+      "title": "First week"
+    },
+    "smoke_free_1y": {
+      "description": "365 smoke-free days in a row.",
+      "title": "One year"
+    },
+    "smoke_free_3m": {
+      "description": "90 smoke-free days in a row.",
+      "title": "Three months"
+    },
+    "subtitle": "Badges you earn are yours to keep forever.",
+    "title": "Badges",
+    "unlockedOn": "Earned on {{date}}",
+    "unlockedToast_one": "New badge unlocked!",
+    "unlockedToast_other": "{{count}} new badges unlocked!",
+    "workouts_1": {
+      "description": "Your first workout completed.",
+      "title": "First step"
+    },
+    "workouts_10": {
+      "description": "10 workouts completed.",
+      "title": "10 workouts"
+    },
+    "workouts_100": {
+      "description": "100 workouts completed. Impressive.",
+      "title": "100 workouts"
+    },
+    "workouts_50": {
+      "description": "50 workouts completed.",
+      "title": "50 workouts"
+    },
+    "xpRules": "How to earn XP",
+    "xpRulesHint": "Each action is rewarded only once."
+  },
+  "benefits": {
+    "kinds": {
+      "hobby": "A hobby",
+      "other": "Other",
+      "purchase": "A purchase",
+      "savings": "Savings",
+      "travel": "A trip"
+    },
+    "limits": "Souffle does not calculate life expectancy gained or lung capacity: that would need a validated medical model and real measurements. The guides shown are general, taken from public health sources, and vary from person to person.",
+    "limitsTitle": "What Souffle does not calculate",
+    "notForReduction": "not calculated in reduction mode",
+    "projectHint": "Link a project to your savings",
+    "projectName": "Project name",
+    "projectNameRequired": "Give your project a name.",
+    "projectNote": "These are theoretical savings: the money is not set aside automatically.",
+    "projectProgress": "{{saved}} of {{target}}",
+    "projectReached": "Goal reached, in theory! It's up to you how to enjoy it.",
+    "projectSubtitle": "Link your savings to something that matters to you.",
+    "projectTarget": "Target amount (optional)",
+    "projectTargetHint": "For example 600",
+    "projectTargetInvalid": "Enter a valid amount, for example 600.",
+    "projectTitle": "My savings project",
+    "savedTitle": "Estimated savings since the start",
+    "spentLogged": "Minus {{amount}} for the cigarettes you logged.",
+    "subtitle": "Your savings and health guides, with their sources and limits.",
+    "timelineFuture": "The timeline will start on your quit date.",
+    "timelineReduction": "These guides are about stopping completely. In reduction mode, the benefits are more limited and cannot be reliably estimated.",
+    "title": "Benefits"
+  },
+  "breathingTest": {
+    "breathlessness": "Breathlessness",
+    "cardHint": "Track how you feel over time, without maximum effort.",
+    "cardSubtitle": "Every 2 weeks, 2 minutes",
+    "chartSummary": "Reported breathlessness: {{first}}/10 on the first test, {{last}}/10 on the latest.",
+    "comparison": "Reported breathlessness: {{prev}}/10 last time, {{now}}/10 today.",
+    "dueAgain": "Now is a good time to do it again.",
+    "effort": "Perceived effort",
+    "exhaleSafety": "This is not about lasting as long as possible: a slow, comfortable breath out is enough.",
+    "exhaleSeconds": "Estimated length of the breath out",
+    "history": "Your reported breathlessness",
+    "historyHint": "From 0 (none) to 10 (very strong)",
+    "lastTest": "Last test on {{date}}.",
+    "marchHint": "Keep a pace where you can still talk. Stop if you feel unwell.",
+    "nextIn_one": "Next test suggested in {{count}} day.",
+    "nextIn_other": "Next test suggested in {{count}} days.",
+    "none": "None",
+    "notMedical": "This test is not medical and does not measure your lung capacity. It only records how you feel. Stop if you feel unwell.",
+    "protocol": {
+      "calm": "Sit down and breathe calmly for 30 seconds.",
+      "exhale": "Breathe out slowly and comfortably, and estimate how long it lasts. Don't force it and never hold your breath.",
+      "march": "March on the spot at a comfortable pace for 30 seconds.",
+      "rate": "Rate your perceived effort and your breathlessness."
+    },
+    "protocolTitle": "The protocol",
+    "savedText": "Do it again in about 2 weeks, in the same conditions, to compare.",
+    "savedTitle": "Test saved",
+    "skipStep": "Skip this step",
+    "start": "Start the test",
+    "strong": "Very strong",
+    "subtitle": "A simple protocol, the same every time, to track how you feel over time.",
+    "title": "Breathing test"
+  },
+  "challenges": {
+    "create": "Create challenge",
+    "duration": "Duration",
+    "emptyText": "Create a simple first challenge, for example 3 workouts in 7 days.",
+    "emptyTitle": "No challenges",
+    "kindLabels": {
+      "cravings_overcome": "Cravings overcome",
+      "smoke_free_days": "Smoke-free days",
+      "workouts": "Workouts"
+    },
+    "kinds": {
+      "cravings_overcome_one": "{{count}} craving overcome",
+      "cravings_overcome_other": "{{count}} cravings overcome",
+      "smoke_free_days_one": "{{count}} smoke-free day",
+      "smoke_free_days_other": "{{count}} smoke-free days",
+      "workouts_one": "{{count}} workout",
+      "workouts_other": "{{count}} workouts"
+    },
+    "localOnly": "Local challenges: they stay on your phone, with no remote participants.",
+    "name": "Name (optional)",
+    "newTitle": "New challenge",
+    "progress": "{{value}} / {{target}}",
+    "status": {
+      "active": "In progress",
+      "completed": "Completed, well done!",
+      "ended": "Finished. Every attempt counts.",
+      "upcoming": "Coming up"
+    },
+    "subtitle": "Personal challenges, at your own pace.",
+    "target": "Goal",
+    "title": "Challenges"
+  },
+  "coach": {
+    "actions": {
+      "breathing": "Guided breathing (2 min)",
+      "distraction": "Distraction game",
+      "journal": "Open my journal",
+      "medical": "If the pain or discomfort persists or gets worse, contact a health professional. In an emergency, call 112.",
+      "pact": "Reread my pact",
+      "relapse": "Log the cigarette, no judgement",
+      "rest": "Rest: no exercise for now.",
+      "surf": "Craving surf (3 min)",
+      "workout": "See the suggested workout"
+    },
+    "alternative": "Gentler",
+    "cardHint": "Tell it how you feel and it suggests an action.",
+    "limits": "The coach recognises keywords. If it doesn't understand, it asks you a question rather than guessing. It does not replace a health professional.",
+    "localNote": "This coach runs on your phone with simple, transparent rules. It is not a connected artificial intelligence.",
+    "moodOptional": "Your mood (optional)",
+    "placeholder": "For example: I want to smoke after my coffee",
+    "prompts": {
+      "coffee": "I want to smoke after my coffee",
+      "missed": "I missed two workouts",
+      "no_sport": "I haven't exercised this week",
+      "relapsed": "I just relapsed",
+      "stress": "I'm stressed",
+      "tired": "I'm tired"
+    },
+    "quickPrompts": "Common situations",
+    "replies": {
+      "anger": {
+        "message": "Release the tension with the anti-anger workout: a few minutes is enough.",
+        "why": "Moving helps reduce the physical tension that comes with anger."
+      },
+      "anger_gentle": {
+        "message": "Breathe first, slowly. The anger will ease.",
+        "why": "You mentioned some limitations: calm breathing suits you better than intense effort."
+      },
+      "boredom": {
+        "message": "Keep your mind busy with a little game, or move for a few minutes.",
+        "why": "Boredom leaves room for cravings. A short, absorbing activity helps you get past it."
+      },
+      "craving_coffee": {
+        "message": "Change the ritual: drink your coffee somewhere else, then do the short anti-coffee routine.",
+        "why": "Coffee and cigarettes often go together. Changing place and keeping your hands busy helps break that link."
+      },
+      "craving_general": {
+        "message": "Start with 2 minutes of guided breathing.",
+        "why": "A craving rises and then falls. Breathing helps you get through the moment."
+      },
+      "missed_sessions": {
+        "message": "That's OK. Pick up again with a short workout, at your own pace.",
+        "why": "Consistency builds over time, not by catching up all at once."
+      },
+      "motivation": {
+        "message": "Reread your pact: your reasons are still there.",
+        "why": "Motivation goes up and down, that's normal. Coming back to your why helps you stay on course."
+      },
+      "no_sport": {
+        "message": "No problem. A reset workout of a few minutes is enough to restart the week.",
+        "why": "Getting back into it with a short workout is easier than a big one."
+      },
+      "pain": {
+        "message": "Look after yourself first: no exercise right now.",
+        "why": "Pain, dizziness or feeling unwell are signals to respect. Exercise can wait until you feel better."
+      },
+      "proud": {
+        "message": "Well done! Keep a record of this win in your journal.",
+        "why": "Rereading your successes really helps in harder moments."
+      },
+      "relapsed": {
+        "message": "One cigarette doesn't erase your journey. Let's log it together, no judgement.",
+        "why": "Noting what happened helps you prepare for next time. Your XP, badges and past savings are yours to keep."
+      },
+      "sleep": {
+        "message": "Note your night in your journal and choose a wind-down workout this evening.",
+        "why": "Sleep and cravings are often linked. Noting them helps you spot your own patterns."
+      },
+      "stress": {
+        "message": "Two minutes of guided breathing to ease the pressure.",
+        "why": "Breathing out for longer than you breathe in helps your body calm down."
+      },
+      "tired": {
+        "message": "A gentle mobility workout, or simply rest.",
+        "why": "Tiredness makes cravings stronger. Listen to your body: recovery is part of the programme too."
+      },
+      "unknown": {
+        "message": "I'm not sure I understood. Which of these situations is closest to yours?",
+        "why": "I only recognise a few specific situations: choose one below."
+      }
+    },
+    "send": "Send",
+    "subtitle": "Practical tips for your situation.",
+    "thisWeek_one": "This week: {{count}} workout.",
+    "thisWeek_other": "This week: {{count}} workouts.",
+    "title": "Coach",
+    "youSaid": "You wrote",
+    "yourMessage": "Your message"
+  },
+  "common": {
+    "back": "Back",
+    "backHome": "Back to home",
+    "cancel": "Cancel",
+    "colon": ":",
+    "confirm": "Confirm",
+    "continue": "Continue",
+    "decrease": "Decrease: {{label}}",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this entry?",
+    "done": "Done",
+    "edit": "Edit",
+    "finish": "Finish",
+    "increase": "Increase: {{label}}",
+    "next": "Next",
+    "off": "Off",
+    "on": "On",
+    "pause": "Pause",
+    "previous": "Previous",
+    "remaining": "left",
+    "resume": "Resume",
+    "save": "Save",
+    "saved": "Saved.",
+    "selected": "Selected",
+    "start": "Start",
+    "tapToDismiss": "Tap to close",
+    "tapToEdit": "Tap to edit"
+  },
+  "cough": {
+    "emptyText": "Note your cough from time to time to see how it changes.",
+    "emptyTitle": "No entries",
+    "frequencies": {
+      "constant": "Almost all the time",
+      "often": "Often",
+      "rare": "Rarely",
+      "sometimes": "Sometimes"
+    },
+    "frequency": "How often",
+    "history": "History",
+    "intensity": "Intensity",
+    "medical": "If your cough is worrying, persists or gets worse (blood, fever, severe breathlessness, chest pain), see a health professional.",
+    "needMore": "A trend will appear after 4 entries.",
+    "newEntry": "New entry",
+    "none": "None",
+    "note": "Notes (optional)",
+    "strong": "Very strong",
+    "subtitle": "Track how you feel, with no diagnosis at all.",
+    "title": "Cough",
+    "today": "Today",
+    "trend": "Trend",
+    "trendSummary_one": "{{count}} entry: intensity {{first}}/10 at the start, {{last}}/10 at the end.",
+    "trendSummary_other": "{{count}} entries: intensity {{first}}/10 at the start, {{last}}/10 at the end.",
+    "trends": {
+      "improving": "Your reported cough seems to be easing.",
+      "stable": "Your reported cough seems stable.",
+      "worsening": "Your reported cough seems to be increasing. If it continues, talk to a health professional."
+    },
+    "yesterday": "Yesterday"
+  },
+  "craving": {
+    "actionTaken": "Action chosen",
+    "charts": {
+      "byHour": "Cravings by hour",
+      "byHourSummary": "Most frequent hour: {{hour}}:00.",
+      "byWeekday": "Cravings by day of the week",
+      "byWeekdaySummary": "Most frequent day: {{day}}.",
+      "interventions": "What helps you most",
+      "interventionsHint": "Based on the results you entered.",
+      "last14": "Last 14 days",
+      "last14Summary_one": "{{count}} craving logged in the last 14 days.",
+      "last14Summary_other": "{{count}} cravings logged in the last 14 days.",
+      "triggers": "Common triggers"
+    },
+    "context": "Context (optional)",
+    "editTitle": "Edit craving",
+    "emptyDescription": "Log your cravings to discover your high-risk moments and what helps you most.",
+    "emptyTitle": "No cravings logged",
+    "errors": {
+      "required": "Enter at least the intensity and the trigger."
+    },
+    "historyTitle": "Craving journal",
+    "intensity": "Intensity",
+    "intensityHigh": "Very strong",
+    "intensityLow": "Mild",
+    "list": "History",
+    "location": "Where are you? (optional)",
+    "logSubtitle": "A few seconds is enough. These notes help you spot your high-risk moments.",
+    "logTitle": "Log a craving",
+    "mood": "Mood (optional)",
+    "moreHidden_one": "{{count}} older craving is not shown.",
+    "moreHidden_other": "{{count}} older cravings are not shown.",
+    "outcome": "Result",
+    "startSuggested": "Start: {{action}}",
+    "stats": {
+      "avgIntensity": "Average intensity",
+      "count": "Cravings logged",
+      "fewData": "Charts appear once 3 cravings are logged for the period.",
+      "noOutcome": "No result entered",
+      "overcome": "Cravings overcome",
+      "overcomeRate": "Success rate"
+    },
+    "suggestion": "{{title}}: {{text}}",
+    "timeAuto": "The time is recorded automatically.",
+    "trigger": "Trigger"
+  },
+  "dashboard": {
+    "best_one": "Best: {{count}} day",
+    "best_other": "Best: {{count}} days",
+    "counter": {
+      "a11y": "Smoke-free for: {{days}} d, {{hours}} h and {{minutes}} min",
+      "futureA11y": "Your quit starts in: {{days}} d, {{hours}} h and {{minutes}} min",
+      "futureHint": "Use this time to prepare: spot your high-risk moments and try the SOS button.",
+      "futureTitle": "Your quit starts on",
+      "noDate": "You haven't chosen a quit date yet.",
+      "setDate": "Choose my date",
+      "since": "Since {{date}}",
+      "title": "Smoke-free for"
+    },
+    "emptyHint": "Welcome! Next time a craving comes, tap the orange button. You can also start your first workout.",
+    "frozen": "Paused",
+    "greeting": "Hello",
+    "greetingName": "Hello {{name}}",
+    "level": "Level {{level}} · {{current}}/{{needed}}",
+    "nextWorkout": "Suggested next workout",
+    "pactHint": "Reread why you started.",
+    "pactTitle": "My pact",
+    "recentBadges": "Recent badges",
+    "reduction": {
+      "a11y": "Cigarettes logged today: {{smoked}}, with a target of {{target}}",
+      "logCigarette": "Log a cigarette",
+      "overTarget": "Over today's goal. That's OK: tomorrow is a new day.",
+      "summary_one": "Target met on {{count}} day out of {{total}}. Cutting down helps, but it is not the same as quitting completely.",
+      "summary_other": "Target met on {{count}} days out of {{total}}. Cutting down helps, but it is not the same as quitting completely.",
+      "title": "Today",
+      "underTarget": "{{left}} left before you reach today's goal. Every cigarette you skip counts."
+    },
+    "savings": {
+      "a11y_one": "Estimated savings: {{amount}}, {{count}} cigarette avoided",
+      "a11y_other": "Estimated savings: {{amount}}, {{count}} cigarettes avoided",
+      "avoided_one": "{{count}} cigarette avoided",
+      "avoided_other": "{{count}} cigarettes avoided",
+      "disclaimer": "Theoretical projections based on the habits you reported. This is not money actually set aside.",
+      "disclaimerReduction": "Theoretical projections if you meet your reduction goal every day, based on the habits you reported.",
+      "project": "For: {{title}}",
+      "title": "Estimated savings",
+      "y1": "In 1 year",
+      "y10": "In 10 years",
+      "y5": "In 5 years"
+    },
+    "shield": "Shield",
+    "shieldHint": "Once a week",
+    "shieldReady": "Available",
+    "shieldUsed": "Used",
+    "smokedButton": "I smoked",
+    "smokedHint": "Log a cigarette without losing your progress",
+    "sosButton": "I want to smoke",
+    "sosHint": "Opens instant help in seconds",
+    "streak": "Streak",
+    "subtitle": "One step at a time, at your own pace.",
+    "workouts": "Workouts",
+    "workoutsHint": "completed",
+    "xp": "Experience"
+  },
+  "demo": {
+    "activeText": "The data shown is fictional. Your personal data, if you had any, is saved separately and will be restored when you leave the demo.",
+    "banner": "Demo mode: profile and data are entirely fictional.",
+    "confirmText": "Your data will be set aside on this phone and temporarily replaced by a fictional profile. It will come back untouched when you leave the demo.",
+    "confirmTitle": "Start the demo?",
+    "exit": "Leave the demo",
+    "exitRestore": "Leave the demo and get my data back",
+    "inactiveText": "Load a fictional profile to explore the app. Your current data is set aside on the phone, then restored when you leave the demo.",
+    "load": "Load the demo",
+    "reset": "Reset the demo",
+    "tag": "demo",
+    "title": "Demo mode",
+    "welcomeHint": "Want to see what the app looks like first? Load a fictional profile, clearly labelled. You can leave it at any time."
+  },
+  "dependence": {
+    "high": "High dependence",
+    "low": "Low dependence",
+    "medium": "Moderate dependence",
+    "very_high": "Very high dependence",
+    "very_low": "Very low dependence"
+  },
+  "exercises": {
+    "arm_circles": {
+      "easier": "Make smaller circles, elbows slightly bent.",
+      "harder": "Gradually make the circles bigger.",
+      "instructions": "Arms out to the sides, make small circles forwards, then backwards.",
+      "name": "Arm circles",
+      "safety": "Stop if you feel pain in your shoulder."
+    },
+    "box_breathing_soft": {
+      "easier": "Drop the pauses and breathe continuously.",
+      "harder": "Gently lengthen each phase.",
+      "instructions": "Breathe in for 4 seconds, pause briefly if it feels comfortable, breathe out for 4 seconds, then a short pause.",
+      "name": "Gentle box breathing",
+      "safety": "At the slightest discomfort, go back to natural breathing."
+    },
+    "calf_raise": {
+      "easier": "Keep your hands on the back of a chair.",
+      "harder": "Do it on one leg, holding on.",
+      "instructions": "Slowly rise up onto your toes, then lower back down.",
+      "name": "Calf raises",
+      "safety": "Keep something stable within reach."
+    },
+    "cat_cow": {
+      "easier": "Reduce the range of movement.",
+      "harder": "Slow down and lengthen each breath.",
+      "instructions": "On all fours, round your back as you breathe out, then gently arch it as you breathe in.",
+      "name": "Cat-cow",
+      "safety": "Move slowly, without straining your lower back."
+    },
+    "chair_squat": {
+      "easier": "Use your hands on your thighs or on the armrests.",
+      "harder": "Just touch the seat lightly without sitting down.",
+      "instructions": "Feet hip-width apart, sit down slowly on the chair, then stand up by pushing through your heels.",
+      "name": "Chair squat",
+      "safety": "Knees in line with your feet, stable chair placed against a wall."
+    },
+    "child_pose": {
+      "easier": "Slide a cushion under your bottom or your forehead.",
+      "harder": "Widen your knees for a deeper stretch.",
+      "instructions": "Kneeling, sit back on your heels and stretch your arms out in front of you, forehead towards the floor.",
+      "name": "Child's pose",
+      "safety": "Avoid this pose if your knees are painful."
+    },
+    "dead_bug": {
+      "easier": "Only move your legs, one at a time.",
+      "harder": "Extend your arm and leg further, more slowly.",
+      "instructions": "On your back, arms towards the ceiling, knees bent at 90°. Slowly extend one arm and the opposite leg, then switch.",
+      "name": "Dead bug",
+      "safety": "Keep your lower back in contact with the floor."
+    },
+    "glute_bridge": {
+      "easier": "Don't lift as high.",
+      "harder": "Hold for 3 seconds at the top of the movement.",
+      "instructions": "On your back, knees bent, lift your hips by squeezing your glutes, then lower slowly.",
+      "name": "Glute bridge",
+      "safety": "Avoid arching your lower back."
+    },
+    "hamstring_stretch": {
+      "easier": "Bend your knee slightly.",
+      "harder": "Gently bring your chest closer to your leg.",
+      "instructions": "One leg straight out in front of you, heel on the floor, lean your upper body forward with a straight back. Switch sides.",
+      "name": "Hamstring stretch",
+      "safety": "No bouncing: hold the position."
+    },
+    "high_knees": {
+      "easier": "March on the spot lifting your knees, without hopping.",
+      "harder": "Speed up the pace.",
+      "instructions": "Drive your knees up dynamically while swinging your arms.",
+      "name": "High knees",
+      "safety": "Land softly, on the balls of your feet."
+    },
+    "hip_stretch": {
+      "easier": "Hold the position without leaning forward.",
+      "harder": "Lean a little further, back straight.",
+      "instructions": "Sitting on a chair, rest one ankle on the opposite knee and lean forward slightly. Switch sides.",
+      "name": "Hip stretch",
+      "safety": "A gentle stretch, never painful."
+    },
+    "incline_pushup": {
+      "easier": "Use a higher surface, or the wall.",
+      "harder": "Use a lower surface, like a chair against a wall.",
+      "instructions": "Hands on a table or a stable surface, body in a straight line. Lower your chest towards the edge, then push back up.",
+      "name": "Incline push-ups",
+      "safety": "Make sure the surface cannot slide."
+    },
+    "jumping_jacks": {
+      "easier": "No-jump version: step one leg out at a time while raising your arms.",
+      "harder": "Speed up the pace.",
+      "instructions": "Jump while spreading your arms and legs, then come back with feet together.",
+      "name": "Jumping jacks",
+      "safety": "Land softly. Switch to the no-jump version at the slightest discomfort."
+    },
+    "lunge": {
+      "easier": "Hold the back of a chair and reduce the range of movement.",
+      "harder": "Do a reverse lunge, more slowly.",
+      "instructions": "Take a big step forward, lower down by bending both knees, then come back. Alternate legs.",
+      "name": "Adapted lunges",
+      "safety": "Keep your front knee above your ankle."
+    },
+    "march": {
+      "easier": "Stay close to a wall and simply lift your heels.",
+      "harder": "Lift your knees higher and speed up slightly.",
+      "instructions": "Lift your knees to a comfortable height while swinging your arms, back straight, breathing steadily.",
+      "name": "Marching on the spot",
+      "safety": "Keep a pace where you can still talk."
+    },
+    "mountain_climber_slow": {
+      "easier": "Hands on a chair wedged against a wall.",
+      "harder": "Increase the pace while keeping your back straight.",
+      "instructions": "Supporting yourself on your hands, slowly bring one knee towards your chest, then the other.",
+      "name": "Slow mountain climbers",
+      "safety": "Wrists under your shoulders, hips steady."
+    },
+    "neck_rolls": {
+      "easier": "Make the movements smaller.",
+      "harder": "Hold each position for one slow breath.",
+      "instructions": "Gently tilt your head towards one shoulder, then the other. Then look right and left, without forcing.",
+      "name": "Neck mobility",
+      "safety": "Avoid full, fast rotations of your head."
+    },
+    "plank_knees": {
+      "easier": "Do shorter sets, with breaks.",
+      "harder": "Move onto your feet if it feels comfortable.",
+      "instructions": "Resting on your forearms and knees, line up your head, back and hips. Breathe calmly.",
+      "name": "Plank on knees",
+      "safety": "Don't hold your breath. Stop if your lower back pulls."
+    },
+    "recovery_breathing": {
+      "easier": "Simply breathe at your own pace.",
+      "harder": "Lengthen the breath out a little, without forcing.",
+      "instructions": "Breathe in gently through your nose, breathe out for longer through your mouth, shoulders relaxed.",
+      "name": "Recovery breathing",
+      "safety": "Never hold your breath."
+    },
+    "seated_forward_fold": {
+      "easier": "Keep your hands resting on your thighs.",
+      "harder": "Let your hands move down towards the floor.",
+      "instructions": "Sitting on the edge of a chair, slowly lean your upper body towards your thighs, arms relaxed.",
+      "name": "Seated forward fold",
+      "safety": "Come back up slowly to avoid feeling dizzy."
+    },
+    "seated_leg_extension": {
+      "easier": "Only straighten your leg halfway.",
+      "harder": "Keep your leg straight for 5 seconds.",
+      "instructions": "Sit on the edge of a chair, straighten one leg in front of you, hold for 2 seconds, lower it, then switch legs.",
+      "name": "Seated leg extension",
+      "safety": "Keep your back straight, without leaning back."
+    },
+    "seated_twist": {
+      "easier": "Don't twist as far.",
+      "harder": "Hold each side for 3 breaths.",
+      "instructions": "Sitting on a chair, gently turn your upper body to the right using the chair back for support, then to the left.",
+      "name": "Seated twist",
+      "safety": "Sit up tall before you twist, without forcing."
+    },
+    "shadow_boxing": {
+      "easier": "Go slower, elbows slightly bent.",
+      "harder": "Add a small side step between sets.",
+      "instructions": "Feet apart, throw loose punches into the air, alternating arms.",
+      "name": "Shadow boxing",
+      "safety": "Never fully lock your elbow."
+    },
+    "shoulder_mobility": {
+      "easier": "Make smaller circles.",
+      "harder": "Add big arm circles.",
+      "instructions": "Roll your shoulders backwards, then forwards, relaxing your neck.",
+      "name": "Shoulder mobility",
+      "safety": "Stay within a comfortable range of movement."
+    },
+    "side_plank_knees": {
+      "easier": "Lift your hips for just a few seconds, then lower them.",
+      "harder": "Straighten your legs, resting on your feet.",
+      "instructions": "Lie on your side, resting on your forearm, knees bent. Lift your hips. Switch sides halfway through.",
+      "name": "Adapted side plank",
+      "safety": "Keep your elbow right under your shoulder."
+    },
+    "squat": {
+      "easier": "Don't go as low, or do a chair squat.",
+      "harder": "Lower slowly over 3 seconds.",
+      "instructions": "Feet apart, lower down as if sitting, weight in your heels, then come back up as you breathe out.",
+      "name": "Squat",
+      "safety": "Knees in line with your feet, back straight."
+    },
+    "standing_balance": {
+      "easier": "Keep one hand on the chair.",
+      "harder": "Let go of the chair for a few seconds, always within reach.",
+      "instructions": "Next to a chair, lift one foot off the floor and hold your balance, then switch feet.",
+      "name": "Standing balance",
+      "safety": "Always stay close to something stable."
+    },
+    "step_jacks": {
+      "easier": "Only raise your arms to shoulder height.",
+      "harder": "Speed up while staying in control.",
+      "instructions": "Step one leg out to the side while raising your arms, come back, then alternate.",
+      "name": "Step jacks (no jump)",
+      "safety": "Controlled movement, no jerking."
+    },
+    "wall_pushup": {
+      "easier": "Bring your feet closer to the wall.",
+      "harder": "Move your feet further from the wall.",
+      "instructions": "Hands on the wall at shoulder height, feet a little way back. Bend your elbows to bring your chest towards the wall, then push back.",
+      "name": "Wall push-ups",
+      "safety": "Keep your body in a straight line, without arching your back."
+    }
+  },
+  "family": {
+    "notAvailable": "These features need a server and are not available yet. The app does not send any invitations.",
+    "privacy": "No contact details of your loved ones are requested or stored.",
+    "share": {
+      "cravings": "Cravings overcome and wins",
+      "days": "Smoke-free days",
+      "savings": "Estimated savings",
+      "why": "My why",
+      "workouts": "Workouts"
+    },
+    "shareButton": "Share this summary",
+    "shareSubtitle": "Choose what you want to share. You send the text yourself, to whoever you like.",
+    "shareTitle": "Share a summary",
+    "shared": "Summary ready to share.",
+    "subtitle": "Share your progress with someone close, your way.",
+    "summary": {
+      "cravings_one": "• {{count}} craving overcome · wins logged: {{victories}}",
+      "cravings_other": "• {{count}} cravings overcome · wins logged: {{victories}}",
+      "days_one": "• {{count}} smoke-free day",
+      "days_other": "• {{count}} smoke-free days",
+      "footer": "Thanks for cheering me on!",
+      "header": "{{name}}'s progress with Souffle:",
+      "savings": "• About {{amount}} saved",
+      "why": "• My why: {{why}}",
+      "workouts_one": "• {{count}} workout",
+      "workouts_other": "• {{count}} workouts"
+    },
+    "title": "Family mode",
+    "vision": "In a future version, someone close to you will be able to follow the wins you choose to share and send you encouragement, with private challenges and an anonymous, moderated discussion space.",
+    "visionTitle": "Coming soon"
+  },
+  "forecast": {
+    "bestIntervention_one": "Based on your answers, {{intervention}} helped you {{percent}}% of the time ({{count}} try).",
+    "bestIntervention_other": "Based on your answers, {{intervention}} helped you {{percent}}% of the time ({{count}} tries).",
+    "confidence": {
+      "high_one": "Reasonable confidence ({{count}} entry)",
+      "high_other": "Reasonable confidence ({{count}} entries)",
+      "low_one": "Low confidence ({{count}} entry)",
+      "low_other": "Low confidence ({{count}} entries)",
+      "medium_one": "Medium confidence ({{count}} entry)",
+      "medium_other": "Medium confidence ({{count}} entries)"
+    },
+    "disclaimer": "A trend estimated from your notes, not a certain prediction.",
+    "noPattern": "Your cravings are spread out with no main time. Keep logging them and the trend will become clearer.",
+    "notEnough_one": "Not enough entries yet ({{count}} craving logged, {{min}} needed). No trend is made up.",
+    "notEnough_other": "Not enough entries yet ({{count}} cravings logged, {{min}} needed). No trend is made up.",
+    "nowInPeak": "This is one of your usual times. A short active break may help, if that suits you.",
+    "peakSlot": "You often log cravings {{slot}} ({{percent}}%).",
+    "peakWeekday": "{{day}} comes up more often ({{percent}}% of cravings).",
+    "slots": {
+      "afternoon": "in the afternoon",
+      "evening": "in the evening",
+      "midday": "around midday",
+      "morning": "in the morning",
+      "night": "at night"
+    },
+    "title": "Craving forecast",
+    "topTrigger": "Common trigger: {{trigger}} ({{percent}}%)."
+  },
+  "goal": {
+    "quit": "Quit completely",
+    "reduce": "Cut down gradually"
+  },
+  "goalSettings": {
+    "confirmMessage": "Your dashboard will be updated. Your history stays intact.",
+    "confirmTitle": "Apply this change?",
+    "historyKept": "All your history is kept: cravings, workouts, badges, XP and savings.",
+    "keepDate": "Keep my date",
+    "quitNote": "Correcting the date can make your savings start earlier, never later: your past savings are kept.",
+    "reduceNote": "Your baseline: {{baseline}} cigarettes a day.",
+    "subtitle": "Change your goal or correct your date without losing your history.",
+    "title": "Goal and date"
+  },
+  "health": {
+    "after": {
+      "days_one": "{{count}} day",
+      "days_other": "{{count}} days",
+      "hours_one": "{{count}} hour",
+      "hours_other": "{{count}} hours",
+      "minutes_one": "{{count}} minute",
+      "minutes_other": "{{count}} minutes",
+      "months_one": "{{count}} month",
+      "months_other": "{{count}} months",
+      "weeks_one": "{{count}} week",
+      "weeks_other": "{{count}} weeks",
+      "years_one": "{{count}} year",
+      "years_other": "{{count}} years"
+    },
+    "milestones": {
+      "m1m": {
+        "description": "Between 1 and 9 months, coughing and shortness of breath decrease.",
+        "title": "Cough and breathlessness"
+      },
+      "m1y": {
+        "description": "After one year, your risk of coronary heart disease is about half that of a person who smokes.",
+        "title": "Heart"
+      },
+      "m20min": {
+        "description": "Your heart rate and blood pressure start to drop.",
+        "title": "Heart and blood pressure"
+      },
+      "m24h": {
+        "description": "Carbon monoxide has been flushed out and your lungs start to clear.",
+        "title": "Carbon monoxide gone"
+      },
+      "m2w": {
+        "description": "Between 2 and 12 weeks, your circulation improves and your lung function increases.",
+        "title": "Circulation"
+      },
+      "m3m": {
+        "description": "Between 3 and 9 months, coughing, sinus congestion, tiredness and shortness of breath decrease. Chest infections become less likely.",
+        "title": "Airways"
+      },
+      "m48h": {
+        "description": "There is no nicotine left in your body. Your senses of taste and smell start to improve.",
+        "title": "Taste and smell"
+      },
+      "m72h": {
+        "description": "Breathing often becomes easier and your energy comes back.",
+        "title": "Easier breathing"
+      },
+      "m8h": {
+        "description": "The levels of carbon monoxide and nicotine in your blood have roughly halved.",
+        "title": "Less carbon monoxide"
+      }
+    },
+    "timeline": {
+      "next": "Next milestone: {{label}}",
+      "reached": "Reached",
+      "seeAll": "See the full timeline and sources",
+      "subtitle": "General guides from public health sources, not measured by your phone.",
+      "title": "Your body is recovering",
+      "upcoming": "Next",
+      "varies": "(varies from person to person)"
+    }
+  },
+  "intensity": {
+    "dynamic": "Dynamic",
+    "gentle": "Gentle",
+    "moderate": "Moderate"
+  },
+  "interventions": {
+    "breathing": "Breathing",
+    "craving_surf": "Craving surf",
+    "distraction": "Distraction",
+    "none": "No action",
+    "replacement_ritual": "Replacement ritual",
+    "workout": "Mini workout"
+  },
+  "journal": {
+    "deleteTitle": "Delete this entry?",
+    "emptyText": "Write down a first win, even a small one.",
+    "emptyTitle": "Your journal is empty",
+    "newEntry": "New entry",
+    "noObligation": "No pressure: write whenever you feel like it.",
+    "placeholders": {
+      "craving_overcome": "What helped you get through it?",
+      "decision": "What choice did you make for yourself?",
+      "free": "Write whatever you like.",
+      "good_day": "What made today a good day?",
+      "gratitude": "What are you grateful for today?",
+      "workout_done": "How did you feel during the workout?"
+    },
+    "reminderSettings": "Set journal reminders",
+    "saved": "Saved! +{{xp}} XP",
+    "savedNoXp": "Saved!",
+    "subtitle": "Small ones and big ones, they all count.",
+    "text": "Your text",
+    "timeline": "Timeline",
+    "title": "Wins journal",
+    "types": {
+      "craving_overcome": "Craving overcome",
+      "decision": "Positive decision",
+      "free": "Free note",
+      "good_day": "Good day",
+      "gratitude": "Gratitude",
+      "workout_done": "Workout done"
+    },
+    "weekly": "Your week",
+    "weeklyTotal_one": "{{count}} entry in the last 7 days",
+    "weeklyTotal_other": "{{count}} entries in the last 7 days"
+  },
+  "level": {
+    "advanced": "Advanced",
+    "beginner": "Beginner",
+    "intermediate": "Intermediate"
+  },
+  "limitations": {
+    "back": "Back",
+    "balance": "Balance",
+    "breathing": "Breathing difficulties",
+    "knees": "Knees",
+    "no_jumping": "No jumping",
+    "other": "Other",
+    "pregnancy": "Pregnancy",
+    "shoulders": "Shoulders",
+    "wrists": "Wrists"
+  },
+  "locations": {
+    "home": "At home",
+    "other": "Elsewhere",
+    "outside": "Outside",
+    "social": "With others",
+    "work": "At work"
+  },
+  "moods": {
+    "calm": "Calm",
+    "irritated": "Irritated",
+    "ok": "OK",
+    "sad": "Sad",
+    "tense": "Tense",
+    "tired": "Tired"
+  },
+  "notifications": {
+    "encouragement": {
+      "body": "You've already made great progress. If a craving comes, your SOS button is there to help.",
+      "title": "You're moving forward"
+    },
+    "journal": {
+      "body": "If you feel like it, note down what went well.",
+      "title": "A win today?"
+    },
+    "milestone": {
+      "body": "{{label}}: {{title}}. Well done on how far you've come.",
+      "title": "New milestone reached"
+    },
+    "pact": {
+      "body": "Take a minute to reread why you started.",
+      "title": "Your pact"
+    },
+    "trigger": {
+      "body": "You often log cravings {{slot}}. A short active break may help, if that suits you.",
+      "title": "Your usual time is coming up"
+    },
+    "weekly": {
+      "body": "Take a look at your progress this week. Every small win counts.",
+      "title": "Your weekly review"
+    },
+    "workout": {
+      "body": "A few minutes of movement today, at your own pace. Your workout is waiting.",
+      "title": "A quick workout?"
+    }
+  },
+  "onboarding": {
+    "fagerstrom": {
+      "disclaimer": "This score is an indicator, not a diagnosis. It doesn't commit you to any particular way of quitting. Interpretation guides: NIDA (NIH).",
+      "interpretation": {
+        "high": "Your physical dependence seems high. Support from a professional (doctor, stop-smoking specialist, pharmacist) can really make the first few weeks easier.",
+        "low": "Your physical dependence seems low. Cravings linked to habits can still be strong: get your strategies ready.",
+        "medium": "Your physical dependence seems moderate. A health professional can help you, for example with nicotine replacement, if you'd like.",
+        "very_high": "Your physical dependence seems very high. Don't hesitate to get support from a professional: it's a resource, not a failure.",
+        "very_low": "Your physical dependence seems very low. Habits and situations still matter: Souffle helps you spot them."
+      },
+      "q1": {
+        "a0": "Within 5 minutes",
+        "a1": "6 to 30 minutes",
+        "a2": "31 to 60 minutes",
+        "a3": "After 60 minutes",
+        "question": "How soon after you wake up do you smoke your first cigarette?"
+      },
+      "q2": {
+        "a0": "Yes",
+        "a1": "No",
+        "question": "Do you find it difficult to refrain from smoking in places where it is forbidden (e.g. cinema, library, public transport)?"
+      },
+      "q3": {
+        "a0": "The first one in the morning",
+        "a1": "Any other",
+        "question": "Which cigarette would you hate most to give up?"
+      },
+      "q4": {
+        "a0": "10 or fewer",
+        "a1": "11 to 20",
+        "a2": "21 to 30",
+        "a3": "31 or more",
+        "question": "How many cigarettes per day do you smoke?"
+      },
+      "q5": {
+        "a0": "Yes",
+        "a1": "No",
+        "question": "Do you smoke more frequently during the first hours after waking than during the rest of the day?"
+      },
+      "q6": {
+        "a0": "Yes",
+        "a1": "No",
+        "question": "Do you smoke when you are so ill that you are in bed most of the day?"
+      },
+      "resultTitle": "Your score: {{score}} / {{max}}",
+      "subtitle": "Six validated questions to estimate your physical dependence on nicotine.",
+      "title": "Fagerström test"
+    },
+    "goals": {
+      "baseline_one": "Right now: {{count}} cigarette a day",
+      "baseline_other": "Right now: {{count}} cigarettes a day",
+      "choice": {
+        "in14": "In 2 weeks",
+        "in3": "In 3 days",
+        "in7": "In a week",
+        "now": "Now",
+        "past": "I've already stopped",
+        "tomorrow": "Tomorrow morning"
+      },
+      "firstWorkoutTitle": "Your first suggested workout",
+      "monthlySavings": "About {{amount}} saved per month, based on your habits.",
+      "pastDays": "For how many days?",
+      "quitDate": "Quit date",
+      "quitDateIs": "Your quit date",
+      "reduceNote": "Cutting down is real progress, but the health benefits are much greater when you stop completely. You can change your goal at any time.",
+      "reductionSavings": "About {{amount}} saved per month if you stick to this goal.",
+      "subtitleQuit": "Choose when you stop. The counter will start from that actual date.",
+      "subtitleReduce": "Set your daily goal. You can adjust it whenever you like.",
+      "target": "Maximum per day",
+      "targetSummary": "Goal: {{target}} a day",
+      "title": "Your plan"
+    },
+    "health": {
+      "intensity": "Preferred intensity",
+      "level": "Your fitness level",
+      "levelHint": {
+        "advanced": "Workouts of 25 to 30 minutes, adjustable intensity.",
+        "beginner": "Workouts of about 10 minutes, low impact, with plenty of recovery.",
+        "intermediate": "Workouts of about 20 minutes with gradual progression."
+      },
+      "limitations": "Limitations to take into account (optional)",
+      "note": "Details (optional)",
+      "noteHint": "For example: sensitive right knee. Stays on your phone.",
+      "safety": "If you have a health condition, ask a professional for advice before starting physical activity again. Stop any exercise if you feel pain, dizziness or unwell.",
+      "subtitle": "So we can suggest suitable workouts. No medical details are requested.",
+      "title": "Physical activity"
+    },
+    "pact": {
+      "contractTitle": "My commitment",
+      "editLater": "You can reread and edit your pact at any time.",
+      "invalid": "Some answers are not valid. Check the previous steps.",
+      "missing": "Some information from the “Let’s get to know you” step is missing. Go back to complete it.",
+      "reasons": "What matters to you",
+      "sign": "I sign my pact",
+      "signature": "Your signature",
+      "signatureHint": "Your first name or initials.",
+      "subtitle": "Why do you want to stop? Your answer will be shown to you in difficult moments.",
+      "title": "Your personal pact",
+      "why": "In your own words",
+      "whyHint": "For example: to play football with my kids without getting out of breath."
+    },
+    "profile": {
+      "age": "Age (optional)",
+      "ageHint": "Souffle is designed for adults.",
+      "cigarettesPerDay": "Cigarettes per day",
+      "cigarettesPerPack": "Cigarettes per pack",
+      "errors": {
+        "age": "Enter an age between 18 and 120, or leave it blank.",
+        "invalid": "Check the values you entered.",
+        "price": "Enter a valid price, for example 9.50.",
+        "range": "This value is outside the expected range."
+      },
+      "firstName": "First name (optional)",
+      "firstNameHint": "To personalise messages.",
+      "goal": "Your goal",
+      "goalQuitHint": "You choose a date and the smoke-free counter starts at that moment.",
+      "goalReduceHint": "You set a maximum number per day and log each cigarette. You can switch to quitting completely whenever you want.",
+      "habitsTitle": "Your habits",
+      "packPrice": "Pack price",
+      "subtitle": "This information is used to calculate your savings and tailor the advice. You can change it later.",
+      "title": "Let's get to know you",
+      "yearsSmoking": "Years of smoking"
+    },
+    "stepOf": "Step {{step}} of {{total}}",
+    "welcome": {
+      "how": "See how it works",
+      "howTitle": "How Souffle supports you",
+      "how_kind": "No guilt: if you smoke a cigarette, your progress is still yours.",
+      "how_sos": "When a craving comes, the SOS button suggests a short action: breathe, move or distract yourself.",
+      "how_sport": "A 12-week home workout programme, adapted to your level and your limits.",
+      "how_track": "You track your cravings, your savings and your progress. Everything stays on your phone.",
+      "privacy": "Privacy policy",
+      "privacyNote": "Your answers stay on this phone. No account, no server.",
+      "resume": "Pick up where I left off",
+      "start": "Get started",
+      "tagline": "Every craving is a chance to catch your breath."
+    }
+  },
+  "outcomes": {
+    "partly_passed": "It eased",
+    "passed": "It passed",
+    "persisted": "It's still there"
+  },
+  "pact": {
+    "noWhy": "You haven't written your why yet.",
+    "reminder": "Your reasons are still there, even after a hard day.",
+    "signedOn": "Signed on {{date}} by {{signature}}",
+    "text": "I choose to move forward at my own pace. Even if I hit a difficulty, I can start again. Every bit of progress counts.",
+    "title": "My pact",
+    "why": "Why I'm quitting"
+  },
+  "periods": {
+    "30d": "30 days",
+    "7d": "7 days",
+    "all": "All"
+  },
+  "privacy": {
+    "counts": "Currently: cravings {{cravings}} · cigarettes logged {{smoking}} · workouts {{sessions}} · journal, sleep and cough {{journal}}.",
+    "deleteButton": "Delete everything",
+    "deleteConfirmText": "To confirm, type {{word}} below. Export your data first if you want to keep it.",
+    "deleteConfirmTitle": "Delete permanently?",
+    "deleteText": "Permanently erases your profile and all Souffle data on this phone, as well as scheduled reminders. This cannot be undone.",
+    "deleteTitle": "Delete all my data",
+    "deleteTypeWord": "Type {{word}}",
+    "deleteWord": "DELETE",
+    "deleteWordMismatch": "The word doesn't match.",
+    "errors": {
+      "canceled": "Cancelled.",
+      "invalid_user": "The profile in this file is invalid. Nothing has been changed.",
+      "newer_version": "This file comes from a newer version of Souffle. Update the app to import it.",
+      "not_json": "This file is not a readable Souffle export.",
+      "not_souffle": "This file doesn't come from Souffle.",
+      "print_failed": "The PDF couldn't be generated. Try again in a moment.",
+      "read_failed": "Unable to read this file.",
+      "sharing_unavailable": "File sharing is not available on this device.",
+      "write_failed": "The file couldn't be created. Check the available space and try again."
+    },
+    "exportDone": "Export ready. Choose where to save or share it.",
+    "exportHint": "A complete JSON file that you can keep or import again later.",
+    "exportJson": "Export (JSON)",
+    "exportTitle": "Export my data",
+    "gdprNote": "Local storage greatly limits the risks, but on its own it is not enough to guarantee GDPR compliance. The processing, permissions and services used are described in the project documentation.",
+    "importConfirmText": "Your current data will be replaced by the data in the file. Remember to export first if you want to keep it.",
+    "importConfirmTitle": "Replace your data?",
+    "importDone": "Import complete.",
+    "importDoneSkipped_one": "Import complete. {{count}} invalid item was skipped.",
+    "importDoneSkipped_other": "Import complete. {{count}} invalid items were skipped.",
+    "importHint": "Restore a file exported from Souffle. The content is checked before importing.",
+    "importJson": "Import a file",
+    "importTitle": "Import a backup",
+    "permissions": "Notifications (optional, for reminders) and vibration. No location, no contacts, no microphone, no camera.",
+    "permissionsTitle": "Permissions",
+    "reportPdf": "Create a PDF report",
+    "subtitle": "Your data belongs to you and stays on your phone.",
+    "thirdParty": "No analytics or advertising tools are built in. Notifications and text-to-speech use your phone's system services. A file only leaves the phone if you share it yourself.",
+    "thirdPartyTitle": "Third-party services",
+    "what": "Your profile (optional first name, habits, goal, pact), your cravings, the cigarettes you log, your workouts, your journal, your sleep and cough if you fill them in, your badges and your settings. No unnecessary medical data is requested.",
+    "whatTitle": "What data?",
+    "where": "Only in the app's local storage, on this phone. Souffle has no account, no server and no ads, and sends no health data.",
+    "whereTitle": "Where is it kept?"
+  },
+  "profile": {
+    "anonymous": "You",
+    "baselineNote": "If you change your consumption or the price, the new values apply from today: your past savings don't change.",
+    "editTitle": "Edit my profile",
+    "fagerstrom": "Fagerström test: {{score}}/10 ({{level}})",
+    "habits": "My habits",
+    "habitsSummary": "{{cigs}} cigarettes a day for {{years}} years · pack of {{perPack}} at {{price}}",
+    "quitDate": "Quit date: {{date}}"
+  },
+  "program": {
+    "backToCurrent": "Current week",
+    "doneThisWeek": "{{done}}/{{total}} this week",
+    "goal": "Goal",
+    "hardDay": "Hard day",
+    "phaseWeeks": "weeks {{from}} to {{to}}",
+    "phases": {
+      "autonomy": {
+        "description": "You know what to do when a craving comes: exercise becomes a real tool against relapse.",
+        "title": "Independence"
+      },
+      "basics": {
+        "description": "You've mastered the basic moves and you keep a steady rhythm.",
+        "title": "Consistency and basics"
+      },
+      "consolidation": {
+        "description": "You strengthen what you've learnt and adjust the intensity to how you feel.",
+        "title": "Consolidation"
+      },
+      "endurance": {
+        "description": "Your stamina is building: slightly longer, more coordinated sequences.",
+        "title": "Endurance and coordination"
+      },
+      "habit": {
+        "description": "Short, regular workouts. The aim is to move, not to perform.",
+        "title": "Building the habit"
+      },
+      "progress": {
+        "description": "Effort periods get a little longer, recovery stays generous.",
+        "title": "Gentle progression"
+      }
+    },
+    "review": "Review",
+    "sessionsPerWeek_one": "{{count}} workout recommended this week.",
+    "sessionsPerWeek_other": "{{count}} workouts suggested this week, with rest days in between.",
+    "weekLabel": "Week {{week}}",
+    "weeks": {
+      "w1": {
+        "goal": "Do 3 short workouts, even if they're incomplete.",
+        "hardDay": "5 minutes of marching on the spot is enough.",
+        "review": "Which time of day suited you best?"
+      },
+      "w10": {
+        "goal": "Do the breathing test again and compare.",
+        "hardDay": "Mobility and breathing only.",
+        "review": "What has changed since the start?"
+      },
+      "w11": {
+        "goal": "Use exercise as a response to cravings.",
+        "hardDay": "The 5-minute SOS workout.",
+        "review": "Which situations are still the hardest?"
+      },
+      "w12": {
+        "goal": "Build your routine for what comes next.",
+        "hardDay": "Choose any workout you like.",
+        "review": "Well done on these 12 weeks. What's your plan to keep going?"
+      },
+      "w2": {
+        "goal": "Keep the same training days.",
+        "hardDay": "Choose the mobility workout.",
+        "review": "Have you noticed an effect on your cravings after a workout?"
+      },
+      "w3": {
+        "goal": "Get comfortable with the chair squat and wall push-ups.",
+        "hardDay": "Just do the warm-up and the cool-down.",
+        "review": "Which exercise feels easier than at the start?"
+      },
+      "w4": {
+        "goal": "Do 3 workouts in a row without rushing.",
+        "hardDay": "Use the anti-tiredness workout.",
+        "review": "Note your perceived effort after each workout."
+      },
+      "w5": {
+        "goal": "Make the effort periods a little longer.",
+        "hardDay": "Stay at last week's level.",
+        "review": "Compare your breathing with week 1."
+      },
+      "w6": {
+        "goal": "Do the breathing test again.",
+        "hardDay": "A breathing workout counts too.",
+        "review": "What helps you stay consistent?"
+      },
+      "w7": {
+        "goal": "Work on endurance with the cardio workout.",
+        "hardDay": "Choose the no-jump version of each exercise.",
+        "review": "Is your recovery faster?"
+      },
+      "w8": {
+        "goal": "Improve your coordination and balance.",
+        "hardDay": "A short themed workout is enough.",
+        "review": "Find the workout that makes you feel best."
+      },
+      "w9": {
+        "goal": "Settle into a rhythm of 3 workouts a week.",
+        "hardDay": "Do half the workout: that's already good.",
+        "review": "When is your best time to move?"
+      }
+    }
+  },
+  "progress": {
+    "badgesCount_one": "{{count}} badge out of {{total}}",
+    "badgesCount_other": "{{count}} badges out of {{total}}",
+    "coughHint_one": "{{count}} entry",
+    "coughHint_other": "{{count}} entries",
+    "cravingsHint_one": "{{count}} craving logged",
+    "cravingsHint_other": "{{count}} cravings logged",
+    "journalHint_one": "{{count}} entry",
+    "journalHint_other": "{{count}} entries",
+    "levelTitle": "Level {{level}}",
+    "nextLevel": "{{xp}} XP to go until the next level",
+    "ofCravings_one": "of {{count}} craving logged",
+    "ofCravings_other": "of {{count}} cravings logged",
+    "sections": "All your tracking",
+    "sleepHint_one": "{{count}} night logged",
+    "sleepHint_other": "{{count}} nights logged",
+    "smokeFreeDays": "Smoke-free days",
+    "smokeFreeDaysHint": "in total, even if not in a row",
+    "title": "Progress",
+    "xpTotal": "{{xp}} XP in total"
+  },
+  "reasons": {
+    "breath": "Getting my breath back",
+    "children": "Setting an example for the kids",
+    "family": "My family",
+    "freedom": "My freedom",
+    "health": "My health",
+    "money": "My finances",
+    "other": "Another reason"
+  },
+  "relapse": {
+    "actions": {
+      "breathing": "Breathe for 2 minutes",
+      "pact": "Reread my pact",
+      "plan": "Adjust my plan",
+      "reset": "5-minute reset workout",
+      "stretch": "Gentle stretches"
+    },
+    "confirmMessage_one": "{{count}} cigarette will be added to your history. Your XP, badges and workouts are still yours.",
+    "confirmMessage_other": "{{count}} cigarettes will be added to your history. Your XP, badges and workouts are still yours.",
+    "confirmTitle": "Save?",
+    "confirmWithShield": "The cigarette will be logged and your shield will protect your streak. Everything you've achieved stays intact.",
+    "count": "Number of cigarettes",
+    "decision": "What now?",
+    "decisionHints": {
+      "continue_quit": "Your counter restarts from this cigarette. Your best streak, badges and past savings are kept.",
+      "new_quit_date": "The counter restarts from now. All your history is kept.",
+      "reduction_log": "The cigarette is added to today's tracking.",
+      "switch_to_reduce": "You switch to reduction mode with a daily goal. You can go back to quitting whenever you like."
+    },
+    "decisions": {
+      "continue_quit": "It was a slip, I'm carrying on with my quit",
+      "new_quit_date": "I'm starting again from a new date",
+      "switch_to_reduce": "I'd rather cut down for now"
+    },
+    "kept": "Still yours: {{xp}} XP · badges earned: {{badges}} · best streak: {{best}} d.",
+    "kindMessage": "One cigarette doesn't wipe out the progress you've already made. Let's look at what happened and prepare the next step.",
+    "loggedText": "You had the courage to log it. That's exactly how you move forward.",
+    "loggedTextReduction": "Thanks for being honest: that's what makes your tracking useful.",
+    "loggedTitle": "Logged, no judgement",
+    "loggedTitleReduction": "Cigarette logged",
+    "nextStep": "Your next step",
+    "reductionHint": "Logging every cigarette lets you track your reduction honestly.",
+    "shield": {
+      "already": "This day is already protected.",
+      "cooldown": "Your shield has already been used this week.",
+      "ok_one": "Protect your {{count}}-day streak. Available once a week.",
+      "ok_other": "Protect your {{count}}-day streak. Available once a week.",
+      "title": "Use my shield",
+      "too_old": "The shield can only protect today or yesterday."
+    },
+    "shieldApplied_one": "Your shield protected your streak: {{count}} day.",
+    "shieldApplied_other": "Your shield protected your streak: {{count}} days.",
+    "situation": "Situation (optional)",
+    "streakNow_one": "Your current streak: {{count}} day. A new one starts right now.",
+    "streakNow_other": "Your current streak: {{count}} days. A new one starts right now.",
+    "title": "I smoked",
+    "titleReduction": "Log a cigarette",
+    "when": "When?",
+    "whenHoursAgo_one": "{{count}} h ago",
+    "whenHoursAgo_other": "{{count}} h ago",
+    "whenNow": "Just now",
+    "yourWhy": "Your why"
+  },
+  "reports": {
+    "content": "Goal, smoke-free days or reduction progress, cigarettes avoided and estimated savings, workouts and exercise time, craving trends, common triggers, wins, and sleep and cough if filled in.",
+    "contentTitle": "Report contents",
+    "done": "Report ready.",
+    "empty": "Little or no data for this period: the report will say so clearly.",
+    "generate": "Generate the PDF",
+    "minutes_one": "{{count}} minute",
+    "minutes_other": "{{count}} minutes",
+    "overcome_one": "{{count}} overcome",
+    "overcome_other": "{{count}} overcome",
+    "pdf": {
+      "avgIntensity": "Average intensity",
+      "cigarettesAvoided": "Cigarettes avoided (estimate)",
+      "cigarettesLogged": "Cigarettes logged",
+      "cough": "Cough",
+      "coughValue_one": "average intensity {{avg}}/10 (from {{first}} to {{last}}, {{count}} entry)",
+      "coughValue_other": "average intensity {{avg}}/10 (from {{first}} to {{last}}, {{count}} entries)",
+      "cravings": "Cravings",
+      "cravingsCount": "Cravings logged",
+      "cravingsOvercome": "Cravings overcome",
+      "daysOf_one": "{{count}} day out of {{total}}",
+      "daysOf_other": "{{count}} days out of {{total}}",
+      "daysUnderTarget": "Days under the goal",
+      "disclaimer": "This document is a personal journal. It does not replace a medical assessment.",
+      "empty": "Little data was recorded for this period.",
+      "estimates": "Cigarettes avoided and savings are estimates calculated from the habits you reported.",
+      "generated": "Generated on {{date}} on the device, offline.",
+      "goal": "Goal",
+      "health": "Sleep and cough",
+      "intensityTrend": "Intensity trend",
+      "intensityTrendValue": "{{first}}/10 at the start of the period, {{second}}/10 at the end",
+      "noVictories": "No wins noted for this period.",
+      "saved": "Estimated savings",
+      "sleep": "Sleep",
+      "sleepValue_one": "{{duration}} on average, quality {{quality}}/5 ({{count}} night logged)",
+      "sleepValue_other": "{{duration}} on average, quality {{quality}}/5 ({{count}} nights logged)",
+      "smokeFreeDays": "Smoke-free days",
+      "summary": "Summary",
+      "title": "Souffle: personal report",
+      "topTriggers": "Common triggers",
+      "victories": "Wins",
+      "workoutMinutes": "Minutes of activity",
+      "workouts": "Workouts completed"
+    },
+    "periods": {
+      "current_month": "This month",
+      "last_30_days": "Last 30 days",
+      "previous_month": "Last month"
+    },
+    "subtitle": "A monthly summary generated on your phone, which you can save or share.",
+    "title": "PDF report"
+  },
+  "settings": {
+    "accessibility": {
+      "note": "Souffle works with screen readers (VoiceOver, TalkBack). No information is conveyed by colour alone.",
+      "subtitle": "Adjust the app to suit you.",
+      "title": "Display and accessibility"
+    },
+    "enableReduceMotion": "Reduce animations",
+    "fontSize": {
+      "large": "Large",
+      "normal": "Normal",
+      "preview": "Preview: every craving is a chance to catch your breath.",
+      "title": "Text size",
+      "xlarge": "Extra large"
+    },
+    "forecast": "Craving forecast",
+    "forecastHint": "Show trends calculated from your cravings.",
+    "haptics": "Vibration",
+    "hapticsHint": "Gentle haptic feedback, for example to follow your breathing.",
+    "hapticsUnavailable": "Not available on this device. The visual and voice guides stay on.",
+    "highContrast": "High contrast",
+    "highContrastHint": "Stronger colours and visible borders.",
+    "language": {
+      "device": "Phone language",
+      "deviceHint": "Currently: {{language}}",
+      "en": "English",
+      "formats": "Dates, times and amounts are shown in the format of the chosen language.",
+      "fr": "French",
+      "native": {
+        "en": "English",
+        "fr": "Français",
+        "nl": "Nederlands"
+      },
+      "nl": "Dutch",
+      "subtitle": "Choose the app language.",
+      "supported": "Available languages: French, Dutch and English.",
+      "title": "Language"
+    },
+    "notifications": {
+      "bestEffort": "Your phone's system may delay or group some notifications: Souffle cannot guarantee the exact delivery time.",
+      "categories": "Reminder types",
+      "category": {
+        "encouragement": "Encouragement",
+        "journal_reminder": "Journal reminder",
+        "milestone": "Health milestones reached",
+        "pact_reminder": "Pact reminder",
+        "trigger_preparation": "Getting ready for high-risk moments",
+        "weekly_summary": "Weekly review",
+        "workout_reminder": "Workout reminder"
+      },
+      "categoryHint": {
+        "encouragement": "Once a week.",
+        "journal_reminder": "Every day at the time you choose. Never compulsory.",
+        "milestone": "When a milestone on the health timeline is reached.",
+        "pact_reminder": "Once a week, on Saturday.",
+        "trigger_preparation": "Shortly before your usual time, only if there is a clear trend.",
+        "weekly_summary": "Monday evening.",
+        "workout_reminder": "On the days and at the time you choose."
+      },
+      "days": "Days",
+      "denied": "Notifications are blocked in your phone's settings.",
+      "enable": "Allow notifications",
+      "enableHint": "Nothing is sent by a server: reminders are scheduled on your phone.",
+      "hour": "Time",
+      "journalTitle": "Journal reminder",
+      "openSettings": "Open phone settings",
+      "quietFrom": "From",
+      "quietHours": "Quiet hours",
+      "quietHoursHint": "No reminders during this time.",
+      "quietTo": "To",
+      "subtitle": "Local, kind reminders that you can fully adjust.",
+      "title": "Notifications",
+      "webUnsupported": "Notifications are not available in the web demo version.",
+      "workoutTitle": "Workout reminder"
+    },
+    "privacy": {
+      "subtitle": "Export, import and deletion",
+      "title": "Privacy and data"
+    },
+    "reduceMotion": "Reduce animations",
+    "reduceMotionHint": "Turns off transitions and makes the breathing circle static.",
+    "systemReduceMotion": "Your phone asks for reduced animations. Do you want to apply this setting in Souffle?",
+    "theme": {
+      "dark": "Dark",
+      "light": "Light",
+      "system": "Automatic",
+      "title": "Theme"
+    },
+    "title": "Settings",
+    "voice": "Voice guide",
+    "voiceHint": "Uses your phone's text-to-speech, offline."
+  },
+  "sleep": {
+    "average7": "Average of your last 7 logged nights",
+    "comparisonText": "After a difficult night, you logged an average of {{low}} cravings during the day, compared with {{good}} after a good night.",
+    "comparisonTitle": "Sleep and cravings",
+    "emptyText": "Sleep tracking is optional.",
+    "emptyTitle": "No nights logged",
+    "great": "Excellent",
+    "history": "History",
+    "lastNight": "Last night",
+    "needMore": "The comparison with your cravings will appear after at least 3 good and 3 bad nights logged.",
+    "newEntry": "My night",
+    "nightBefore": "The night before",
+    "noCausal": "This is a simple comparison of your notes, not cause and effect.",
+    "note": "Comment (optional)",
+    "poor": "Poor",
+    "quality": "Quality",
+    "subtitle": "Log your nights, if you'd like to.",
+    "title": "Sleep",
+    "trend": "Sleep quality",
+    "trendSummary_one": "Quality of your last logged night, from 1 to 5.",
+    "trendSummary_other": "Quality of your last {{count}} logged nights, from 1 to 5."
+  },
+  "sos": {
+    "bestForYou": "Based on your answers, {{intervention}} often helps you ({{percent}}%).",
+    "breathing": {
+      "comfort": "If you feel any discomfort, just breathe at your own pace.",
+      "exhale": "Breathe out",
+      "hint": "Breathe in for {{inhale}} s, out for {{exhale}} s. No forcing, no holding your breath.",
+      "inhale": "Breathe in",
+      "ready": "Let's go",
+      "title": "Breathe with the circle",
+      "voice": "Voice guide"
+    },
+    "distraction": {
+      "elapsed": "Time elapsed: {{seconds}} s",
+      "grounding": {
+        "done": "Well done. Your attention is back in the present moment.",
+        "hear3": "3 sounds you can hear",
+        "hint": "Take time to notice around you:",
+        "see5": "5 things you can see",
+        "smell2": "2 things you can smell",
+        "taste1": "1 thing you can taste",
+        "title": "5-4-3-2-1 grounding",
+        "touch4": "4 things you can touch"
+      },
+      "memory": {
+        "cardDown": "Card face down",
+        "cardUp": "Card face up",
+        "hint": "Find the pairs of matching icons.",
+        "moves_one": "{{count}} move",
+        "moves_other": "{{count}} moves",
+        "restart": "Start again",
+        "title": "Memory",
+        "won_one": "Well done! All pairs in {{count}} move.",
+        "won_other": "Well done! All pairs in {{count}} moves."
+      },
+      "order": {
+        "hint": "Tap the numbers from 1 to 16 in order, as calmly as you can.",
+        "next": "Next: {{n}}",
+        "title": "Numbers",
+        "won_one": "Done in {{count}} second!",
+        "won_other": "Done in {{count}} seconds!"
+      },
+      "subtitle": "A few minutes of play to let the craving pass.",
+      "title": "Take your mind off it"
+    },
+    "feedback": {
+      "duration": "{{intervention}} · {{time}}",
+      "intensityBefore": "How strong was it at the start?",
+      "journal": "Add this win to my journal",
+      "message": {
+        "partly_passed": "The craving has eased: you've taken back some control. You can follow up with another action if you like.",
+        "passed": "You just got through a craving. Every time counts.",
+        "persisted": "Some cravings are more stubborn. You can try another option, or give it a little more time."
+      },
+      "surf": "Try Craving surf",
+      "thanks": {
+        "partly_passed": "That's real progress already",
+        "passed": "Well done!",
+        "persisted": "Thanks for trying"
+      },
+      "title": "How is your craving now?",
+      "triggerOptional": "What triggered it? (optional)",
+      "tryAnother": "Try another option"
+    },
+    "footer": "A craving usually fades in the end. Every time you get through one, you're getting stronger.",
+    "intake": {
+      "hide": "Hide",
+      "show": "Describe my craving (optional)"
+    },
+    "logOnly": "Just log the craving",
+    "options": {
+      "breathing": {
+        "subtitle": "Guided breathing",
+        "title": "I have 2 minutes"
+      },
+      "distraction": {
+        "subtitle": "Short games and a grounding exercise",
+        "title": "Take my mind off it"
+      },
+      "workout": {
+        "subtitle": "Gentle mini workout, no equipment",
+        "title": "I have 5 minutes"
+      }
+    },
+    "softened": "(Gentle version, adapted to what you told us.)",
+    "subtitle": "Choose an action. You can stop at any time.",
+    "suggestedWorkout": "Suggested workout: {{title}}",
+    "surf": "Guided Craving surf (3 min)",
+    "surfHint": "Watch the craving without judging it, with a voice guide",
+    "title": "Want to smoke?",
+    "workout": {
+      "adapted": "The exercises are adapted to the limitations you mentioned.",
+      "intensity": "Intensity",
+      "subtitle_one": "About {{count}} minute, at your own pace. You can stop whenever you like.",
+      "subtitle_other": "About {{count}} minutes, at your own pace. You can stop whenever you like.",
+      "title": "5-minute mini workout"
+    }
+  },
+  "sport": {
+    "adaptedNote": "Exercises are automatically replaced based on the limitations you mentioned.",
+    "history": {
+      "empty": "Your completed workouts will appear here. The first one is often the most important.",
+      "emptyTitle": "No workouts yet",
+      "last": "Last workout: {{date}}",
+      "list": "All workouts",
+      "title": "Workout history",
+      "weekly": "Workouts per week",
+      "weeklySummary_one": "{{count}} workout completed in total, {{minutes}} minutes of activity.",
+      "weeklySummary_other": "{{count}} workouts completed in total, {{minutes}} minutes of activity."
+    },
+    "level": {
+      "allUnlocked": "All levels are unlocked.",
+      "neverForced": "You never have to move up a level.",
+      "subtitle": "You can stay at the same level or go back down at any time.",
+      "title": "Your level",
+      "unlockAdvanced": "Advanced level: after {{workouts}} workouts spread over at least {{weeks}} weeks.",
+      "unlockIntermediate": "Intermediate level: after {{workouts}} workouts spread over at least {{weeks}} weeks."
+    },
+    "stats": {
+      "completed": "Workouts completed",
+      "minutes": "Minutes of activity",
+      "minutesHint_one": "{{count}} minute of activity",
+      "minutesHint_other": "{{count}} minutes of activity",
+      "thisWeek": "This week"
+    },
+    "thematic": {
+      "subtitle": "For a specific moment: stress, anger, boredom, coffee, tiredness.",
+      "title": "Themed workouts"
+    },
+    "title": "Sport"
+  },
+  "streak": {
+    "best": "Best",
+    "calendar": "Last 14 days",
+    "freeze": {
+      "active": "Your streak is paused until {{date}}. These days don't count and don't break it.",
+      "confirmMessage_one": "Your streak will be paused for {{count}} day, starting today. You can cancel the pause.",
+      "confirmMessage_other": "Your streak will be paused for {{count}} days, starting today. You can cancel the pause.",
+      "confirmTitle": "Pause it?",
+      "days": "Duration",
+      "errors": {
+        "active": "A pause is already running or planned for these dates.",
+        "past": "A pause can't start in the past.",
+        "too_long": "The duration must be between 1 and 14 days."
+      },
+      "reasons": {
+        "illness": "Illness",
+        "other": "Other",
+        "travel": "Travel"
+      },
+      "start": "Pause my streak",
+      "subtitle": "If you're ill or travelling: up to {{max}} days, one pause at a time.",
+      "title": "Streak pause"
+    },
+    "legend": {
+      "frozen": "paused",
+      "notCounted": "before quitting",
+      "shielded": "protected",
+      "smokeFree": "smoke-free",
+      "smoked": "cigarette",
+      "today": "today"
+    },
+    "rule": "A day counts once it's over. Your quit day, if already under way, doesn't count.",
+    "shield": {
+      "available": "Available",
+      "explain": "The shield protects your streak once every {{days}} days, for a cigarette logged today or yesterday. You choose to use it yourself when you log a cigarette.",
+      "title": "Shield",
+      "unavailable": "Available again on {{date}}",
+      "usedOn": "{{date}} protected"
+    },
+    "subtitle": "Full smoke-free days, calculated using your local calendar.",
+    "title": "Streak and shield"
+  },
+  "surf": {
+    "disclaimer": "A craving doesn't always go away in 3 minutes. The aim is to watch it without obeying it, not to make it disappear at all costs.",
+    "stepOf": "Step {{step}} of {{total}}",
+    "steps": {
+      "breathe": {
+        "text": "Breathe normally, without forcing. Let the air flow in and out, at your own pace.",
+        "title": "Breathe"
+      },
+      "choose": {
+        "text": "Now, consciously choose your next action: drink a glass of water, move a little, or simply carry on with your day.",
+        "title": "Choose"
+      },
+      "evolve": {
+        "text": "Is the craving changing in intensity? It may rise, then fall. All you have to do is watch it.",
+        "title": "Watch the wave"
+      },
+      "observe": {
+        "text": "Where do you feel it in your body? In your throat, your chest, your hands? Describe it like a curious observer.",
+        "title": "Observe"
+      },
+      "recognize": {
+        "text": "Notice the craving, without judging it. Just tell yourself: I want to smoke, and this is a feeling that will change.",
+        "title": "Recognise"
+      }
+    },
+    "subtitle": "A craving rises, peaks and then falls, like a wave. Watch it without judging it.",
+    "title": "Craving surf",
+    "voiceHint": "Uses your phone's text-to-speech, offline. The text stays on screen."
+  },
+  "tabs": {
+    "home": "Home",
+    "profile": "Profile",
+    "progress": "Progress",
+    "sos": "SOS",
+    "sosA11y": "SOS craving: instant help",
+    "sport": "Sport"
+  },
+  "triggers": {
+    "after_meal": "After a meal",
+    "alcohol": "Alcohol",
+    "anger": "Anger",
+    "boredom": "Boredom",
+    "coffee": "Coffee",
+    "fatigue": "Tiredness",
+    "night": "Night",
+    "other": "Other",
+    "social": "Social setting",
+    "stress": "Stress"
+  },
+  "units": {
+    "cigs": "cigs",
+    "cigsPerDay": "cigs/day",
+    "cigsToday": "cigs today",
+    "d": "d",
+    "days": "days",
+    "daysCount_one": "{{count}} day",
+    "daysCount_other": "{{count}} days",
+    "h": "h",
+    "hours": "Hours",
+    "min": "min",
+    "minutes": "Minutes",
+    "s": "s"
+  },
+  "weekdays": {
+    "0": "Sunday",
+    "1": "Monday",
+    "2": "Tuesday",
+    "3": "Wednesday",
+    "4": "Thursday",
+    "5": "Friday",
+    "6": "Saturday"
+  },
+  "weekdaysShort": {
+    "0": "Sun",
+    "1": "Mon",
+    "2": "Tue",
+    "3": "Wed",
+    "4": "Thu",
+    "5": "Fri",
+    "6": "Sat"
+  },
+  "workout": {
+    "aboutMinutes_one": "About {{count}} minute",
+    "aboutMinutes_other": "About {{count}} minutes",
+    "adaptedCount_one": "{{count}} exercise replaced by a version adapted to your limitations.",
+    "adaptedCount_other": "{{count}} exercises replaced by versions adapted to your limitations.",
+    "blockOf": "Exercise {{current}} of {{total}}",
+    "complete": {
+      "abandonedText": "The workout isn't counted this time, but every minute of movement counts.",
+      "abandonedTitle": "You moved, and that's good",
+      "effort": "Perceived effort",
+      "effortHigh": "Very hard",
+      "effortLow": "Very easy",
+      "effortShort": "effort {{value}}/5",
+      "noPressure": "No pressure: you can start again whenever you like.",
+      "notes": "Notes (optional)",
+      "text": "Well done. Every workout builds your stamina and your confidence.",
+      "title": "Workout complete!"
+    },
+    "duration": "Duration",
+    "easier": "Easier",
+    "exercises": "Exercises",
+    "exercisesCount_one": "{{count}} exercise",
+    "exercisesCount_other": "{{count}} exercises",
+    "go": "Let's go",
+    "harder": "Harder",
+    "hideVariants": "Hide variations",
+    "level": "Level",
+    "next": "Up next",
+    "notFound": "Workout not found",
+    "reps_one": "About {{count}} rep",
+    "reps_other": "About {{count}} reps",
+    "rest": "Recovery",
+    "restShort": "rest",
+    "safety": "Safety",
+    "showVariants": "Variations and safety",
+    "skip": "Skip",
+    "stop": "Stop the workout",
+    "stopConfirm": "Stop",
+    "stopIfPain": "Stop immediately if you feel pain, dizziness, unwell or unusually out of breath.",
+    "stopMessage": "What you've already done counts. If you've done at least half of the exercises, the workout is counted.",
+    "stopTitle": "Stop now?"
+  },
+  "workouts": {
+    "advanced_cardio": {
+      "description": "Adjustable intensity: every exercise has a gentler version.",
+      "title": "Advanced cardio"
+    },
+    "advanced_mobility": {
+      "description": "To recover between more intense workouts.",
+      "title": "Mobility and recovery"
+    },
+    "advanced_strength": {
+      "description": "A full upper and lower body circuit.",
+      "title": "Advanced strength"
+    },
+    "beginner_cardio": {
+      "description": "Marching on the spot and no-jump moves to get your breathing going.",
+      "title": "Gentle cardio"
+    },
+    "beginner_mobility": {
+      "description": "Mobility and stretches to release tension.",
+      "title": "Mobility and relaxation"
+    },
+    "beginner_strength": {
+      "description": "Chair squats, wall push-ups and light core work. No jumping.",
+      "title": "Gentle strength"
+    },
+    "intermediate_cardio": {
+      "description": "Dynamic sequences with active recovery.",
+      "title": "Intermediate cardio"
+    },
+    "intermediate_mobility": {
+      "description": "A full-body recovery workout.",
+      "title": "Full mobility"
+    },
+    "intermediate_strength": {
+      "description": "Squats, incline push-ups, core work and lunges, with gradual progression.",
+      "title": "Progressive strength"
+    },
+    "sos_5min": {
+      "description": "5 accessible minutes: marching, chair squats, wall push-ups, then recovery.",
+      "title": "SOS mini workout"
+    },
+    "theme_anger": {
+      "description": "Release tension with dynamic moves, then calm back down.",
+      "title": "Anti-anger"
+    },
+    "theme_boredom": {
+      "description": "A varied little challenge to keep your body and mind busy.",
+      "title": "Anti-boredom"
+    },
+    "theme_calm": {
+      "description": "Slow stretches and breathing to ease the pressure.",
+      "title": "Wind down"
+    },
+    "theme_coffee": {
+      "description": "A short routine to do after your coffee, somewhere other than usual.",
+      "title": "Anti-coffee"
+    },
+    "theme_fatigue": {
+      "description": "Gentle mobility and breathing, with no intense effort.",
+      "title": "Anti-tiredness"
+    },
+    "theme_reset": {
+      "description": "A few minutes to get going again, no judgement.",
+      "title": "Reset after a slip"
+    },
+    "theme_stress": {
+      "description": "Slow movements and breathing to bring the tension down.",
+      "title": "Anti-stress"
+    }
+  },
+  "xp": {
+    "breathing_test": "Breathing test",
+    "craving_overcome": "Craving overcome",
+    "journal_entry": "Journal note",
+    "milestone": "Smoke-free milestone",
+    "relapse_recovery": "Getting back on track after a slip",
+    "sos_completed": "SOS exercise completed",
+    "victory": "Personal win",
+    "workout_completed": "Workout completed"
+  }
+}

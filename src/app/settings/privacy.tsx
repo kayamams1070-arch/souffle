@@ -86,7 +86,7 @@ export default function PrivacyScreen() {
         <AppText variant="bodySmall">{t('privacy.what')}</AppText>
         {user ? (
           <AppText variant="caption" tone="secondary" style={{ marginTop: 8 }}>
-            {t('privacy.counts', counts)}
+            {t('privacy.counts', { cravings: counts.cravings, smoking: counts.smoking, sessions: counts.sessions, journal: counts.journal })}
           </AppText>
         ) : null}
       </AppCard>

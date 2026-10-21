@@ -7,12 +7,12 @@ import type { SmokeFreeState, ReductionSummary } from '@/utils/calculations';
 import { formatDate } from '@/utils/money';
 import type { Language } from '@/types';
 
-function Unit({ value, label }: { value: number; label: string }) {
+function Unit({ value, label, pad = true }: { value: number; label: string; pad?: boolean }) {
   const theme = useAppTheme();
   return (
     <View style={{ alignItems: 'center', minWidth: 64 }}>
       <AppText variant="display" weight="bold" style={{ color: theme.colors.primary, fontVariant: ['tabular-nums'] }}>
-        {value < 10 && label !== 'd' ? `0${value}` : value}
+        {pad && value < 10 ? `0${value}` : value}
       </AppText>
       <AppText variant="caption" tone="secondary">
         {label}
@@ -36,9 +36,9 @@ export function SmokeFreeCounter({ state, language }: { state: SmokeFreeState; l
           {t('dashboard.counter.futureHint')}
         </AppText>
         <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 12 }}>
-          <Unit value={d.days} label="d" />
-          <Unit value={d.hours} label="h" />
-          <Unit value={d.minutes} label="min" />
+          <Unit value={d.days} label={t('units.d')} pad={false} />
+          <Unit value={d.hours} label={t('units.h')} />
+          <Unit value={d.minutes} label={t('units.min')} />
         </View>
       </AppCard>
     );
@@ -50,7 +50,7 @@ export function SmokeFreeCounter({ state, language }: { state: SmokeFreeState; l
         {t('dashboard.counter.title')}
       </AppText>
       <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 8, alignItems: 'flex-end' }}>
-        <Unit value={d.days} label={t('units.d')} />
+        <Unit value={d.days} label={t('units.d')} pad={false} />
         <Unit value={d.hours} label={t('units.h')} />
         <Unit value={d.minutes} label={t('units.min')} />
         <View style={{ alignItems: 'center', minWidth: 48 }}>
@@ -94,7 +94,7 @@ export function ReductionCounter({ stats }: { stats: ReductionSummary }) {
         {over ? t('dashboard.reduction.overTarget') : t('dashboard.reduction.underTarget', { left: stats.target - stats.todaySmoked })}
       </AppText>
       <AppText variant="caption" tone="secondary" style={{ marginTop: 4 }}>
-        {t('dashboard.reduction.summary', { days: stats.daysUnderTarget, total: stats.daysOnPlan })}
+        {t('dashboard.reduction.summary', { count: stats.daysUnderTarget, total: stats.daysOnPlan })}
       </AppText>
     </AppCard>
   );

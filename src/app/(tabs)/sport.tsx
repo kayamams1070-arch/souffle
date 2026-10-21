@@ -87,7 +87,7 @@ export default function SportScreen() {
           {t(`program.phases.${phase.key}.description`)}
         </AppText>
         <AppText variant="bodySmall" weight="semibold" style={{ marginTop: 8 }}>
-          {t('program.goal')}: <AppText variant="bodySmall">{t(`program.weeks.w${shownWeek}.goal`)}</AppText>
+          {t('program.goal')}{t('common.colon')} <AppText variant="bodySmall">{t(`program.weeks.w${shownWeek}.goal`)}</AppText>
         </AppText>
         <AppText variant="bodySmall" style={{ marginTop: 4 }}>
           {t('program.sessionsPerWeek', { count: program.recommendedSessions })}
@@ -111,10 +111,10 @@ export default function SportScreen() {
           })}
         </View>
         <AppText variant="caption" tone="secondary" style={{ marginTop: 10 }}>
-          {t('program.hardDay')}: {t(`program.weeks.w${shownWeek}.hardDay`)}
+          {t('program.hardDay')}{t('common.colon')} {t(`program.weeks.w${shownWeek}.hardDay`)}
         </AppText>
         <AppText variant="caption" tone="secondary" style={{ marginTop: 4 }}>
-          {t('program.review')}: {t(`program.weeks.w${shownWeek}.review`)}
+          {t('program.review')}{t('common.colon')} {t(`program.weeks.w${shownWeek}.review`)}
         </AppText>
       </AppCard>
 

@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useAppTheme } from '@/theme/ThemeContext';
 import { fontFamily, MIN_TOUCH } from '@/theme/tokens';
 import { useHaptics } from '@/hooks/useHaptics';
+import { useTranslation } from 'react-i18next';
 import { AppText } from './AppText';
 
 export interface ChipOption<T extends string | number> {
@@ -149,6 +150,7 @@ interface StepperProps {
 }
 
 export function NumberStepper({ value, onChange, min = 0, max = 999, step = 1, label, unit }: StepperProps) {
+  const { t } = useTranslation();
   const theme = useAppTheme();
   const haptics = useHaptics();
   const set = (v: number) => onChange(Math.max(min, Math.min(max, v)));
@@ -162,7 +164,7 @@ export function NumberStepper({ value, onChange, min = 0, max = 999, step = 1, l
       <View style={[styles.stepper, { borderColor: theme.colors.border, borderRadius: theme.radius.md, backgroundColor: theme.colors.surface }]}>
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel="-"
+          accessibilityLabel={t('common.decrease', { label: label ?? '' })}
           disabled={value <= min}
           onPress={() => {
             haptics.selection();
@@ -177,7 +179,7 @@ export function NumberStepper({ value, onChange, min = 0, max = 999, step = 1, l
         </AppText>
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel="+"
+          accessibilityLabel={t('common.increase', { label: label ?? '' })}
           disabled={value >= max}
           onPress={() => {
             haptics.selection();
