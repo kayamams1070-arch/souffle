@@ -1,0 +1,62 @@
+name: APK Android
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Dépendances
+        run: npm ci
+
+      - name: Vérifications (TypeScript, lint, tests, traductions)
+        run: npm run check
+
+      - name: Génération du projet Android
+        run: npx expo prebuild --platform android --no-install
+
+      - name: Compilation de l'APK
+        working-directory: android
+        run: ./gradlew assembleRelease --no-daemon
+
+      - name: Renommage
+        run: |
+          VERSION=$(node -p "require('./app.json').expo.version")
+          mkdir -p out
+          cp android/app/build/outputs/apk/release/app-release.apk "out/souffle-${VERSION}-${GITHUB_RUN_NUMBER}.apk"
+          echo "APK=out/souffle-${VERSION}-${GITHUB_RUN_NUMBER}.apk" >> "$GITHUB_ENV"
+          echo "TAG=v${VERSION}-${GITHUB_RUN_NUMBER}" >> "$GITHUB_ENV"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: souffle-apk
+          path: out/*.apk
+
+      - name: Publication (lien de téléchargement)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG }}
+          name: Souffle ${{ env.TAG }}
+          files: ${{ env.APK }}
+          make_latest: true
