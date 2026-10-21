@@ -5,6 +5,7 @@
  * Every function works on the Zustand stores (single source of truth in memory); the
  * persist middleware mirrors them to AsyncStorage through storageService.
  */
+import { evaluateBadges } from './rewardService';
 import { z } from 'zod';
 import type { AppDataExport, RewardState, Settings, SportLevel, User } from '@/types';
 import {
@@ -277,6 +278,12 @@ export function loadDemoIntoStores(language: Settings['language']): void {
   useWorkoutStore.getState().replaceAll({ sessions: data.sessions, breathingTests: data.breathingTests, activeLevel: 'beginner' });
   useRewardStore.getState().replaceAll({ xp: data.xp, events: data.xpEvents, badges: [], shieldUses: [], freezes: [], bestStreakDays: 12 });
   useJournalStore.getState().replaceAll({ entries: data.entries, sleep: data.sleep, cough: data.cough, challenges: data.challenges });
+  // The demo profile arrives with its badges already earned: unlocking them here (rather than
+  // in the app-wide sync) avoids a "9 new badges" celebration the moment the demo opens.
+  const rewards = useRewardStore.getState();
+  rewards.unlockBadges(
+    evaluateBadges({ user: data.user, cravings: data.cravings, smokingEvents: data.smokingEvents, sessions: data.sessions, rewards })
+  );
   useSettingsStore.getState().setDemoMode(true);
 }
 

@@ -21,7 +21,8 @@ import { STORAGE_KEYS } from '@/services/storageService';
 import { DEMO_USER_ID, buildDemoData } from '@/data/demoData';
 import { computeSavings } from '@/utils/calculations';
 import { computeCurrentStreak } from '@/utils/streaks';
-import { xpEventId } from '@/services/rewardService';
+import { evaluateBadges, xpEventId } from '@/services/rewardService';
+import { useCelebrationStore } from '@/store/useCelebrationStore';
 import { SCHEMA_VERSION } from '@/utils/constants';
 import { craving, local, makeUser, ms, session } from './helpers';
 
@@ -149,6 +150,22 @@ describe('demo mode never destroys a real profile', () => {
     await enterDemo('en');
     expect((await exitDemo()).restored).toBe(false);
     expect(useUserStore.getState().user).toBeNull();
+  });
+
+  it('opens the demo with its badges already earned, without a celebration burst', async () => {
+    useUserStore.getState().reset();
+    useCelebrationStore.getState().dismiss();
+    await enterDemo('fr');
+    const badges = useRewardStore.getState().badges.map((b) => b.id);
+    expect(badges).toEqual(expect.arrayContaining(['smoke_free_1d', 'smoke_free_1w']));
+    // The app-wide sync then finds nothing new to celebrate.
+    const rewards = useRewardStore.getState();
+    const { user } = useUserStore.getState();
+    const { cravings, smokingEvents } = useCravingStore.getState();
+    const { sessions } = useWorkoutStore.getState();
+    expect(rewards.unlockBadges(evaluateBadges({ user, cravings, smokingEvents, sessions, rewards }))).toEqual([]);
+    expect(useCelebrationStore.getState().pendingBadges).toEqual([]);
+    await exitDemo();
   });
 
   it('builds coherent fictional data in each language', () => {

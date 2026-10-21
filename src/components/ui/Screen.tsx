@@ -39,6 +39,9 @@ export function Screen({
   const theme = useAppTheme();
   const insets = useSafeAreaInsets();
   // Inside tabs, leave room for the raised SOS tab button.
+  // No navigation header anywhere in the app: each screen clears the status bar itself
+  // (Android edge-to-edge and the iPhone notch).
+  const paddingTop = insets.top + theme.spacing.lg;
   const paddingBottom = insideTabs ? theme.spacing.xxxl + theme.spacing.lg : Math.max(insets.bottom, theme.spacing.lg);
 
   const header =
@@ -58,7 +61,7 @@ export function Screen({
       style={{ flex: 1 }}
       contentContainerStyle={[
         styles.content,
-        { padding: theme.spacing.lg, paddingBottom: footer ? theme.spacing.lg : paddingBottom },
+        { padding: theme.spacing.lg, paddingTop, paddingBottom: footer ? theme.spacing.lg : paddingBottom },
         contentStyle,
       ]}
       keyboardShouldPersistTaps="handled"
@@ -67,7 +70,7 @@ export function Screen({
       {children}
     </ScrollView>
   ) : (
-    <View style={[styles.content, { flex: 1, padding: theme.spacing.lg, paddingBottom: footer ? 0 : paddingBottom }, contentStyle]}>
+    <View style={[styles.content, { flex: 1, padding: theme.spacing.lg, paddingTop, paddingBottom: footer ? 0 : paddingBottom }, contentStyle]}>
       {header}
       {children}
     </View>
