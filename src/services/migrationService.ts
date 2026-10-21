@@ -10,6 +10,7 @@
  */
 import { SCHEMA_VERSION } from '@/utils/constants';
 import { savingsStart } from '@/utils/calculations';
+import { fagerstromLevel } from '@/utils/fagerstrom';
 import type { User } from '@/types';
 
 type AnyRecord = Record<string, unknown>;
@@ -28,6 +29,11 @@ export function migrateUserState(persisted: unknown, version: number): AnyRecord
         const user = state.user as User | null | undefined;
         if (user && typeof user === 'object' && !user.savingsStartDate && user.createdAt) {
           state.user = { ...user, savingsStartDate: savingsStart(user) };
+        }
+        // v2 also adopts the 5 NIDA dependence bands: recompute the level from the score.
+        const migrated = state.user as User | null | undefined;
+        if (migrated?.smoking && typeof migrated.smoking.dependenceScore === 'number') {
+          state.user = { ...migrated, smoking: { ...migrated.smoking, dependenceLevel: fagerstromLevel(migrated.smoking.dependenceScore) } };
         }
         break;
       }

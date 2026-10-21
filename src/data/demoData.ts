@@ -76,7 +76,7 @@ export function buildDemoData(now = new Date(), language: Language = 'fr') {
       cigarettesPerPack: 20,
       packPriceCents: 950,
       dependenceScore: 5,
-      dependenceLevel: 'moderate',
+      dependenceLevel: 'medium',
       fagerstromAnswers: [2, 0, 0, 1, 1, 1],
     },
     goal: 'quit',

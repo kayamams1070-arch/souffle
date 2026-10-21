@@ -33,9 +33,10 @@ describe('Fagerström test (FTND)', () => {
     expect(computeFagerstromScore([9, -1])).toBe(0);
   });
 
-  it('uses the usual interpretation bands', () => {
-    expect([0, 1, 2].map(fagerstromLevel)).toEqual(['low', 'low', 'low']);
-    expect([3, 4, 5].map(fagerstromLevel)).toEqual(['moderate', 'moderate', 'moderate']);
+  it('uses the NIDA (NIH) interpretation bands', () => {
+    expect([0, 1, 2].map(fagerstromLevel)).toEqual(['very_low', 'very_low', 'very_low']);
+    expect([3, 4].map(fagerstromLevel)).toEqual(['low', 'low']);
+    expect(fagerstromLevel(5)).toBe('medium');
     expect([6, 7].map(fagerstromLevel)).toEqual(['high', 'high']);
     expect([8, 9, 10].map(fagerstromLevel)).toEqual(['very_high', 'very_high', 'very_high']);
   });

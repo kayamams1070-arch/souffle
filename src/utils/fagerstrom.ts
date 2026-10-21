@@ -45,12 +45,14 @@ export function computeFagerstromScore(answers: number[]): number {
 }
 
 /**
- * Interpretation bands commonly used with the FTND
- * (0-2 low, 3-5 moderate, 6-7 high, 8-10 very high). This is an indicator, not a diagnosis.
+ * Interpretation bands of the NIDA Common Data Elements (NIH, CDE 2195870):
+ * 0-2 very low, 3-4 low, 5 medium, 6-7 high, 8-10 very high.
+ * https://cde.nida.nih.gov/node/239 — an indicator, never a diagnosis.
  */
 export function fagerstromLevel(score: number): DependenceLevel {
-  if (score <= 2) return 'low';
-  if (score <= 5) return 'moderate';
+  if (score <= 2) return 'very_low';
+  if (score <= 4) return 'low';
+  if (score === 5) return 'medium';
   if (score <= 7) return 'high';
   return 'very_high';
 }

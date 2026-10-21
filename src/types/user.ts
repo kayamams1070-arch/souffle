@@ -2,7 +2,8 @@ export type QuitGoal = 'quit' | 'reduce';
 
 export type SportLevel = 'beginner' | 'intermediate' | 'advanced';
 
-export type DependenceLevel = 'low' | 'moderate' | 'high' | 'very_high';
+/** FTND bands as published in the NIDA Common Data Elements (NIH), CDE 2195870. */
+export type DependenceLevel = 'very_low' | 'low' | 'medium' | 'high' | 'very_high';
 
 export type IntensityPreference = 'gentle' | 'moderate' | 'dynamic';
 

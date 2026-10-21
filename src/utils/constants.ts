@@ -42,22 +42,31 @@ export const PROGRAM_WEEKS = 12;
 
 export const STORAGE_PREFIX = 'souffle';
 
-/** Public health references used for the health timeline. */
+/** Public health references used for the health timeline (checked October 2026). */
 export const HEALTH_SOURCES: Record<string, { label: string; url: string }> = {
   who: {
-    label: 'OMS / WHO, "Tobacco: health benefits of smoking cessation"',
-    url: 'https://www.who.int/news-room/questions-and-answers/item/tobacco-health-benefits-of-smoking-cessation',
-  },
-  cdc: {
-    label: 'CDC, "Benefits of Quitting Smoking"',
-    url: 'https://www.cdc.gov/tobacco/about/benefits-of-quitting.html',
+    label: 'WHO, "Tobacco: Health benefits of smoking cessation"',
+    url: 'https://www.who.int/news-room/q-a-detail/health-benefits-of-smoking-cessation',
   },
   nhs: {
-    label: 'NHS Better Health, "What happens when you quit smoking"',
-    url: 'https://www.nhs.uk/better-health/quit-smoking/',
-  },
-  tis: {
-    label: 'Tabac Info Service (Santé publique France)',
-    url: 'https://www.tabac-info-service.fr/',
+    label: 'NHS Wales 111, "Quit smoking timeline"',
+    url: 'https://111.wales.nhs.uk/livewell/quitsmokingtimeline/',
   },
 };
+
+/** Fagerström interpretation reference. */
+export const FAGERSTROM_SOURCE = {
+  label: 'NIDA Common Data Elements (NIH), FTND score interpretation, CDE 2195870',
+  url: 'https://cde.nida.nih.gov/node/239',
+};
+
+/**
+ * Free quit-smoking help lines (checked October 2026). Shown as complementary resources,
+ * never as a sign of failure.
+ */
+export const HELP_RESOURCES = [
+  { id: 'be', country: 'BE', name: 'Tabacstop / Tabakstop', phone: '0800 111 00', url: 'https://www.tabacstop.be' },
+  { id: 'fr', country: 'FR', name: 'Tabac Info Service', phone: '39 89', url: 'https://www.tabac-info-service.fr' },
+  { id: 'nl', country: 'NL', name: 'Ikstopnu (Stoplijn)', phone: '0800-1995', url: 'https://www.ikstopnu.nl' },
+  { id: 'uk', country: 'UK', name: 'NHS Smokefree National Helpline', phone: '0300 123 1044', url: 'https://www.nhs.uk/better-health/quit-smoking/' },
+] as const;

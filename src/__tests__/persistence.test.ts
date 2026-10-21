@@ -69,6 +69,7 @@ describe('persistence (survives closing and reopening the app)', () => {
 
   it('migrates a v1 profile on launch (savings start pinned)', async () => {
     const v1User = makeUser({ firstName: 'Old', quitDate: local(2026, 2, 1, 9) });
+    v1User.smoking = { ...v1User.smoking, dependenceScore: 5, dependenceLevel: 'moderate' as never };
     delete (v1User as Partial<typeof v1User>).savingsStartDate;
     await AsyncStorage.setItem(
       STORAGE_KEYS.user,
@@ -76,6 +77,7 @@ describe('persistence (survives closing and reopening the app)', () => {
     );
     await useUserStore.persist.rehydrate();
     expect(useUserStore.getState().user?.savingsStartDate).toBe(local(2026, 2, 1, 9));
+    expect(useUserStore.getState().user?.smoking.dependenceLevel).toBe('medium');
   });
 
   it('repairs partial or corrupt slices instead of crashing', () => {

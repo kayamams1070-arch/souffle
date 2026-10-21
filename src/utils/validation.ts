@@ -9,7 +9,7 @@ export const smokingProfileSchema = z.object({
   cigarettesPerPack: z.number().int().min(1).max(50),
   packPriceCents: z.number().int().min(1).max(100_000),
   dependenceScore: z.number().int().min(0).max(10).optional(),
-  dependenceLevel: z.enum(['low', 'moderate', 'high', 'very_high']).optional(),
+  dependenceLevel: z.enum(['very_low', 'low', 'medium', 'high', 'very_high']).optional(),
   fagerstromAnswers: z.array(z.number().int()).optional(),
 });
 
