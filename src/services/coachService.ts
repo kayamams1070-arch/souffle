@@ -58,18 +58,18 @@ export interface CoachProvider {
 
 const KEYWORDS: Record<Exclude<CoachIntent, 'unknown'>, string[]> = {
   pain: ['douleur', 'mal au', 'mal aux', 'blessé', 'blessure', 'vertige', 'malaise', 'pijn', 'duizelig', 'blessure', 'geblesseerd', 'in pain', 'painful', 'hurt', 'injur', 'dizzy', 'faint', 'chest'],
-  relapsed: ['rechut', 'j\'ai fumé', 'jai fumé', 'craqué', 'fumé une', 'teruggevallen', 'gerookt', 'relaps', 'smoked', 'slipped', 'gave in'],
+  relapsed: ['rechut', 'j\'ai fumé', 'jai fumé', 'craqué', 'fumé une', 'teruggevallen', 'gerookt', 'relaps', 'smoked', 'slipped', 'gave in', 'fumé un joint', 'fumé un pétard', 'geblowd', 'jointje gerookt', 'got high'],
   craving_coffee: ['café', 'koffie', 'coffee'],
   tired: ['fatigu', 'épuis', 'crevé', 'moe', 'uitgeput', 'tired', 'exhausted', 'drained'],
   stress: ['stress', 'anxi', 'angoiss', 'nerveu', 'tendu', 'gestrest', 'nerveus', 'gespannen', 'anxious', 'nervous', 'tense', 'overwhelmed'],
-  anger: ['colère', 'énervé', 'furieux', 'rage', 'boos', 'kwaad', 'woedend', 'angry', 'furious', 'mad'],
+  anger: ['colère', 'énervé', 'furieux', 'irrit', 'prikkelbaar', 'rage', 'boos', 'kwaad', 'woedend', 'angry', 'furious', 'mad'],
   boredom: ['ennui', 'm\'ennuie', 'rien à faire', 'verveel', 'bored', 'boring', 'nothing to do'],
   no_sport: ['pas fait de sport', 'pas de sport', 'pas entraîné', 'pas bougé', 'niet gesport', 'geen sport', 'no sport', 'no workout', 'haven\'t exercised', 'didn\'t train'],
   missed_sessions: ['raté', 'manqué', 'sauté', 'gemist', 'overgeslagen', 'missed', 'skipped'],
-  sleep: ['dormi', 'sommeil', 'insomn', 'slaap', 'geslapen', 'sleep', 'slept', 'insomnia'],
+  sleep: ['dormi', 'sommeil', 'insomn', 'cauchemar', 'nachtmerrie', 'nightmare', 'slaap', 'geslapen', 'sleep', 'slept', 'insomnia'],
   proud: ['fier', 'réussi', 'content', 'victoire', 'trots', 'gelukt', 'blij', 'proud', 'managed', 'happy', 'victory'],
   motivation: ['motiv', 'envie d\'arrêter', 'abandonn', 'à quoi bon', 'opgeven', 'motivatie', 'give up', 'what\'s the point', 'motivation'],
-  craving_general: ['envie', 'fumer', 'cigarette', 'clope', 'zin in', 'roken', 'sigaret', 'craving', 'smoke', 'smoking', 'urge'],
+  craving_general: ['envie', 'fumer', 'cigarette', 'clope', 'zin in', 'roken', 'sigaret', 'craving', 'smoke', 'smoking', 'urge', 'joint', 'pétard', 'beuh', 'bédo', 'cannabis', 'hasch', 'spliff', 'blowen', 'wiet', 'hasj', 'weed', 'stoned'],
 };
 
 /** Ordered detection: safety first, then specific intents, generic last. */
@@ -90,7 +90,7 @@ const DETECTION_ORDER: Exclude<CoachIntent, 'unknown'>[] = [
 ];
 
 /** Keywords that must match a whole word (they are prefixes of unrelated words otherwise). */
-const WHOLE_WORD = new Set(['moe', 'mad', 'boos', 'fier', 'blij', 'content', 'rage', 'smoke', 'urge']);
+const WHOLE_WORD = new Set(['moe', 'mad', 'boos', 'fier', 'blij', 'content', 'rage', 'smoke', 'urge', 'joint', 'beuh', 'wiet', 'weed']);
 
 const LETTER = '[a-z\\u00e0-\\u00ff\\u0153\\u00e6]';
 

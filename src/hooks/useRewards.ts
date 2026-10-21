@@ -67,7 +67,7 @@ export function useRewardsSync(): { newlyUnlocked: string[]; dismiss: () => void
     // Health milestones reached on the current smoke-free run: XP once per milestone, ever.
     const state = getSmokeFreeState(user, smokingEvents, nowMs);
     if (state.status === 'running') {
-      for (const m of milestoneStatus(state.duration.totalMs / 60_000).reached) {
+      for (const m of milestoneStatus(state.duration.totalMs / 60_000, user.smoking.substance ?? 'tobacco').reached) {
         rewards.awardXp(xpEventId.milestone(m.id), 'milestone');
       }
     }

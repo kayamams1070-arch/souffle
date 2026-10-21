@@ -1,0 +1,157 @@
+{
+  "about": {
+    "helpNote": "Ton médecin, ton pharmacien ou un service spécialisé en addictions peuvent aussi t'accompagner, sans jugement."
+  },
+  "badges": {
+    "categories": {
+      "smoke_free": "Sans cannabis"
+    },
+    "comeback": {
+      "description": "Tu as repris le chemin après un joint."
+    },
+    "smoke_free_1d": {
+      "description": "Une journée complète sans cannabis."
+    },
+    "smoke_free_1m": {
+      "description": "30 jours sans cannabis d'affilée."
+    },
+    "smoke_free_1w": {
+      "description": "7 jours sans cannabis d'affilée."
+    },
+    "smoke_free_1y": {
+      "description": "365 jours sans cannabis d'affilée."
+    },
+    "smoke_free_3m": {
+      "description": "90 jours sans cannabis d'affilée."
+    }
+  },
+  "benefits": {
+    "spentLogged": "Dont déduit : {{amount}} pour les joints que tu as notés."
+  },
+  "challenges": {
+    "kindLabels": {
+      "smoke_free_days": "Jours sans cannabis"
+    },
+    "kinds": {
+      "smoke_free_days_one": "{{count}} jour sans cannabis",
+      "smoke_free_days_other": "{{count}} jours sans cannabis"
+    }
+  },
+  "coach": {
+    "actions": {
+      "relapse": "Noter le joint, sans jugement"
+    },
+    "placeholder": "Par exemple : j'ai envie de fumer un joint le soir",
+    "prompts": {
+      "coffee": "J'ai envie de fumer après le café"
+    },
+    "replies": {
+      "craving_coffee": {
+        "why": "Certains moments deviennent associés au joint. Changer de lieu et occuper ses mains aide à casser ce lien."
+      },
+      "relapsed": {
+        "message": "Un joint n'efface pas ton chemin. Notons-le ensemble, sans jugement."
+      }
+    }
+  },
+  "dashboard": {
+    "counter": {
+      "a11y": "Sans cannabis depuis : {{days}} j, {{hours}} h et {{minutes}} min",
+      "title": "Sans cannabis depuis"
+    },
+    "reduction": {
+      "a11y": "Joints notés aujourd'hui : {{smoked}}, pour un objectif de {{target}}",
+      "logCigarette": "Noter un joint",
+      "underTarget": "Encore {{left}} avant ton objectif du jour. Chaque joint en moins compte."
+    },
+    "savings": {
+      "a11y_one": "Économies estimées : {{amount}}, {{count}} joint évité",
+      "a11y_other": "Économies estimées : {{amount}}, {{count}} joints évités",
+      "avoided_one": "{{count}} joint évité",
+      "avoided_other": "{{count}} joints évités",
+      "disclaimerReduction": "Estimation qui suppose que tu notes chaque joint. Les projections supposent que tu tiens ton objectif chaque jour."
+    },
+    "smokedButton": "J'ai fumé un joint",
+    "smokedHint": "Noter un joint sans perdre tes progrès",
+    "sosButton": "J'ai envie de fumer"
+  },
+  "family": {
+    "share": {
+      "days": "Jours sans cannabis"
+    },
+    "summary": {
+      "days_one": "• {{count}} jour sans cannabis",
+      "days_other": "• {{count}} jours sans cannabis"
+    }
+  },
+  "goalSettings": {
+    "reduceNote": "Ta consommation de référence : {{baseline}} joints par jour."
+  },
+  "onboarding": {
+    "goals": {
+      "baseline_one": "Aujourd'hui : {{count}} joint par jour",
+      "baseline_other": "Aujourd'hui : {{count}} joints par jour"
+    },
+    "profile": {
+      "goalQuitHint": "Tu choisis une date et le compteur sans cannabis démarre à ce moment-là.",
+      "goalReduceHint": "Tu fixes un nombre maximum de joints par jour et tu notes chacun. Tu pourras passer à l'arrêt complet quand tu le souhaites."
+    },
+    "welcome": {
+      "how_kind": "Aucune culpabilité : si tu fumes un joint, tes progrès restent acquis."
+    }
+  },
+  "privacy": {
+    "counts": "Actuellement : envies {{cravings}} · joints notés {{smoking}} · séances {{sessions}} · journal, sommeil et toux {{journal}}.",
+    "what": "Ton profil (prénom facultatif, habitudes, objectif, pacte), tes envies, tes joints notés, tes séances, ton journal, ton sommeil et ta toux si tu les renseignes, tes badges et tes réglages. Aucune donnée médicale superflue n'est demandée."
+  },
+  "progress": {
+    "smokeFreeDays": "Jours sans cannabis"
+  },
+  "relapse": {
+    "confirmMessage_one": "{{count}} joint sera ajouté à ton historique. Tes XP, badges et séances restent acquis.",
+    "confirmMessage_other": "{{count}} joints seront ajoutés à ton historique. Tes XP, badges et séances restent acquis.",
+    "confirmWithShield": "Le joint sera noté et ton bouclier protégera ta série. Tes acquis restent intacts.",
+    "count": "Nombre de joints",
+    "decisionHints": {
+      "continue_quit": "Ton compteur repart de ce joint. Ton record, tes badges et tes économies passées sont conservés.",
+      "reduction_log": "Le joint est ajouté à ton suivi du jour."
+    },
+    "kindMessage": "Un joint ne supprime pas les progrès que tu as déjà réalisés. Voyons ce qui s'est passé et préparons la prochaine étape.",
+    "loggedTitleReduction": "Joint noté",
+    "reductionHint": "Noter chaque joint permet de suivre honnêtement ta réduction.",
+    "title": "J'ai fumé un joint",
+    "titleReduction": "Noter un joint"
+  },
+  "reports": {
+    "content": "Objectif, jours sans cannabis ou progression de la réduction, joints évités et économies estimées, séances et temps sportif, évolution des envies, déclencheurs fréquents, victoires, sommeil et toux si renseignés.",
+    "pdf": {
+      "cigarettesAvoided": "Joints évités (estimation)",
+      "cigarettesLogged": "Joints notés",
+      "estimates": "Les joints évités et les économies sont des estimations calculées à partir des habitudes déclarées.",
+      "smokeFreeDays": "Jours sans cannabis"
+    }
+  },
+  "streak": {
+    "freeze": {
+      "errors": {
+        "smoked": "Un joint est déjà noté aujourd'hui : la pause ne peut pas le masquer. Le bouclier sert à ça."
+      }
+    },
+    "legend": {
+      "smokeFree": "sans cannabis",
+      "smoked": "joint"
+    },
+    "shield": {
+      "explain": "Le bouclier protège ta série une fois tous les {{days}} jours, pour un joint noté aujourd'hui ou hier. Tu le choisis toi-même lorsque tu notes un joint."
+    },
+    "subtitle": "Des journées complètes sans cannabis, calculées selon ton calendrier local."
+  },
+  "xp": {
+    "milestone": "Étape sans cannabis"
+  },
+  "units": {
+    "cigs": "joints",
+    "cigsPerDay": "joints/jour",
+    "cigsToday": "joints aujourd'hui"
+  }
+}

@@ -12,6 +12,7 @@ import {
   FAGERSTROM_MAX_SCORE,
   FAGERSTROM_QUESTIONS,
 } from '@/utils/fagerstrom';
+import { afterFagerstromRoute } from '@/utils/onboardingFlow';
 
 export default function FagerstromStep() {
   const router = useRouter();
@@ -33,8 +34,9 @@ export default function FagerstromStep() {
   const onContinue = () => {
     if (!complete || score === null || !level) return;
     updateDraft({
-      step: 3,
+      step: draft.smoking?.substance === 'both' ? 2 : 3,
       smoking: {
+        ...draft.smoking,
         cigarettesPerDay: draft.smoking?.cigarettesPerDay ?? 1,
         yearsSmoking: draft.smoking?.yearsSmoking ?? 0,
         cigarettesPerPack: draft.smoking?.cigarettesPerPack ?? 20,
@@ -44,7 +46,7 @@ export default function FagerstromStep() {
         dependenceLevel: level,
       },
     });
-    router.push('/onboarding/health');
+    router.push(afterFagerstromRoute(draft.smoking?.substance));
   };
 
   return (

@@ -6,7 +6,7 @@ import { OnboardingHeader } from '@/components/onboarding/OnboardingHeader';
 import { AppButton, AppCard, AppText, Banner, ChipGroup, NumberStepper, Screen } from '@/components/ui';
 import { useSettingsStore, useUserStore } from '@/store';
 import { formatCents, formatDate } from '@/utils/money';
-import { pricePerCigaretteCents } from '@/utils/calculations';
+import { dailyCostCents, habitsFromProfile, unitPriceCents, unitsPerDay } from '@/utils/calculations';
 import { getProgramWeek } from '@/data/program';
 import { getWorkout } from '@/data/workouts';
 import { workoutDurationMinutes } from '@/services/recommendationService';
@@ -19,15 +19,15 @@ export default function GoalsStep() {
   const updateDraft = useUserStore((s) => s.updateDraft);
   const language = useSettingsStore((s) => s.settings.language);
   const goal = draft.goal ?? 'quit';
-  const baseline = draft.smoking?.cigarettesPerDay ?? 10;
+  const habits = draft.smoking ? habitsFromProfile(draft.smoking) : undefined;
+  const baseline = habits ? Math.max(1, unitsPerDay(habits)) : 10;
   const [choice, setChoice] = useState<QuitChoice>('now');
   const [pastDays, setPastDays] = useState(1);
   const [target, setTarget] = useState(draft.reductionTargetPerDay ?? Math.max(1, Math.round(baseline * 0.75)));
 
   const quitDate = useMemo(() => quitDateForChoice(choice, pastDays), [choice, pastDays]);
-  const perCig = pricePerCigaretteCents(draft.smoking?.packPriceCents ?? 0, draft.smoking?.cigarettesPerPack ?? 20);
-  const monthlySavings = Math.round(baseline * perCig * 30);
-  const reductionMonthly = Math.round(Math.max(0, baseline - target) * perCig * 30);
+  const monthlySavings = habits ? Math.round(dailyCostCents(habits) * 30) : 0;
+  const reductionMonthly = habits ? Math.round(Math.max(0, baseline - target) * unitPriceCents(habits) * 30) : 0;
 
   const level = draft.sportLevel ?? 'beginner';
   const firstWorkoutId = getProgramWeek(1)?.workoutIds[level][0];

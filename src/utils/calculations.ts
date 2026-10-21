@@ -2,12 +2,67 @@
  * Pure, centralized business calculations. These functions never touch storage or UI
  * and are covered by unit tests in src/__tests__/calculations.test.ts.
  */
-import type { HabitsSnapshot, SmokingEvent, User } from '@/types';
+import type { ConsumptionKind, HabitsSnapshot, SmokingEvent, SmokingProfile, Substance, User } from '@/types';
 import { DAY_MS, dayKey, dayKeysBetween, splitDuration, type Duration } from './dates';
 
 export function pricePerCigaretteCents(packPriceCents: number, cigarettesPerPack: number): number {
   if (cigarettesPerPack <= 0) return 0;
   return packPriceCents / cigarettesPerPack;
+}
+
+/** The person's substance; profiles created before the cannabis option are tobacco. */
+export function substanceOf(user: Pick<User, 'smoking'> | null | undefined): Substance {
+  return user?.smoking.substance ?? 'tobacco';
+}
+
+/** Cost of one joint: declared grams per joint times the price per gram. */
+export function pricePerJointCents(gramsPerJoint: number | undefined, pricePerGramCents: number | undefined): number {
+  if (!gramsPerJoint || !pricePerGramCents || gramsPerJoint <= 0 || pricePerGramCents <= 0) return 0;
+  return gramsPerJoint * pricePerGramCents;
+}
+
+/** Consumption units per day in a habits snapshot (cigarettes + joints). */
+export function unitsPerDay(h: HabitsSnapshot): number {
+  return Math.max(0, h.cigarettesPerDay) + Math.max(0, h.jointsPerDay ?? 0);
+}
+
+/** Theoretical daily spending for a habits snapshot. */
+export function dailyCostCents(h: HabitsSnapshot): number {
+  return (
+    Math.max(0, h.cigarettesPerDay) * pricePerCigaretteCents(h.packPriceCents, h.cigarettesPerPack) +
+    Math.max(0, h.jointsPerDay ?? 0) * pricePerJointCents(h.gramsPerJoint, h.pricePerGramCents)
+  );
+}
+
+/**
+ * Price of one consumption unit. With a known kind, the exact price; otherwise the
+ * profile's single kind, or the average unit price for a mixed (tobacco + cannabis) profile.
+ */
+export function unitPriceCents(h: HabitsSnapshot, kind?: ConsumptionKind): number {
+  const cig = pricePerCigaretteCents(h.packPriceCents, h.cigarettesPerPack);
+  const joint = pricePerJointCents(h.gramsPerJoint, h.pricePerGramCents);
+  if (kind === 'joint') return joint;
+  if (kind === 'cigarette') return cig;
+  const cigs = Math.max(0, h.cigarettesPerDay);
+  const joints = Math.max(0, h.jointsPerDay ?? 0);
+  if (joints === 0) return cig;
+  if (cigs === 0) return joint;
+  return dailyCostCents(h) / (cigs + joints);
+}
+
+/** Habits declared in a smoking profile (onboarding, profile edit), as a snapshot. */
+export function habitsFromProfile(smoking: SmokingProfile, effectiveFrom = new Date(0).toISOString()): HabitsSnapshot {
+  const substance = smoking.substance ?? 'tobacco';
+  const cannabis = substance !== 'tobacco' ? smoking.cannabis : undefined;
+  return {
+    effectiveFrom,
+    cigarettesPerDay: substance === 'cannabis' ? 0 : smoking.cigarettesPerDay,
+    cigarettesPerPack: smoking.cigarettesPerPack,
+    packPriceCents: smoking.packPriceCents,
+    ...(cannabis
+      ? { jointsPerDay: cannabis.jointsPerDay, gramsPerJoint: cannabis.gramsPerJoint, pricePerGramCents: cannabis.pricePerGramCents }
+      : {}),
+  };
 }
 
 /** Sum of cigarettes smoked in events within [from, to] (inclusive, ISO date-times). */
@@ -92,12 +147,23 @@ export function savingsStart(user: User): string {
 
 /** Habits snapshots sorted ascending, always non-empty (falls back to the current profile). */
 export function habitsTimeline(user: User): HabitsSnapshot[] {
+  const cannabis = substanceOf(user) !== 'tobacco' ? user.smoking.cannabis : undefined;
   const current: HabitsSnapshot = {
     effectiveFrom: new Date(0).toISOString(),
-    cigarettesPerDay: user.smokingBaselinePerDay,
+    // Tobacco-only profiles: the baseline is the cigarette count (it can differ from the
+    // declared habit when the plan was adjusted).
+    cigarettesPerDay: cannabis ? Math.max(0, user.smoking.cigarettesPerDay) : user.smokingBaselinePerDay,
     cigarettesPerPack: user.smoking.cigarettesPerPack,
     packPriceCents: user.smoking.packPriceCents,
+    ...(cannabis
+      ? {
+          jointsPerDay: substanceOf(user) === 'cannabis' ? user.smokingBaselinePerDay : cannabis.jointsPerDay,
+          gramsPerJoint: cannabis.gramsPerJoint,
+          pricePerGramCents: cannabis.pricePerGramCents,
+        }
+      : {}),
   };
+  if (substanceOf(user) === 'cannabis') current.cigarettesPerDay = 0;
   const history = (user.habitsHistory ?? []).filter((h) => !Number.isNaN(new Date(h.effectiveFrom).getTime()));
   if (history.length === 0) return [current];
   return [...history].sort((a, b) => (a.effectiveFrom < b.effectiveFrom ? -1 : 1));
@@ -122,11 +188,11 @@ export function habitsAt(timeline: HabitsSnapshot[], t: number): HabitsSnapshot 
 export function computeSavings(user: User, events: SmokingEvent[], now = Date.now()): SavingsSummary {
   const timeline = habitsTimeline(user);
   const currentHabits = habitsAt(timeline, now);
-  const currentPerCig = pricePerCigaretteCents(currentHabits.packPriceCents, currentHabits.cigarettesPerPack);
-  const perDayCents = currentHabits.cigarettesPerDay * currentPerCig;
+  const currentUnits = unitsPerDay(currentHabits);
+  const perDayCents = dailyCostCents(currentHabits);
   const dailyAvoidable =
     user.goal === 'reduce'
-      ? Math.max(0, currentHabits.cigarettesPerDay - (user.reductionTargetPerDay ?? currentHabits.cigarettesPerDay)) * currentPerCig
+      ? Math.max(0, currentUnits - (user.reductionTargetPerDay ?? currentUnits)) * unitPriceCents(currentHabits)
       : perDayCents;
   const projection = (years: number) => Math.round(dailyAvoidable * 365.25 * years);
   const base = {
@@ -152,9 +218,8 @@ export function computeSavings(user: User, events: SmokingEvent[], now = Date.no
     const to = points[i + 1]!;
     const h = habitsAt(timeline, from);
     const days = (to - from) / DAY_MS;
-    const cigs = h.cigarettesPerDay * days;
-    expectedCigs += cigs;
-    expectedCents += cigs * pricePerCigaretteCents(h.packPriceCents, h.cigarettesPerPack);
+    expectedCigs += unitsPerDay(h) * days;
+    expectedCents += dailyCostCents(h) * days;
   }
   let smoked = 0;
   let spent = 0;
@@ -163,7 +228,7 @@ export function computeSavings(user: User, events: SmokingEvent[], now = Date.no
     if (t < start || t > now) continue;
     const h = habitsAt(timeline, t);
     smoked += e.cigarettes;
-    spent += e.cigarettes * pricePerCigaretteCents(h.packPriceCents, h.cigarettesPerPack);
+    spent += e.cigarettes * unitPriceCents(h, e.kind);
   }
   return {
     ...base,

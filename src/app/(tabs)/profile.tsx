@@ -31,10 +31,32 @@ export default function ProfileScreen() {
       {settings.demoMode ? <Banner text={t('demo.banner')} tone="warm" /> : null}
 
       <AppCard title={t('profile.habits')} onPress={() => router.push('/edit-profile')}>
-        <AppText variant="bodySmall" tone="secondary">
-          {t('profile.habitsSummary', { cigs: user.smokingBaselinePerDay, years: user.smoking.yearsSmoking, price: formatCents(user.smoking.packPriceCents, settings.language, 2), perPack: user.smoking.cigarettesPerPack })}
-        </AppText>
-        {user.smoking.dependenceScore !== undefined ? (
+        {user.smoking.substance !== 'cannabis' ? (
+          <AppText variant="bodySmall" tone="secondary">
+            {t('profile.habitsSummary', {
+              cigs: user.smoking.substance === 'both' ? user.smoking.cigarettesPerDay : user.smokingBaselinePerDay,
+              years: user.smoking.yearsSmoking,
+              price: formatCents(user.smoking.packPriceCents, settings.language, 2),
+              perPack: user.smoking.cigarettesPerPack,
+            })}
+          </AppText>
+        ) : null}
+        {user.smoking.substance !== 'tobacco' && user.smoking.cannabis ? (
+          <AppText variant="bodySmall" tone="secondary" style={{ marginTop: 4 }}>
+            {t('profile.cannabisSummary', {
+              count: user.smoking.substance === 'cannabis' ? user.smokingBaselinePerDay : user.smoking.cannabis.jointsPerDay,
+              years: user.smoking.cannabis.yearsUsing,
+              grams: user.smoking.cannabis.gramsPerJoint.toLocaleString(settings.language),
+              price: formatCents(user.smoking.cannabis.pricePerGramCents, settings.language, 2),
+            })}
+          </AppText>
+        ) : null}
+        {user.smoking.substance !== 'tobacco' && user.smoking.cannabis?.cuditScore !== undefined ? (
+          <AppText variant="bodySmall" tone="secondary" style={{ marginTop: 4 }}>
+            {t('profile.cudit', { score: user.smoking.cannabis.cuditScore, level: t(`cannabisUse.${user.smoking.cannabis.cuditLevel ?? 'low'}`) })}
+          </AppText>
+        ) : null}
+        {user.smoking.substance !== 'cannabis' && user.smoking.dependenceScore !== undefined ? (
           <AppText variant="bodySmall" tone="secondary" style={{ marginTop: 4 }}>
             {t('profile.fagerstrom', { score: user.smoking.dependenceScore, level: t(`dependence.${user.smoking.dependenceLevel ?? 'low'}`) })}
           </AppText>
@@ -54,6 +76,7 @@ export default function ProfileScreen() {
         <ListRow icon="document-text-outline" title={t('pact.title')} subtitle={user.why ? user.why.slice(0, 60) : t('dashboard.pactHint')} onPress={() => router.push('/pact')} />
         <ListRow icon="wallet-outline" title={t('benefits.projectTitle')} subtitle={user.savingsProject ? user.savingsProject.title : t('benefits.projectHint')} onPress={() => router.push('/health/benefits')} />
         <ListRow icon="chatbubble-ellipses-outline" title={t('coach.title')} subtitle={t('coach.subtitle')} onPress={() => router.push('/coach')} />
+        <ListRow icon="call-outline" title={t('help.title')} subtitle={t('help.rowSubtitle')} onPress={() => router.push('/help')} />
       </AppCard>
 
       <AppCard title={t('settings.title')}>

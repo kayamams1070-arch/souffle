@@ -4,8 +4,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useAppTheme } from '@/theme/ThemeContext';
 import { AppCard, AppText, ProgressBar } from '@/components/ui';
-import type { HealthMilestone } from '@/types';
-import { HEALTH_MILESTONES } from '@/data/healthMilestones';
+import type { HealthMilestone, Substance } from '@/types';
+import { milestonesFor } from '@/data/healthMilestones';
 
 interface Props {
   elapsedMinutes: number;
@@ -13,6 +13,7 @@ interface Props {
   next: HealthMilestone | undefined;
   compact?: boolean;
   onPress?: () => void;
+  substance?: Substance;
 }
 
 export function milestoneLabel(m: HealthMilestone, t: (k: string, o?: Record<string, unknown>) => string): string {
@@ -25,10 +26,13 @@ export function milestoneLabel(m: HealthMilestone, t: (k: string, o?: Record<str
   return t('health.after.years', { count: Math.round(min / (365 * 24 * 60)) });
 }
 
-export function HealthTimeline({ elapsedMinutes, reached, next, compact, onPress }: Props) {
+export function HealthTimeline({ elapsedMinutes, reached, next, compact, onPress, substance = 'tobacco' }: Props) {
   const theme = useAppTheme();
   const { t } = useTranslation();
-  const list = compact ? HEALTH_MILESTONES.slice(0, 5) : HEALTH_MILESTONES;
+  const all = milestonesFor(substance);
+  // Compact view: the milestones around "now" (last reached ones and the next ones).
+  const firstShown = compact ? Math.max(0, Math.min(reached.length - 2, all.length - 5)) : 0;
+  const list = compact ? all.slice(firstShown, firstShown + 5) : all;
   const reachedIds = new Set(reached.map((m) => m.id));
   const prevMinutes = reached.length ? reached[reached.length - 1]!.afterMinutes : 0;
   const nextProgress = next ? (elapsedMinutes - prevMinutes) / (next.afterMinutes - prevMinutes) : 1;

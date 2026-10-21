@@ -6,8 +6,8 @@ import { View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts, Inter_400Regular, Inter_500Medium, Inter_600SemiBold, Inter_700Bold } from '@expo-google-fonts/inter';
 import { AppThemeProvider, useAppTheme } from '@/theme/ThemeContext';
-import { useStoresHydrated, useSettingsStore } from '@/store';
-import { detectDeviceLanguage, initI18n, setLanguage } from '@/i18n';
+import { useStoresHydrated, useSettingsStore, useUserStore } from '@/store';
+import { detectDeviceLanguage, initI18n, setLanguage, setSubstance } from '@/i18n';
 import { useNotificationSync } from '@/hooks/useNotifications';
 import { useRewardsSync } from '@/hooks/useRewards';
 
@@ -51,8 +51,12 @@ export default function RootLayout() {
     [settings.languageChosen, settings.language]
   );
 
+  const substance = useUserStore((s) => s.user?.smoking.substance ?? s.draft.smoking?.substance ?? 'tobacco');
+
   // i18n must be ready before the first screen renders text.
   initI18n(language);
+  // Wording adapted to tobacco, cannabis or both (synchronous and idempotent).
+  setSubstance(substance);
   useEffect(() => {
     setLanguage(language);
   }, [language]);

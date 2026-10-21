@@ -175,6 +175,7 @@ export default function HomeScreen() {
           elapsedMinutes={smokeFree.duration.totalMs / 60_000}
           reached={milestones.reached}
           next={milestones.next}
+          substance={user.smoking.substance ?? 'tobacco'}
           compact
           onPress={() => router.push('/health/benefits')}
         />

@@ -9,6 +9,7 @@ import type { QuitReason, User } from '@/types';
 import { createId } from '@/utils/ids';
 import { nowIso } from '@/utils/dates';
 import { userSchema } from '@/utils/validation';
+import { habitsFromProfile, unitsPerDay } from '@/utils/calculations';
 import { useHaptics } from '@/hooks/useHaptics';
 
 const REASONS: QuitReason[] = ['family', 'health', 'breath', 'money', 'freedom', 'children', 'other'];
@@ -46,7 +47,7 @@ export default function PactStep() {
       quitDate: draft.goal === 'reduce' ? undefined : (draft.quitDate ?? now),
       reductionTargetPerDay: draft.goal === 'reduce' ? draft.reductionTargetPerDay : undefined,
       reductionStartDate: draft.goal === 'reduce' ? now : undefined,
-      smokingBaselinePerDay: smoking.cigarettesPerDay,
+      smokingBaselinePerDay: Math.max(1, unitsPerDay(habitsFromProfile(smoking))),
       savingsStartDate: draft.goal === 'reduce' ? now : (draft.quitDate ?? now),
       sportLevel: draft.sportLevel ?? 'beginner',
       intensityPreference: draft.intensityPreference ?? 'gentle',

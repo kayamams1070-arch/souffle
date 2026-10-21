@@ -202,6 +202,11 @@
     "subtitle": "Un protocole simple et identique pour suivre tes sensations dans le temps.",
     "title": "Test de souffle"
   },
+  "cannabisUse": {
+    "hazardous": "Consommation à risque",
+    "low": "Consommation à faible risque",
+    "possible_disorder": "Trouble lié à l'usage possible"
+  },
   "challenges": {
     "create": "Créer le défi",
     "duration": "Durée",
@@ -346,6 +351,7 @@
     "finish": "Terminer",
     "increase": "Augmenter : {{label}}",
     "next": "Suivant",
+    "no": "Non",
     "off": "Désactivées",
     "on": "Activées",
     "pause": "Pause",
@@ -357,7 +363,12 @@
     "selected": "Sélectionné",
     "start": "Commencer",
     "tapToDismiss": "Touche pour fermer",
-    "tapToEdit": "Touche pour modifier"
+    "tapToEdit": "Touche pour modifier",
+    "yes": "Oui"
+  },
+  "consumption": {
+    "cigarette": "Cigarette",
+    "joint": "Joint"
   },
   "cough": {
     "emptyText": "Note ta toux de temps en temps pour suivre son évolution.",
@@ -742,11 +753,11 @@
       "days_other": "• {{count}} jours sans tabac",
       "footer": "Merci de m'encourager !",
       "header": "Les progrès de {{name}} avec Souffle :",
+      "headerAnonymous": "Mes progrès avec Souffle :",
       "savings": "• Environ {{amount}} économisés",
       "why": "• Mon pourquoi : {{why}}",
       "workouts_one": "• {{count}} séance de sport",
-      "workouts_other": "• {{count}} séances de sport",
-      "headerAnonymous": "Mes progrès avec Souffle :"
+      "workouts_other": "• {{count}} séances de sport"
     },
     "title": "Mode famille",
     "vision": "Dans une prochaine version, un proche pourra suivre les victoires que tu choisis de partager et t'envoyer des encouragements, avec des défis privés et un espace d'échange anonyme et modéré.",
@@ -1068,10 +1079,12 @@
     "profile": {
       "age": "Âge (facultatif)",
       "ageHint": "Souffle s'adresse aux adultes.",
+      "cannabisHint": "Une estimation suffit : elle sert seulement à calculer tes économies. Tu pourras la corriger plus tard.",
       "cigarettesPerDay": "Cigarettes par jour",
       "cigarettesPerPack": "Cigarettes par paquet",
       "errors": {
         "age": "Indique un âge entre 18 et 120 ans, ou laisse vide.",
+        "grams": "Indique un poids entre 0,05 et 5 g, par exemple 0,3.",
         "invalid": "Vérifie les valeurs saisies.",
         "price": "Indique un prix valide, par exemple 9,50.",
         "range": "Cette valeur n'est pas dans les limites attendues."
@@ -1081,11 +1094,17 @@
       "goal": "Ton objectif",
       "goalQuitHint": "Tu choisis une date et le compteur sans tabac démarre à ce moment-là.",
       "goalReduceHint": "Tu fixes un nombre maximum par jour et tu notes chaque cigarette. Tu pourras passer à l'arrêt complet quand tu le souhaites.",
+      "gramsPerJoint": "Grammes par joint",
       "habitsTitle": "Tes habitudes",
+      "jointsPerDay": "Joints par jour",
+      "mixed": "Tu roules tes joints avec du tabac ?",
       "packPrice": "Prix du paquet",
+      "pricePerGram": "Prix du gramme",
+      "substance": "Tu fumes",
       "subtitle": "Ces informations servent à calculer tes économies et à adapter les conseils. Tu pourras les modifier plus tard.",
       "title": "Faisons connaissance",
-      "yearsSmoking": "Années de tabagisme"
+      "yearsSmoking": "Années de tabagisme",
+      "yearsUsing": "Années de consommation"
     },
     "stepOf": "Étape {{step}} sur {{total}}",
     "welcome": {
@@ -1125,6 +1144,7 @@
     "deleteButton": "Tout supprimer",
     "deleteConfirmText": "Pour confirmer, écris {{word}} ci-dessous. Exporte tes données avant si tu veux les garder.",
     "deleteConfirmTitle": "Supprimer définitivement ?",
+    "deleteDemoNote": "Attention : tu es en mode démonstration. La suppression efface aussi la sauvegarde de ton vrai profil. Quitte d'abord la démo pour la récupérer.",
     "deleteText": "Efface définitivement ton profil et toutes les données de Souffle sur ce téléphone, ainsi que les rappels programmés. Cette action est irréversible.",
     "deleteTitle": "Supprimer toutes mes données",
     "deleteTypeWord": "Écris {{word}}",
@@ -1163,12 +1183,14 @@
     "what": "Ton profil (prénom facultatif, habitudes, objectif, pacte), tes envies, tes cigarettes notées, tes séances, ton journal, ton sommeil et ta toux si tu les renseignes, tes badges et tes réglages. Aucune donnée médicale superflue n'est demandée.",
     "whatTitle": "Quelles données ?",
     "where": "Uniquement dans le stockage local de l'application, sur ce téléphone. Souffle n'a ni compte, ni serveur, ni publicité, et n'envoie aucune donnée de santé.",
-    "whereTitle": "Où sont-elles conservées ?",
-    "deleteDemoNote": "Attention : tu es en mode démonstration. La suppression efface aussi la sauvegarde de ton vrai profil. Quitte d'abord la démo pour la récupérer."
+    "whereTitle": "Où sont-elles conservées ?"
   },
   "profile": {
     "anonymous": "Toi",
     "baselineNote": "Si tu modifies ta consommation ou le prix, les nouvelles valeurs s'appliquent à partir d'aujourd'hui : tes économies passées ne changent pas.",
+    "cannabisSummary_one": "{{count}} joint par jour pendant {{years}} ans · {{grams}} g par joint à {{price}} le gramme",
+    "cannabisSummary_other": "{{count}} joints par jour pendant {{years}} ans · {{grams}} g par joint à {{price}} le gramme",
+    "cudit": "Test CUDIT-R : {{score}}/32 ({{level}})",
     "editTitle": "Modifier mon profil",
     "fagerstrom": "Test de Fagerström : {{score}}/10 ({{level}})",
     "habits": "Mes habitudes",
@@ -1330,6 +1352,7 @@
       "switch_to_reduce": "Je préfère réduire pour l'instant"
     },
     "kept": "Toujours à toi : {{xp}} XP · badges obtenus : {{badges}} · meilleure série : {{best}} j.",
+    "kind": "Qu'as-tu fumé ?",
     "kindMessage": "Une cigarette ne supprime pas les progrès que tu as déjà réalisés. Voyons ce qui s'est passé et préparons la prochaine étape.",
     "loggedText": "Tu as eu le courage de le noter. C'est exactement comme ça qu'on avance.",
     "loggedTextReduction": "Merci pour ton honnêteté : c'est elle qui rend ton suivi utile.",
@@ -1664,10 +1687,10 @@
       "days": "Durée",
       "errors": {
         "active": "Une pause est déjà en cours ou prévue sur ces dates.",
-        "past": "Une pause ne peut pas commencer dans le passé.",
-        "too_long": "La durée doit être comprise entre 1 et 14 jours.",
         "cooldown": "Une pause a déjà été utilisée ces 30 derniers jours.",
-        "smoked": "Une cigarette est déjà notée aujourd'hui : la pause ne peut pas la masquer. Le bouclier sert à ça."
+        "past": "Une pause ne peut pas commencer dans le passé.",
+        "smoked": "Une cigarette est déjà notée aujourd'hui : la pause ne peut pas la masquer. Le bouclier sert à ça.",
+        "too_long": "La durée doit être comprise entre 1 et 14 jours."
       },
       "reasons": {
         "illness": "Maladie",
@@ -1696,6 +1719,11 @@
     },
     "subtitle": "Des journées complètes sans tabac, calculées selon ton calendrier local.",
     "title": "Série et bouclier"
+  },
+  "substance": {
+    "both": "Les deux",
+    "cannabis": "Cannabis",
+    "tobacco": "Tabac"
   },
   "surf": {
     "disclaimer": "Une envie ne disparaît pas toujours en 3 minutes. L'objectif est de l'observer sans lui obéir, pas de la faire disparaître à tout prix.",
@@ -1756,6 +1784,7 @@
     "daysCount_other": "{{count}} jours",
     "h": "h",
     "hours": "Heures",
+    "joints": "joints",
     "min": "min",
     "minutes": "Minutes",
     "s": "s"

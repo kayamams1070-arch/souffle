@@ -33,6 +33,18 @@ describe('detectIntent', () => {
     expect(detectIntent("Je suis fatigué et j'ai des vertiges")).toBe('pain');
   });
 
+  it('understands cannabis vocabulary in the three languages', () => {
+    expect(detectIntent("J'ai trop envie d'un joint ce soir")).toBe('craving_general');
+    expect(detectIntent('Ik heb zin om te blowen')).toBe('craving_general');
+    expect(detectIntent('I really want some weed')).toBe('craving_general');
+    expect(detectIntent("J'ai fumé un joint hier")).toBe('relapsed');
+    expect(detectIntent('Ik heb gisteren geblowd')).toBe('relapsed');
+    expect(detectIntent('Je fais des cauchemars depuis que j’ai arrêté')).toBe('sleep');
+    expect(detectIntent('Je suis tellement irritable')).toBe('anger');
+    // Whole-word: no match inside unrelated words.
+    expect(detectIntent('La jointure de mon genou va bien')).toBe('unknown');
+  });
+
   it('avoids false positives on word fragments', () => {
     expect(detectIntent('Het is moeilijk vandaag')).not.toBe('tired'); // "moe" inside "moeilijk"
     expect(detectIntent('I made a cake')).toBe('unknown'); // "mad" inside "made"

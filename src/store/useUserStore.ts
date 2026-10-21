@@ -5,7 +5,7 @@ import { STORAGE_KEYS, zustandStorage } from '@/services/storageService';
 import { migrateUserState } from '@/services/migrationService';
 import { SCHEMA_VERSION } from '@/utils/constants';
 import { nowIso } from '@/utils/dates';
-import { habitsTimeline, savingsStart } from '@/utils/calculations';
+import { habitsTimeline, savingsStart, unitsPerDay } from '@/utils/calculations';
 
 /** Savings start pinned on the profile so later goal / date changes never move it forward. */
 function pinnedSavingsStart(user: User): string {
@@ -78,16 +78,29 @@ export const useUserStore = create<UserState>()(
         const changed =
           last.cigarettesPerDay !== habits.cigarettesPerDay ||
           last.cigarettesPerPack !== habits.cigarettesPerPack ||
-          last.packPriceCents !== habits.packPriceCents;
+          last.packPriceCents !== habits.packPriceCents ||
+          (last.jointsPerDay ?? 0) !== (habits.jointsPerDay ?? 0) ||
+          (last.gramsPerJoint ?? 0) !== (habits.gramsPerJoint ?? 0) ||
+          (last.pricePerGramCents ?? 0) !== (habits.pricePerGramCents ?? 0);
         if (changed) history.push({ ...habits, effectiveFrom: now });
+        const cannabis = current.smoking.cannabis;
         get().updateUser({
           habitsHistory: history,
-          smokingBaselinePerDay: habits.cigarettesPerDay,
+          smokingBaselinePerDay: Math.max(1, unitsPerDay({ ...habits, effectiveFrom: now })),
           smoking: {
             ...current.smoking,
             cigarettesPerDay: habits.cigarettesPerDay,
             cigarettesPerPack: habits.cigarettesPerPack,
             packPriceCents: habits.packPriceCents,
+            cannabis:
+              cannabis && (habits.jointsPerDay ?? 0) > 0
+                ? {
+                    ...cannabis,
+                    jointsPerDay: habits.jointsPerDay ?? cannabis.jointsPerDay,
+                    gramsPerJoint: habits.gramsPerJoint ?? cannabis.gramsPerJoint,
+                    pricePerGramCents: habits.pricePerGramCents ?? cannabis.pricePerGramCents,
+                  }
+                : cannabis,
           },
           savingsStartDate: pinnedSavingsStart(current),
         });

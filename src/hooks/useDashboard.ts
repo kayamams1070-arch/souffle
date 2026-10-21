@@ -18,9 +18,10 @@ export function useDashboard() {
   const savings = useMemo(() => (user ? computeSavings(user, smokingEvents, minute) : null), [user, smokingEvents, minute]);
   const reduction = useMemo(() => (user && user.goal === 'reduce' ? computeReductionStats(user, smokingEvents, minute) : null), [user, smokingEvents, minute]);
   const milestones = useMemo(() => {
-    if (!smokeFree || smokeFree.status !== 'running') return milestoneStatus(0);
-    return milestoneStatus(smokeFree.duration.totalMs / 60_000);
-  }, [smokeFree]);
+    const substance = user?.smoking.substance ?? 'tobacco';
+    if (!smokeFree || smokeFree.status !== 'running') return milestoneStatus(0, substance);
+    return milestoneStatus(smokeFree.duration.totalMs / 60_000, substance);
+  }, [smokeFree, user?.smoking.substance]);
   const nextWorkout = useMemo(() => (user ? nextProgramWorkout(user, sessions, activeLevel, minute) : null), [user, sessions, activeLevel, minute]);
   const completedWorkouts = useMemo(() => sessions.filter((s) => s.completed).length, [sessions]);
 

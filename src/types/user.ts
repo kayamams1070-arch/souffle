@@ -1,5 +1,24 @@
 export type QuitGoal = 'quit' | 'reduce';
 
+/** What the person consumes. Profiles created before the cannabis option are 'tobacco'. */
+export type Substance = 'tobacco' | 'cannabis' | 'both';
+
+/** CUDIT-R bands (Adamson et al., 2010): under 8, 8 to 11, 12 and more. */
+export type CannabisUseLevel = 'low' | 'hazardous' | 'possible_disorder';
+
+export interface CannabisProfile {
+  jointsPerDay: number;
+  /** Average grams of cannabis per joint, as declared by the person. */
+  gramsPerJoint: number;
+  pricePerGramCents: number;
+  yearsUsing: number;
+  /** Whether joints are usually rolled with tobacco (spliffs). */
+  mixedWithTobacco?: boolean;
+  cuditScore?: number;
+  cuditLevel?: CannabisUseLevel;
+  cuditAnswers?: number[];
+}
+
 export type SportLevel = 'beginner' | 'intermediate' | 'advanced';
 
 /** FTND bands as published in the NIDA Common Data Elements (NIH), CDE 2195870. */
@@ -36,6 +55,9 @@ export interface BreathingTest {
 }
 
 export interface SmokingProfile {
+  /** Defaults to 'tobacco' when missing (older profiles). */
+  substance?: Substance;
+  /** Cigarettes per day (0 when the person only consumes cannabis). */
   cigarettesPerDay: number;
   yearsSmoking: number;
   cigarettesPerPack: number;
@@ -43,6 +65,7 @@ export interface SmokingProfile {
   dependenceScore?: number;
   dependenceLevel?: DependenceLevel;
   fagerstromAnswers?: number[];
+  cannabis?: CannabisProfile;
 }
 
 /**
@@ -51,9 +74,13 @@ export interface SmokingProfile {
  */
 export interface HabitsSnapshot {
   effectiveFrom: string;
+  /** Cigarettes per day. Total consumption units = cigarettesPerDay + jointsPerDay. */
   cigarettesPerDay: number;
   cigarettesPerPack: number;
   packPriceCents: number;
+  jointsPerDay?: number;
+  gramsPerJoint?: number;
+  pricePerGramCents?: number;
 }
 
 export interface User {
@@ -72,6 +99,7 @@ export interface User {
   reductionTargetPerDay?: number;
   /** ISO date-time when the reduction plan started (goal = reduce). */
   reductionStartDate?: string;
+  /** Consumption units per day at the start (cigarettes + joints). */
   smokingBaselinePerDay: number;
   /**
    * Start of savings tracking. Set once (first quit date or reduction start) and never

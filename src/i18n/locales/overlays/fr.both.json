@@ -1,0 +1,147 @@
+{
+  "about": {
+    "helpNote": "Ton médecin, ton pharmacien, un tabacologue ou un service spécialisé en addictions peuvent aussi t'accompagner, notamment avec des traitements d'aide à l'arrêt du tabac."
+  },
+  "badges": {
+    "categories": {
+      "smoke_free": "Sans fumer"
+    },
+    "comeback": {
+      "description": "Tu as repris le chemin après une consommation."
+    },
+    "smoke_free_1d": {
+      "description": "Une journée complète sans tabac ni cannabis."
+    },
+    "smoke_free_1m": {
+      "description": "30 jours sans tabac ni cannabis d'affilée."
+    },
+    "smoke_free_1w": {
+      "description": "7 jours sans tabac ni cannabis d'affilée."
+    },
+    "smoke_free_1y": {
+      "description": "365 jours sans tabac ni cannabis d'affilée."
+    },
+    "smoke_free_3m": {
+      "description": "90 jours sans tabac ni cannabis d'affilée."
+    }
+  },
+  "benefits": {
+    "spentLogged": "Dont déduit : {{amount}} pour les cigarettes et joints que tu as notés."
+  },
+  "challenges": {
+    "kindLabels": {
+      "smoke_free_days": "Jours sans fumer"
+    },
+    "kinds": {
+      "smoke_free_days_one": "{{count}} jour sans fumer",
+      "smoke_free_days_other": "{{count}} jours sans fumer"
+    }
+  },
+  "coach": {
+    "actions": {
+      "relapse": "Noter la consommation, sans jugement"
+    },
+    "replies": {
+      "relapsed": {
+        "message": "Une cigarette ou un joint n'efface pas ton chemin. Notons-le ensemble, sans jugement."
+      }
+    }
+  },
+  "dashboard": {
+    "counter": {
+      "a11y": "Sans tabac ni cannabis depuis : {{days}} j, {{hours}} h et {{minutes}} min",
+      "title": "Sans tabac ni cannabis depuis"
+    },
+    "reduction": {
+      "a11y": "Consommations notées aujourd'hui : {{smoked}}, pour un objectif de {{target}}",
+      "logCigarette": "Noter une consommation",
+      "underTarget": "Encore {{left}} avant ton objectif du jour. Chaque cigarette ou joint en moins compte."
+    },
+    "savings": {
+      "a11y_one": "Économies estimées : {{amount}}, {{count}} consommation évitée",
+      "a11y_other": "Économies estimées : {{amount}}, {{count}} consommations évitées",
+      "avoided_one": "{{count}} cigarette ou joint évité",
+      "avoided_other": "{{count}} cigarettes et joints évités",
+      "disclaimerReduction": "Estimation qui suppose que tu notes chaque cigarette et chaque joint. Les projections supposent que tu tiens ton objectif chaque jour."
+    },
+    "smokedHint": "Noter une cigarette ou un joint sans perdre tes progrès"
+  },
+  "family": {
+    "share": {
+      "days": "Jours sans fumer"
+    },
+    "summary": {
+      "days_one": "• {{count}} jour sans tabac ni cannabis",
+      "days_other": "• {{count}} jours sans tabac ni cannabis"
+    }
+  },
+  "goalSettings": {
+    "reduceNote": "Ta consommation de référence : {{baseline}} cigarettes et joints par jour, comptés ensemble."
+  },
+  "onboarding": {
+    "goals": {
+      "baseline_one": "Aujourd'hui : {{count}} consommation par jour (cigarettes et joints)",
+      "baseline_other": "Aujourd'hui : {{count}} consommations par jour (cigarettes et joints)"
+    },
+    "profile": {
+      "goalQuitHint": "Tu choisis une date et le compteur sans tabac ni cannabis démarre à ce moment-là.",
+      "goalReduceHint": "Tu fixes un maximum par jour, cigarettes et joints comptés ensemble, et tu notes chaque consommation. Tu pourras passer à l'arrêt complet quand tu le souhaites."
+    },
+    "welcome": {
+      "how_kind": "Aucune culpabilité : si tu fumes une cigarette ou un joint, tes progrès restent acquis."
+    }
+  },
+  "privacy": {
+    "counts": "Actuellement : envies {{cravings}} · consommations notées {{smoking}} · séances {{sessions}} · journal, sommeil et toux {{journal}}.",
+    "what": "Ton profil (prénom facultatif, habitudes, objectif, pacte), tes envies, tes cigarettes et joints notés, tes séances, ton journal, ton sommeil et ta toux si tu les renseignes, tes badges et tes réglages. Aucune donnée médicale superflue n'est demandée."
+  },
+  "progress": {
+    "smokeFreeDays": "Jours sans fumer"
+  },
+  "relapse": {
+    "confirmMessage_one": "{{count}} consommation sera ajoutée à ton historique. Tes XP, badges et séances restent acquis.",
+    "confirmMessage_other": "{{count}} consommations seront ajoutées à ton historique. Tes XP, badges et séances restent acquis.",
+    "confirmWithShield": "La consommation sera notée et ton bouclier protégera ta série. Tes acquis restent intacts.",
+    "count": "Nombre",
+    "decisionHints": {
+      "continue_quit": "Ton compteur repart de ce moment. Ton record, tes badges et tes économies passées sont conservés.",
+      "reduction_log": "La consommation est ajoutée à ton suivi du jour."
+    },
+    "kindMessage": "Une cigarette ou un joint ne supprime pas les progrès que tu as déjà réalisés. Voyons ce qui s'est passé et préparons la prochaine étape.",
+    "loggedTitleReduction": "Consommation notée",
+    "reductionHint": "Noter chaque cigarette et chaque joint permet de suivre honnêtement ta réduction.",
+    "titleReduction": "Noter une consommation"
+  },
+  "reports": {
+    "content": "Objectif, jours sans tabac ni cannabis ou progression de la réduction, consommations évitées et économies estimées, séances et temps sportif, évolution des envies, déclencheurs fréquents, victoires, sommeil et toux si renseignés.",
+    "pdf": {
+      "cigarettesAvoided": "Cigarettes et joints évités (estimation)",
+      "cigarettesLogged": "Cigarettes et joints notés",
+      "estimates": "Les consommations évitées et les économies sont des estimations calculées à partir des habitudes déclarées.",
+      "smokeFreeDays": "Jours sans fumer"
+    }
+  },
+  "streak": {
+    "freeze": {
+      "errors": {
+        "smoked": "Une consommation est déjà notée aujourd'hui : la pause ne peut pas la masquer. Le bouclier sert à ça."
+      }
+    },
+    "legend": {
+      "smokeFree": "sans fumer",
+      "smoked": "consommation"
+    },
+    "shield": {
+      "explain": "Le bouclier protège ta série une fois tous les {{days}} jours, pour une consommation notée aujourd'hui ou hier. Tu le choisis toi-même au moment de la noter."
+    },
+    "subtitle": "Des journées complètes sans tabac ni cannabis, calculées selon ton calendrier local."
+  },
+  "xp": {
+    "milestone": "Étape sans fumer"
+  },
+  "units": {
+    "cigs": "conso.",
+    "cigsPerDay": "conso./jour",
+    "cigsToday": "conso. aujourd'hui"
+  }
+}

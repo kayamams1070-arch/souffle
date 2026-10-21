@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { dependenceTestRoute } from '@/utils/onboardingFlow';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { useAppTheme } from '@/theme/ThemeContext';
@@ -20,10 +21,13 @@ export default function WelcomeScreen() {
   const setLanguage = useSettingsStore((s) => s.setLanguage);
   const [showHow, setShowHow] = useState(false);
   const [loadingDemo, setLoadingDemo] = useState(false);
+  // Step 2 resumes at the first test not answered yet (Fagerström, then CUDIT-R).
+  const dependenceResume =
+    draft.smoking?.substance === 'both' && draft.smoking.dependenceScore !== undefined ? '/onboarding/cudit' : dependenceTestRoute(draft.smoking?.substance);
   const hasDraft = Boolean(draft.step && draft.step > 1);
   // Resume where the user stopped: draft.step is the next step to fill (2..5).
   const resumeRoute =
-    draft.step === 5 ? '/onboarding/pact' : draft.step === 4 ? '/onboarding/goals' : draft.step === 3 ? '/onboarding/health' : draft.step === 2 ? '/onboarding/fagerstrom' : '/onboarding/profile';
+    draft.step === 5 ? '/onboarding/pact' : draft.step === 4 ? '/onboarding/goals' : draft.step === 3 ? '/onboarding/health' : draft.step === 2 ? dependenceResume : '/onboarding/profile';
 
   return (
     <Screen

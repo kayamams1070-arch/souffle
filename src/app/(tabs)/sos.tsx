@@ -110,6 +110,7 @@ export default function SosScreen() {
       </AppCard>
 
       <AppButton label={t('sos.logOnly')} variant="ghost" icon="create-outline" onPress={() => router.push('/craving/log')} />
+      <AppButton label={t('help.sosButton')} variant="secondary" icon="call-outline" onPress={() => router.push('/help')} />
       <AppText variant="caption" tone="secondary" align="center">
         {t('sos.footer')}
       </AppText>

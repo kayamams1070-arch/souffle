@@ -36,7 +36,7 @@ export default function BenefitsScreen() {
   const days = useMemo(() => (user ? totalSmokeFreeDays(user, events, now) : 0), [user, events, now]);
   if (!user || !savings) return null;
   const elapsedMinutes = smokeFree?.status === 'running' ? smokeFree.duration.totalMs / 60_000 : 0;
-  const milestones = milestoneStatus(elapsedMinutes);
+  const milestones = milestoneStatus(elapsedMinutes, user?.smoking.substance ?? 'tobacco');
 
   const saveProject = () => {
     const name = title.trim() || (kind ? t(`benefits.kinds.${kind}`) : '');
@@ -132,7 +132,7 @@ export default function BenefitsScreen() {
       </View>
 
       {user.goal === 'quit' && smokeFree?.status === 'running' ? (
-        <HealthTimeline elapsedMinutes={elapsedMinutes} reached={milestones.reached} next={milestones.next} />
+        <HealthTimeline elapsedMinutes={elapsedMinutes} reached={milestones.reached} next={milestones.next} substance={user?.smoking.substance ?? 'tobacco'} />
       ) : (
         <AppCard title={t('health.timeline.title')}>
           <AppText variant="bodySmall" tone="secondary">

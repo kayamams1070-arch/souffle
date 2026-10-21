@@ -47,10 +47,15 @@ export interface Craving {
 }
 
 /** A moment where cigarettes were actually smoked (relapse or reduction tracking). */
+export type ConsumptionKind = 'cigarette' | 'joint';
+
 export interface SmokingEvent {
   id: string;
   occurredAt: string;
+  /** Consumption units (cigarettes, joints, or both for a mixed profile). */
   cigarettes: number;
+  /** What was consumed; missing = the profile's main substance. */
+  kind?: ConsumptionKind;
   trigger?: Trigger;
   context?: string;
   /** What the user decided right after. */

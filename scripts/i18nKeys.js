@@ -52,6 +52,18 @@ const FAGERSTROM = [
   ['q6', 2],
 ];
 
+const CUDIT = [
+  ['q1', 5],
+  ['q2', 5],
+  ['q3', 5],
+  ['q4', 5],
+  ['q5', 5],
+  ['q6', 5],
+  ['q7', 5],
+  ['q8', 3],
+];
+const CANNABIS_USE = ['low', 'hazardous', 'possible_disorder'];
+
 /** Dynamic families: normalized template ("a.*.b") -> list of concrete keys. */
 const DYNAMIC = {
   'about.limits.*': ['offline', 'coach', 'community', 'widget', 'notifications'],
@@ -94,8 +106,12 @@ const DYNAMIC = {
   'onboarding.fagerstrom.*.question': FAGERSTROM.map(([q]) => q),
   'onboarding.fagerstrom.*.a*': FAGERSTROM.flatMap(([q, n]) => Array.from({ length: n }, (_, i) => `${q}.a${i}`)),
   'onboarding.fagerstrom.interpretation.*': DEPENDENCE,
+  'onboarding.cudit.*.question': CUDIT.map(([q]) => q),
+  'onboarding.cudit.*.a*': CUDIT.flatMap(([q, n]) => Array.from({ length: n }, (_, i) => `${q}.a${i}`)),
+  'onboarding.cudit.interpretation.*': CANNABIS_USE,
+  'cannabisUse.*': CANNABIS_USE,
   'onboarding.health.levelHint.*': LEVELS,
-  'onboarding.profile.errors.*': ['age', 'range', 'price', 'invalid'],
+  'onboarding.profile.errors.*': ['age', 'range', 'price', 'grams', 'invalid'],
   'onboarding.welcome.how_*': ['sos', 'sport', 'track', 'kind'],
   'outcomes.*': OUTCOMES,
   'privacy.errors.*': ['sharing_unavailable', 'write_failed', 'print_failed', 'canceled', 'not_json', 'not_souffle', 'newer_version', 'invalid_user', 'read_failed'],
@@ -228,6 +244,7 @@ function collectKeys() {
         for (const v of values) {
           if (parts.length === 2) add(parts[0] + v + parts[1], info);
           else if (pattern === 'onboarding.fagerstrom.*.a*') add(`onboarding.fagerstrom.${v}`, info);
+          else if (pattern === 'onboarding.cudit.*.a*') add(`onboarding.cudit.${v}`, info);
         }
       } else {
         add(raw, info);
@@ -271,7 +288,42 @@ function checkLocale(lang, required) {
   return { missing, unused, badVars, total: Object.keys(flat).length };
 }
 
-module.exports = { collectKeys, checkLocale, flatten, DYNAMIC };
+const OVERLAYS = ['cannabis', 'both'];
+
+/**
+ * Substance overlays (src/i18n/locales/overlays/<lang>.<substance>.json) may only redefine
+ * keys of the base file, with the same placeholders, and must cover the same keys in every
+ * language.
+ */
+function checkOverlays() {
+  const problems = [];
+  const counts = {};
+  for (const sub of OVERLAYS) {
+    const keySets = {};
+    for (const lang of LANGS) {
+      const base = flatten(JSON.parse(fs.readFileSync(path.join(SRC, 'i18n', 'locales', `${lang}.json`), 'utf8')));
+      const overlay = flatten(JSON.parse(fs.readFileSync(path.join(SRC, 'i18n', 'locales', 'overlays', `${lang}.${sub}.json`), 'utf8')));
+      keySets[lang] = new Set(Object.keys(overlay));
+      counts[`${lang}.${sub}`] = Object.keys(overlay).length;
+      for (const [key, value] of Object.entries(overlay)) {
+        if (!(key in base)) {
+          problems.push(`${lang}.${sub}: ${key} is not a base key`);
+          continue;
+        }
+        if (typeof value !== 'string' || value.trim() === '') problems.push(`${lang}.${sub}: ${key} is empty`);
+        const vars = (v) => [...String(v).matchAll(/\{\{\s*(\w+)\s*\}\}/g)].map((m) => m[1]).sort().join(',');
+        if (vars(value) !== vars(base[key])) problems.push(`${lang}.${sub}: ${key} placeholders differ from the base`);
+      }
+    }
+    for (const lang of LANGS.slice(1)) {
+      for (const k of keySets[LANGS[0]]) if (!keySets[lang].has(k)) problems.push(`${lang}.${sub}: missing ${k}`);
+      for (const k of keySets[lang]) if (!keySets[LANGS[0]].has(k)) problems.push(`${LANGS[0]}.${sub}: missing ${k}`);
+    }
+  }
+  return { problems, counts };
+}
+
+module.exports = { collectKeys, checkLocale, checkOverlays, flatten, DYNAMIC };
 
 if (require.main === module) {
   const { required, unknownTemplates } = collectKeys();
@@ -291,6 +343,12 @@ if (require.main === module) {
     if (r.unused.length) console.log('  unused: ' + r.unused.slice(0, 40).join(', '));
     if (r.badVars.length) console.log('  ' + r.badVars.slice(0, 20).join('\n  '));
     if (r.missing.length || r.badVars.length) failed = true;
+  }
+  const overlays = checkOverlays();
+  console.log(`\nOverlays: ${Object.entries(overlays.counts).map(([k, n]) => `${k} ${n}`).join(', ')}; ${overlays.problems.length} problems`);
+  if (overlays.problems.length) {
+    console.log('  ' + overlays.problems.slice(0, 40).join('\n  '));
+    failed = true;
   }
   process.exit(failed ? 1 : 0);
 }

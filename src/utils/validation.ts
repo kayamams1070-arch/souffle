@@ -3,14 +3,27 @@ import type { FieldErrors, FieldValues, Resolver } from 'react-hook-form';
 
 export const isoDate = z.string().refine((v) => !Number.isNaN(new Date(v).getTime()), 'invalid_date');
 
+export const cannabisProfileSchema = z.object({
+  jointsPerDay: z.number().int().min(1).max(50),
+  gramsPerJoint: z.number().min(0.05).max(5),
+  pricePerGramCents: z.number().int().min(1).max(10_000),
+  yearsUsing: z.number().int().min(0).max(80),
+  mixedWithTobacco: z.boolean().optional(),
+  cuditScore: z.number().int().min(0).max(32).optional(),
+  cuditLevel: z.enum(['low', 'hazardous', 'possible_disorder']).optional(),
+  cuditAnswers: z.array(z.number().int()).optional(),
+});
+
 export const smokingProfileSchema = z.object({
-  cigarettesPerDay: z.number().int().min(1).max(100),
+  substance: z.enum(['tobacco', 'cannabis', 'both']).optional(),
+  cigarettesPerDay: z.number().int().min(0).max(100),
   yearsSmoking: z.number().int().min(0).max(80),
   cigarettesPerPack: z.number().int().min(1).max(50),
-  packPriceCents: z.number().int().min(1).max(100_000),
+  packPriceCents: z.number().int().min(0).max(100_000),
   dependenceScore: z.number().int().min(0).max(10).optional(),
   dependenceLevel: z.enum(['very_low', 'low', 'medium', 'high', 'very_high']).optional(),
   fagerstromAnswers: z.array(z.number().int()).optional(),
+  cannabis: cannabisProfileSchema.optional(),
 });
 
 export const limitationSchema = z.enum([
@@ -36,15 +49,18 @@ export const userSchema = z.object({
   quitDate: isoDate.optional(),
   reductionTargetPerDay: z.number().int().min(0).max(100).optional(),
   reductionStartDate: isoDate.optional(),
-  smokingBaselinePerDay: z.number().int().min(1).max(100),
+  smokingBaselinePerDay: z.number().int().min(1).max(150),
   savingsStartDate: isoDate.optional(),
   habitsHistory: z
     .array(
       z.object({
         effectiveFrom: isoDate,
-        cigarettesPerDay: z.number().int().min(1).max(100),
+        cigarettesPerDay: z.number().int().min(0).max(100),
         cigarettesPerPack: z.number().int().min(1).max(50),
-        packPriceCents: z.number().int().min(1).max(100_000),
+        packPriceCents: z.number().int().min(0).max(100_000),
+        jointsPerDay: z.number().int().min(0).max(50).optional(),
+        gramsPerJoint: z.number().min(0).max(5).optional(),
+        pricePerGramCents: z.number().int().min(0).max(10_000).optional(),
       })
     )
     .optional(),
@@ -94,6 +110,7 @@ export const smokingEventSchema = z.object({
   id: z.string(),
   occurredAt: isoDate,
   cigarettes: z.number().int().min(1).max(200),
+  kind: z.enum(['cigarette', 'joint']).optional(),
   trigger: cravingSchema.shape.trigger.optional(),
   context: z.string().max(300).optional(),
   decision: z.enum(['continue_quit', 'new_quit_date', 'switch_to_reduce', 'reduction_log']).optional(),
@@ -163,14 +180,40 @@ export const challengeSchema = z.object({
 });
 
 /** Form schemas (onboarding). Values arrive as strings from text inputs. */
-export const profileFormSchema = z.object({
-  firstName: z.string().trim().max(40, 'range'),
-  age: z.string().refine((v) => v === '' || (/^\d{1,3}$/.test(v) && Number(v) >= 18 && Number(v) <= 120), 'age'),
-  cigarettesPerDay: z.string().refine((v) => /^\d{1,3}$/.test(v) && Number(v) >= 1 && Number(v) <= 100, 'range'),
-  yearsSmoking: z.string().refine((v) => /^\d{1,2}$/.test(v) && Number(v) <= 80, 'range'),
-  packPrice: z.string().refine((v) => /^\d{1,3}([.,]\d{0,2})?$/.test(v.trim()) && Number(v.replace(',', '.')) > 0, 'price'),
-  cigarettesPerPack: z.string().refine((v) => /^\d{1,2}$/.test(v) && Number(v) >= 1 && Number(v) <= 50, 'range'),
-});
+const intIn = (min: number, max: number, digits: number) => (v: string) =>
+  new RegExp(`^\\d{1,${digits}}$`).test(v) && Number(v) >= min && Number(v) <= max;
+const priceOk = (v: string) => /^\d{1,3}([.,]\d{0,2})?$/.test(v.trim()) && Number(v.replace(',', '.')) > 0;
+const gramsOk = (v: string) => /^\d([.,]\d{1,2})?$/.test(v.trim()) && Number(v.replace(',', '.')) >= 0.05 && Number(v.replace(',', '.')) <= 5;
+
+export const profileFormSchema = z
+  .object({
+    firstName: z.string().trim().max(40, 'range'),
+    age: z.string().refine((v) => v === '' || (/^\d{1,3}$/.test(v) && Number(v) >= 18 && Number(v) <= 120), 'age'),
+    substance: z.enum(['tobacco', 'cannabis', 'both']),
+    cigarettesPerDay: z.string(),
+    yearsSmoking: z.string(),
+    packPrice: z.string(),
+    cigarettesPerPack: z.string(),
+    jointsPerDay: z.string(),
+    yearsUsing: z.string(),
+    gramsPerJoint: z.string(),
+    pricePerGram: z.string(),
+  })
+  .superRefine((v, ctx) => {
+    const fail = (path: string, message: string) => ctx.addIssue({ code: 'custom', path: [path], message });
+    if (v.substance !== 'cannabis') {
+      if (!intIn(1, 100, 3)(v.cigarettesPerDay)) fail('cigarettesPerDay', 'range');
+      if (!intIn(0, 80, 2)(v.yearsSmoking)) fail('yearsSmoking', 'range');
+      if (!priceOk(v.packPrice)) fail('packPrice', 'price');
+      if (!intIn(1, 50, 2)(v.cigarettesPerPack)) fail('cigarettesPerPack', 'range');
+    }
+    if (v.substance !== 'tobacco') {
+      if (!intIn(1, 50, 2)(v.jointsPerDay)) fail('jointsPerDay', 'range');
+      if (!intIn(0, 80, 2)(v.yearsUsing)) fail('yearsUsing', 'range');
+      if (!gramsOk(v.gramsPerJoint)) fail('gramsPerJoint', 'grams');
+      if (!priceOk(v.pricePerGram)) fail('pricePerGram', 'price');
+    }
+  });
 
 export type ProfileFormValues = z.infer<typeof profileFormSchema>;
 

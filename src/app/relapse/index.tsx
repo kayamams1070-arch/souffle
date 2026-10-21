@@ -7,7 +7,7 @@ import { useAppTheme } from '@/theme/ThemeContext';
 import { AppButton, AppCard, AppText, Banner, ChipGroup, ConfirmDialog, NumberStepper, Screen, ScreenHeader, SwitchRow, TextField } from '@/components/ui';
 import { useCravingStore, useRewardStore, useUserStore } from '@/store';
 import { useSosSession } from '@/store/useSosSession';
-import { TRIGGERS, type SmokingEvent, type Trigger } from '@/types';
+import { TRIGGERS, type ConsumptionKind, type SmokingEvent, type Trigger } from '@/types';
 import { canUseShield, computeCurrentStreak } from '@/utils/streaks';
 import { dayKey, nowIso } from '@/utils/dates';
 import { xpEventId } from '@/services/rewardService';
@@ -34,6 +34,8 @@ export default function RelapseScreen() {
   const savingRef = useRef(false);
 
   const [cigarettes, setCigarettes] = useState(1);
+  const substance = user?.smoking.substance ?? 'tobacco';
+  const [kind, setKind] = useState<ConsumptionKind>(substance === 'cannabis' ? 'joint' : 'cigarette');
   const [hoursAgo, setHoursAgo] = useState<number>(0);
   const [trigger, setTrigger] = useState<Trigger | null>(null);
   const [context, setContext] = useState('');
@@ -56,6 +58,7 @@ export default function RelapseScreen() {
     const event = addSmokingEvent({
       occurredAt,
       cigarettes,
+      kind,
       trigger: trigger ?? undefined,
       context: context.trim() || undefined,
       decision,
@@ -142,7 +145,18 @@ export default function RelapseScreen() {
     <Screen footer={<AppButton label={t('common.save')} icon="checkmark" onPress={() => setConfirm(true)} />}>
       <ScreenHeader title={isReduction ? t('relapse.titleReduction') : t('relapse.title')} />
       {!isReduction ? <Banner text={t('relapse.kindMessage')} tone="success" icon="heart-outline" /> : <Banner text={t('relapse.reductionHint')} />}
-      <NumberStepper label={t('relapse.count')} value={cigarettes} onChange={setCigarettes} min={1} max={100} unit={t('units.cigs')} />
+      {substance === 'both' ? (
+        <ChipGroup
+          label={t('relapse.kind')}
+          options={[
+            { value: 'cigarette', label: t('consumption.cigarette'), icon: 'flame-outline' },
+            { value: 'joint', label: t('consumption.joint'), icon: 'leaf-outline' },
+          ]}
+          value={kind}
+          onChange={setKind}
+        />
+      ) : null}
+      <NumberStepper label={t('relapse.count')} value={cigarettes} onChange={setCigarettes} min={1} max={100} unit={kind === 'joint' ? t('units.joints') : t('units.cigs')} />
       <ChipGroup label={t('relapse.when')} options={WHEN_OPTIONS.map((h) => ({ value: h, label: h === 0 ? t('relapse.whenNow') : t('relapse.whenHoursAgo', { count: h }) }))} value={hoursAgo} onChange={setHoursAgo} compact />
       <ChipGroup label={t('craving.trigger')} options={TRIGGERS.map((tr) => ({ value: tr, label: t(`triggers.${tr}`) }))} value={trigger} onChange={setTrigger} compact />
       <TextField label={t('relapse.situation')} value={context} onChangeText={setContext} maxLength={300} multiline />
