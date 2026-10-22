@@ -328,7 +328,7 @@
         "why": "Noteren wat er gebeurd is helpt om je voor te bereiden op de volgende keer. Je XP, badges en eerdere besparingen blijven behouden."
       },
       "sleep": {
-        "message": "Moeilijkere nachten horen vaak bij het stoppen, en ze gaan voorbij. De kit Moeilijke nachten geeft je concrete richtpunten.",
+        "message": "Moeilijkere nachten komen vaak voor als je je gewoonten verandert, en ze gaan voorbij. De kit Moeilijke nachten geeft je concrete richtpunten.",
         "why": "Vaste uren en een rustig moment voor het slapengaan helpen om je slaap terug te vinden."
       },
       "social_pressure": {
@@ -2042,7 +2042,7 @@
   "withdrawal": {
     "breathe": "2 minuten ademen",
     "disclaimer": "Algemene richtpunten uit bronnen van de volksgezondheid (zie Voordelen): iedereen beleeft het afkicken anders. Dit is geen medisch advies.",
-    "nicotineNote": "Je stopt ook met tabak: beide ontwenningsverschijnselen kunnen elkaar in het begin versterken. Allebei tegelijk stoppen is wat specialisten aanraden om je kansen zo groot mogelijk te maken.",
+    "nicotineNote": "Je stopt ook met tabak: beide ontwenningsverschijnselen kunnen elkaar in het begin versterken. Volgens een Britse gids voor stoppen-met-rokenbegeleiders (NCSCT) geeft allebei tegelijk stoppen de beste kans om vol te houden, ook al kunnen de eerste weken zwaarder zijn.",
     "nights": "Moeilijke nachten",
     "phases": {
       "easing": {

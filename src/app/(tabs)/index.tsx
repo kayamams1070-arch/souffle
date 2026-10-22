@@ -13,6 +13,7 @@ import { BadgeToast } from '@/components/dashboard/BadgeToast';
 import { useDashboard } from '@/hooks/useDashboard';
 import { useLevel, useStreak } from '@/hooks/useRewards';
 import { useCelebrationStore } from '@/store/useCelebrationStore';
+import { useSosSession } from '@/store/useSosSession';
 import { useCravingStore, useRewardStore, useSettingsStore } from '@/store';
 import { computeForecast } from '@/services/cravingPredictionService';
 import { workoutDurationMinutes } from '@/services/recommendationService';
@@ -28,6 +29,7 @@ export default function HomeScreen() {
   const { user, smokeFree, savings, reduction, milestones, nextWorkout, completedWorkouts } =
     useDashboard();
   const streak = useStreak();
+  const sos = useSosSession();
   const level = useLevel();
   const newlyUnlocked = useCelebrationStore((s) => s.pendingBadges);
   const dismiss = useCelebrationStore((s) => s.dismiss);
@@ -106,7 +108,10 @@ export default function HomeScreen() {
           phase={withdrawal}
           substance={substance}
           onNights={() => router.push('/health/nights')}
-          onBreathe={() => router.push('/sos/breathing')}
+          onBreathe={() => {
+            sos.begin({ intervention: 'breathing' });
+            router.push('/sos/breathing');
+          }}
         />
       ) : null}
 

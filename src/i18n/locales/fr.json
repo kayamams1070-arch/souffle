@@ -328,7 +328,7 @@
         "why": "Noter ce qui s'est passé aide à préparer la prochaine fois. Tes XP, badges et économies passées restent acquis."
       },
       "sleep": {
-        "message": "Les nuits plus difficiles font souvent partie de l'arrêt, et elles passent. Le kit Nuits difficiles te donne des repères concrets.",
+        "message": "Les nuits plus difficiles arrivent souvent quand on change ses habitudes, et elles passent. Le kit Nuits difficiles te donne des repères concrets.",
         "why": "Des horaires réguliers et un moment calme avant le coucher aident à retrouver le sommeil."
       },
       "social_pressure": {
@@ -2042,7 +2042,7 @@
   "withdrawal": {
     "breathe": "Respirer 2 minutes",
     "disclaimer": "Repères généraux tirés de sources de santé publique (voir Bienfaits) : chacun vit le sevrage à sa façon. Ce n'est pas un avis médical.",
-    "nicotineNote": "Tu arrêtes aussi le tabac : les deux manques peuvent s'additionner au début. Arrêter les deux en même temps reste ce que les spécialistes conseillent pour mettre toutes les chances de ton côté.",
+    "nicotineNote": "Tu arrêtes aussi le tabac : les deux manques peuvent s'additionner au début. Selon un guide britannique destiné aux professionnels de l'arrêt du tabac (NCSCT), arrêter les deux en même temps donne les meilleures chances de tenir, même si les premières semaines peuvent être plus dures.",
     "nights": "Nuits difficiles",
     "phases": {
       "easing": {

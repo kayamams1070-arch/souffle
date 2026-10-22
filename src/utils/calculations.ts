@@ -280,7 +280,11 @@ export function computeReductionStats(user: User, events: SmokingEvent[], now = 
   // Current week runs Monday to Sunday (local time); only days inside the plan count.
   const weekday = (new Date(now).getDay() + 6) % 7; // 0 = Monday
   const weekStart = addDaysToKey(today, -weekday);
-  const firstCounted = weekStart > startDay ? weekStart : startDay;
+  // The day the plan starts only counts as use-free when the plan started early (before 4 am);
+  // otherwise consumption earlier that day was never logged and the day cannot be claimed.
+  const startHour = new Date(startIso).getHours();
+  const firstPlanDay = startHour < 4 ? startDay : addDaysToKey(startDay, 1);
+  const firstCounted = weekStart > firstPlanDay ? weekStart : firstPlanDay;
   let useFreeDone = 0;
   if (firstCounted < today) {
     for (const day of dayKeysBetween(firstCounted, addDaysToKey(today, -1))) {

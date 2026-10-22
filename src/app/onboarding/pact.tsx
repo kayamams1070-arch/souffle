@@ -46,7 +46,7 @@ export default function PactStep() {
       goal: draft.goal ?? 'quit',
       quitDate: draft.goal === 'reduce' ? undefined : (draft.quitDate ?? now),
       reductionTargetPerDay: draft.goal === 'reduce' ? draft.reductionTargetPerDay : undefined,
-      useFreeDaysPerWeek: draft.goal === 'reduce' ? draft.useFreeDaysPerWeek : undefined,
+      useFreeDaysPerWeek: draft.goal === 'reduce' && draft.useFreeDaysPerWeek ? draft.useFreeDaysPerWeek : undefined,
       reductionStartDate: draft.goal === 'reduce' ? now : undefined,
       smokingBaselinePerDay: Math.max(1, unitsPerDay(habitsFromProfile(smoking))),
       savingsStartDate: draft.goal === 'reduce' ? now : (draft.quitDate ?? now),

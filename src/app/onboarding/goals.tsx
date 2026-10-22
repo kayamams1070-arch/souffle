@@ -40,7 +40,8 @@ export default function GoalsStep() {
       step: 5,
       quitDate: goal === 'quit' ? quitDate : undefined,
       reductionTargetPerDay: goal === 'reduce' ? target : undefined,
-      useFreeDaysPerWeek: goal === 'reduce' && useFreeDays > 0 ? useFreeDays : undefined,
+      // 0 is kept in the draft so coming back to this step shows the choice; pact drops it.
+      useFreeDaysPerWeek: goal === 'reduce' ? useFreeDays : undefined,
     });
     router.push('/onboarding/pact');
   };

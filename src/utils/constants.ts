@@ -100,7 +100,7 @@ export interface SupportSource {
 
 const SUPPORT: Record<string, SupportSource> = {
   ncsct: {
-    label: 'NCSCT (UK), "Smoking cessation and cannabis use: a guide for stop smoking practitioners", 2026',
+    label: 'NCSCT (UK), "Smoking cessation and cannabis use: a guide for stop smoking practitioners" (2025, revised 2026)',
     url: 'https://www.ncsct.co.uk/library/view/pdf/NCSCT-cannabis-2025-v2.pdf',
     substance: 'cannabis',
   },

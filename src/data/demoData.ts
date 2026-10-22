@@ -173,6 +173,8 @@ export function buildDemoData(now = new Date(), language: Language = 'fr', subst
         ] as const);
     for (let i = 0; i < count; i += 1) {
       const slot = slots[i]!;
+      // Never create a craving later than "now" (e.g. today's 18:00 slot loaded in the morning).
+      if (at(day, slot[0], (i * 17) % 60).getTime() > now.getTime()) continue;
       const intensity = Math.max(2, Math.min(9, 8 - Math.floor((22 - day) / 5) + ((day + i) % 3) - 1));
       const intervention = interventions[(day + i) % interventions.length]!;
       const outcome = (day + i) % 5 === 0 ? 'persisted' : (day + i) % 3 === 0 ? 'partly_passed' : 'passed';

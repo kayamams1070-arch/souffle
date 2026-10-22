@@ -328,7 +328,7 @@
         "why": "Noting what happened helps you prepare for next time. Your XP, badges and past savings are yours to keep."
       },
       "sleep": {
-        "message": "Harder nights are often part of stopping, and they pass. The Difficult nights kit gives you concrete reference points.",
+        "message": "Harder nights often come when you change your habits, and they pass. The Difficult nights kit gives you concrete reference points.",
         "why": "Regular times and a calm moment before bed help you get your sleep back."
       },
       "social_pressure": {
@@ -2042,7 +2042,7 @@
   "withdrawal": {
     "breathe": "Breathe for 2 minutes",
     "disclaimer": "General reference points from public health sources (see Benefits): everyone goes through withdrawal differently. This is not medical advice.",
-    "nicotineNote": "You are stopping tobacco too: both withdrawals can add up at the start. Stopping both at the same time is still what specialists advise to give yourself the best chance.",
+    "nicotineNote": "You are stopping tobacco too: both withdrawals can add up at the start. According to a UK guide for stop smoking practitioners (NCSCT), stopping both at the same time gives the best chance of staying stopped, even if the first weeks can be harder.",
     "nights": "Difficult nights",
     "phases": {
       "easing": {

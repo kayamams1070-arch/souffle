@@ -40,6 +40,7 @@ describe('cannabis demo', () => {
       expect(d.smokingEvents.every((e) => e.kind === 'joint')).toBe(true);
       expect(d.cravings.some((cr) => cr.trigger === 'to_sleep')).toBe(true);
       expect(d.cough).toHaveLength(0);
+      expect(d.cravings.every((c) => new Date(c.occurredAt).getTime() <= new Date(2026, 3, 20, 12).getTime())).toBe(true);
       expect(computeSavings(d.user, d.smokingEvents, new Date(2026, 3, 20, 12).getTime()).savedCents).toBeGreaterThan(0);
     }
   });
@@ -73,10 +74,17 @@ describe('use-free days (reduction goal)', () => {
   });
 
   it('ignores days before the plan and reports today as used once something is logged', () => {
-    const user = { ...base(), reductionStartDate: local(2026, 4, 22, 9) };
+    // Plan started Tuesday 09:00: Tuesday itself is not claimed (use before 09:00 was never logged).
+    const user = { ...base(), reductionStartDate: local(2026, 4, 21, 9) };
     const s = computeReductionStats(user, [smoke(local(2026, 4, 23, 10), 1)], now);
-    expect(s.useFreeDoneThisWeek).toBe(1); // only Wednesday is inside the plan
+    expect(s.useFreeDoneThisWeek).toBe(1); // only Wednesday
     expect(s.todayUseFree).toBe(false);
+    // A plan started in the small hours counts its first day.
+    const early = { ...base(), reductionStartDate: local(2026, 4, 21, 2) };
+    expect(computeReductionStats(early, [], now).useFreeDoneThisWeek).toBe(2);
+    // Onboarding on Wednesday evening: nothing to claim yet on Thursday.
+    const evening = { ...base(), reductionStartDate: local(2026, 4, 22, 21) };
+    expect(computeReductionStats(evening, [], now).useFreeDoneThisWeek).toBe(0);
   });
 
   it('is absent when no weekly goal is set and validated between 0 and 7', () => {
@@ -126,6 +134,13 @@ describe('coach: cannabis situations', () => {
     expect(detectIntent("Je fais des rêves bizarres et je n'arrive pas à m'endormir")).toBe('sleep');
     expect(detectIntent('Ik kan niet inslapen')).toBe('sleep');
     expect(detectIntent('Je suis sous pression au travail')).toBe('unknown');
+    // Unrelated uses of "offer" / "dream" are not misread.
+    expect(detectIntent('Je me suis proposé pour aider')).not.toBe('social_pressure');
+    expect(detectIntent('I was offered a job')).not.toBe('social_pressure');
+    expect(detectIntent("J'ai très envie en soirée")).toBe('craving_general');
+    expect(detectIntent("Mon rêve c'est d'arrêter")).not.toBe('sleep');
+    expect(detectIntent('They keep offering me a joint')).toBe('social_pressure');
+    expect(detectIntent("On m'a offert un joint")).toBe('social_pressure');
     const user = makeUser();
     const r = coach.reply('I keep having vivid dreams', { user, sessions: [], cravings: [], language: 'en' }) as CoachReply;
     expect(r.action.type).toBe('nights');
