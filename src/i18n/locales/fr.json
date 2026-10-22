@@ -25,6 +25,10 @@
       "text": "Marche cinq minutes, dehors ou sur place.",
       "title": "Après le repas"
     },
+    "after_work": {
+      "title": "En rentrant",
+      "text": "Remplace le moment du retour par un sas : douche, petite marche ou séance courte, avant de te poser."
+    },
     "alcohol": {
       "text": "L'alcool baisse la vigilance. Alterne avec de l'eau, éloigne-toi un moment et observe l'envie sans y céder.",
       "title": "Alcool"
@@ -53,6 +57,10 @@
       "text": "Deux minutes de respiration guidée, puis choisis ta prochaine action.",
       "title": "Une idée"
     },
+    "screens": {
+      "title": "Jeux ou séries",
+      "text": "Fais une vraie pause entre deux parties ou deux épisodes : lève-toi, bois un verre d'eau et bouge deux minutes."
+    },
     "social": {
       "text": "Prépare une phrase de refus simple (« Non merci, j'arrête ») et garde une action de remplacement : un verre d'eau, un chewing-gum.",
       "title": "En groupe"
@@ -60,6 +68,10 @@
     "stress": {
       "text": "Une respiration guidée ou un peu de yoga doux aide à faire redescendre la tension.",
       "title": "Stress"
+    },
+    "to_sleep": {
+      "title": "Pour s'endormir",
+      "text": "Lumière tamisée, écrans de côté, deux minutes de respiration lente. Les nuits plus difficiles du début passent : le kit Nuits difficiles peut t'aider."
     }
   },
   "badges": {
@@ -513,7 +525,8 @@
     "exit": "Quitter la démonstration",
     "exitRestore": "Quitter la démo et retrouver mes données",
     "inactiveText": "Charge un profil fictif pour découvrir l'application. Tes données actuelles sont mises de côté sur le téléphone, puis restaurées quand tu quittes la démo.",
-    "load": "Charger la démonstration",
+    "load": "Charger la démonstration tabac",
+    "loadCannabis": "Charger la démonstration cannabis",
     "reset": "Réinitialiser la démonstration",
     "tag": "démo",
     "title": "Mode démonstration",
@@ -1899,6 +1912,7 @@
   },
   "triggers": {
     "after_meal": "Après un repas",
+    "after_work": "Après le travail ou les cours",
     "alcohol": "Alcool",
     "anger": "Colère",
     "boredom": "Ennui",
@@ -1906,8 +1920,10 @@
     "fatigue": "Fatigue",
     "night": "Nuit",
     "other": "Autre",
+    "screens": "Jeux vidéo ou séries",
     "social": "Contexte social",
-    "stress": "Stress"
+    "stress": "Stress",
+    "to_sleep": "Pour m'endormir"
   },
   "units": {
     "cigs": "cig.",

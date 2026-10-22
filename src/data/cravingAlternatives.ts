@@ -22,5 +22,8 @@ export const CRAVING_ALTERNATIVES: Record<Trigger, CravingAlternative> = {
   social: { trigger: 'social', key: 'social', intervention: 'replacement_ritual', intense: false },
   fatigue: { trigger: 'fatigue', key: 'fatigue', intervention: 'breathing', theme: 'fatigue', intense: false },
   night: { trigger: 'night', key: 'night', intervention: 'craving_surf', theme: 'calm', intense: false },
+  to_sleep: { trigger: 'to_sleep', key: 'to_sleep', intervention: 'breathing', theme: 'calm', intense: false },
+  screens: { trigger: 'screens', key: 'screens', intervention: 'workout', theme: 'boredom', intense: false },
+  after_work: { trigger: 'after_work', key: 'after_work', intervention: 'workout', theme: 'general', intense: false },
   other: { trigger: 'other', key: 'other', intervention: 'breathing', intense: false },
 };

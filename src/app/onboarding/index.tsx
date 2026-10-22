@@ -20,7 +20,7 @@ export default function WelcomeScreen() {
   const settings = useSettingsStore((s) => s.settings);
   const setLanguage = useSettingsStore((s) => s.setLanguage);
   const [showHow, setShowHow] = useState(false);
-  const [loadingDemo, setLoadingDemo] = useState(false);
+  const [loadingDemo, setLoadingDemo] = useState<'tobacco' | 'cannabis' | null>(null);
   // Step 2 resumes at the first test not answered yet (Fagerström, then CUDIT-R).
   const dependenceResume =
     draft.smoking?.substance === 'both' && draft.smoking.dependenceScore !== undefined ? '/onboarding/cudit' : dependenceTestRoute(draft.smoking?.substance);
@@ -89,20 +89,25 @@ export default function WelcomeScreen() {
         <AppText variant="bodySmall" tone="warm">
           {t('demo.welcomeHint')}
         </AppText>
-        <AppButton
-          label={t('demo.load')}
-          variant="ghost"
-          size="sm"
-          fullWidth={false}
-          loading={loadingDemo}
-          style={{ marginTop: 8 }}
-          onPress={async () => {
-            setLoadingDemo(true);
-            await enterDemo(settings.language);
-            setLoadingDemo(false);
-            router.replace('/(tabs)');
-          }}
-        />
+        <View style={{ gap: 4, marginTop: 8, alignItems: 'flex-start' }}>
+          {(['tobacco', 'cannabis'] as const).map((sub) => (
+            <AppButton
+              key={sub}
+              label={t(sub === 'cannabis' ? 'demo.loadCannabis' : 'demo.load')}
+              variant="ghost"
+              size="sm"
+              fullWidth={false}
+              loading={loadingDemo === sub}
+              disabled={loadingDemo !== null}
+              onPress={async () => {
+                setLoadingDemo(sub);
+                await enterDemo(settings.language, sub);
+                setLoadingDemo(null);
+                router.replace('/(tabs)');
+              }}
+            />
+          ))}
+        </View>
       </AppCard>
     </Screen>
   );

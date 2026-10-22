@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSubstance } from '@/hooks/useSubstance';
 import { View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
@@ -7,7 +8,7 @@ import { useAppTheme } from '@/theme/ThemeContext';
 import { AppButton, AppCard, AppText, ChipGroup, ScaleSelector, Screen } from '@/components/ui';
 import { useCravingStore, useRewardStore } from '@/store';
 import { useSosSession } from '@/store/useSosSession';
-import { TRIGGERS, type CravingOutcome, type Trigger } from '@/types';
+import { triggersFor, type CravingOutcome, type Trigger } from '@/types';
 import { xpEventId } from '@/services/rewardService';
 import { useHaptics } from '@/hooks/useHaptics';
 import { formatMinutesAsClock } from '@/utils/dates';
@@ -16,6 +17,7 @@ export default function SosFeedbackScreen() {
   const theme = useAppTheme();
   const router = useRouter();
   const { t } = useTranslation();
+  const substance = useSubstance();
   const haptics = useHaptics();
   const session = useSosSession();
   const addCraving = useCravingStore((s) => s.addCraving);
@@ -108,7 +110,7 @@ export default function SosFeedbackScreen() {
         <ScaleSelector label={t('sos.feedback.intensityBefore')} value={intensity} onChange={setIntensity} min={1} max={10} minLabel={t('craving.intensityLow')} maxLabel={t('craving.intensityHigh')} />
       ) : null}
       {session.trigger === null ? (
-        <ChipGroup label={t('sos.feedback.triggerOptional')} options={TRIGGERS.map((tr) => ({ value: tr, label: t(`triggers.${tr}`) }))} value={trigger} onChange={setTrigger} compact />
+        <ChipGroup label={t('sos.feedback.triggerOptional')} options={triggersFor(substance).map((tr) => ({ value: tr, label: t(`triggers.${tr}`) }))} value={trigger} onChange={setTrigger} compact />
       ) : null}
     </Screen>
   );

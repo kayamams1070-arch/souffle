@@ -25,6 +25,10 @@
       "text": "Wandel vijf minuten, buiten of ter plaatse.",
       "title": "Na het eten"
     },
+    "after_work": {
+      "title": "Bij thuiskomst",
+      "text": "Vervang het moment van thuiskomen door een overgang: douchen, een korte wandeling of een korte sessie, voor je gaat zitten."
+    },
     "alcohol": {
       "text": "Alcohol maakt je minder alert. Wissel af met water, ga even weg en kijk naar je zin zonder eraan toe te geven.",
       "title": "Alcohol"
@@ -53,6 +57,10 @@
       "text": "Twee minuten begeleide ademhaling, kies daarna je volgende actie.",
       "title": "Een idee"
     },
+    "screens": {
+      "title": "Gamen of series",
+      "text": "Neem een echte pauze tussen twee games of afleveringen: sta op, drink een glas water en beweeg twee minuten."
+    },
     "social": {
       "text": "Bereid een eenvoudige weigerzin voor (\"Nee bedankt, ik stop\") en houd een vervangende actie klaar: een glas water, een kauwgom.",
       "title": "In groep"
@@ -60,6 +68,10 @@
     "stress": {
       "text": "Een begeleide ademhaling of wat zachte yoga helpt om de spanning te laten zakken.",
       "title": "Stress"
+    },
+    "to_sleep": {
+      "title": "Om in slaap te vallen",
+      "text": "Gedimd licht, schermen weg, twee minuten rustig ademen. De moeilijkere nachten in het begin gaan voorbij: de kit Moeilijke nachten kan je helpen."
     }
   },
   "badges": {
@@ -513,7 +525,8 @@
     "exit": "Demo verlaten",
     "exitRestore": "Demo verlaten en mijn gegevens terugzetten",
     "inactiveText": "Laad een fictief profiel om de app te ontdekken. Je huidige gegevens worden op de telefoon opzijgezet en teruggezet wanneer je de demo verlaat.",
-    "load": "Demo laden",
+    "load": "Tabaksdemo laden",
+    "loadCannabis": "Cannabisdemo laden",
     "reset": "Demo opnieuw instellen",
     "tag": "demo",
     "title": "Demomodus",
@@ -1899,6 +1912,7 @@
   },
   "triggers": {
     "after_meal": "Na het eten",
+    "after_work": "Na het werk of de lessen",
     "alcohol": "Alcohol",
     "anger": "Boosheid",
     "boredom": "Verveling",
@@ -1906,8 +1920,10 @@
     "fatigue": "Vermoeidheid",
     "night": "Nacht",
     "other": "Iets anders",
+    "screens": "Gamen of series",
     "social": "Sociale context",
-    "stress": "Stress"
+    "stress": "Stress",
+    "to_sleep": "Om in slaap te vallen"
   },
   "units": {
     "cigs": "sig.",

@@ -23,7 +23,7 @@ export default function PrivacyScreen() {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [confirmText, setConfirmText] = useState('');
   const [confirmImport, setConfirmImport] = useState(false);
-  const [confirmDemo, setConfirmDemo] = useState(false);
+  const [confirmDemo, setConfirmDemo] = useState<'tobacco' | 'cannabis' | null>(null);
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState<Status>(null);
   const [backup, setBackup] = useState(false);
@@ -68,9 +68,9 @@ export default function PrivacyScreen() {
     router.replace('/onboarding');
   };
 
-  const doEnterDemo = async () => {
-    setConfirmDemo(false);
-    await enterDemo(settings.language);
+  const doEnterDemo = async (substance: 'tobacco' | 'cannabis') => {
+    setConfirmDemo(null);
+    await enterDemo(settings.language, substance);
     router.replace('/(tabs)');
   };
 
@@ -123,7 +123,18 @@ export default function PrivacyScreen() {
               <AppButton label={backup ? t('demo.exitRestore') : t('demo.exit')} variant="primary" size="sm" icon="exit-outline" onPress={() => void doExitDemo()} />
             </>
           ) : (
-            <AppButton label={t('demo.load')} variant="secondary" size="sm" icon="play-outline" onPress={() => (user ? setConfirmDemo(true) : void doEnterDemo())} />
+            <>
+              {(['tobacco', 'cannabis'] as const).map((sub) => (
+                <AppButton
+                  key={sub}
+                  label={t(sub === 'cannabis' ? 'demo.loadCannabis' : 'demo.load')}
+                  variant="secondary"
+                  size="sm"
+                  icon="play-outline"
+                  onPress={() => (user ? setConfirmDemo(sub) : void doEnterDemo(sub))}
+                />
+              ))}
+            </>
           )}
         </View>
       </AppCard>
@@ -167,7 +178,15 @@ export default function PrivacyScreen() {
         ) : null}
       </ConfirmDialog>
       <ConfirmDialog visible={confirmImport} title={t('privacy.importConfirmTitle')} message={t('privacy.importConfirmText')} confirmLabel={t('privacy.importJson')} cancelLabel={t('common.cancel')} onConfirm={() => void doImport()} onCancel={() => setConfirmImport(false)} />
-      <ConfirmDialog visible={confirmDemo} title={t('demo.confirmTitle')} message={t('demo.confirmText')} confirmLabel={t('demo.load')} cancelLabel={t('common.cancel')} onConfirm={() => void doEnterDemo()} onCancel={() => setConfirmDemo(false)} />
+      <ConfirmDialog
+        visible={confirmDemo !== null}
+        title={t('demo.confirmTitle')}
+        message={t('demo.confirmText')}
+        confirmLabel={t(confirmDemo === 'cannabis' ? 'demo.loadCannabis' : 'demo.load')}
+        cancelLabel={t('common.cancel')}
+        onConfirm={() => void doEnterDemo(confirmDemo ?? 'tobacco')}
+        onCancel={() => setConfirmDemo(null)}
+      />
     </Screen>
   );
 }

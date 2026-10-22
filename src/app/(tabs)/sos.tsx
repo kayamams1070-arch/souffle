@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { useSubstance } from '@/hooks/useSubstance';
 import { View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
@@ -7,7 +8,7 @@ import { useAppTheme } from '@/theme/ThemeContext';
 import { AppButton, AppCard, AppText, Banner, ChipGroup, ScaleSelector, Screen } from '@/components/ui';
 import { useSosSession } from '@/store/useSosSession';
 import { useCravingStore, useUserStore } from '@/store';
-import { TRIGGERS, type InterventionType, type Trigger } from '@/types';
+import { triggersFor, type InterventionType, type Trigger } from '@/types';
 import { suggestionForTrigger } from '@/services/recommendationService';
 import { computeForecast } from '@/services/cravingPredictionService';
 
@@ -15,6 +16,7 @@ export default function SosScreen() {
   const theme = useAppTheme();
   const router = useRouter();
   const { t } = useTranslation();
+  const substance = useSubstance();
   const user = useUserStore((s) => s.user);
   const cravings = useCravingStore((s) => s.cravings);
   const begin = useSosSession((s) => s.begin);
@@ -91,7 +93,7 @@ export default function SosScreen() {
         {showIntake ? (
           <View style={{ gap: 14, marginTop: 8 }}>
             <ScaleSelector label={t('craving.intensity')} value={intensity} onChange={setIntensity} min={1} max={10} minLabel={t('craving.intensityLow')} maxLabel={t('craving.intensityHigh')} />
-            <ChipGroup label={t('craving.trigger')} options={TRIGGERS.map((tr) => ({ value: tr, label: t(`triggers.${tr}`) }))} value={trigger} onChange={setTrigger} compact />
+            <ChipGroup label={t('craving.trigger')} options={triggersFor(substance).map((tr) => ({ value: tr, label: t(`triggers.${tr}`) }))} value={trigger} onChange={setTrigger} compact />
             {suggestion ? (
               <Banner
                 text={`${t(`alternatives.${trigger}.text`)}${suggestion.softened ? ` ${t('sos.softened')}` : ''}`}

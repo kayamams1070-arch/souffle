@@ -1,11 +1,12 @@
 import React, { useMemo, useState } from 'react';
+import { useSubstance } from '@/hooks/useSubstance';
 import { View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { AppButton, AppText, Banner, ChipGroup, ScaleSelector, Screen, TextField } from '@/components/ui';
 import { useCravingStore, useRewardStore, useUserStore } from '@/store';
 import { useSosSession } from '@/store/useSosSession';
-import { TRIGGERS, type CravingOutcome, type InterventionType, type LocationType, type Mood, type Trigger } from '@/types';
+import { triggersFor, type CravingOutcome, type InterventionType, type LocationType, type Mood, type Trigger } from '@/types';
 import { suggestionForTrigger } from '@/services/recommendationService';
 import { xpEventId } from '@/services/rewardService';
 import { nowIso } from '@/utils/dates';
@@ -16,6 +17,7 @@ const LOCATIONS: LocationType[] = ['home', 'work', 'outside', 'social', 'other']
 export default function CravingLogScreen() {
   const router = useRouter();
   const { t } = useTranslation();
+  const substance = useSubstance();
   const params = useLocalSearchParams<{ id?: string }>();
   const user = useUserStore((s) => s.user);
   const cravings = useCravingStore((s) => s.cravings);
@@ -86,7 +88,7 @@ export default function CravingLogScreen() {
       <AppText variant="h1">{existing ? t('craving.editTitle') : t('craving.logTitle')}</AppText>
       <AppText tone="secondary">{t('craving.logSubtitle')}</AppText>
       <ScaleSelector label={t('craving.intensity')} value={intensity} onChange={setIntensity} min={1} max={10} minLabel={t('craving.intensityLow')} maxLabel={t('craving.intensityHigh')} />
-      <ChipGroup label={t('craving.trigger')} options={TRIGGERS.map((tr) => ({ value: tr, label: t(`triggers.${tr}`) }))} value={trigger} onChange={setTrigger} compact />
+      <ChipGroup label={t('craving.trigger')} options={triggersFor(substance).map((tr) => ({ value: tr, label: t(`triggers.${tr}`) }))} value={trigger} onChange={setTrigger} compact />
       {suggestion && trigger ? (
         <Banner text={`${t('craving.suggestion', { title: t(`alternatives.${trigger}.title`), text: t(`alternatives.${trigger}.text`) })}${suggestion.softened ? ` ${t('sos.softened')}` : ''}`} tone="success" icon="bulb-outline" />
       ) : null}

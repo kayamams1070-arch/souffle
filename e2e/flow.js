@@ -346,7 +346,7 @@ async function expectText(page, needle, timeout = 5000) {
 
   // ---------- Demo ----------
   await check('demo mode is clearly flagged and can be exited', async () => {
-    await btn(page, 'Charger la démonstration').click();
+    await btn(page, 'Charger la démonstration tabac').click();
     await expectText(page, 'Mode démonstration : profil et données entièrement fictifs.', 8000);
     await shot(page, 'demo-dashboard');
     await page.goto(BASE + '/settings/privacy', { waitUntil: 'networkidle' });

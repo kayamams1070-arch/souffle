@@ -7,7 +7,8 @@
  */
 import { evaluateBadges } from './rewardService';
 import { z } from 'zod';
-import type { AppDataExport, RewardState, Settings, SportLevel, User } from '@/types';
+import type { AppDataExport, RewardState, Settings, SportLevel, Substance, User } from '@/types';
+import { substanceOf } from '@/utils/calculations';
 import {
   resetAllStores,
   useCravingStore,
@@ -257,7 +258,10 @@ export function isDemoActive(): boolean {
  * Enters demo mode. If a real profile exists, its data is first copied to a dedicated
  * storage key so that leaving the demo restores it intact.
  */
-export async function enterDemo(language: Settings['language'] = useSettingsStore.getState().settings.language): Promise<{ backedUp: boolean }> {
+export async function enterDemo(
+  language: Settings['language'] = useSettingsStore.getState().settings.language,
+  substance: Substance = 'tobacco'
+): Promise<{ backedUp: boolean }> {
   let backedUp = false;
   const current = useUserStore.getState().user;
   // An existing backup (real profile) is never overwritten.
@@ -265,13 +269,17 @@ export async function enterDemo(language: Settings['language'] = useSettingsStor
     await writeRaw(STORAGE_KEYS.demoBackup, serializeSnapshot(snapshotData()));
     backedUp = true;
   }
-  loadDemoIntoStores(language);
+  loadDemoIntoStores(language, substance);
   return { backedUp };
 }
 
 /** Replaces the data stores with fresh fictional data (settings are kept). */
-export function loadDemoIntoStores(language: Settings['language']): void {
-  const data = buildDemoData(new Date(), language);
+export function loadDemoIntoStores(
+  language: Settings['language'],
+  // Resetting keeps the demo profile that is currently shown (tobacco or cannabis).
+  substance: Substance = isDemoActive() ? substanceOf(useUserStore.getState().user) : 'tobacco'
+): void {
+  const data = buildDemoData(new Date(), language, substance === 'cannabis' ? 'cannabis' : 'tobacco');
   useUserStore.getState().setUser(data.user);
   useUserStore.getState().clearDraft();
   useCravingStore.getState().replaceAll({ cravings: data.cravings, smokingEvents: data.smokingEvents });

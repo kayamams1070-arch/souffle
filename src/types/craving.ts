@@ -8,10 +8,23 @@ export const TRIGGERS = [
   'social',
   'fatigue',
   'night',
+  'to_sleep',
+  'screens',
+  'after_work',
   'other',
 ] as const;
 
 export type Trigger = (typeof TRIGGERS)[number];
+
+/** Triggers that mostly concern cannabis use; only offered when cannabis is tracked. */
+export const CANNABIS_TRIGGERS: readonly Trigger[] = ['to_sleep', 'screens', 'after_work'];
+
+/** Triggers offered in pickers for a given substance (cannabis-specific ones first). */
+export function triggersFor(substance: 'tobacco' | 'cannabis' | 'both' | undefined): Trigger[] {
+  if (!substance || substance === 'tobacco') return TRIGGERS.filter((t) => !CANNABIS_TRIGGERS.includes(t));
+  const rest = TRIGGERS.filter((t) => !CANNABIS_TRIGGERS.includes(t) && t !== 'other');
+  return [...CANNABIS_TRIGGERS, ...rest, 'other'];
+}
 
 export const INTERVENTION_TYPES = [
   'breathing',

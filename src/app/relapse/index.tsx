@@ -7,7 +7,7 @@ import { useAppTheme } from '@/theme/ThemeContext';
 import { AppButton, AppCard, AppText, Banner, ChipGroup, ConfirmDialog, NumberStepper, Screen, ScreenHeader, SwitchRow, TextField } from '@/components/ui';
 import { useCravingStore, useRewardStore, useUserStore } from '@/store';
 import { useSosSession } from '@/store/useSosSession';
-import { TRIGGERS, type ConsumptionKind, type SmokingEvent, type Trigger } from '@/types';
+import { triggersFor, type ConsumptionKind, type SmokingEvent, type Trigger } from '@/types';
 import { canUseShield, computeCurrentStreak } from '@/utils/streaks';
 import { dayKey, nowIso } from '@/utils/dates';
 import { xpEventId } from '@/services/rewardService';
@@ -158,7 +158,7 @@ export default function RelapseScreen() {
       ) : null}
       <NumberStepper label={t('relapse.count')} value={cigarettes} onChange={setCigarettes} min={1} max={100} unit={kind === 'joint' ? t('units.joints') : t('units.cigs')} />
       <ChipGroup label={t('relapse.when')} options={WHEN_OPTIONS.map((h) => ({ value: h, label: h === 0 ? t('relapse.whenNow') : t('relapse.whenHoursAgo', { count: h }) }))} value={hoursAgo} onChange={setHoursAgo} compact />
-      <ChipGroup label={t('craving.trigger')} options={TRIGGERS.map((tr) => ({ value: tr, label: t(`triggers.${tr}`) }))} value={trigger} onChange={setTrigger} compact />
+      <ChipGroup label={t('craving.trigger')} options={triggersFor(substance).map((tr) => ({ value: tr, label: t(`triggers.${tr}`) }))} value={trigger} onChange={setTrigger} compact />
       <TextField label={t('relapse.situation')} value={context} onChangeText={setContext} maxLength={300} multiline />
       {!isReduction ? (
         <>

@@ -25,6 +25,10 @@
       "text": "Walk for five minutes, outside or on the spot.",
       "title": "After a meal"
     },
+    "after_work": {
+      "title": "Getting home",
+      "text": "Replace the coming-home moment with a transition: a shower, a short walk or a quick session, before you settle down."
+    },
     "alcohol": {
       "text": "Alcohol lowers your guard. Alternate with water, step away for a moment and watch the craving without giving in.",
       "title": "Alcohol"
@@ -53,6 +57,10 @@
       "text": "Two minutes of guided breathing, then choose your next action.",
       "title": "An idea"
     },
+    "screens": {
+      "title": "Gaming or series",
+      "text": "Take a real break between two games or episodes: get up, drink a glass of water and move for two minutes."
+    },
     "social": {
       "text": "Prepare a simple way to say no (“No thanks, I'm quitting”) and keep a replacement action ready: a glass of water, some chewing gum.",
       "title": "With others"
@@ -60,6 +68,10 @@
     "stress": {
       "text": "Guided breathing or a little gentle yoga helps bring the tension down.",
       "title": "Stress"
+    },
+    "to_sleep": {
+      "title": "To fall asleep",
+      "text": "Dim the lights, put screens away, two minutes of slow breathing. The harder nights at the start pass: the Difficult nights kit can help."
     }
   },
   "badges": {
@@ -513,7 +525,8 @@
     "exit": "Leave the demo",
     "exitRestore": "Leave the demo and get my data back",
     "inactiveText": "Load a fictional profile to explore the app. Your current data is set aside on the phone, then restored when you leave the demo.",
-    "load": "Load the demo",
+    "load": "Load the tobacco demo",
+    "loadCannabis": "Load the cannabis demo",
     "reset": "Reset the demo",
     "tag": "demo",
     "title": "Demo mode",
@@ -1899,6 +1912,7 @@
   },
   "triggers": {
     "after_meal": "After a meal",
+    "after_work": "After work or classes",
     "alcohol": "Alcohol",
     "anger": "Anger",
     "boredom": "Boredom",
@@ -1906,8 +1920,10 @@
     "fatigue": "Tiredness",
     "night": "Night",
     "other": "Other",
+    "screens": "Gaming or TV series",
     "social": "Social setting",
-    "stress": "Stress"
+    "stress": "Stress",
+    "to_sleep": "To fall asleep"
   },
   "units": {
     "cigs": "cigs",
