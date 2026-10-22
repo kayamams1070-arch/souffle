@@ -257,9 +257,11 @@
       "distraction": "Afleidingsspel",
       "journal": "Mijn dagboek openen",
       "medical": "Als de pijn of het onwel voelen aanhoudt of erger wordt, neem dan contact op met een zorgverlener. Bel in geval van nood 112.",
+      "nights": "De kit Moeilijke nachten openen",
       "pact": "Mijn pact herlezen",
       "relapse": "De sigaret noteren, zonder oordeel",
       "rest": "Rust uit: voorlopig geen oefeningen.",
+      "social": "Zinnen om nee te zeggen bekijken",
       "surf": "Craving surf (3 min)",
       "workout": "Voorgestelde training bekijken"
     },
@@ -273,7 +275,9 @@
       "coffee": "Ik heb zin om te roken bij mijn koffie",
       "missed": "Ik heb twee trainingen gemist",
       "no_sport": "Ik heb deze week niet gesport",
+      "offered": "Iemand bood me een sigaret aan",
       "relapsed": "Ik heb net gerookt",
+      "sleep": "Ik slaap slecht",
       "stress": "Ik ben gestrest",
       "tired": "Ik ben moe"
     },
@@ -324,8 +328,12 @@
         "why": "Noteren wat er gebeurd is helpt om je voor te bereiden op de volgende keer. Je XP, badges en eerdere besparingen blijven behouden."
       },
       "sleep": {
-        "message": "Noteer je nacht in je dagboek en kies vanavond een rustgevende training.",
-        "why": "Slaap en zin om te roken hangen vaak samen. Ze noteren helpt je om je eigen patronen te herkennen."
+        "message": "Moeilijkere nachten horen vaak bij het stoppen, en ze gaan voorbij. De kit Moeilijke nachten geeft je concrete richtpunten.",
+        "why": "Vaste uren en een rustig moment voor het slapengaan helpen om je slaap terug te vinden."
+      },
+      "social_pressure": {
+        "message": "Bereid een eenvoudige zin voor, zeg hem zonder je te verantwoorden en verander dan van onderwerp of stel iets anders voor.",
+        "why": "Vaak ga je overstag omdat je niet wist wat te zeggen. Een klaar antwoord maakt het moment veel makkelijker."
       },
       "stress": {
         "message": "Twee minuten begeleide ademhaling om de druk te laten zakken.",
@@ -373,6 +381,7 @@
     "save": "Opslaan",
     "saved": "Opgeslagen.",
     "selected": "Geselecteerd",
+    "sources": "Bronnen",
     "start": "Starten",
     "tapToDismiss": "Tik om te sluiten",
     "tapToEdit": "Tik om te bewerken",
@@ -1025,6 +1034,32 @@
     "sad": "Verdrietig",
     "tense": "Gespannen",
     "tired": "Moe"
+  },
+  "nights": {
+    "awake": {
+      "tip1": "Beweeg overdag, maar niet in de 4 uur voor het slapengaan.",
+      "tip2": "Doe geen dutje, ook niet na een korte nacht.",
+      "tip3": "Ga even naar buiten, in het daglicht."
+    },
+    "awakeTitle": "Overdag",
+    "breathe": "Rustig ademen (2 minuten)",
+    "doctor": "Blijft de slapeloosheid duren, weegt ze zwaar op je dag of gaat ze samen met grote nood, praat er dan over met je huisarts.",
+    "dreams": "Heel levendige dromen of nachtmerries komen vaak voor na het stoppen met cannabis. Ze zijn niet gevaarlijk en verdwijnen na verloop van tijd. Vaste slaaptijden aanhouden helpt het meest.",
+    "dreamsTitle": "Intense dromen, nachtmerries",
+    "evening": {
+      "tip1": "Ga slapen en sta op op vaste uren, ook na een slechte nacht.",
+      "tip2": "Ontspan minstens een uur voor het slapengaan: bad, lezen, rustige muziek.",
+      "tip3": "Geen telefoon of tv vlak voor het slapengaan.",
+      "tip4": "Geen koffie, thee of alcohol in de 6 uur voor het slapengaan, en geen grote maaltijd laat op de avond.",
+      "tip5": "Een donkere, rustige en comfortabele slaapkamer (gordijnen, oogmasker of oordopjes als het nodig is)."
+    },
+    "eveningTitle": "'s Avonds",
+    "logSleep": "Mijn nacht noteren",
+    "subtitle": "Eenvoudige richtpunten om beter te slapen tijdens het stoppen.",
+    "title": "Moeilijke nachten",
+    "whyCannabis": "Anders dan vaak gedacht helpt cannabis niet om goed te slapen: het verstoort de slaapcycli. Na het stoppen kan slapeloosheid 3 tot 4 weken duren en kunnen dromen intenser worden. Dat is tijdelijk, maar het is ook een moment waarop de zin om opnieuw te gebruiken sterk kan zijn: je nachten voorbereiden helpt echt.",
+    "whyGeneral": "Als je een gewoonte verandert, kunnen je nachten een tijd onrustiger zijn. Een paar eenvoudige gewoonten helpen om weer regelmatig te slapen.",
+    "whyTitle": "Wat er gebeurt"
   },
   "notifications": {
     "encouragement": {
@@ -1702,6 +1737,44 @@
     "trendSummary_one": "Kwaliteit van je laatste genoteerde nacht, van 1 tot 5.",
     "trendSummary_other": "Kwaliteit van je laatste {{count}} genoteerde nachten, van 1 tot 5."
   },
+  "social": {
+    "after": "Dat is geen mislukking. Noteer het zonder oordeel: je vooruitgang, je badges en je besparingen blijven behouden. Kijk wat er gebeurde om je voor te bereiden op de volgende keer.",
+    "afterTitle": "En als je toch overstag ging",
+    "before": {
+      "tip1": "Kies je zin op voorhand: vaak ga je overstag omdat je niet wist wat te zeggen.",
+      "tip2": "Zorg voor een drankje, een snack of iets om je handen bezig te houden.",
+      "tip3": "Kies de eerste weken liever voor momenten met mensen die niet roken."
+    },
+    "beforeTitle": "Vooraf",
+    "during": {
+      "tip1": "Zeg zonder aarzelen nee en verander dan van onderwerp.",
+      "tip2": "Stel iets anders voor: een koffie, een film, een wandeling.",
+      "tip3": "Blijft iemand aandringen, vraag dan om het niet meer aan te bieden, of ga even weg."
+    },
+    "duringTitle": "Ter plaatse",
+    "friends": "Je hoeft de banden niet te verbreken. Vertel een of twee vrienden wat je doet en vraag hen om je niets meer aan te bieden. De eerste weken kan het helpen om vrienden die roken wat minder vaak te zien.",
+    "friendsTitle": "Met je vrienden",
+    "phrases": {
+      "p1": "Nee bedankt, ik ben gestopt.",
+      "p2": "Nee bedankt, ik las even een pauze in.",
+      "p3": "Niet voor mij, maar een glas water wil ik wel.",
+      "p4": "Nee, ik voel me beter zonder."
+    },
+    "phrasesCannabis": {
+      "p1": "Nee bedankt, ik ben gestopt.",
+      "p2": "Nee, ik moet morgen fit zijn.",
+      "p3": "Niet voor mij. Zullen we iets anders doen?",
+      "p4": "Nee, ik slaap beter zonder."
+    },
+    "phrasesHint": "Zeg het met zelfvertrouwen, zonder je te verantwoorden. De eerste keren voelt het misschien ongemakkelijk, daarna wordt het makkelijker.",
+    "phrasesTitle": "Zinnen die je zo kunt zeggen",
+    "rowSubtitle": "Zinnen en tips om nee te zeggen",
+    "sos": "Ik heb nu zin",
+    "sosLink": "Iemand biedt me iets aan: wat zeg ik?",
+    "subtitle": "Bereid je antwoorden voor op feestjes en momenten met vrienden.",
+    "subtitleCannabis": "Bereid je antwoorden voor op het moment dat iemand je een joint aanbiedt.",
+    "title": "Als je iets aangeboden krijgt"
+  },
   "sos": {
     "bestForYou": "Volgens je antwoorden helpt {{intervention}} je vaak ({{percent}}%).",
     "breathing": {
@@ -1965,6 +2038,52 @@
     "4": "Do",
     "5": "Vr",
     "6": "Za"
+  },
+  "withdrawal": {
+    "breathe": "2 minuten ademen",
+    "disclaimer": "Algemene richtpunten uit bronnen van de volksgezondheid (zie Voordelen): iedereen beleeft het afkicken anders. Dit is geen medisch advies.",
+    "nicotineNote": "Je stopt ook met tabak: beide ontwenningsverschijnselen kunnen elkaar in het begin versterken. Allebei tegelijk stoppen is wat specialisten aanraden om je kansen zo groot mogelijk te maken.",
+    "nights": "Moeilijke nachten",
+    "phases": {
+      "easing": {
+        "text": "Voor veel mensen is het ergste voorbij. Er kunnen nog moeilijkere momenten zijn, vooral 's avonds en 's nachts.",
+        "tip1": "Noteer je zin en je slaap: je ziet de intensiteit dalen.",
+        "tip2": "Vermijd nog even de plaatsen en mensen die je met de joint verbindt.",
+        "tip3": "Plan activiteiten voor je avonden: sport, uitstapje, een vriend bellen.",
+        "title": "De ontwenning neemt af"
+      },
+      "fading": {
+        "text": "Ontwenningsverschijnselen verdwijnen meestal binnen enkele weken. Je slaap kan nog wat langer verstoord blijven.",
+        "tip1": "Sta op en ga slapen op vaste uren, ook in het weekend.",
+        "tip2": "Herlees je pact en de redenen waarom je begonnen bent.",
+        "tip3": "Onverwachte zin blijft mogelijk: de SOS-knop is er altijd.",
+        "title": "Bijna klaar"
+      },
+      "first_day": {
+        "text": "De ontwenning is er vaak nog niet: die begint meestal 1 tot 3 dagen na de laatste joint. Dit is het goede moment om je voor te bereiden.",
+        "tip1": "Doe je spullen weg en verwijder, als je kunt, het nummer van je dealer.",
+        "tip2": "Vertel het aan iemand die je vertrouwt en vraag steun voor de komende dagen.",
+        "tip3": "Bereid je avonden voor: een lijstje met leuke dingen om in de plaats te doen.",
+        "title": "Eerste dag"
+      },
+      "peak": {
+        "text": "Tussen dag 2 en dag 6 is de ontwenning vaak het sterkst: prikkelbaarheid, onrust, minder eetlust, onrustige slaap. Het is vervelend, ongevaarlijk en het gaat voorbij.",
+        "tip1": "Zin gaat meestal over na een kwartiertje: stel de beslissing uit, leid jezelf af, adem.",
+        "tip2": "Eet weinig maar vaak, drink water en ga elke dag wandelen.",
+        "tip3": "Maak je agenda lichter als het kan, en laat koffie staan als je je zenuwachtig voelt.",
+        "title": "De zwaarste dagen"
+      },
+      "sleep": {
+        "text": "Na het stoppen kan slapeloosheid 3 tot 4 weken duren en kunnen dromen intenser worden. Dat is tijdelijk: cannabis verstoort de slaapcycli, en die komen weer op hun plaats.",
+        "tip1": "Een rustige routine voor het slapengaan, zonder telefoon vlak ervoor.",
+        "tip2": "Beweeg overdag, maar niet in de 4 uur voor je gaat slapen.",
+        "tip3": "Blijft slapen nog weken moeilijk, praat er dan over met een arts.",
+        "title": "Je slaap herstelt zich"
+      }
+    },
+    "progress": "Dag {{day}} van {{total}}",
+    "title": "Je afkickperiode · dag {{day}}",
+    "whatHelps": "Wat nu helpt"
   },
   "workout": {
     "aboutMinutes_one": "Ongeveer {{count}} minuut",

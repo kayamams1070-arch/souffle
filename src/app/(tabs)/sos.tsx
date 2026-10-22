@@ -111,6 +111,7 @@ export default function SosScreen() {
         ) : null}
       </AppCard>
 
+      <AppButton label={t('social.sosLink')} variant="ghost" icon="chatbubble-ellipses-outline" onPress={() => router.push('/health/social')} />
       <AppButton label={t('sos.logOnly')} variant="ghost" icon="create-outline" onPress={() => router.push('/craving/log')} />
       <AppButton label={t('help.sosButton')} variant="secondary" icon="call-outline" onPress={() => router.push('/help')} />
       <AppText variant="caption" tone="secondary" align="center">

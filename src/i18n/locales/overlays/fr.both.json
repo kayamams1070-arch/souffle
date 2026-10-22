@@ -41,6 +41,9 @@
     "actions": {
       "relapse": "Noter la consommation, sans jugement"
     },
+    "prompts": {
+      "offered": "On m'a proposé un joint"
+    },
     "replies": {
       "relapsed": {
         "message": "Une cigarette ou un joint n'efface pas ton chemin. Notons-le ensemble, sans jugement."
@@ -77,6 +80,11 @@
   },
   "goalSettings": {
     "reduceNote": "Ta consommation de référence : {{baseline}} cigarettes et joints par jour, comptés ensemble."
+  },
+  "health": {
+    "timeline": {
+      "subtitle": "Repères généraux issus de sources de santé et d'études, non mesurés par ton téléphone."
+    }
   },
   "onboarding": {
     "goals": {
@@ -136,17 +144,12 @@
     },
     "subtitle": "Des journées complètes sans tabac ni cannabis, calculées selon ton calendrier local."
   },
-  "xp": {
-    "milestone": "Étape sans fumer"
-  },
   "units": {
     "cigs": "conso.",
     "cigsPerDay": "conso./jour",
     "cigsToday": "conso. aujourd'hui"
   },
-  "health": {
-    "timeline": {
-      "subtitle": "Repères généraux issus de sources de santé et d'études, non mesurés par ton téléphone."
-    }
+  "xp": {
+    "milestone": "Étape sans fumer"
   }
 }

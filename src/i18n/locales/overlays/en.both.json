@@ -41,6 +41,9 @@
     "actions": {
       "relapse": "Log it, no judgement"
     },
+    "prompts": {
+      "offered": "Someone offered me a joint"
+    },
     "replies": {
       "relapsed": {
         "message": "One cigarette or joint doesn't erase your journey. Let's log it together, no judgement."
@@ -77,6 +80,11 @@
   },
   "goalSettings": {
     "reduceNote": "Your baseline: {{baseline}} cigarettes and joints a day, counted together."
+  },
+  "health": {
+    "timeline": {
+      "subtitle": "General guides from health sources and studies, not measured by your phone."
+    }
   },
   "onboarding": {
     "goals": {
@@ -136,17 +144,12 @@
     },
     "subtitle": "Full days free of tobacco and cannabis, calculated using your local calendar."
   },
-  "xp": {
-    "milestone": "Smoke-free milestone"
-  },
   "units": {
     "cigs": "uses",
     "cigsPerDay": "uses/day",
     "cigsToday": "uses today"
   },
-  "health": {
-    "timeline": {
-      "subtitle": "General guides from health sources and studies, not measured by your phone."
-    }
+  "xp": {
+    "milestone": "Smoke-free milestone"
   }
 }

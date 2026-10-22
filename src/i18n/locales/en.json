@@ -257,9 +257,11 @@
       "distraction": "Distraction game",
       "journal": "Open my journal",
       "medical": "If the pain or discomfort persists or gets worse, contact a health professional. In an emergency, call 112.",
+      "nights": "Open the Difficult nights kit",
       "pact": "Reread my pact",
       "relapse": "Log the cigarette, no judgement",
       "rest": "Rest: no exercise for now.",
+      "social": "See phrases for saying no",
       "surf": "Craving surf (3 min)",
       "workout": "See the suggested workout"
     },
@@ -273,7 +275,9 @@
       "coffee": "I want to smoke after my coffee",
       "missed": "I missed two workouts",
       "no_sport": "I haven't exercised this week",
+      "offered": "Someone offered me a cigarette",
       "relapsed": "I just relapsed",
+      "sleep": "I'm sleeping badly",
       "stress": "I'm stressed",
       "tired": "I'm tired"
     },
@@ -324,8 +328,12 @@
         "why": "Noting what happened helps you prepare for next time. Your XP, badges and past savings are yours to keep."
       },
       "sleep": {
-        "message": "Note your night in your journal and choose a wind-down workout this evening.",
-        "why": "Sleep and cravings are often linked. Noting them helps you spot your own patterns."
+        "message": "Harder nights are often part of stopping, and they pass. The Difficult nights kit gives you concrete reference points.",
+        "why": "Regular times and a calm moment before bed help you get your sleep back."
+      },
+      "social_pressure": {
+        "message": "Prepare a simple phrase, say it without justifying yourself, then change the subject or suggest something else.",
+        "why": "People often give in because they didn't know what to say. A ready answer makes the moment much easier."
       },
       "stress": {
         "message": "Two minutes of guided breathing to ease the pressure.",
@@ -373,6 +381,7 @@
     "save": "Save",
     "saved": "Saved.",
     "selected": "Selected",
+    "sources": "Sources",
     "start": "Start",
     "tapToDismiss": "Tap to close",
     "tapToEdit": "Tap to edit",
@@ -1025,6 +1034,32 @@
     "sad": "Sad",
     "tense": "Tense",
     "tired": "Tired"
+  },
+  "nights": {
+    "awake": {
+      "tip1": "Move during the day, but not in the 4 hours before bed.",
+      "tip2": "Avoid napping, even after a short night.",
+      "tip3": "Spend some time outside, in daylight."
+    },
+    "awakeTitle": "During the day",
+    "breathe": "Calm breathing (2 minutes)",
+    "doctor": "If insomnia lasts, weighs on your days or comes with great distress, talk to your doctor.",
+    "dreams": "Very vivid dreams or nightmares are common after stopping cannabis. They are not dangerous and fade with time. Keeping regular sleep times helps the most.",
+    "dreamsTitle": "Vivid dreams, nightmares",
+    "evening": {
+      "tip1": "Go to bed and get up at the same times, even after a bad night.",
+      "tip2": "Relax for at least an hour before bed: a bath, reading, calm music.",
+      "tip3": "No phone or TV right before sleeping.",
+      "tip4": "No coffee, tea or alcohol in the 6 hours before bed, and no big meal late at night.",
+      "tip5": "A dark, quiet and comfortable bedroom (curtains, eye mask or earplugs if needed)."
+    },
+    "eveningTitle": "In the evening",
+    "logSleep": "Log my night",
+    "subtitle": "Simple reference points to sleep better while you stop.",
+    "title": "Difficult nights",
+    "whyCannabis": "Contrary to a common belief, cannabis doesn't help you sleep well: it disrupts sleep cycles. After stopping, insomnia can last 3 to 4 weeks and dreams can get more intense. It's temporary, but it's also a time when the urge to use again can be strong: preparing your nights really helps.",
+    "whyGeneral": "When you change a habit, nights can be more restless for a while. A few simple habits help you get back to regular sleep.",
+    "whyTitle": "What's happening"
   },
   "notifications": {
     "encouragement": {
@@ -1702,6 +1737,44 @@
     "trendSummary_one": "Quality of your last logged night, from 1 to 5.",
     "trendSummary_other": "Quality of your last {{count}} logged nights, from 1 to 5."
   },
+  "social": {
+    "after": "It's not a failure. Log it without judgement: your progress, badges and savings are kept. Look at what happened to prepare for next time.",
+    "afterTitle": "And if you gave in",
+    "before": {
+      "tip1": "Choose your phrase in advance: people often give in because they didn't know what to say.",
+      "tip2": "Bring a drink, a snack or something to keep your hands busy.",
+      "tip3": "For the first few weeks, favour time with people who don't smoke."
+    },
+    "beforeTitle": "Before",
+    "during": {
+      "tip1": "Say no without hesitating, then change the subject.",
+      "tip2": "Suggest something else: a coffee, a film, a walk.",
+      "tip3": "If someone insists, ask them to stop offering, or step away for a moment."
+    },
+    "duringTitle": "On the spot",
+    "friends": "You don't have to cut ties. Tell one or two friends what you're doing and ask them to stop offering. For the first few weeks, seeing friends who smoke a bit less often can help.",
+    "friendsTitle": "With your friends",
+    "phrases": {
+      "p1": "No thanks, I've stopped.",
+      "p2": "No thanks, I'm taking a break at the moment.",
+      "p3": "Not for me, but I'd love a glass of water.",
+      "p4": "No, I feel better without."
+    },
+    "phrasesCannabis": {
+      "p1": "No thanks, I've stopped.",
+      "p2": "No, I need to be on form tomorrow.",
+      "p3": "Not for me. Shall we do something else?",
+      "p4": "No, I sleep better without."
+    },
+    "phrasesHint": "Say it with confidence, without justifying yourself. It can feel awkward the first few times, then it gets easier.",
+    "phrasesTitle": "Ready-to-say phrases",
+    "rowSubtitle": "Phrases and tips for saying no",
+    "sos": "I have a craving right now",
+    "sosLink": "Someone is offering: what do I say?",
+    "subtitle": "Prepare your answers for parties and time with friends.",
+    "subtitleCannabis": "Prepare your answers for when someone passes you a joint.",
+    "title": "When someone offers you one"
+  },
   "sos": {
     "bestForYou": "Based on your answers, {{intervention}} often helps you ({{percent}}%).",
     "breathing": {
@@ -1965,6 +2038,52 @@
     "4": "Thu",
     "5": "Fri",
     "6": "Sat"
+  },
+  "withdrawal": {
+    "breathe": "Breathe for 2 minutes",
+    "disclaimer": "General reference points from public health sources (see Benefits): everyone goes through withdrawal differently. This is not medical advice.",
+    "nicotineNote": "You are stopping tobacco too: both withdrawals can add up at the start. Stopping both at the same time is still what specialists advise to give yourself the best chance.",
+    "nights": "Difficult nights",
+    "phases": {
+      "easing": {
+        "text": "For many people the worst is over. Some harder moments can remain, especially in the evening and at night.",
+        "tip1": "Log your cravings and sleep: you will see their intensity go down.",
+        "tip2": "Keep avoiding places and people linked to smoking joints for a little longer.",
+        "tip3": "Plan activities for your evenings: sport, going out, calling a friend.",
+        "title": "Withdrawal is easing"
+      },
+      "fading": {
+        "text": "Withdrawal symptoms usually go away within a few weeks. Sleep can stay disturbed a little longer.",
+        "tip1": "Keep regular times for getting up and going to bed, weekends included.",
+        "tip2": "Reread your pact and the reasons you started.",
+        "tip3": "An unexpected craving is still possible: the SOS button is always there.",
+        "title": "Almost there"
+      },
+      "first_day": {
+        "text": "Withdrawal often hasn't started yet: it usually begins 1 to 3 days after the last joint. This is a good time to get ready.",
+        "tip1": "Get rid of your gear and, if you can, delete your dealer's number.",
+        "tip2": "Tell someone you trust and ask for their support over the next few days.",
+        "tip3": "Plan your evenings: a list of enjoyable things to do instead.",
+        "title": "First day"
+      },
+      "peak": {
+        "text": "Between day 2 and day 6, withdrawal is often at its strongest: irritability, restlessness, less appetite, restless sleep. It's unpleasant, harmless, and it doesn't last.",
+        "tip1": "A craving usually passes in about fifteen minutes: delay the decision, keep busy, breathe.",
+        "tip2": "Eat little and often, drink water and go for a walk every day.",
+        "tip3": "Lighten your schedule if you can, and skip coffee if you feel on edge.",
+        "title": "The hardest days"
+      },
+      "sleep": {
+        "text": "After stopping, insomnia can last 3 to 4 weeks and dreams can become more intense. It is temporary: cannabis disrupts sleep cycles, and they settle back into place.",
+        "tip1": "A calm routine before bed, with no phone right before.",
+        "tip2": "Move during the day, but not in the 4 hours before sleep.",
+        "tip3": "If sleep is still hard for several more weeks, talk to a doctor.",
+        "title": "Sleep is settling"
+      }
+    },
+    "progress": "Day {{day}} of {{total}}",
+    "title": "Your withdrawal · day {{day}}",
+    "whatHelps": "What helps now"
   },
   "workout": {
     "aboutMinutes_one": "About {{count}} minute",

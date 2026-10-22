@@ -41,6 +41,9 @@
     "actions": {
       "relapse": "Het gebruik noteren, zonder oordeel"
     },
+    "prompts": {
+      "offered": "Iemand bood me een joint aan"
+    },
     "replies": {
       "relapsed": {
         "message": "Eén sigaret of joint wist je weg niet uit. Laten we het samen noteren, zonder oordeel."
@@ -77,6 +80,11 @@
   },
   "goalSettings": {
     "reduceNote": "Je referentieverbruik: {{baseline}} sigaretten en joints per dag, samen geteld."
+  },
+  "health": {
+    "timeline": {
+      "subtitle": "Algemene richtpunten uit gezondheidsbronnen en studies, niet gemeten door je telefoon."
+    }
   },
   "onboarding": {
     "goals": {
@@ -136,17 +144,12 @@
     },
     "subtitle": "Volledige dagen zonder tabak en cannabis, berekend volgens je lokale kalender."
   },
-  "xp": {
-    "milestone": "Mijlpaal zonder roken"
-  },
   "units": {
     "cigs": "keer",
     "cigsPerDay": "keer/dag",
     "cigsToday": "keer vandaag"
   },
-  "health": {
-    "timeline": {
-      "subtitle": "Algemene richtpunten uit gezondheidsbronnen en studies, niet gemeten door je telefoon."
-    }
+  "xp": {
+    "milestone": "Mijlpaal zonder roken"
   }
 }

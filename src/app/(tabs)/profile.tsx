@@ -76,6 +76,8 @@ export default function ProfileScreen() {
         <ListRow icon="document-text-outline" title={t('pact.title')} subtitle={user.why ? user.why.slice(0, 60) : t('dashboard.pactHint')} onPress={() => router.push('/pact')} />
         <ListRow icon="wallet-outline" title={t('benefits.projectTitle')} subtitle={user.savingsProject ? user.savingsProject.title : t('benefits.projectHint')} onPress={() => router.push('/health/benefits')} />
         <ListRow icon="chatbubble-ellipses-outline" title={t('coach.title')} subtitle={t('coach.subtitle')} onPress={() => router.push('/coach')} />
+        <ListRow icon="bed-outline" title={t('nights.title')} subtitle={t('nights.subtitle')} onPress={() => router.push('/health/nights')} />
+        <ListRow icon="chatbubbles-outline" title={t('social.title')} subtitle={t('social.rowSubtitle')} onPress={() => router.push('/health/social')} />
         <ListRow icon="call-outline" title={t('help.title')} subtitle={t('help.rowSubtitle')} onPress={() => router.push('/help')} />
       </AppCard>
 

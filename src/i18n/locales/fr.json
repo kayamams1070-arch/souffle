@@ -257,9 +257,11 @@
       "distraction": "Jeu de distraction",
       "journal": "Ouvrir mon journal",
       "medical": "Si la douleur ou le malaise persiste ou s'aggrave, contacte un professionnel de santé. En cas d'urgence, appelle le 112.",
+      "nights": "Ouvrir le kit Nuits difficiles",
       "pact": "Relire mon pacte",
       "relapse": "Noter la cigarette, sans jugement",
       "rest": "Repose-toi : aucun exercice pour le moment.",
+      "social": "Voir les phrases pour dire non",
       "surf": "Craving surf (3 min)",
       "workout": "Voir la séance proposée"
     },
@@ -273,7 +275,9 @@
       "coffee": "J'ai envie de fumer après le café",
       "missed": "J'ai raté deux séances",
       "no_sport": "Je n'ai pas fait de sport cette semaine",
+      "offered": "On m'a proposé une cigarette",
       "relapsed": "Je viens de rechuter",
+      "sleep": "Je dors mal",
       "stress": "Je suis stressé",
       "tired": "Je suis fatigué"
     },
@@ -324,8 +328,12 @@
         "why": "Noter ce qui s'est passé aide à préparer la prochaine fois. Tes XP, badges et économies passées restent acquis."
       },
       "sleep": {
-        "message": "Note ta nuit dans ton journal et choisis une séance de retour au calme ce soir.",
-        "why": "Le sommeil et les envies sont souvent liés. Les noter t'aide à repérer tes propres tendances."
+        "message": "Les nuits plus difficiles font souvent partie de l'arrêt, et elles passent. Le kit Nuits difficiles te donne des repères concrets.",
+        "why": "Des horaires réguliers et un moment calme avant le coucher aident à retrouver le sommeil."
+      },
+      "social_pressure": {
+        "message": "Prépare une phrase simple, dis-la sans te justifier, puis change de sujet ou propose autre chose.",
+        "why": "On craque souvent faute d'avoir su quoi répondre. Une réponse prête rend le moment beaucoup plus facile."
       },
       "stress": {
         "message": "Deux minutes de respiration guidée pour relâcher la pression.",
@@ -373,6 +381,7 @@
     "save": "Enregistrer",
     "saved": "Enregistré.",
     "selected": "Sélectionné",
+    "sources": "Sources",
     "start": "Commencer",
     "tapToDismiss": "Touche pour fermer",
     "tapToEdit": "Touche pour modifier",
@@ -1025,6 +1034,32 @@
     "sad": "Triste",
     "tense": "Tendu",
     "tired": "Fatigué"
+  },
+  "nights": {
+    "awake": {
+      "tip1": "Bouge pendant la journée, mais pas dans les 4 heures avant le coucher.",
+      "tip2": "Évite la sieste, même si la nuit a été courte.",
+      "tip3": "Sors un moment dehors, à la lumière du jour."
+    },
+    "awakeTitle": "Pendant la journée",
+    "breathe": "Respiration calme (2 minutes)",
+    "doctor": "Si l'insomnie dure, te pèse au quotidien ou s'accompagne d'une grande détresse, parles-en à ton médecin.",
+    "dreams": "Des rêves très vivants ou des cauchemars sont fréquents après l'arrêt du cannabis. Ils ne sont pas dangereux et s'estompent avec le temps. Garder des horaires réguliers est ce qui aide le plus.",
+    "dreamsTitle": "Rêves intenses, cauchemars",
+    "evening": {
+      "tip1": "Couche-toi et lève-toi à heures fixes, même après une mauvaise nuit.",
+      "tip2": "Détends-toi au moins une heure avant le coucher : bain, lecture, musique calme.",
+      "tip3": "Pas de téléphone ni de télé juste avant de dormir.",
+      "tip4": "Pas de café, de thé ni d'alcool dans les 6 heures avant le coucher, et pas de gros repas tard.",
+      "tip5": "Une chambre sombre, calme et confortable (rideaux, masque ou bouchons si besoin)."
+    },
+    "eveningTitle": "Le soir",
+    "logSleep": "Noter ma nuit",
+    "subtitle": "Des repères simples pour mieux dormir pendant l'arrêt.",
+    "title": "Nuits difficiles",
+    "whyCannabis": "Contrairement à une idée répandue, le cannabis n'aide pas à bien dormir : il perturbe les cycles du sommeil. À l'arrêt, l'insomnie peut durer 3 à 4 semaines et les rêves s'intensifier. C'est transitoire, mais c'est aussi un moment où l'envie de reprendre peut être forte : préparer tes nuits aide beaucoup.",
+    "whyGeneral": "Quand on change une habitude, les nuits peuvent être plus agitées pendant un temps. Quelques habitudes simples aident à retrouver un sommeil régulier.",
+    "whyTitle": "Ce qui se passe"
   },
   "notifications": {
     "encouragement": {
@@ -1702,6 +1737,44 @@
     "trendSummary_one": "Qualité de ta dernière nuit notée, de 1 à 5.",
     "trendSummary_other": "Qualité de tes {{count}} dernières nuits notées, de 1 à 5."
   },
+  "social": {
+    "after": "Ce n'est pas un échec. Note-le sans jugement : tes progrès, tes badges et tes économies restent acquis. Repère ce qui s'est passé pour préparer la prochaine fois.",
+    "afterTitle": "Et si tu as craqué",
+    "before": {
+      "tip1": "Choisis ta phrase à l'avance : on craque souvent faute d'avoir su quoi répondre.",
+      "tip2": "Prévois une boisson, un en-cas ou une activité pour occuper tes mains.",
+      "tip3": "Les premières semaines, privilégie les moments avec des personnes qui ne fument pas."
+    },
+    "beforeTitle": "Avant",
+    "during": {
+      "tip1": "Réponds non sans hésiter, puis change de sujet.",
+      "tip2": "Propose autre chose : un café, un film, une balade.",
+      "tip3": "Si on insiste, demande qu'on arrête de te le proposer, ou éloigne-toi un moment."
+    },
+    "duringTitle": "Sur place",
+    "friends": "Tu n'as pas à couper les ponts. Dis à un ou deux proches ce que tu fais et demande-leur de ne plus t'en proposer. Les premières semaines, voir moins souvent les amis qui fument peut t'aider.",
+    "friendsTitle": "Avec tes amis",
+    "phrases": {
+      "p1": "Non merci, j'ai arrêté.",
+      "p2": "Non merci, je fais une pause en ce moment.",
+      "p3": "Pas pour moi, mais je prendrais bien un verre d'eau.",
+      "p4": "Non, je me sens mieux sans."
+    },
+    "phrasesCannabis": {
+      "p1": "Non merci, j'ai arrêté.",
+      "p2": "Non, je dois être en forme demain.",
+      "p3": "Pas pour moi. On fait autre chose ?",
+      "p4": "Non, je dors mieux sans."
+    },
+    "phrasesHint": "Dis-le avec assurance, sans te justifier. Les premières fois, ça peut sembler gênant, puis ça devient plus facile.",
+    "phrasesTitle": "Des phrases prêtes à dire",
+    "rowSubtitle": "Phrases et astuces pour dire non",
+    "sos": "J'ai une envie maintenant",
+    "sosLink": "On me propose : que répondre ?",
+    "subtitle": "Prépare tes réponses pour les soirées et les moments entre amis.",
+    "subtitleCannabis": "Prépare tes réponses pour le moment où on te tend un joint.",
+    "title": "Quand on te propose"
+  },
   "sos": {
     "bestForYou": "D'après tes réponses, {{intervention}} t'aide souvent ({{percent}} %).",
     "breathing": {
@@ -1965,6 +2038,52 @@
     "4": "Jeu",
     "5": "Ven",
     "6": "Sam"
+  },
+  "withdrawal": {
+    "breathe": "Respirer 2 minutes",
+    "disclaimer": "Repères généraux tirés de sources de santé publique (voir Bienfaits) : chacun vit le sevrage à sa façon. Ce n'est pas un avis médical.",
+    "nicotineNote": "Tu arrêtes aussi le tabac : les deux manques peuvent s'additionner au début. Arrêter les deux en même temps reste ce que les spécialistes conseillent pour mettre toutes les chances de ton côté.",
+    "nights": "Nuits difficiles",
+    "phases": {
+      "easing": {
+        "text": "Pour beaucoup de personnes, le plus fort est passé. Il peut rester des moments plus difficiles, surtout le soir et la nuit.",
+        "tip1": "Note tes envies et ton sommeil : tu verras leur intensité baisser.",
+        "tip2": "Évite encore un peu les lieux et les personnes associés au joint.",
+        "tip3": "Prévois des activités pour tes soirées : sport, sortie, appel à un ami.",
+        "title": "Le manque recule"
+      },
+      "fading": {
+        "text": "Les signes de manque disparaissent en général en quelques semaines. Le sommeil, lui, peut rester perturbé encore un peu.",
+        "tip1": "Garde des heures de lever et de coucher régulières, même le week-end.",
+        "tip2": "Relis ton pacte et les raisons qui t'ont fait commencer.",
+        "tip3": "Une envie inattendue reste possible : le bouton SOS est toujours là.",
+        "title": "Presque au bout"
+      },
+      "first_day": {
+        "text": "Le manque n'est souvent pas encore là : il apparaît en général 1 à 3 jours après le dernier joint. C'est le bon moment pour te préparer.",
+        "tip1": "Débarrasse-toi du matériel et, si tu peux, supprime le numéro de ton fournisseur.",
+        "tip2": "Préviens une personne de confiance et demande-lui son soutien pour les jours qui viennent.",
+        "tip3": "Prépare tes soirées : une liste de choses agréables à faire à la place.",
+        "title": "Premier jour"
+      },
+      "peak": {
+        "text": "Entre le 2e et le 6e jour, le manque est souvent à son maximum : irritabilité, nervosité, moins d'appétit, sommeil agité. C'est désagréable, sans danger, et ça ne dure pas.",
+        "tip1": "Une envie passe en général en une quinzaine de minutes : retarde la décision, occupe-toi, respire.",
+        "tip2": "Mange un peu et souvent, bois de l'eau, sors marcher chaque jour.",
+        "tip3": "Allège ton agenda si tu peux, et évite le café si tu te sens nerveux.",
+        "title": "Les jours les plus durs"
+      },
+      "sleep": {
+        "text": "Après l'arrêt, l'insomnie peut durer 3 à 4 semaines et les rêves devenir plus intenses. C'est transitoire : le cannabis perturbe les cycles du sommeil, ils se remettent en place.",
+        "tip1": "Une routine calme avant le coucher, sans téléphone juste avant.",
+        "tip2": "Bouge pendant la journée, mais pas dans les 4 heures avant de dormir.",
+        "tip3": "Si le sommeil reste difficile encore plusieurs semaines, parles-en à un médecin.",
+        "title": "Le sommeil se réajuste"
+      }
+    },
+    "progress": "Jour {{day}} sur {{total}}",
+    "title": "Ton sevrage · jour {{day}}",
+    "whatHelps": "Ce qui aide maintenant"
   },
   "workout": {
     "aboutMinutes_one": "Environ {{count}} minute",

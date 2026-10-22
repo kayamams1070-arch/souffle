@@ -38,7 +38,7 @@ npx eas-cli@latest build --profile development --platform android   # ou ios
 
 ### Données de démonstration
 
-Sur l'écran d'accueil : **Charger la démonstration** (profil fictif « Sam », 23 jours, envies, séances, sommeil, toux, badges). Un bandeau signale toujours le mode démo.
+Sur l'écran d'accueil : **Charger la démonstration tabac** (profil fictif « Sam », 23 jours, envies, séances, sommeil, toux, badges) ou **Charger la démonstration cannabis** (profil fictif « Alex » : envies du soir, nuits difficiles qui s'améliorent, un joint noté il y a 10 jours, compagnon de sevrage visible). Un bandeau signale toujours le mode démo, et les badges du profil fictif arrivent déjà gagnés (pas de célébration au chargement).
 Depuis *Profil → Confidentialité et données* : **Réinitialiser la démonstration** ou **Quitter la démonstration**. Si un vrai profil existait, il est sauvegardé à part avant la démo et restauré intact à la sortie.
 
 ---
@@ -53,6 +53,15 @@ Au premier écran du profil, la personne choisit ce qu'elle fume :
 
 Tous les textes s'adaptent (« Sans cannabis depuis », « Noter un joint », « joints évités »…) grâce à des surcouches de traduction (`src/i18n/locales/overlays/<langue>.<cannabis|both>.json`) qui ne redéfinissent que les phrases concernées. La chronologie santé, les sources et les lignes d'aide suivent aussi la substance. Le choix se modifie à tout moment dans *Profil → Mes habitudes* ; les économies passées sont conservées.
 
+Accompagnement spécifique au cannabis :
+
+- **Compagnon de sevrage** (accueil, 30 premiers jours sans cannabis) : jour en cours, phase (premier jour, pic des jours 2 à 6, recul, presque au bout, sommeil qui se réajuste), ce qui est fréquent maintenant et trois choses qui aident. Pour « les deux », une note sur le manque de nicotine qui s'ajoute.
+- **Nuits difficiles** (*Profil*, *Progrès → Sommeil*, coach) : pourquoi le sommeil est perturbé, routine du soir, journée, rêves intenses, quand consulter, respiration calme et suivi du sommeil.
+- **Quand on te propose** (*SOS*, *Profil*, coach) : phrases prêtes à dire, avant / sur place / avec les amis / si on a craqué.
+- **Déclencheurs** « pour m'endormir », « jeux vidéo ou séries », « après le travail » (proposés seulement si le cannabis est suivi), chacun avec une alternative.
+- **Jours sans par semaine** : objectif facultatif de la réduction (proposé par défaut pour le cannabis), suivi de la semaine en cours sur l'accueil.
+- **Coach** : comprend « on m'a proposé un joint », « je dors mal », « rêves bizarres ».
+
 ---
 
 ## 2. Vérifications
@@ -60,7 +69,7 @@ Tous les textes s'adaptent (« Sans cannabis depuis », « Noter un joint », «
 ```bash
 npm run typecheck     # TypeScript strict
 npm run lint          # ESLint (config Expo)
-npm test              # Jest : 176 tests unitaires et d'intégration
+npm test              # Jest : 188 tests unitaires et d'intégration
 npm run i18n:check    # toutes les clés utilisées existent en FR, NL et EN
 npm run check         # les quatre à la suite
 ```
@@ -74,6 +83,7 @@ node serve.js ../dist 8088 &          # petit serveur statique
 CHROME_PATH=/chemin/vers/chrome node flow.js ./shots
 CHROME_PATH=/chemin/vers/chrome node flow2.js ./shots
 CHROME_PATH=/chemin/vers/chrome node flow3.js ./shots
+CHROME_PATH=/chemin/vers/chrome node flow4.js ./shots
 ```
 
 `flow.js` (28 vérifications) : onboarding complet, Fagerström, compteur, économies, persistance après rechargement, SOS respiration (pause / reprise / fin), feedback, journal des envies, séance complète avec adaptation aux limitations, XP et badges, rechute, thème sombre, néerlandais et anglais, export JSON, PDF, suppression des données, mode démo.
@@ -81,11 +91,19 @@ CHROME_PATH=/chemin/vers/chrome node flow3.js ./shots
 
 `flow3.js` (12 vérifications) : parcours cannabis complet (profil, CUDIT-R, économies en joints, chronologie du sevrage, lignes d'aide cannabis, joint noté), passage à « les deux » (choix cigarette / joint), textes adaptés en néerlandais et en anglais, persistance.
 
+`flow4.js` (7 vérifications) : démo cannabis sans avalanche de badges, compagnon de sevrage (jour 10, phase « le manque recule »), kit Nuits difficiles, déclencheurs cannabis et écran « Quand on te propose » depuis le SOS, coach (joint proposé), réduction avec jours sans, absence du compagnon et des déclencheurs cannabis pour un profil tabac.
+
 Les scénarios pilotent le temps avec une horloge simulée (minuteurs de 2, 3 et 5 minutes et séances de 10 minutes exécutés jusqu'au bout).
 
 ---
 
-## 3. Builds Android et iOS (EAS)
+## 3. Builds Android et iOS
+
+### APK automatique (GitHub Actions)
+
+Chaque envoi sur la branche `main` du dépôt https://github.com/kayamams1070-arch/souffle lance `.github/workflows/android-apk.yml` : vérifications complètes (`npm run check`), `expo prebuild`, compilation Gradle, puis publication de l'APK dans les Releases : https://github.com/kayamams1070-arch/souffle/releases. Sur Android, ouvrir le lien de l'APK, le télécharger et l'installer (autoriser l'installation depuis le navigateur). Une nouvelle version s'installe par-dessus l'ancienne en gardant les données (l'APK est signé avec la clé de debug du modèle Expo, identique à chaque build : à remplacer par une vraie clé avant une publication sur le Play Store). Le dépôt est public : les minutes GitHub Actions sont gratuites pour les dépôts publics.
+
+### EAS (Expo)
 
 ```bash
 npm install -g eas-cli
@@ -127,7 +145,7 @@ src/
                   challenge, notification, audio, haptic, future/ (interfaces V2)
   data/           exercices, séances, programme 12 semaines, badges, jalons santé, démo
   utils/          calculs purs (compteur, économies, séries, Fagerström), dates, monnaie, validation
-  i18n/           fr.json, nl.json, en.json (1 491 chaînes chacun) + overlays/ (textes cannabis et « les deux »)
+  i18n/           fr.json, nl.json, en.json (1 594 chaînes chacun) + overlays/ (textes cannabis et « les deux »)
   __tests__/      tests Jest
 scripts/          i18nKeys.js (contrôle des traductions), buildLocale.py
 e2e/              scénarios Playwright
@@ -150,6 +168,7 @@ Principes :
 - Lignes d'aide tabac : Tabacstop 0800 111 00 (Belgique, gratuit), Tabac Info Service 39 89 (France), Ikstopnu 0800-1995 (Pays-Bas), NHS Smokefree 0300 123 1044 (Royaume-Uni).
 - Cannabis, test CUDIT-R : Adamson et al. 2010 (libre d'utilisation selon PhenX), version française validée CUDIT-R-Fr (Luquiens et al. 2021, formulation tutoyée dans l'appli), seuils 8 (consommation à risque) et 12 (trouble possible) ; https://www.phenxtoolkit.org/protocols/view/510310. Pas de version néerlandaise validée : la version NL de l'appli est une traduction, signalée comme telle.
 - Cannabis, sevrage : Budney et al. 2003 (début jours 1 à 3, pic jours 2 à 6, la plupart des effets 4 à 14 jours), Bonnet & Preuss 2017 (jusqu'à 3 semaines), Royal Children's Hospital Melbourne (sommeil parfois perturbé plusieurs mois), Lee et al. 2014 (rêves et sommeil), Jellinek et Santé.fr (bénéfices décrits sans chiffres). Tabac dans les joints : FRANK (gouvernement britannique).
+- Cannabis, accompagnement (compagnon, nuits, situations sociales, réduction) : NCSCT 2026 (guide pour les professionnels de l'arrêt du tabac : arrêter les deux en même temps, symptômes jusqu'à environ 4 semaines), NCPIC / Queensland Health (guide d'arrêt : planifier, prévenir un proche, une envie passe en une quinzaine de minutes, éviter un temps les amis qui fument), With You (gestion des symptômes, sommeil), Santé.fr (insomnie de 3 à 4 semaines, rêves plus intenses, le cannabis n'aide pas à dormir), NHS « Insomnia » (routine de sommeil), Drug Aware et ministère de la Santé de Tasmanie (dire non), Lower-Risk Cannabis Use Guidelines 2022 et programme d'auto-assistance De DrugLijn (réduire). Liens dans l'appli, sur chaque écran concerné.
 - Grammes par joint : seulement un repère affiché (0,32 g, Ridgeway & Kilmer 2016, données américaines), jamais appliqué automatiquement.
 - Lignes d'aide cannabis : Infor-Drogues & Addictions 02 227 52 52 et De DrugLijn 078 15 10 20 (Belgique), Drogues Info Service 0 800 23 13 13 (France, gratuit, 8 h-2 h), Trimbos Drugs Infolijn 0900-1995 et Jellinek (Pays-Bas), FRANK 0300 123 6600 (Royaume-Uni, 24 h/24). Écran « Trouver de l'aide » avec appel direct.
 - Aucune estimation personnalisée d'espérance de vie ou de capacité pulmonaire.

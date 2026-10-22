@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { Linking, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import { AppButton, AppCard, AppText, Banner, ChipGroup, ProgressBar, Screen, ScreenHeader, StatCard, TextField } from '@/components/ui';
+import { AppButton, AppCard, AppText, Banner, ChipGroup, ProgressBar, Screen, ScreenHeader, StatCard, TextField, SourceLinks } from '@/components/ui';
 import { HealthTimeline } from '@/components/dashboard/HealthTimeline';
 import { useCravingStore, useSettingsStore, useUserStore, useWorkoutStore } from '@/store';
 import { useNow } from '@/hooks/useNow';
@@ -11,7 +11,7 @@ import { milestoneStatus } from '@/data/healthMilestones';
 import { computeWorkoutStats } from '@/services/analyticsService';
 import { cravingsOvercome } from '@/services/rewardService';
 import { formatCents, parseEurosToCents } from '@/utils/money';
-import { HEALTH_SOURCES } from '@/utils/constants';
+import { HEALTH_SOURCES, WITHDRAWAL_SOURCES } from '@/utils/constants';
 
 const PROJECT_KINDS = ['travel', 'purchase', 'hobby', 'savings', 'other'] as const;
 
@@ -149,6 +149,8 @@ export default function BenefitsScreen() {
             .map(([id, s]) => (
               <AppButton key={id} label={s.label} variant="ghost" size="sm" icon="link-outline" onPress={() => void Linking.openURL(s.url).catch(() => undefined)} />
             ))}
+          {/* Sources of the day-by-day withdrawal companion shown on the home screen. */}
+          {(user?.smoking.substance ?? 'tobacco') !== 'tobacco' ? <SourceLinks sources={WITHDRAWAL_SOURCES} /> : null}
         </View>
       </AppCard>
     </Screen>

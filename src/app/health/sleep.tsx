@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { useRouter } from 'expo-router';
 import { AppButton, AppCard, AppText, Banner, ChipGroup, ConfirmDialog, EmptyState, ListRow, NumberStepper, ScaleSelector, Screen, ScreenHeader, TextField } from '@/components/ui';
 import { LineChart } from '@/components/charts/BarChart';
 import { useCravingStore, useJournalStore, useSettingsStore } from '@/store';
@@ -10,6 +11,7 @@ import { formatDate } from '@/utils/money';
 
 export default function SleepScreen() {
   const { t } = useTranslation();
+  const router = useRouter();
   const sleep = useJournalStore((s) => s.sleep);
   const upsertSleep = useJournalStore((s) => s.upsertSleep);
   const removeSleep = useJournalStore((s) => s.removeSleep);
@@ -48,6 +50,7 @@ export default function SleepScreen() {
   return (
     <Screen>
       <ScreenHeader title={t('sleep.title')} subtitle={t('sleep.subtitle')} />
+      <AppButton label={t('nights.title')} variant="secondary" icon="bed-outline" onPress={() => router.push('/health/nights')} />
       <AppCard title={t('sleep.newEntry')}>
         <View style={{ gap: 12 }}>
           <ChipGroup options={[{ value: 'today', label: t('sleep.lastNight') }, { value: 'yesterday', label: t('sleep.nightBefore') }]} value={day} onChange={setDay} compact />

@@ -43,7 +43,8 @@
     },
     "placeholder": "Bijvoorbeeld: ik heb 's avonds zin om een joint te roken",
     "prompts": {
-      "coffee": "Ik heb zin om te roken na mijn koffie"
+      "coffee": "Ik heb zin om te roken na mijn koffie",
+      "offered": "Iemand bood me een joint aan"
     },
     "replies": {
       "craving_coffee": {
@@ -86,6 +87,11 @@
   },
   "goalSettings": {
     "reduceNote": "Je referentieverbruik: {{baseline}} joints per dag."
+  },
+  "health": {
+    "timeline": {
+      "subtitle": "Algemene richtpunten uit gezondheidsbronnen en studies, niet gemeten door je telefoon."
+    }
   },
   "onboarding": {
     "goals": {
@@ -146,17 +152,12 @@
     },
     "subtitle": "Volledige dagen zonder cannabis, berekend volgens je lokale kalender."
   },
-  "xp": {
-    "milestone": "Mijlpaal zonder cannabis"
-  },
   "units": {
     "cigs": "joints",
     "cigsPerDay": "joints/dag",
     "cigsToday": "joints vandaag"
   },
-  "health": {
-    "timeline": {
-      "subtitle": "Algemene richtpunten uit gezondheidsbronnen en studies, niet gemeten door je telefoon."
-    }
+  "xp": {
+    "milestone": "Mijlpaal zonder cannabis"
   }
 }

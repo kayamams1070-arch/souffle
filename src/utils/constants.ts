@@ -91,6 +91,70 @@ export const HEALTH_SOURCES: Record<string, { label: string; url: string; substa
   },
 };
 
+/** Sources behind the cannabis support content (withdrawal companion, nights, social). Checked October 2026. */
+export interface SupportSource {
+  label: string;
+  url: string;
+  substance: 'tobacco' | 'cannabis' | 'all';
+}
+
+const SUPPORT: Record<string, SupportSource> = {
+  ncsct: {
+    label: 'NCSCT (UK), "Smoking cessation and cannabis use: a guide for stop smoking practitioners", 2026',
+    url: 'https://www.ncsct.co.uk/library/view/pdf/NCSCT-cannabis-2025-v2.pdf',
+    substance: 'cannabis',
+  },
+  ncpic: {
+    label: 'NCPIC / Queensland Health, "A do-it-yourself guide to quitting cannabis"',
+    url: 'https://adis.health.qld.gov.au/sites/default/files/resource/file/do-it-yourself-guide-to-quitting.pdf',
+    substance: 'cannabis',
+  },
+  withyou: {
+    label: 'With You (UK), "Coping with cannabis withdrawal symptoms"',
+    url: 'https://www.wearewithyou.org.uk/help-and-advice/advice-you/coping-cannabis-weed-withdrawal-symptoms/',
+    substance: 'cannabis',
+  },
+  santeSleep: {
+    label: 'Santé.fr, "Le cannabis aide-t-il à dormir ?"',
+    url: 'https://www.sante.fr/node/798439',
+    substance: 'cannabis',
+  },
+  nhsInsomnia: {
+    label: 'NHS, "Insomnia"',
+    url: 'https://www.nhs.uk/conditions/insomnia/',
+    substance: 'all',
+  },
+  drugAware: {
+    label: 'Drug Aware (Australia), "Tips for saying no to drug use"',
+    url: 'https://drugaware.com.au/get-the-facts/tips-for-saying-no-to-drug-use/',
+    substance: 'all',
+  },
+  tasHealth: {
+    label: 'Tasmanian Department of Health, "Coping with high-risk situations"',
+    url: 'https://health.tas.gov.au/sites/default/files/2024-08/coping_with_high-risk_situations.pdf',
+    substance: 'all',
+  },
+  lrcug: {
+    label: 'Fischer et al. 2022, Lower-Risk Cannabis Use Guidelines (update), Int J Drug Policy 99',
+    url: 'https://doi.org/10.1016/j.drugpo.2021.103381',
+    substance: 'cannabis',
+  },
+  druglijnSelfHelp: {
+    label: 'De DrugLijn, zelfhulpprogramma (gratis, anoniem)',
+    url: 'https://zelfhulp.druglijn.be/',
+    substance: 'cannabis',
+  },
+};
+
+/** Day-by-day withdrawal companion. */
+export const WITHDRAWAL_SOURCES: SupportSource[] = [SUPPORT.ncsct!, SUPPORT.ncpic!, SUPPORT.withyou!, SUPPORT.santeSleep!];
+/** "Difficult nights" kit. */
+export const NIGHTS_SOURCES: SupportSource[] = [SUPPORT.nhsInsomnia!, SUPPORT.santeSleep!, SUPPORT.withyou!, SUPPORT.ncsct!];
+/** "When someone offers you one" screen. */
+export const SOCIAL_SOURCES: SupportSource[] = [SUPPORT.drugAware!, SUPPORT.tasHealth!, SUPPORT.ncpic!];
+/** Cutting down (use-free days). */
+export const REDUCTION_SOURCES: SupportSource[] = [SUPPORT.lrcug!, SUPPORT.druglijnSelfHelp!];
+
 /** CUDIT-R reference (freely available, permission not required, per PhenX). */
 export const CUDIT_SOURCE = {
   label: 'Adamson et al. 2010, CUDIT-R, Drug Alcohol Depend 110; French version CUDIT-R-Fr (Luquiens et al. 2021); cut-offs 8 / 12 (PhenX Toolkit)',

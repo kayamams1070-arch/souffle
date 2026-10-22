@@ -8,7 +8,7 @@ import { local, makeUser, ms, smoke } from './helpers';
 import { computeCuditScore, cuditLevel } from '@/utils/cudit';
 import { userSchema } from '@/utils/validation';
 import { showsWithdrawalCompanion, withdrawalPhase } from '@/utils/withdrawal';
-import { coach, detectIntent } from '@/services/coachService';
+import { coach, detectIntent, type CoachReply } from '@/services/coachService';
 
 describe('cannabis triggers', () => {
   it('keeps the tobacco picker unchanged and puts cannabis triggers first otherwise', () => {
@@ -127,9 +127,17 @@ describe('coach: cannabis situations', () => {
     expect(detectIntent('Ik kan niet inslapen')).toBe('sleep');
     expect(detectIntent('Je suis sous pression au travail')).toBe('unknown');
     const user = makeUser();
-    const r = coach.reply('I keep having vivid dreams', { user, sessions: [], cravings: [], language: 'en' });
+    const r = coach.reply('I keep having vivid dreams', { user, sessions: [], cravings: [], language: 'en' }) as CoachReply;
     expect(r.action.type).toBe('nights');
-    const s = coach.reply("On m'a proposé un pétard", { user, sessions: [], cravings: [], language: 'fr' });
+    const s = coach.reply("On m'a proposé un pétard", { user, sessions: [], cravings: [], language: 'fr' }) as CoachReply;
     expect(s.action.type).toBe('social');
+  });
+});
+
+describe('coach quick prompts in substance wordings', () => {
+  it('understands the cannabis variant of the "offered" prompt', () => {
+    expect(detectIntent("On m'a proposé un joint")).toBe('social_pressure');
+    expect(detectIntent('Iemand bood me een joint aan')).toBe('social_pressure');
+    expect(detectIntent('Someone offered me a joint')).toBe('social_pressure');
   });
 });

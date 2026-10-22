@@ -78,7 +78,7 @@ const DYNAMIC = {
   'challenges.kindLabels.*': ['smoke_free_days', 'workouts', 'cravings_overcome'],
   'challenges.kinds.*': ['smoke_free_days', 'workouts', 'cravings_overcome'],
   'challenges.status.*': ['upcoming', 'active', 'completed', 'ended'],
-  'coach.actions.*': ['breathing', 'workout', 'distraction', 'surf', 'pact', 'relapse', 'journal', 'rest', 'medical'],
+  'coach.actions.*': ['breathing', 'workout', 'distraction', 'surf', 'pact', 'relapse', 'journal', 'nights', 'social', 'rest', 'medical'],
   'coach.prompts.*': COACH_PROMPTS,
   'coach.replies.*.message': COACH_REPLY_KEYS,
   'coach.replies.*.why': COACH_REPLY_KEYS,

@@ -43,7 +43,8 @@
     },
     "placeholder": "For example: I want to smoke a joint in the evening",
     "prompts": {
-      "coffee": "I want to smoke after my coffee"
+      "coffee": "I want to smoke after my coffee",
+      "offered": "Someone offered me a joint"
     },
     "replies": {
       "craving_coffee": {
@@ -86,6 +87,11 @@
   },
   "goalSettings": {
     "reduceNote": "Your baseline: {{baseline}} joints a day."
+  },
+  "health": {
+    "timeline": {
+      "subtitle": "General guides from health sources and studies, not measured by your phone."
+    }
   },
   "onboarding": {
     "goals": {
@@ -146,17 +152,12 @@
     },
     "subtitle": "Full cannabis-free days, calculated using your local calendar."
   },
-  "xp": {
-    "milestone": "Cannabis-free milestone"
-  },
   "units": {
     "cigs": "joints",
     "cigsPerDay": "joints/day",
     "cigsToday": "joints today"
   },
-  "health": {
-    "timeline": {
-      "subtitle": "General guides from health sources and studies, not measured by your phone."
-    }
+  "xp": {
+    "milestone": "Cannabis-free milestone"
   }
 }

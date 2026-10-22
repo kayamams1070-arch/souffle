@@ -43,7 +43,8 @@
     },
     "placeholder": "Par exemple : j'ai envie de fumer un joint le soir",
     "prompts": {
-      "coffee": "J'ai envie de fumer après le café"
+      "coffee": "J'ai envie de fumer après le café",
+      "offered": "On m'a proposé un joint"
     },
     "replies": {
       "craving_coffee": {
@@ -86,6 +87,11 @@
   },
   "goalSettings": {
     "reduceNote": "Ta consommation de référence : {{baseline}} joints par jour."
+  },
+  "health": {
+    "timeline": {
+      "subtitle": "Repères généraux issus de sources de santé et d'études, non mesurés par ton téléphone."
+    }
   },
   "onboarding": {
     "goals": {
@@ -146,17 +152,12 @@
     },
     "subtitle": "Des journées complètes sans cannabis, calculées selon ton calendrier local."
   },
-  "xp": {
-    "milestone": "Étape sans cannabis"
-  },
   "units": {
     "cigs": "joints",
     "cigsPerDay": "joints/jour",
     "cigsToday": "joints aujourd'hui"
   },
-  "health": {
-    "timeline": {
-      "subtitle": "Repères généraux issus de sources de santé et d'études, non mesurés par ton téléphone."
-    }
+  "xp": {
+    "milestone": "Étape sans cannabis"
   }
 }

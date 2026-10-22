@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
-import { AppButton, AppCard, AppText, Banner, ChipGroup, ConfirmDialog, NumberStepper, Screen, ScreenHeader } from '@/components/ui';
+import { AppButton, AppCard, AppText, Banner, ChipGroup, ConfirmDialog, NumberStepper, Screen, ScreenHeader, SourceLinks } from '@/components/ui';
+import { REDUCTION_SOURCES } from '@/utils/constants';
 import { useSettingsStore, useUserStore } from '@/store';
 import type { QuitGoal } from '@/types';
 import { quitDateForChoice, type QuitChoice } from '@/utils/quitDate';
@@ -85,6 +86,7 @@ export default function GoalSettingsScreen() {
           <AppText variant="caption" tone="secondary">
             {t('goal.useFreeDays.hint')}
           </AppText>
+          {user.smoking.substance && user.smoking.substance !== 'tobacco' ? <SourceLinks sources={REDUCTION_SOURCES} /> : null}
           <Banner text={t('goalSettings.reduceNote', { baseline: user.smokingBaselinePerDay })} />
         </>
       )}
