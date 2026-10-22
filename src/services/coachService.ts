@@ -21,10 +21,11 @@ export type CoachIntent =
   | 'proud'
   | 'pain'
   | 'sleep'
+  | 'social_pressure'
   | 'motivation'
   | 'unknown';
 
-export type CoachActionType = 'breathing' | 'workout' | 'distraction' | 'surf' | 'pact' | 'relapse' | 'journal' | 'rest' | 'medical';
+export type CoachActionType = 'breathing' | 'workout' | 'distraction' | 'surf' | 'pact' | 'relapse' | 'journal' | 'nights' | 'social' | 'rest' | 'medical';
 
 export interface CoachAction {
   type: CoachActionType;
@@ -66,7 +67,8 @@ const KEYWORDS: Record<Exclude<CoachIntent, 'unknown'>, string[]> = {
   boredom: ['ennui', 'm\'ennuie', 'rien à faire', 'verveel', 'bored', 'boring', 'nothing to do'],
   no_sport: ['pas fait de sport', 'pas de sport', 'pas entraîné', 'pas bougé', 'niet gesport', 'geen sport', 'no sport', 'no workout', 'haven\'t exercised', 'didn\'t train'],
   missed_sessions: ['raté', 'manqué', 'sauté', 'gemist', 'overgeslagen', 'missed', 'skipped'],
-  sleep: ['dormi', 'sommeil', 'insomn', 'cauchemar', 'nachtmerrie', 'nightmare', 'slaap', 'geslapen', 'sleep', 'slept', 'insomnia'],
+  sleep: ['dormi', 'sommeil', 'insomn', 'cauchemar', 'rêve', 'm\'endormir', 'nachtmerrie', 'droom', 'inslapen', 'nightmare', 'dream', 'slaap', 'geslapen', 'sleep', 'slept', 'insomnia', 'fall asleep'],
+  social_pressure: ['proposé', 'propose un', 'on m\'a tendu', 'potes fument', 'amis fument', 'en soirée', 'pression des', 'aangeboden', 'vrienden blowen', 'vrienden roken', 'feestje', 'groepsdruk', 'offered', 'friends smoke', 'mates smoke', 'peer pressure', 'at a party'],
   proud: ['fier', 'réussi', 'content', 'victoire', 'trots', 'gelukt', 'blij', 'proud', 'managed', 'happy', 'victory'],
   motivation: ['motiv', 'envie d\'arrêter', 'abandonn', 'à quoi bon', 'opgeven', 'motivatie', 'give up', 'what\'s the point', 'motivation'],
   craving_general: ['envie', 'fumer', 'cigarette', 'clope', 'zin in', 'roken', 'sigaret', 'craving', 'smoke', 'smoking', 'urge', 'joint', 'pétard', 'beuh', 'bédo', 'cannabis', 'hasch', 'spliff', 'blowen', 'wiet', 'hasj', 'weed', 'stoned'],
@@ -83,6 +85,7 @@ const DETECTION_ORDER: Exclude<CoachIntent, 'unknown'>[] = [
   'tired',
   'missed_sessions',
   'no_sport',
+  'social_pressure',
   'sleep',
   'proud',
   'motivation',
@@ -163,7 +166,9 @@ export class LocalRuleCoach implements CoachProvider {
           vars: { thisWeek: stats.thisWeek },
         };
       case 'sleep':
-        return { ...base, intent, key: 'sleep', action: { type: 'journal' }, alternative: { type: 'workout', workoutId: themed('calm', user) } };
+        return { ...base, intent, key: 'sleep', action: { type: 'nights' }, alternative: { type: 'journal' } };
+      case 'social_pressure':
+        return { ...base, intent, key: 'social_pressure', action: { type: 'social' }, alternative: { type: 'breathing' } };
       case 'proud':
         return { ...base, intent, key: 'proud', action: { type: 'journal' }, alternative: { type: 'pact' } };
       case 'motivation':
@@ -187,4 +192,6 @@ export const COACH_PROMPTS: { id: string; intent: CoachIntent }[] = [
   { id: 'missed', intent: 'missed_sessions' },
   { id: 'relapsed', intent: 'relapsed' },
   { id: 'stress', intent: 'stress' },
+  { id: 'offered', intent: 'social_pressure' },
+  { id: 'sleep', intent: 'sleep' },
 ];

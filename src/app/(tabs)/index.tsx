@@ -17,6 +17,9 @@ import { useCravingStore, useRewardStore, useSettingsStore } from '@/store';
 import { computeForecast } from '@/services/cravingPredictionService';
 import { workoutDurationMinutes } from '@/services/recommendationService';
 import { getBadge } from '@/data/badges';
+import { WithdrawalCompanion } from '@/components/dashboard/WithdrawalCompanion';
+import { substanceOf } from '@/utils/calculations';
+import { showsWithdrawalCompanion, withdrawalPhase } from '@/utils/withdrawal';
 
 export default function HomeScreen() {
   const theme = useAppTheme();
@@ -42,6 +45,12 @@ export default function HomeScreen() {
     ? t('dashboard.greetingName', { name: user.firstName })
     : t('dashboard.greeting');
   const isNew = cravings.length === 0 && completedWorkouts === 0;
+  const substance = substanceOf(user);
+  // First 30 days without cannabis: day-by-day withdrawal companion.
+  const withdrawal =
+    user.goal === 'quit' && smokeFree?.status === 'running' && showsWithdrawalCompanion(substance)
+      ? withdrawalPhase(smokeFree.duration.totalMs / 60_000)
+      : null;
 
   return (
     <Screen insideTabs>
@@ -91,6 +100,15 @@ export default function HomeScreen() {
         onPress={() => router.push('/(tabs)/sos')}
         accessibilityHint={t('dashboard.sosHint')}
       />
+
+      {withdrawal ? (
+        <WithdrawalCompanion
+          phase={withdrawal}
+          substance={substance}
+          onNights={() => router.push('/health/nights')}
+          onBreathe={() => router.push('/sos/breathing')}
+        />
+      ) : null}
 
       {isNew ? (
         <Banner text={t('dashboard.emptyHint')} tone="success" icon="sparkles-outline" />
@@ -175,7 +193,7 @@ export default function HomeScreen() {
           elapsedMinutes={smokeFree.duration.totalMs / 60_000}
           reached={milestones.reached}
           next={milestones.next}
-          substance={user.smoking.substance ?? 'tobacco'}
+          substance={substance}
           compact
           onPress={() => router.push('/health/benefits')}
         />

@@ -15,6 +15,7 @@ const SRC = path.join(ROOT, 'src');
 
 const TRIGGERS = ['coffee', 'stress', 'boredom', 'after_meal', 'alcohol', 'anger', 'social', 'fatigue', 'night', 'to_sleep', 'screens', 'after_work', 'other'];
 const LEVELS = ['beginner', 'intermediate', 'advanced'];
+const WITHDRAWAL_PHASES = ['first_day', 'peak', 'easing', 'fading', 'sleep'];
 const DEPENDENCE = ['very_low', 'low', 'medium', 'high', 'very_high'];
 const OUTCOMES = ['passed', 'partly_passed', 'persisted'];
 const INTERVENTIONS = ['breathing', 'workout', 'distraction', 'craving_surf', 'replacement_ritual', 'none'];
@@ -140,6 +141,11 @@ const DYNAMIC = {
   'surf.steps.*.text': ['recognize', 'observe', 'breathe', 'evolve', 'choose'],
   'surf.steps.*.title': ['recognize', 'observe', 'breathe', 'evolve', 'choose'],
   'triggers.*': TRIGGERS,
+  'withdrawal.phases.*.title': WITHDRAWAL_PHASES,
+  'withdrawal.phases.*.text': WITHDRAWAL_PHASES,
+  'withdrawal.phases.*.tip1': WITHDRAWAL_PHASES,
+  'withdrawal.phases.*.tip2': WITHDRAWAL_PHASES,
+  'withdrawal.phases.*.tip3': WITHDRAWAL_PHASES,
   'weekdays.*': DAYS7,
   'weekdaysShort.*': DAYS7,
   'workouts.*.description': WORKOUT_KEYS,

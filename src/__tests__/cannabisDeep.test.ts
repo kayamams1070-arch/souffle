@@ -7,6 +7,8 @@ import { computeReductionStats, computeSavings, substanceOf } from '@/utils/calc
 import { local, makeUser, ms, smoke } from './helpers';
 import { computeCuditScore, cuditLevel } from '@/utils/cudit';
 import { userSchema } from '@/utils/validation';
+import { showsWithdrawalCompanion, withdrawalPhase } from '@/utils/withdrawal';
+import { coach, detectIntent } from '@/services/coachService';
 
 describe('cannabis triggers', () => {
   it('keeps the tobacco picker unchanged and puts cannabis triggers first otherwise', () => {
@@ -90,5 +92,44 @@ describe('use-free days (reduction goal)', () => {
     useUserStore.getState().switchGoal('reduce', { reductionTargetPerDay: 1, useFreeDaysPerWeek: 0 });
     expect(useUserStore.getState().user?.useFreeDaysPerWeek).toBeUndefined();
     useUserStore.getState().reset();
+  });
+});
+
+describe('withdrawal companion', () => {
+  const DAY = 24 * 60;
+  it('maps the days since the last use to the published time course', () => {
+    expect(withdrawalPhase(0)).toMatchObject({ id: 'first_day', day: 1 });
+    expect(withdrawalPhase(DAY - 1)?.id).toBe('first_day');
+    expect(withdrawalPhase(DAY)).toMatchObject({ id: 'peak', day: 2 });
+    expect(withdrawalPhase(6 * DAY - 1)).toMatchObject({ id: 'peak', day: 6 });
+    expect(withdrawalPhase(6 * DAY)).toMatchObject({ id: 'easing', day: 7 });
+    expect(withdrawalPhase(14 * DAY)).toMatchObject({ id: 'fading', day: 15 });
+    expect(withdrawalPhase(21 * DAY)).toMatchObject({ id: 'sleep', day: 22 });
+    expect(withdrawalPhase(30 * DAY - 1)).toMatchObject({ id: 'sleep', day: 30 });
+    expect(withdrawalPhase(30 * DAY)).toBeNull();
+    expect(withdrawalPhase(-5)).toBeNull();
+  });
+
+  it('is offered only when cannabis is tracked', () => {
+    expect(showsWithdrawalCompanion('tobacco')).toBe(false);
+    expect(showsWithdrawalCompanion('cannabis')).toBe(true);
+    expect(showsWithdrawalCompanion('both')).toBe(true);
+  });
+});
+
+describe('coach: cannabis situations', () => {
+  it('recognises offers and social pressure, and sends sleep worries to the nights kit', () => {
+    expect(detectIntent("On m'a proposé un joint en soirée")).toBe('social_pressure');
+    expect(detectIntent('Mijn vrienden blowen allemaal')).toBe('social_pressure');
+    expect(detectIntent('My mates smoke weed every weekend and offered me some')).toBe('social_pressure');
+    expect(detectIntent("J'ai fumé un joint en soirée")).toBe('relapsed');
+    expect(detectIntent("Je fais des rêves bizarres et je n'arrive pas à m'endormir")).toBe('sleep');
+    expect(detectIntent('Ik kan niet inslapen')).toBe('sleep');
+    expect(detectIntent('Je suis sous pression au travail')).toBe('unknown');
+    const user = makeUser();
+    const r = coach.reply('I keep having vivid dreams', { user, sessions: [], cravings: [], language: 'en' });
+    expect(r.action.type).toBe('nights');
+    const s = coach.reply("On m'a proposé un pétard", { user, sessions: [], cravings: [], language: 'fr' });
+    expect(s.action.type).toBe('social');
   });
 });

@@ -60,6 +60,12 @@ export default function CoachScreen() {
       case 'journal':
         router.push('/journal');
         return;
+      case 'nights':
+        router.push('/health/nights');
+        return;
+      case 'social':
+        router.push('/health/social');
+        return;
       case 'rest':
       case 'medical':
         return;
