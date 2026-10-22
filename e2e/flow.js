@@ -132,7 +132,9 @@ async function expectText(page, needle, timeout = 5000) {
     await shot(page, 'dashboard');
   });
   await check('savings after 1 day = 15 cig x 0.49 €', async () => {
-    await page.clock.runFor(24 * 3600 * 1000);
+    // Jump a day without replaying every 1-second tick (86 400 renders), then let timers settle.
+    await page.clock.fastForward(24 * 3600 * 1000);
+    await page.clock.runFor(2000);
     await page.waitForTimeout(200);
     const body = await text(page);
     // 15 cig/day * 9.80/20 = 7.35 € per day
