@@ -97,6 +97,11 @@ export interface User {
   quitDate?: string;
   /** Daily target for the reduction goal. */
   reductionTargetPerDay?: number;
+  /**
+   * Optional weekly goal of days without any consumption (reduction goal). Recommended by
+   * addiction services for cutting down cannabis (e.g. Jellinek), available for every substance.
+   */
+  useFreeDaysPerWeek?: number;
   /** ISO date-time when the reduction plan started (goal = reduce). */
   reductionStartDate?: string;
   /** Consumption units per day at the start (cigarettes + joints). */
@@ -138,6 +143,7 @@ export type OnboardingDraft = Partial<
     | 'goal'
     | 'quitDate'
     | 'reductionTargetPerDay'
+    | 'useFreeDaysPerWeek'
     | 'sportLevel'
     | 'intensityPreference'
     | 'limitations'

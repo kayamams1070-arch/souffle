@@ -3,7 +3,8 @@ import { CRAVING_ALTERNATIVES } from '@/data/cravingAlternatives';
 import { buildDemoData } from '@/data/demoData';
 import { enterDemo, exitDemo, loadDemoIntoStores } from '@/services/dataService';
 import { useCravingStore, useUserStore } from '@/store';
-import { computeSavings, substanceOf } from '@/utils/calculations';
+import { computeReductionStats, computeSavings, substanceOf } from '@/utils/calculations';
+import { local, makeUser, ms, smoke } from './helpers';
 import { computeCuditScore, cuditLevel } from '@/utils/cudit';
 import { userSchema } from '@/utils/validation';
 
@@ -51,5 +52,43 @@ describe('cannabis demo', () => {
     expect(useCravingStore.getState().cravings.length).toBeGreaterThan(0);
     await exitDemo();
     expect(useUserStore.getState().user).toBeNull();
+  });
+});
+
+describe('use-free days (reduction goal)', () => {
+  // 2026-04-23 is a Thursday: Monday 20, Tuesday 21, Wednesday 22 are finished days.
+  const now = ms(local(2026, 4, 23, 15));
+  const base = () =>
+    makeUser({ goal: 'reduce', reductionTargetPerDay: 2, reductionStartDate: local(2026, 4, 1, 8), useFreeDaysPerWeek: 3 });
+
+  it('counts finished days of the current week without consumption', () => {
+    const events = [smoke(local(2026, 4, 21, 20), 1)];
+    const s = computeReductionStats(base(), events, now);
+    expect(s.useFreeTarget).toBe(3);
+    expect(s.useFreeDoneThisWeek).toBe(2); // Monday and Wednesday
+    expect(s.useFreeDaysLeftThisWeek).toBe(4); // Thursday to Sunday
+    expect(s.todayUseFree).toBe(true);
+  });
+
+  it('ignores days before the plan and reports today as used once something is logged', () => {
+    const user = { ...base(), reductionStartDate: local(2026, 4, 22, 9) };
+    const s = computeReductionStats(user, [smoke(local(2026, 4, 23, 10), 1)], now);
+    expect(s.useFreeDoneThisWeek).toBe(1); // only Wednesday is inside the plan
+    expect(s.todayUseFree).toBe(false);
+  });
+
+  it('is absent when no weekly goal is set and validated between 0 and 7', () => {
+    const { useFreeDaysPerWeek: _omit, ...rest } = base();
+    expect(computeReductionStats(rest, [], now).useFreeTarget).toBeUndefined();
+    expect(userSchema.safeParse({ ...base(), useFreeDaysPerWeek: 8 }).success).toBe(false);
+  });
+
+  it('keeps or updates the weekly goal when switching goals', () => {
+    useUserStore.getState().setUser(makeUser({ goal: 'quit', quitDate: local(2026, 4, 1, 8) }));
+    useUserStore.getState().switchGoal('reduce', { reductionTargetPerDay: 2, useFreeDaysPerWeek: 2 });
+    expect(useUserStore.getState().user?.useFreeDaysPerWeek).toBe(2);
+    useUserStore.getState().switchGoal('reduce', { reductionTargetPerDay: 1, useFreeDaysPerWeek: 0 });
+    expect(useUserStore.getState().user?.useFreeDaysPerWeek).toBeUndefined();
+    useUserStore.getState().reset();
   });
 });

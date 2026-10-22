@@ -24,6 +24,8 @@ export default function GoalsStep() {
   const [choice, setChoice] = useState<QuitChoice>('now');
   const [pastDays, setPastDays] = useState(1);
   const [target, setTarget] = useState(draft.reductionTargetPerDay ?? Math.max(1, Math.round(baseline * 0.75)));
+  // Use-free days are suggested by default for cannabis, optional (0) for tobacco.
+  const [useFreeDays, setUseFreeDays] = useState(draft.useFreeDaysPerWeek ?? (draft.smoking?.substance && draft.smoking.substance !== 'tobacco' ? 2 : 0));
 
   const quitDate = useMemo(() => quitDateForChoice(choice, pastDays), [choice, pastDays]);
   const monthlySavings = habits ? Math.round(dailyCostCents(habits) * 30) : 0;
@@ -38,6 +40,7 @@ export default function GoalsStep() {
       step: 5,
       quitDate: goal === 'quit' ? quitDate : undefined,
       reductionTargetPerDay: goal === 'reduce' ? target : undefined,
+      useFreeDaysPerWeek: goal === 'reduce' && useFreeDays > 0 ? useFreeDays : undefined,
     });
     router.push('/onboarding/pact');
   };
@@ -87,6 +90,10 @@ export default function GoalsStep() {
               {t('onboarding.goals.reductionSavings', { amount: formatCents(reductionMonthly, language) })}
             </AppText>
           </AppCard>
+          <NumberStepper label={t('goal.useFreeDays.label')} value={useFreeDays} onChange={setUseFreeDays} min={0} max={7} unit={t('units.days')} />
+          <AppText variant="caption" tone="secondary">
+            {t('goal.useFreeDays.hint')}
+          </AppText>
           <Banner text={t('onboarding.goals.reduceNote')} tone="warm" />
         </>
       )}

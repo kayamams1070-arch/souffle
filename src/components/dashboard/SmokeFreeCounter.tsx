@@ -96,6 +96,21 @@ export function ReductionCounter({ stats }: { stats: ReductionSummary }) {
       <AppText variant="caption" tone="secondary" style={{ marginTop: 4 }}>
         {t('dashboard.reduction.summary', { count: stats.daysUnderTarget, total: stats.daysOnPlan })}
       </AppText>
+      {stats.useFreeTarget ? (
+        <View style={{ marginTop: 12, gap: 6 }} accessible accessibilityLabel={t('dashboard.reduction.useFree', { done: stats.useFreeDoneThisWeek, target: stats.useFreeTarget })}>
+          <AppText variant="bodySmall" weight="semibold">
+            {t('dashboard.reduction.useFree', { done: stats.useFreeDoneThisWeek, target: stats.useFreeTarget })}
+          </AppText>
+          <ProgressBar value={Math.min(1, stats.useFreeDoneThisWeek / stats.useFreeTarget)} tone="accent" accessibilityValueText={`${stats.useFreeDoneThisWeek}/${stats.useFreeTarget}`} />
+          <AppText variant="caption" tone="secondary">
+            {stats.useFreeDoneThisWeek >= stats.useFreeTarget
+              ? t('dashboard.reduction.useFreeReached')
+              : stats.todayUseFree
+                ? t('dashboard.reduction.useFreeToday')
+                : t('dashboard.reduction.useFreeLater')}
+          </AppText>
+        </View>
+      ) : null}
     </AppCard>
   );
 }

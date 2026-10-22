@@ -18,6 +18,9 @@ export default function GoalSettingsScreen() {
   const [choice, setChoice] = useState<QuitChoice | 'keep'>(() => (user?.goal === 'quit' && user.quitDate ? 'keep' : 'now'));
   const [pastDays, setPastDays] = useState(1);
   const [target, setTarget] = useState(user?.reductionTargetPerDay ?? Math.max(1, Math.round((user?.smokingBaselinePerDay ?? 10) * 0.75)));
+  const [useFreeDays, setUseFreeDays] = useState(
+    user?.useFreeDaysPerWeek ?? (user?.goal !== 'reduce' && user?.smoking.substance && user.smoking.substance !== 'tobacco' ? 2 : 0)
+  );
   const [confirm, setConfirm] = useState(false);
   const keptDate = user?.goal === 'quit' ? user.quitDate : undefined;
   const newQuitDate = useMemo(() => (choice === 'keep' ? keptDate : quitDateForChoice(choice, pastDays)), [choice, pastDays, keptDate]);
@@ -33,7 +36,7 @@ export default function GoalSettingsScreen() {
         switchGoal('quit', { quitDate: date });
       }
     } else {
-      switchGoal('reduce', { reductionTargetPerDay: target });
+      switchGoal('reduce', { reductionTargetPerDay: target, useFreeDaysPerWeek: useFreeDays });
     }
     setConfirm(false);
     router.back();
@@ -78,6 +81,10 @@ export default function GoalSettingsScreen() {
       ) : (
         <>
           <NumberStepper label={t('onboarding.goals.target')} value={target} onChange={setTarget} min={0} max={Math.max(0, user.smokingBaselinePerDay - 1)} unit={t('units.cigsPerDay')} />
+          <NumberStepper label={t('goal.useFreeDays.label')} value={useFreeDays} onChange={setUseFreeDays} min={0} max={7} unit={t('units.days')} />
+          <AppText variant="caption" tone="secondary">
+            {t('goal.useFreeDays.hint')}
+          </AppText>
           <Banner text={t('goalSettings.reduceNote', { baseline: user.smokingBaselinePerDay })} />
         </>
       )}

@@ -26,8 +26,8 @@
       "title": "After a meal"
     },
     "after_work": {
-      "title": "Getting home",
-      "text": "Replace the coming-home moment with a transition: a shower, a short walk or a quick session, before you settle down."
+      "text": "Replace the coming-home moment with a transition: a shower, a short walk or a quick session, before you settle down.",
+      "title": "Getting home"
     },
     "alcohol": {
       "text": "Alcohol lowers your guard. Alternate with water, step away for a moment and watch the craving without giving in.",
@@ -58,8 +58,8 @@
       "title": "An idea"
     },
     "screens": {
-      "title": "Gaming or series",
-      "text": "Take a real break between two games or episodes: get up, drink a glass of water and move for two minutes."
+      "text": "Take a real break between two games or episodes: get up, drink a glass of water and move for two minutes.",
+      "title": "Gaming or series"
     },
     "social": {
       "text": "Prepare a simple way to say no (“No thanks, I'm quitting”) and keep a replacement action ready: a glass of water, some chewing gum.",
@@ -70,8 +70,8 @@
       "title": "Stress"
     },
     "to_sleep": {
-      "title": "To fall asleep",
-      "text": "Dim the lights, put screens away, two minutes of slow breathing. The harder nights at the start pass: the Difficult nights kit can help."
+      "text": "Dim the lights, put screens away, two minutes of slow breathing. The harder nights at the start pass: the Difficult nights kit can help.",
+      "title": "To fall asleep"
     }
   },
   "badges": {
@@ -488,7 +488,11 @@
       "summary_one": "Target met on {{count}} day out of {{total}}. Cutting down helps, but it is not the same as quitting completely.",
       "summary_other": "Target met on {{count}} days out of {{total}}. Cutting down helps, but it is not the same as quitting completely.",
       "title": "Today",
-      "underTarget": "{{left}} left before you reach today's goal. Every cigarette you skip counts."
+      "underTarget": "{{left}} left before you reach today's goal. Every cigarette you skip counts.",
+      "useFree": "Use-free days this week: {{done}} of {{target}}",
+      "useFreeLater": "The next days are new chances.",
+      "useFreeReached": "Weekly goal reached. Well done.",
+      "useFreeToday": "Today can still be one."
     },
     "savings": {
       "a11y_one": "Estimated savings: {{amount}}, {{count}} cigarette avoided",
@@ -806,7 +810,11 @@
   },
   "goal": {
     "quit": "Quit completely",
-    "reduce": "Cut down gradually"
+    "reduce": "Cut down gradually",
+    "useFreeDays": {
+      "hint": "Optional. Whole days without using help you take back control. Start with one or two days, for example the days you work.",
+      "label": "Use-free days per week"
+    }
   },
   "goalSettings": {
     "confirmMessage": "Your dashboard will be updated. Your history stays intact.",

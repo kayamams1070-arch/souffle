@@ -48,6 +48,7 @@ export const userSchema = z.object({
   goal: z.enum(['quit', 'reduce']),
   quitDate: isoDate.optional(),
   reductionTargetPerDay: z.number().int().min(0).max(100).optional(),
+  useFreeDaysPerWeek: z.number().int().min(0).max(7).optional(),
   reductionStartDate: isoDate.optional(),
   smokingBaselinePerDay: z.number().int().min(1).max(150),
   savingsStartDate: isoDate.optional(),

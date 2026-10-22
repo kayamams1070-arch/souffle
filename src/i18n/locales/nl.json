@@ -26,8 +26,8 @@
       "title": "Na het eten"
     },
     "after_work": {
-      "title": "Bij thuiskomst",
-      "text": "Vervang het moment van thuiskomen door een overgang: douchen, een korte wandeling of een korte sessie, voor je gaat zitten."
+      "text": "Vervang het moment van thuiskomen door een overgang: douchen, een korte wandeling of een korte sessie, voor je gaat zitten.",
+      "title": "Bij thuiskomst"
     },
     "alcohol": {
       "text": "Alcohol maakt je minder alert. Wissel af met water, ga even weg en kijk naar je zin zonder eraan toe te geven.",
@@ -58,8 +58,8 @@
       "title": "Een idee"
     },
     "screens": {
-      "title": "Gamen of series",
-      "text": "Neem een echte pauze tussen twee games of afleveringen: sta op, drink een glas water en beweeg twee minuten."
+      "text": "Neem een echte pauze tussen twee games of afleveringen: sta op, drink een glas water en beweeg twee minuten.",
+      "title": "Gamen of series"
     },
     "social": {
       "text": "Bereid een eenvoudige weigerzin voor (\"Nee bedankt, ik stop\") en houd een vervangende actie klaar: een glas water, een kauwgom.",
@@ -70,8 +70,8 @@
       "title": "Stress"
     },
     "to_sleep": {
-      "title": "Om in slaap te vallen",
-      "text": "Gedimd licht, schermen weg, twee minuten rustig ademen. De moeilijkere nachten in het begin gaan voorbij: de kit Moeilijke nachten kan je helpen."
+      "text": "Gedimd licht, schermen weg, twee minuten rustig ademen. De moeilijkere nachten in het begin gaan voorbij: de kit Moeilijke nachten kan je helpen.",
+      "title": "Om in slaap te vallen"
     }
   },
   "badges": {
@@ -488,7 +488,11 @@
       "summary_one": "Doel gehaald op {{count}} dag van de {{total}}. Minderen helpt, maar is niet hetzelfde als volledig stoppen.",
       "summary_other": "Doel gehaald op {{count}} dagen van de {{total}}. Minderen helpt, maar is niet hetzelfde als volledig stoppen.",
       "title": "Vandaag",
-      "underTarget": "Nog {{left}} tot je dagdoel. Elke sigaret minder telt."
+      "underTarget": "Nog {{left}} tot je dagdoel. Elke sigaret minder telt.",
+      "useFree": "Dagen zonder deze week: {{done}} van {{target}}",
+      "useFreeLater": "De volgende dagen zijn telkens een nieuwe kans.",
+      "useFreeReached": "Weekdoel gehaald. Goed gedaan.",
+      "useFreeToday": "Vandaag kan er nog een zijn."
     },
     "savings": {
       "a11y_one": "Geschatte besparing: {{amount}}, {{count}} sigaret vermeden",
@@ -806,7 +810,11 @@
   },
   "goal": {
     "quit": "Volledig stoppen",
-    "reduce": "Geleidelijk minderen"
+    "reduce": "Geleidelijk minderen",
+    "useFreeDays": {
+      "hint": "Optioneel. Hele dagen zonder gebruik helpen om de controle terug te nemen. Begin met een of twee dagen, bijvoorbeeld de dagen dat je werkt.",
+      "label": "Dagen zonder per week"
+    }
   },
   "goalSettings": {
     "confirmMessage": "Je dashboard wordt bijgewerkt. Je geschiedenis blijft intact.",

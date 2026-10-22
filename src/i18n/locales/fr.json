@@ -26,8 +26,8 @@
       "title": "Après le repas"
     },
     "after_work": {
-      "title": "En rentrant",
-      "text": "Remplace le moment du retour par un sas : douche, petite marche ou séance courte, avant de te poser."
+      "text": "Remplace le moment du retour par un sas : douche, petite marche ou séance courte, avant de te poser.",
+      "title": "En rentrant"
     },
     "alcohol": {
       "text": "L'alcool baisse la vigilance. Alterne avec de l'eau, éloigne-toi un moment et observe l'envie sans y céder.",
@@ -58,8 +58,8 @@
       "title": "Une idée"
     },
     "screens": {
-      "title": "Jeux ou séries",
-      "text": "Fais une vraie pause entre deux parties ou deux épisodes : lève-toi, bois un verre d'eau et bouge deux minutes."
+      "text": "Fais une vraie pause entre deux parties ou deux épisodes : lève-toi, bois un verre d'eau et bouge deux minutes.",
+      "title": "Jeux ou séries"
     },
     "social": {
       "text": "Prépare une phrase de refus simple (« Non merci, j'arrête ») et garde une action de remplacement : un verre d'eau, un chewing-gum.",
@@ -70,8 +70,8 @@
       "title": "Stress"
     },
     "to_sleep": {
-      "title": "Pour s'endormir",
-      "text": "Lumière tamisée, écrans de côté, deux minutes de respiration lente. Les nuits plus difficiles du début passent : le kit Nuits difficiles peut t'aider."
+      "text": "Lumière tamisée, écrans de côté, deux minutes de respiration lente. Les nuits plus difficiles du début passent : le kit Nuits difficiles peut t'aider.",
+      "title": "Pour s'endormir"
     }
   },
   "badges": {
@@ -488,7 +488,11 @@
       "summary_one": "Objectif tenu {{count}} jour sur {{total}}. La réduction aide, mais elle n'équivaut pas à un arrêt complet.",
       "summary_other": "Objectif tenu {{count}} jours sur {{total}}. La réduction aide, mais elle n'équivaut pas à un arrêt complet.",
       "title": "Aujourd'hui",
-      "underTarget": "Encore {{left}} avant ton objectif du jour. Chaque cigarette en moins compte."
+      "underTarget": "Encore {{left}} avant ton objectif du jour. Chaque cigarette en moins compte.",
+      "useFree": "Jours sans cette semaine : {{done}} sur {{target}}",
+      "useFreeLater": "Les prochains jours sont autant de nouvelles occasions.",
+      "useFreeReached": "Objectif de la semaine atteint. Bien joué.",
+      "useFreeToday": "Aujourd'hui peut encore en être un."
     },
     "savings": {
       "a11y_one": "Économies estimées : {{amount}}, {{count}} cigarette évitée",
@@ -806,7 +810,11 @@
   },
   "goal": {
     "quit": "Arrêt complet",
-    "reduce": "Réduction progressive"
+    "reduce": "Réduction progressive",
+    "useFreeDays": {
+      "hint": "Facultatif. Des journées entières sans consommer aident à reprendre la main. Commence par un ou deux jours, par exemple ceux où tu travailles.",
+      "label": "Jours sans par semaine"
+    }
   },
   "goalSettings": {
     "confirmMessage": "Ton tableau de bord sera mis à jour. Ton historique reste intact.",

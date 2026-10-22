@@ -29,7 +29,7 @@ export interface UserState {
   setQuitDate: (quitDateIso: string, options?: { correction?: boolean }) => void;
   /** Updates declared habits and records a dated snapshot so past savings stay unchanged. */
   updateHabits: (habits: Omit<HabitsSnapshot, 'effectiveFrom'>) => void;
-  switchGoal: (goal: User['goal'], options?: { reductionTargetPerDay?: number; quitDate?: string }) => void;
+  switchGoal: (goal: User['goal'], options?: { reductionTargetPerDay?: number; useFreeDaysPerWeek?: number; quitDate?: string }) => void;
   setSavingsProject: (project: User['savingsProject']) => void;
   reset: () => void;
   _setHydrated: (value: boolean) => void;
@@ -118,6 +118,7 @@ export const useUserStore = create<UserState>()(
               options?.reductionTargetPerDay ??
               current.reductionTargetPerDay ??
               Math.max(1, Math.round(current.smokingBaselinePerDay * 0.75)),
+            useFreeDaysPerWeek: options && 'useFreeDaysPerWeek' in options ? options.useFreeDaysPerWeek || undefined : current.useFreeDaysPerWeek,
             reductionStartDate: current.goal === 'reduce' && current.reductionStartDate ? current.reductionStartDate : nowIso(),
             savingsStartDate,
           });

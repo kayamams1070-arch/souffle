@@ -3,7 +3,7 @@
  * and are covered by unit tests in src/__tests__/calculations.test.ts.
  */
 import type { ConsumptionKind, HabitsSnapshot, SmokingEvent, SmokingProfile, Substance, User } from '@/types';
-import { DAY_MS, dayKey, dayKeysBetween, splitDuration, type Duration } from './dates';
+import { DAY_MS, addDaysToKey, dayKey, dayKeysBetween, splitDuration, type Duration } from './dates';
 
 export function pricePerCigaretteCents(packPriceCents: number, cigarettesPerPack: number): number {
   if (cigarettesPerPack <= 0) return 0;
@@ -251,6 +251,14 @@ export interface ReductionSummary {
   daysOnPlan: number;
   /** Days of the plan (today included) where logged consumption stayed at or under the target. */
   daysUnderTarget: number;
+  /** Weekly goal of days without consumption, when the person set one. */
+  useFreeTarget?: number;
+  /** Finished days of the current week (Monday to yesterday, within the plan) with nothing logged. */
+  useFreeDoneThisWeek: number;
+  /** Days still available this week, today included. */
+  useFreeDaysLeftThisWeek: number;
+  /** Whether nothing has been logged today so far. */
+  todayUseFree: boolean;
 }
 
 /**
@@ -269,12 +277,27 @@ export function computeReductionStats(user: User, events: SmokingEvent[], now = 
   for (const day of days) {
     if (cigarettesSmokedOnDay(events, day) <= target) daysUnderTarget += 1;
   }
+  // Current week runs Monday to Sunday (local time); only days inside the plan count.
+  const weekday = (new Date(now).getDay() + 6) % 7; // 0 = Monday
+  const weekStart = addDaysToKey(today, -weekday);
+  const firstCounted = weekStart > startDay ? weekStart : startDay;
+  let useFreeDone = 0;
+  if (firstCounted < today) {
+    for (const day of dayKeysBetween(firstCounted, addDaysToKey(today, -1))) {
+      if (cigarettesSmokedOnDay(events, day) === 0) useFreeDone += 1;
+    }
+  }
+  const todaySmoked = cigarettesSmokedOnDay(events, today);
   return {
-    todaySmoked: cigarettesSmokedOnDay(events, today),
+    todaySmoked,
     target,
     baseline,
     daysOnPlan: days.length,
     daysUnderTarget,
+    ...(user.useFreeDaysPerWeek ? { useFreeTarget: user.useFreeDaysPerWeek } : {}),
+    useFreeDoneThisWeek: useFreeDone,
+    useFreeDaysLeftThisWeek: 7 - weekday,
+    todayUseFree: todaySmoked === 0,
   };
 }
 

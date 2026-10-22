@@ -127,7 +127,7 @@ export default function PrivacyScreen() {
               {(['tobacco', 'cannabis'] as const).map((sub) => (
                 <AppButton
                   key={sub}
-                  label={t(sub === 'cannabis' ? 'demo.loadCannabis' : 'demo.load')}
+                  label={sub === 'cannabis' ? t('demo.loadCannabis') : t('demo.load')}
                   variant="secondary"
                   size="sm"
                   icon="play-outline"
@@ -182,7 +182,7 @@ export default function PrivacyScreen() {
         visible={confirmDemo !== null}
         title={t('demo.confirmTitle')}
         message={t('demo.confirmText')}
-        confirmLabel={t(confirmDemo === 'cannabis' ? 'demo.loadCannabis' : 'demo.load')}
+        confirmLabel={confirmDemo === 'cannabis' ? t('demo.loadCannabis') : t('demo.load')}
         cancelLabel={t('common.cancel')}
         onConfirm={() => void doEnterDemo(confirmDemo ?? 'tobacco')}
         onCancel={() => setConfirmDemo(null)}

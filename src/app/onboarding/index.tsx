@@ -93,7 +93,7 @@ export default function WelcomeScreen() {
           {(['tobacco', 'cannabis'] as const).map((sub) => (
             <AppButton
               key={sub}
-              label={t(sub === 'cannabis' ? 'demo.loadCannabis' : 'demo.load')}
+              label={sub === 'cannabis' ? t('demo.loadCannabis') : t('demo.load')}
               variant="ghost"
               size="sm"
               fullWidth={false}

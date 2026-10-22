@@ -13,7 +13,7 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const SRC = path.join(ROOT, 'src');
 
-const TRIGGERS = ['coffee', 'stress', 'boredom', 'after_meal', 'alcohol', 'anger', 'social', 'fatigue', 'night', 'other'];
+const TRIGGERS = ['coffee', 'stress', 'boredom', 'after_meal', 'alcohol', 'anger', 'social', 'fatigue', 'night', 'to_sleep', 'screens', 'after_work', 'other'];
 const LEVELS = ['beginner', 'intermediate', 'advanced'];
 const DEPENDENCE = ['very_low', 'low', 'medium', 'high', 'very_high'];
 const OUTCOMES = ['passed', 'partly_passed', 'persisted'];
